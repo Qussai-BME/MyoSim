@@ -1,0 +1,119 @@
+[build-system]
+requires = ["hatchling>=1.25"]
+build-backend = "hatchling.build"
+
+[project]
+name = "myosim"
+version = "0.1.3"
+description = "A reproducible software-only motor-intent to virtual prosthetic-control research demonstrator."
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "Apache-2.0" }
+authors = [
+  { name = "MyoSim Contributors" },
+]
+keywords = ["biomechanics", "mujoco", "prosthetics", "robotics", "simulation", "myoelectric-control"]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Intended Audience :: Science/Research",
+  "License :: OSI Approved :: Apache Software License",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+]
+dependencies = [
+  "mujoco>=3.3,<4.0",
+  "numpy>=1.26,<2.0",
+  "PyYAML>=6.0,<7.0",
+  "matplotlib>=3.8,<4.0",
+  "imageio>=2.35,<3.0",
+  "Pillow>=12.3.0,<13.0",
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=9.0.3,<10.0",
+  "pytest-cov>=7.0.0,<8.0",
+  "ruff>=0.8,<1.0",
+  "mypy>=1.13,<2.0",
+  "pre-commit>=4.0,<5.0",
+  "types-PyYAML>=6.0",
+  "build>=1.2,<2.0",
+  "twine>=7.0,<8.0",
+  "pip-audit>=2.9,<3.0",
+]
+pybullet = ["pybullet>=3.2.6"]
+
+[project.scripts]
+myosim = "myosim.cli.main:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/myosim"]
+include = ["src/myosim/resources/**/*"]
+
+[tool.hatch.build.targets.sdist]
+include = [
+  "/src/myosim/**/*.py",
+  "/src/myosim/resources/**/*",
+  "/assets/**/*",
+  "/configs/**/*",
+  "/examples/**/*",
+  "/docs/**/*",
+  "/tests/**/*",
+  "/scripts/**/*",
+  "/README.md",
+  "/CHANGELOG.md",
+  "/RELEASE_NOTES_V1.md",
+  "/CITATION.cff",
+  "/CONTRIBUTING.md",
+  "/SECURITY.md",
+  "/SUPPORT.md",
+  "/CODE_OF_CONDUCT.md",
+  "/Dockerfile",
+  "/uv.lock",
+  "/LICENSE",
+  "/THIRD_PARTY_NOTICES.md",
+]
+
+[tool.pytest.ini_options]
+minversion = "8.0"
+addopts = "-ra --strict-markers --cov=myosim --cov-report=term-missing --cov-report=json:coverage.json"
+testpaths = ["tests"]
+pythonpath = ["src"]
+
+[tool.ruff]
+target-version = "py311"
+line-length = 100
+src = ["src", "tests"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM"]
+ignore = []
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+line-ending = "lf"
+
+[tool.mypy]
+python_version = "3.11"
+files = ["src"]
+warn_return_any = true
+warn_unused_configs = true
+strict = true
+
+[[tool.mypy.overrides]]
+module = ["mujoco", "mujoco.*", "pybullet"]
+ignore_missing_imports = true
+
+[tool.coverage.run]
+source = ["myosim"]
+branch = true
+
+[tool.coverage.report]
+fail_under = 90
+show_missing = true
+
+[tool.myosim.coverage]
+per_module_minimum = 85
+minimum_statements = 10

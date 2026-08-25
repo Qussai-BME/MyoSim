@@ -1,0 +1,69 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - "v*"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5.6.0
+        with:
+          python-version: "3.12"
+      - name: Install release verification tools and all declared extras
+        run: python -m pip install --upgrade pip && python -m pip install '.[dev,pybullet]'
+      - name: Verify source tree
+        run: |
+          ruff format --check .
+          ruff check .
+          mypy src
+          pytest -q
+          python scripts/check_coverage_policy.py coverage.json 85
+          myosim doctor --strict
+      - name: Audit declared dependencies
+        run: |
+          python scripts/export_audit_requirements.py --output audit-requirements.txt
+          pip-audit --progress-spinner off --strict --requirement audit-requirements.txt
+      - name: Build distributions
+        run: python -m build
+      - name: Validate distribution metadata
+        run: python -m twine check dist/*
+      - name: Generate CycloneDX SBOM
+        run: |
+          pip-audit --progress-spinner off --requirement audit-requirements.txt \
+            --format cyclonedx-json --output sbom.cdx.json
+      - name: Upload release artifacts
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        with:
+          name: myosim-release-artifacts
+          path: |
+            dist/
+            sbom.cdx.json
+          if-no-files-found: error
+
+  publish-pypi:
+    if: github.event_name == 'push'
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: pypi
+      url: https://pypi.org/p/myosim
+    permissions:
+      id-token: write
+    steps:
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4.3.0
+        with:
+          name: myosim-release-artifacts
+          path: dist-artifacts
+      - name: Publish distributions with PyPI Trusted Publishing
+        uses: pypa/gh-action-pypi-publish@dc37677b2e1c63e2034f94d8a5b11f265b73ba33 # v1.14.2
+        with:
+          packages-dir: dist-artifacts/dist/

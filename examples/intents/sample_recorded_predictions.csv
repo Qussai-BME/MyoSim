@@ -1,0 +1,10 @@
+timestamp_s,label,confidence,source_subject,modality,model_version,window_id
+0.00,REST,0.99,synthetic-demo,emg-replay,example-decoder-v1,000
+0.05,PINCH,0.93,synthetic-demo,emg-replay,example-decoder-v1,001
+0.10,PINCH,0.95,synthetic-demo,emg-replay,example-decoder-v1,002
+0.15,PINCH,0.92,synthetic-demo,emg-replay,example-decoder-v1,003
+0.20,PINCH,0.94,synthetic-demo,emg-replay,example-decoder-v1,004
+0.25,PINCH,0.91,synthetic-demo,emg-replay,example-decoder-v1,005
+0.30,PINCH,0.88,synthetic-demo,emg-replay,example-decoder-v1,006
+0.35,REST,0.99,synthetic-demo,emg-replay,example-decoder-v1,007
+0.46,REST,0.99,synthetic-demo,emg-replay,example-decoder-v1,008

@@ -1,0 +1,16 @@
+cff-version: 1.2.0
+message: "If you use MyoSim in academic work, please cite this software."
+title: "MyoSim: Reproducible Motor-Intent to Simulated-Action Research Demonstrator"
+abstract: "A local-first, software-only, non-clinical platform for deterministic replay of motor-intent events through confidence-aware control, virtual prosthetic simulation, task metrics, and provenance reporting."
+type: software
+authors:
+  - name: "MyoSim Contributors"
+license: Apache-2.0
+version: 0.1.3
+date-released: 2026-08-22
+keywords:
+  - myoelectric control
+  - simulation
+  - prosthetics
+  - MuJoCo
+  - reproducibility

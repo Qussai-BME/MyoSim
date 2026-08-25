@@ -1,0 +1,42 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+coverage.json
+htmlcov/
+dist/
+build/
+*.egg-info/
+.venv/
+
+# Editors and operating systems
+.vscode/
+.idea/
+.DS_Store
+
+# Generated experiment outputs; placeholders are retained via .gitkeep files.
+artifacts/runs/*
+!artifacts/runs/.gitkeep
+artifacts/videos/*
+!artifacts/videos/.gitkeep
+artifacts/figures/*
+!artifacts/figures/.gitkeep
+artifacts/benchmarks/*
+!artifacts/benchmarks/.gitkeep
+artifacts/task_runs/*
+!artifacts/task_runs/.gitkeep
+artifacts/development_runs/*
+!artifacts/development_runs/.gitkeep
+artifacts/reports/generated/*
+!artifacts/reports/generated/.gitkeep
+
+# Local user input and secrets
+.env
+*.pem
+*.key
+local_data/
