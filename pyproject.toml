@@ -23,7 +23,7 @@ classifiers = [
 ]
 dependencies = [
   "mujoco>=3.3,<4.0",
-  "numpy>=1.26,<2.0",
+  "numpy>=1.26,<3.0",
   "PyYAML>=6.0,<7.0",
   "matplotlib>=3.8,<4.0",
   "imageio>=2.35,<3.0",
