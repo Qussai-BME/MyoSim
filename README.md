@@ -1,4 +1,8 @@
 # MyoSim
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22096522.svg)](https://zenodo.org/records/22096522)
+
+🚀 **[Live Interactive Demo](https://myosim-qussai-bme.streamlit.app/)
+
 
 **MyoSim** is a local-first, software-only research demonstrator for reproducible simulation of the path from motor-intent events to bounded virtual prosthetic action.
 
