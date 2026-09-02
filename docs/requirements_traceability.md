@@ -1,6 +1,6 @@
 # MyoSim V1 — Requirements Traceability and Evidence Baseline
 
-**Status:** Maintained public-release traceability record (V1.1; distribution 0.1.3)
+**Status:** Maintained public-release traceability record (V1.1; audited distribution 0.1.4)
 **Authoritative source:** `MyoSim_Master_Engineering_Spec.md` supplied by the project owner.
 **Scope:** Software-only, local-first, non-clinical research demonstrator.
 
@@ -13,7 +13,7 @@ MyoSim V1 shall demonstrate a deterministic and reproducible chain from a synthe
 | RQ-001 | The repository is greenfield; no legacy implementation is imported or inspected during initial construction. | §§0, 0.2, 35 | ADR and repository provenance record | Must |
 | RQ-002 | The product remains software-only, local-first, and does not require physical sensors, actuators, or clinical devices. | §§0, 1A, 33A | README, dependency inventory, network-default test | Must |
 | RQ-003 | A public contract separates signals, intent, control, physics, tasks, rendering, metrics, and CLI. | §§4, 5, 11, 23 | import-boundary test and architecture document | Must |
-| RQ-004 | The simulator consumes generic discrete `IntentEvent` and continuous `IntentVector` contracts. | §5 | unit validation tests | Must |
+| RQ-004 | The simulator accepts canonical discrete `IntentRecord` and continuous `IntentVector` contracts; internal compatibility events do not replace the public record boundary. | §5 | contract and replay-adapter tests | Must |
 | RQ-005 | A `PhysicsBackend` protocol prevents controller code from importing MuJoCo directly. | §3 | contract tests and import inspection | Must |
 | RQ-006 | MuJoCo is the primary backend and headless model loading is supported. | §§2, 10, 25 | headless smoke test in CI | Must |
 | RQ-007 | The virtual hand begins with open, close/fist, pinch, and rest actions rather than anatomical over-complexity. | §9 | model and command-mapping tests | Must |
@@ -26,14 +26,14 @@ MyoSim V1 shall demonstrate a deterministic and reproducible chain from a synthe
 | RQ-014 | Recorded prediction files can drive deterministic replay before live inference is considered. | §§15–17, 27 | replay integration test and manifest | Must |
 | RQ-015 | At least reach/grasp/pick-place task semantics and measurable task outcomes exist, with pick-and-place as the flagship V1 benchmark. | §14 | task integration tests and benchmark report | Must |
 | RQ-016 | Metrics include control behavior and task outcome, not offline classification accuracy only. | §18 | JSON metrics schema and report test | Must |
-| RQ-017 | Every run stores configuration hash, commit/version, backend, source, seed, task, transitions, metrics, and paths to artifacts. | §19 | provenance-schema test and example run | Must |
+| RQ-017 | Every run stores configuration hash, commit/version, backend, source, protocol, full input hash where applicable, environment, seed, task, transitions, metrics, and SHA-256 artifact manifest. | §19 | provenance, manifest, and example-run tests | Must |
 | RQ-018 | Research-clean and diagnostic recordings are distinct; debug overlays are not presented as scientific results. | §20 | rendering/recording tests and documentation | Should |
 | RQ-019 | A researcher can run an end-to-end demo through one documented CLI command. | §§16, 34 | clean-environment smoke test | Must |
 | RQ-020 | The engineering baseline uses typing, pytest, Ruff, pre-commit configuration, deterministic seeds, and CI. | §§22, 24 | CI workflow and local quality command | Must |
 | RQ-021 | Fixed scripted replay produces reproducible outputs within an explicit tolerance. | §24 | regression test and stored baseline | Must |
 | RQ-022 | The release includes documentation, dependency/license inventory, changelog, citation metadata, limitations, non-clinical language, security disclosure, support, contributor conduct, and a verifiable source distribution. | §§22, 32, 33, 37B | release checklist, source-distribution content check, and public-release audit | Must |
 | RQ-023 | Integration with MyoControl, MyoAdapt, Lite-DAN, or BioSignal-FM occurs only through public contracts or versioned predictions. | §§1, 27 | adapter boundary test and ADR | Must |
-| RQ-024 | Optional live inference is deferred until recorded replay is stable. | §§17, 35 | roadmap gate record; no live connector in V1 | Must |
+| RQ-024 | Optional live inference is introduced only after recorded replay is stable and remains an explicit caller-owned, hardware-free record bridge. | §§17, 35 | replay gate record, live-boundary tests, and roadmap | Must |
 | RQ-025 | The V1 definition of done is demonstrable without keyboard-driven task control and without clinical claims. | §§32, 37 | final audit, release report, and clean-environment evidence | Must |
 | RQ-026 | A public package release audits declared dependencies, validates distributions, records an SBOM, and is prepared for short-lived-token trusted publishing. | Public-release hardening review | CI/release workflow, SBOM artifact, and `SECURITY.md` | Must |
 | RQ-027 | A maintained roadmap distinguishes the V1 replay baseline from future EMG, EEG, EEG+EMG fusion, continuous-control, assistance, and manipulator research tracks, with explicit acceptance gates and non-clinical boundaries. | §§5, 28–30, 33, 33A | `docs/roadmap.md`, README roadmap link, and release-note deferred-scope record | Must |

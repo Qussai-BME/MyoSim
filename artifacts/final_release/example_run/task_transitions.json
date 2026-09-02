@@ -1,0 +1,26 @@
+[
+  {
+    "current": "WAIT_FOR_GRASP",
+    "previous": "APPROACH",
+    "reason": "approach_reached",
+    "timestamp_s": 1.6
+  },
+  {
+    "current": "TRANSPORT",
+    "previous": "WAIT_FOR_GRASP",
+    "reason": "decoded_grasp_command",
+    "timestamp_s": 1.7
+  },
+  {
+    "current": "WAIT_FOR_RELEASE",
+    "previous": "TRANSPORT",
+    "reason": "transport_reached",
+    "timestamp_s": 2.9
+  },
+  {
+    "current": "COMPLETE",
+    "previous": "WAIT_FOR_RELEASE",
+    "reason": "object_released_in_target",
+    "timestamp_s": 3.1
+  }
+]

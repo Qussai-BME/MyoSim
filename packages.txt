@@ -1,3 +1,9 @@
+# System packages needed for MuJoCo's headless EGL rendering on Streamlit
+# Community Cloud's Debian container (no GPU). This mirrors the exact
+# package set this project's own Dockerfile already installs for the same
+# purpose (see Dockerfile), which is also exercised by this repository's
+# CI test suite (tests/integration/test_recording.py calls backend.render()
+# under MUJOCO_GL=egl on a headless GitHub Actions runner).
 libegl1
 libgl1
-libglib2.0-0t64
+libglib2.0-0

@@ -1,9 +1,9 @@
 # MyoSim Research Roadmap
 
 **Document status:** Maintained forward-looking research roadmap
-**Current baseline:** MyoSim V1.1 / distribution `0.1.3`
+**Current baseline:** MyoSim V1.1 / audited distribution `0.1.4`
 **Scope:** Software-first, local-first, non-clinical research development
-**Last updated:** 2026-08-22
+**Last updated:** 2026-08-26
 
 > **Reading rule:** This roadmap distinguishes a future research direction from a delivered capability. It is not a clinical-development plan, product promise, implementation schedule, or claim that EEG, EMG, multimodal fusion, hardware, medical robotics, or clinical validation is presently available in MyoSim.
 
@@ -13,7 +13,7 @@ MyoSim’s long-term purpose is to make a reproducible chain from **biosignal-de
 
 The next research increments must preserve that separation. Signal science belongs in versioned decoder/data-adapter experiments; command safety belongs in the controller; and task/physics validity belongs in the simulation experiment. A higher offline classification score must never be treated as evidence of improved task performance, user benefit, or clinical suitability.
 
-| Capability | Status at `0.1.3` | Roadmap treatment |
+| Capability | Status at `0.1.4` | Roadmap treatment |
 |---|---|---|
 | Synthetic and CSV intent replay | **Implemented and verified** | Stable regression baseline for every future modality experiment. |
 | Discrete intent, confidence gating, temporal confirmation, state machine | **Implemented and verified** | Must remain the modality-agnostic safety boundary. |
@@ -68,7 +68,7 @@ The sequence is dependency-driven, not calendar-driven. A stage may begin only a
 
 | Stage | Research objective and deliverables | Minimum acceptance gate | Explicit non-claim |
 |---|---|---|---|
-| **R0 — Verified V1 baseline** | Preserve `0.1.3` deterministic replay, task metrics, provenance, package, CI, SBOM, and container path. | Existing V1 quality gates, clean installs, strict doctor, and task demo remain green. | No live biosignal pathway. |
+| **R0 — Verified V1 baseline** | Preserve `0.1.4` deterministic replay, task metrics, complete provenance, artifact hashes, package, CI, SBOM, and container path. | Existing V1 quality gates, clean installs, strict doctor, and task demo remain green. | No live biosignal acquisition or hardware pathway. |
 | **R1 — Multimodal data and replay foundation** | Specify a versioned EEG/EMG recording manifest; modality-specific timestamps; clock/alignment metadata; channel/electrode metadata; quality flags; event labels; and consent/data-governance fields. Implement import only for **offline** artifacts. | Schema validation; malformed/misaligned/stale fixtures fail safely; deterministic replays reproduce labels and task outcomes; no raw human data is bundled. | No decoder, classifier, or device integration. |
 | **R2 — EMG intent integration** | Add a public adapter for versioned EMG-derived predictions from MyoControl or another explicitly versioned upstream source. Maintain synthetic and recorded replay modes. | Compare the exact same task protocol using synthetic, recorded EMG intent, and a no-command control; report confidence, latency, false activations, unintended transitions, and task metrics. | No claim of real-time EMG control or cross-subject generalization. |
 | **R3 — Subject-invariant EMG evaluation** | Evaluate a separately versioned MyoAdapt/Lite-DAN-style decoder output using subject/session-disjoint protocols. Add calibration-budget and failure-mode reporting. | Frozen data split, participant/session-disjoint validation, model/config/data hashes, and matched baseline comparisons. Evidence must include task-level results, not only decoder scores. | No zero-calibration or clinical-performance claim without dedicated evidence. |

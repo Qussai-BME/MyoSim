@@ -10,7 +10,11 @@ from myosim import __version__
 from myosim.control.controllers import IntentController
 from myosim.core.config import AppConfig
 from myosim.core.types import StateTransition
-from myosim.experiments.provenance import RunProvenance, create_provenance
+from myosim.experiments.provenance import (
+    RunProvenance,
+    create_provenance,
+    input_metadata,
+)
 from myosim.intent.inference import IntentSource
 from myosim.metrics.control import ControlMetrics, compute_control_metrics
 from myosim.simulation.mujoco_backend import MujocoBackend
@@ -66,6 +70,7 @@ class SyntheticExperimentRunner:
                 invalid_state_detected = invalid_state_detected or result.invalid_state
                 previous_time_s = event.timestamp_s
             state = backend.get_state()
+            intent_protocol_id, input_file_sha256 = input_metadata(events)
             provenance = create_provenance(
                 config_hash=self._config.content_hash(),
                 physics_backend=self._config.simulation.backend,
@@ -76,6 +81,8 @@ class SyntheticExperimentRunner:
                 task="synthetic_controller_validation",
                 package_version=__version__,
                 repository_root=self._repository_root,
+                intent_protocol_id=intent_protocol_id,
+                input_file_sha256=input_file_sha256,
             )
             return SyntheticRunResult(
                 provenance=provenance,

@@ -1,4 +1,4 @@
-"""Generic intent-source adapters used by deterministic experiments."""
+"""Input-source abstractions for chronological discrete intent streams."""
 
 from __future__ import annotations
 
@@ -6,25 +6,29 @@ from collections.abc import Iterator, Sequence
 from dataclasses import dataclass
 from typing import Protocol
 
-from myosim.core.types import IntentEvent
+from myosim.core.types import IntentInput
 
 
 class IntentSource(Protocol):
-    """A chronological source of discrete intent events."""
+    """A chronological source of canonical records or compatibility events."""
 
     @property
     def source_name(self) -> str:
         """Return a versioned human-readable origin label."""
 
-    def events(self) -> Iterator[IntentEvent]:
-        """Yield valid events in non-decreasing timestamp order."""
+    def events(self) -> Iterator[IntentInput]:
+        """Yield valid inputs in non-decreasing timestamp order."""
 
 
 @dataclass(frozen=True, slots=True)
 class SyntheticIntentSource:
-    """In-memory deterministic intent program used for Level-0 controller tests."""
+    """In-memory deterministic intent program used for controller tests and demos.
 
-    sequence: Sequence[IntentEvent]
+    Existing ``IntentEvent`` fixtures remain accepted for backwards-compatible
+    scripted tests; real external and recorded sources emit ``IntentRecord``.
+    """
+
+    sequence: Sequence[IntentInput]
     name: str = "synthetic-program-v1"
 
     def __post_init__(self) -> None:
@@ -38,5 +42,5 @@ class SyntheticIntentSource:
     def source_name(self) -> str:
         return self.name
 
-    def events(self) -> Iterator[IntentEvent]:
+    def events(self) -> Iterator[IntentInput]:
         yield from self.sequence

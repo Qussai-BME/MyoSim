@@ -1,0 +1,9 @@
+{
+  "event_count": 33,
+  "false_activation_count": 0,
+  "false_activation_rate": 0.0,
+  "mean_confirmation_latency_s": 0.30000000000000004,
+  "released_command_count": 1,
+  "state_transition_count": 5,
+  "unintended_transition_count": 0
+}

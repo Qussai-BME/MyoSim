@@ -1,7 +1,7 @@
 # MyoSim V1.1 Repair Release Notes
 
-**Distribution version:** 0.1.3
-**Release date:** 2026-08-22
+**Distribution version:** 0.1.4
+**Release date:** 2026-08-26
 **Release status:** Software-only, local-first, non-clinical research demonstrator.
 
 ## Release summary
@@ -16,11 +16,17 @@ The 0.1.2 public-release patch closes the final adversarial-audit findings witho
 
 These changes improve release integrity and operator safety. They do **not** certify the software, validate clinical use, change the simplified V1 research model, or create a live inference/hardware pathway.
 
-The 0.1.3 documentation patch adds `docs/roadmap.md`, a standalone evidence-gated research roadmap for future EMG integration, EEG-only offline research, EEG+EMG fusion, continuous control, adaptive assistance, and constrained manipulator research. It specifies data/provenance contracts, matched unimodal baselines, safe abstention, task-level evaluation, and non-clinical boundaries. None of these future tracks is implemented in V1.1.
+The 0.1.3 documentation patch adds `docs/roadmap.md`, a standalone evidence-gated research roadmap for future EMG integration, EEG-only offline research, EEG+EMG fusion, continuous control, adaptive assistance, and constrained manipulator research. It specifies data/provenance contracts, matched unimodal baselines, safe abstention, task-level evaluation, and non-clinical boundaries.
+
+## Audit remediation in 0.1.4
+
+The 0.1.4 audited release corrects release-evidence omissions found during an independent package-to-specification review. Every run now records intent protocol identity, the full replay input SHA-256 when applicable, and non-identifying runtime-environment facts. Each run bundle includes a SHA-256 artifact manifest. Recorded pick-and-place demonstrations now also include a visual summary containing an event timeline, task/control metrics, and reproducibility metadata. The reproducibility guide states the MuJoCo numerical tolerance used by deterministic backend testing, and the release dossier contains the required release-evidence fields.
+
+These changes improve auditability and scientific reproducibility. They do **not** add device acquisition, a network service, biosignal upload, hardware control, medical validation, or a clinical claim.
 
 ## Included deliverable
 
-The release includes typed intent/control/physics contracts; the primary MuJoCo virtual-hand simulation; the optional PyBullet compatibility backend; confidence-aware temporal control; deterministic synthetic and CSV replay; reach, grasp, and scripted virtual pick-and-place tasks; objective metrics; JSON provenance; Markdown reports; clean/debug GIF recordings; tests; documentation; CI definition; package resources; a wheel; and a source distribution.
+The release includes typed intent/control/physics contracts; the primary MuJoCo virtual-hand simulation; the optional PyBullet compatibility backend; confidence-aware temporal control; deterministic synthetic and CSV replay; reach, grasp, and scripted virtual pick-and-place tasks; objective metrics; full JSON provenance; Markdown reports; clean/debug GIF recordings; a visual summary PNG; SHA-256 artifact manifests; tests; documentation; CI definition; package resources; a wheel; and a source distribution.
 
 | Capability | V1.1 status | Operator-facing entry point |
 |---|---|---|
@@ -83,11 +89,11 @@ PyBullet is an optional compatibility backend, not a claim of physical equivalen
 
 ## Representative output
 
-A demo writes a fresh `artifacts/runs/<run-id>/` directory containing provenance, control/task metrics, transitions, report, and clean/debug GIF recordings. Task and benchmark commands write corresponding structured evidence under their configured artifact directories. `artifacts/reports/repair_final_audit.md` provides the final audit trail and `docs/reproducibility.md` provides the repeatable operator workflow.
+A recorded demo writes a fresh `artifacts/runs/<run-id>/` directory containing provenance, control/task metrics, transitions, report, clean/debug GIF recordings, a visual summary PNG, and an SHA-256 artifact manifest. Task and benchmark commands write corresponding structured evidence under their configured artifact directories. `docs/reproducibility.md` provides the repeatable operator workflow.
 
 ## Deferred scope
 
-Live inference, external datasets, EMG integration, EEG-only research, EEG+EMG fusion, cross-subject evaluation, continuous control, OpenSim, adaptive/shared control, hardware links, and manipulator/surgical applications remain deferred. Each requires a separate ADR, protocol, implementation phase, and validation gate. `docs/roadmap.md` defines their dependency-gated research sequence, modality data contracts, and non-clinical boundaries. **PyBullet compatibility is intentionally excluded from this deferred list because it is implemented in V1.1.**
+An optional caller-supplied, finite live-decoder bridge is implemented, but live biosignal acquisition, external datasets, EMG integration, EEG-only research, EEG+EMG fusion, cross-subject evaluation, continuous control, OpenSim, adaptive/shared control, hardware links, and manipulator/surgical applications remain deferred. Each requires a separate ADR, protocol, implementation phase, privacy/risk review, and validation gate. `docs/roadmap.md` defines their dependency-gated research sequence, modality data contracts, and non-clinical boundaries. **PyBullet compatibility is intentionally excluded from this deferred list because it is implemented in V1.1.**
 
 ## Non-clinical boundary
 

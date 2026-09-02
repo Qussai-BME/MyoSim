@@ -6,7 +6,14 @@ from collections.abc import Sequence
 from dataclasses import asdict, dataclass
 from statistics import mean
 
-from myosim.core.types import Command, IntentEvent, IntentLabel, StateTransition
+from myosim.core.types import (
+    Command,
+    IntentEvent,
+    IntentInput,
+    IntentLabel,
+    StateTransition,
+    as_discrete_event,
+)
 
 
 @dataclass(frozen=True, slots=True)
@@ -26,7 +33,7 @@ class ControlMetrics:
 
 
 def compute_control_metrics(
-    events: Sequence[IntentEvent], transitions: Sequence[StateTransition]
+    events: Sequence[IntentInput], transitions: Sequence[StateTransition]
 ) -> ControlMetrics:
     """Compute deterministic V1 metrics from replayable control records.
 
@@ -35,7 +42,8 @@ def compute_control_metrics(
     synthetic/replay validation; broader out-of-set activity protocols are a
     future research experiment.
     """
-    events_by_timestamp = {event.timestamp_s: event for event in events}
+    discrete_events = tuple(as_discrete_event(event) for event in events)
+    events_by_timestamp = {event.timestamp_s: event for event in discrete_events}
     releases = [
         transition
         for transition in transitions
@@ -64,10 +72,12 @@ def compute_control_metrics(
         for transition in transitions
     )
     return ControlMetrics(
-        event_count=len(events),
+        event_count=len(discrete_events),
         released_command_count=len(releases),
         false_activation_count=len(false_activations),
-        false_activation_rate=(len(false_activations) / len(events) if events else 0.0),
+        false_activation_rate=(
+            len(false_activations) / len(discrete_events) if discrete_events else 0.0
+        ),
         unintended_transition_count=unintended,
         mean_confirmation_latency_s=(mean(latencies) if latencies else None),
         state_transition_count=len(transitions),

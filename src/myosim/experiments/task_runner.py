@@ -13,8 +13,12 @@ from myosim import __version__
 from myosim.control.controllers import ControlOutput, IntentController
 from myosim.core.commands import JointTargets
 from myosim.core.config import AppConfig
-from myosim.core.types import IntentEvent, StateTransition
-from myosim.experiments.provenance import RunProvenance, create_provenance
+from myosim.core.types import IntentInput, StateTransition
+from myosim.experiments.provenance import (
+    RunProvenance,
+    create_provenance,
+    input_metadata,
+)
 from myosim.intent.inference import IntentSource
 from myosim.metrics.control import ControlMetrics, compute_control_metrics
 from myosim.metrics.task import TaskMetrics, make_pick_place_metrics
@@ -57,7 +61,7 @@ class PickPlaceExperimentRunner:
     def run(
         self,
         source: IntentSource,
-        on_step: Callable[[MujocoBackend, IntentEvent, ControlOutput, TaskStep], None]
+        on_step: Callable[[MujocoBackend, IntentInput, ControlOutput, TaskStep], None]
         | None = None,
     ) -> TaskRunResult:
         events = tuple(source.events())
@@ -134,6 +138,7 @@ class PickPlaceExperimentRunner:
                 grasp_stability_steps=grasp_stability_steps,
                 command_corrections=command_corrections,
             )
+            intent_protocol_id, input_file_sha256 = input_metadata(events)
             provenance = create_provenance(
                 config_hash=self._config.content_hash(),
                 physics_backend=self._config.simulation.backend,
@@ -144,6 +149,8 @@ class PickPlaceExperimentRunner:
                 task="pick_place",
                 package_version=__version__,
                 repository_root=self._repository_root,
+                intent_protocol_id=intent_protocol_id,
+                input_file_sha256=input_file_sha256,
             )
             return TaskRunResult(
                 provenance=provenance,

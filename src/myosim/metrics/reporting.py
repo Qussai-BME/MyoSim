@@ -26,7 +26,11 @@ def write_task_markdown_report(result: TaskRunResult, run_dir: Path) -> Path:
 | Physics backend | `{provenance.physics_backend}` |
 | Model | `{provenance.model_path}` (`{provenance.model_version}`) |
 | Intent source | `{provenance.intent_source}` |
+| Intent protocol | `{provenance.intent_protocol_id}` |
+| Input file SHA-256 | `{provenance.input_file_sha256 or "not applicable"}` |
 | Seed | `{provenance.seed}` |
+| Python runtime | `{provenance.environment.get("python_version", "unknown")}` |
+| Platform | `{provenance.environment.get("platform", "unknown")}` |
 
 ## Task outcome
 
@@ -64,8 +68,9 @@ provenance; packaged examples are synthetic.
 ## Associated machine-readable artifacts
 
 `provenance.json`, `control_metrics.json`, `task_metrics.json`,
-`control_transitions.json`, `task_transitions.json`, and `summary.json` in this
-directory preserve the underlying evidence.
+`control_transitions.json`, `task_transitions.json`, `summary.json`, and
+`artifact_manifest.json` preserve the underlying evidence. The artifact manifest
+contains SHA-256 hashes for every evidence file other than itself.
 """
     path.write_text(text, encoding="utf-8")
     return path

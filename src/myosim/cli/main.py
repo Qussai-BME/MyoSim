@@ -12,14 +12,19 @@ from myosim import __version__
 from myosim.control.controllers import ControlOutput
 from myosim.core.config import AppConfig, load_config
 from myosim.core.errors import MyoSimError
-from myosim.core.types import IntentEvent
+from myosim.core.types import IntentInput, as_discrete_event
 from myosim.experiments.basic_task_runner import run_grasp_evaluation, run_reach_evaluation
-from myosim.experiments.registry import write_synthetic_run, write_task_run
+from myosim.experiments.registry import (
+    write_artifact_manifest,
+    write_synthetic_run,
+    write_task_run,
+)
 from myosim.experiments.runner import SyntheticExperimentRunner
 from myosim.experiments.task_runner import PickPlaceExperimentRunner, TaskRunResult
 from myosim.metrics.reporting import write_task_markdown_report
 from myosim.rendering.overlays import DebugOverlay
 from myosim.rendering.recorder import FrameRecorder
+from myosim.rendering.summary import write_visual_summary
 from myosim.rendering.viewer import launch_mujoco_viewer
 from myosim.runtime import resource_root
 from myosim.signals.replay import CsvIntentReplay
@@ -213,7 +218,7 @@ def _run_pick_place_task(replay_path: Path, config: AppConfig, record: bool) -> 
 
     def capture(
         backend: MujocoBackend,
-        event: IntentEvent,
+        event: IntentInput,
         control: ControlOutput,
         task_step: TaskStep,
     ) -> None:
@@ -230,7 +235,7 @@ def _run_pick_place_task(replay_path: Path, config: AppConfig, record: bool) -> 
         recorder.capture(
             DebugOverlay(
                 timestamp_s=event.timestamp_s,
-                intent=event.label.value,
+                intent=as_discrete_event(event).label.value,
                 confidence=event.confidence,
                 controller_state=control.state_output.state.value,
                 task_state=task_step.state.value,
@@ -246,7 +251,26 @@ def _run_pick_place_task(replay_path: Path, config: AppConfig, record: bool) -> 
     recordings: dict[str, str] = {}
     if recorder is not None:
         clean_path, debug_path = recorder.write(run_dir, stem="pick_place")
-        recordings = {"clean_video": str(clean_path), "debug_video": str(debug_path)}
+        visual_summary_path = write_visual_summary(
+            run_dir / "pick_place_summary.png",
+            task_metrics=result.task_metrics.to_dict(),
+            control_metrics=result.control_metrics.to_dict(),
+            timeline=tuple(
+                (transition.timestamp_s, transition.current.value)
+                for transition in result.control_transitions
+            ),
+            run_id=result.provenance.run_id,
+            config_hash=result.provenance.config_hash,
+            intent_source=result.provenance.intent_source,
+            intent_protocol_id=result.provenance.intent_protocol_id,
+            input_file_sha256=result.provenance.input_file_sha256,
+        )
+        recordings = {
+            "clean_video": str(clean_path),
+            "debug_video": str(debug_path),
+            "visual_summary": str(visual_summary_path),
+        }
+    artifact_manifest_path = write_artifact_manifest(run_dir)
     print(
         json.dumps(
             {
@@ -254,6 +278,7 @@ def _run_pick_place_task(replay_path: Path, config: AppConfig, record: bool) -> 
                 "run_dir": str(run_dir),
                 "report": str(report_path),
                 "recordings": recordings,
+                "artifact_manifest": str(artifact_manifest_path),
                 "task_metrics": result.task_metrics.to_dict(),
                 "control_metrics": result.control_metrics.to_dict(),
             },
@@ -269,6 +294,7 @@ def _write_basic_task_result(result: dict[str, Any], config: AppConfig) -> Path:
     (run_dir / "summary.json").write_text(
         json.dumps(result, indent=2, sort_keys=True) + "\n", encoding="utf-8"
     )
+    write_artifact_manifest(run_dir)
     return run_dir
 
 

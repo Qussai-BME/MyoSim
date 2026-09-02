@@ -1,0 +1,18 @@
+{
+  "algorithm": "sha256",
+  "artifacts": {
+    "control_metrics.json": "54fe5053351f8b2bfc0e94151428cc65e71f6b9f987a718b1a082ba854990f62",
+    "control_transitions.json": "d5827f77333004d71d8737549fe6b9402bd8828a6656168ff9e01ecb7c436846",
+    "pick_place_clean.gif": "3cdf8b0559d46763dd2246bd9eb05c8d4dcefa1827d89201b2fba9bb8890fb8f",
+    "pick_place_debug.gif": "3fcd7b82a05ba4a54ff91c4a1392557e9261edf3e58b20dee573d14e3dd6dce2",
+    "pick_place_summary.png": "34dad7a419ff3575c8903b58182a7638843bb10e21efa05e28fe5f2410c1313f",
+    "provenance.json": "8ff13e74fd2914536dcb0597f6079be6f55c575e7a1bc0a56e55eef958f44009",
+    "report.md": "a702bc405ebd5f3051c132fe49dcac2d3ae518359d123abeb1ce6e8335f1411c",
+    "summary.json": "7aae9c9e374eb3daa77c28c26253b6c1971dbd4a26855df41ca28077a695ae12",
+    "task_metrics.json": "da23418526b4c6031556c463740f460177a9a8fe57b08578ba5d52452f562d44",
+    "task_transitions.json": "745ec48b71ecf3c3339dcd0f37af1a355f3d659ce8d09d71364f368535bb1ef4"
+  },
+  "excluded": [
+    "artifact_manifest.json"
+  ]
+}

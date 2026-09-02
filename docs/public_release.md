@@ -39,9 +39,9 @@ The package's direct dependency ranges are intentionally accompanied by `uv.lock
 The Docker image uses supported Python 3.11, where the declared PyBullet release provides a binary wheel, and installs the PyBullet compatibility extra because the image's default strict doctor command checks both declared backends. The resulting runtime image does not need a compiler and executes as an unprivileged user. On a Docker-capable host, run:
 
 ```bash
-docker build -t myosim:0.1.3 .
-docker run --rm myosim:0.1.3 doctor --strict
-docker run --rm myosim:0.1.3 run-demo
+docker build -t myosim:0.1.4 .
+docker run --rm myosim:0.1.4 doctor --strict
+docker run --rm myosim:0.1.4 run-demo
 ```
 
 The image runs as an unprivileged `myosim` user and writes run evidence below `/opt/myosim/artifacts`. Container success demonstrates only the declared local software path; it does not validate graphics acceleration, real-time performance, hardware integration, or clinical behavior.
@@ -50,7 +50,7 @@ The image runs as an unprivileged `myosim` user and writes run evidence below `/
 
 1. Review the final audit and confirm that all Critical and High findings are closed.
 2. Update `CHANGELOG.md`, `RELEASE_NOTES_V1.md`, `CITATION.cff`, and package version together.
-3. Commit the reviewed release state and create a signed or organization-approved tag following local policy, for example `v0.1.3`.
+3. Commit the reviewed release state and create a signed or organization-approved tag following local policy, for example `v0.1.4`.
 4. Confirm the release workflow's build, audit, test, health, SBOM, and distribution checks pass.
 5. The tag workflow publishes only through the configured PyPI Trusted Publisher. If PyPI configuration is not complete, use `workflow_dispatch` to perform the build-only verification and do not publish.
 6. Publish the release notes, distributions, SBOM, SHA-256 checksums, and audit documents together.

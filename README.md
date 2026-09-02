@@ -3,7 +3,6 @@
 
 🚀 **[Live Interactive Demo](https://myosim-qussai-bme.streamlit.app/)
 
-
 **MyoSim** is a local-first, software-only research demonstrator for reproducible simulation of the path from motor-intent events to bounded virtual prosthetic action.
 
 > **Research scope only.** MyoSim is not a medical device, is not clinically validated, and must not be represented as safe or ready for patient deployment.
@@ -27,8 +26,9 @@ streamlit run streamlit_app.py
 ## System chain
 
 ```text
-Intent source → confidence and temporal logic → command state machine
-→ bounded motion targets → physics backend → virtual hand/task → metrics and provenance
+Intent source → input adapter → IntentRecord → confidence and temporal logic
+→ command state machine → bounded motion targets → physics backend
+→ virtual hand/task → metrics and provenance
 ```
 
 The V1 implementation deliberately begins with synthetic and recorded intent replay. It does not require EMG devices, prosthetic hardware, a patient-specific calibration, or live ML inference.
@@ -66,7 +66,7 @@ Task defaults resolve by convention from `configs/tasks/<task>.yaml`. The viewer
 
 ## Quality policy
 
-MyoSim is developed in verified increments. Each phase carries unit and integration tests, a smoke run where relevant, a provenance record, documented limitations, and an engineering/research/product/release review. See `docs/research_protocol.md`, `docs/reproducibility.md`, and `docs/adr/`.
+MyoSim is developed in verified increments. Each phase carries unit and integration tests, a smoke run where relevant, a provenance record, documented limitations, and an engineering/research/product/release review. See `docs/research_protocol.md`, `docs/research.md`, `docs/safety.md`, `docs/reproducibility.md`, and `docs/adr/`.
 
 ## Future research roadmap
 
@@ -90,7 +90,7 @@ These controls improve package and release integrity. They do not certify securi
 | `src/myosim/metrics` and `src/myosim/experiments` | Objective measures, reports, execution, and provenance. |
 | `src/myosim/rendering` | Headless frame capture, diagnostic overlays, and visual outputs. |
 | `tests` | Unit, integration, fixtures, and deterministic regression checks. |
-| `docs` | Architecture, controls, tasks, metrics, reproducibility, public-release procedure, and ADRs. |
+| `docs` | Architecture, intent, controls, safety, tasks, metrics, research use, reproducibility, phase reports, public-release procedure, and ADRs. |
 | `streamlit_app.py`, `requirements.txt`, `packages.txt`, `.streamlit/` | Read-only Streamlit demo front end and its Streamlit Community Cloud deployment config. |
 
 ## Licence and citation

@@ -8,7 +8,15 @@ from myosim.control.confidence import ConfidenceDecision, ConfidenceGate
 from myosim.control.temporal import TemporalConsistency, TemporalDecision
 from myosim.core.commands import CommandRequest
 from myosim.core.config import ControlConfig
-from myosim.core.types import Command, ControllerState, IntentEvent, IntentLabel, StateTransition
+from myosim.core.types import (
+    Command,
+    ControllerState,
+    IntentEvent,
+    IntentInput,
+    IntentLabel,
+    StateTransition,
+    as_discrete_event,
+)
 
 _COMMAND_BY_LABEL: dict[IntentLabel, Command] = {
     IntentLabel.REST: Command.REST,
@@ -69,7 +77,9 @@ class CommandStateMachine:
         self._last_timestamp_s = timestamp_s
         self._transitions.clear()
 
-    def process(self, event: IntentEvent) -> StateMachineOutput:
+    def process(self, intent: IntentInput) -> StateMachineOutput:
+        """Validate an input record and evaluate its decision-state transition."""
+        event = as_discrete_event(intent)
         if self._last_timestamp_s is not None and event.timestamp_s < self._last_timestamp_s:
             raise ValueError("intent events must be chronological")
         self._last_timestamp_s = event.timestamp_s

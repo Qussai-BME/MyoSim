@@ -5,6 +5,7 @@ from pathlib import Path
 
 import pytest
 
+from myosim import __version__
 from myosim.cli import main as cli_main
 
 REPOSITORY_ROOT = Path(__file__).resolve().parents[2]
@@ -31,7 +32,7 @@ def _json_output(capsys: pytest.CaptureFixture[str]) -> dict[str, object]:
 def test_doctor_and_list_backends_report_runtime_schema(capsys: pytest.CaptureFixture[str]) -> None:
     assert cli_main.main(["doctor", "--strict"]) == 0
     doctor = _json_output(capsys)
-    assert doctor["package_version"] == "0.1.3"
+    assert doctor["package_version"] == __version__
     assert doctor["mujoco_headless_load_reset_step"] is True
     assert doctor["pybullet_availability"] == "available"
     assert doctor["pybullet_headless_load_reset_step"] is True

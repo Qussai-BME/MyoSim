@@ -20,6 +20,7 @@ Run locally with:
 from __future__ import annotations
 
 import base64
+import os
 import tempfile
 from pathlib import Path
 from typing import Any
@@ -38,8 +39,8 @@ from myosim.runtime import resource_root
 from myosim.signals.replay import CsvIntentReplay
 from myosim.simulation.factory import backend_status, create_backend
 
-# TODO: point this at your published repository once it exists on GitHub.
-GITHUB_REPO_URL = "https://github.com/<your-username>/myosim"
+# A publisher may set this without baking an unverified public URL into a release.
+REPOSITORY_URL = os.environ.get("MYOSIM_REPOSITORY_URL", "").strip()
 
 REPO_ROOT = resource_root()
 DEMO_CONFIG_PATH = REPO_ROOT / "configs" / "demo.yaml"
@@ -194,7 +195,10 @@ with st.sidebar:
         "prosthetic action."
     )
     st.code(SYSTEM_CHAIN, language=None)
-    st.markdown(f"[Source code on GitHub]({GITHUB_REPO_URL})")
+    if REPOSITORY_URL:
+        st.markdown(f"[Source code and release notes]({REPOSITORY_URL})")
+    else:
+        st.caption("Canonical source URL is supplied by the release publisher.")
     st.markdown("Licence: Apache-2.0 · Cite via `CITATION.cff`")
     st.divider()
     st.caption(
@@ -391,7 +395,13 @@ with tab_about:
         "biomechanics model. See `docs/limitations.md` for the full statement.",
         icon="📄",
     )
-    st.markdown(
-        f"Full documentation, source, licence (Apache-2.0), and citation "
-        f"metadata live in the repository: [{GITHUB_REPO_URL}]({GITHUB_REPO_URL})"
-    )
+    if REPOSITORY_URL:
+        st.markdown(
+            f"Full documentation, source, licence (Apache-2.0), and citation "
+            f"metadata are available at [{REPOSITORY_URL}]({REPOSITORY_URL})."
+        )
+    else:
+        st.caption(
+            "Set MYOSIM_REPOSITORY_URL when publishing this release to expose "
+            "its canonical source link."
+        )

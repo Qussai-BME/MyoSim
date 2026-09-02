@@ -9,7 +9,7 @@ from myosim.control.safety import SafetyLimiter
 from myosim.control.state_machine import CommandStateMachine, StateMachineOutput
 from myosim.core.commands import JointTargets
 from myosim.core.config import ControlConfig
-from myosim.core.types import Command, IntentEvent
+from myosim.core.types import Command, IntentInput
 from myosim.simulation.base import PhysicsBackend
 
 
@@ -51,7 +51,7 @@ class IntentController:
             {joint: 0.0 for joint in self._last_targets.positions_rad}, Command.REST, timestamp_s
         )
 
-    def process(self, event: IntentEvent) -> ControlOutput:
+    def process(self, event: IntentInput) -> ControlOutput:
         state_output = self._state_machine.process(event)
         proposed = self._mapper.targets_for(state_output.request.command, event.timestamp_s)
         if proposed is None:

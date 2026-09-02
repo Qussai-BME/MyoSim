@@ -2,9 +2,29 @@
 
 All notable changes to MyoSim are documented in this file. The project follows a phase-gated engineering workflow; entries are recorded only after the associated implementation, review, and verification gates pass.
 
-## [Unreleased]
+## [0.1.4] - 2026-08-26
 
-No unreleased user-facing changes are recorded after the 0.1.3 research-roadmap documentation patch.
+### Added
+
+- Canonical `IntentRecord`, `IntentVector`, command, control-state, and simulator-protocol contracts with deterministic JSON serialization and strict schema validation.
+- Phase-gate completion records for the deterministic physics backend, Decision Engine, bounded control/safety, replay, recorded-decoder adapter, task benchmark, and visualization/recording paths.
+- Required safety and research-use documentation, including non-clinical claim boundaries and reproducible benchmark interpretation guidance.
+- Release-verification artifacts, including a fresh wheel, source distribution, dependency-audit requirements, and CycloneDX SBOM.
+- Optional caller-owned live-decoder protocol and bounded `OptInLiveIntentSource` bridge, with no device, network, telemetry, or biosignal-acquisition implementation.
+- Audited run provenance now includes intent protocol, full replay-file SHA-256 where applicable, and non-identifying runtime-environment metadata.
+- Every generated run now includes a SHA-256 artifact manifest; recorded task demonstrations additionally produce a visual summary with a state-event timeline, task/control metrics, and reproducibility information.
+
+### Changed
+
+- `CsvIntentReplay` now emits canonical `IntentRecord` objects with source, protocol, replay-run, and SHA-256 input-file provenance.
+- The Decision Engine, controller, metrics, task runner, and overlay boundary explicitly normalize canonical recorded intents before discrete-label policy evaluation.
+- README system-chain and documentation index now describe the input-adapter → `IntentRecord` boundary and completed safety/research guidance.
+
+### Verification
+
+- Final all-phase regression suite: 118 tests passed with 93.45% global coverage and every substantive module at or above the 85% coverage policy.
+- Ruff formatting/lint, strict `mypy src`, strict multi-backend doctor, package metadata validation, and declared-dependency audit completed successfully.
+- An independent archive, clean-wheel, deterministic replay, artifact-integrity, and specification-conformance audit identified and remediated release-evidence omissions before this 0.1.4 package was issued.
 
 ## [0.1.3] - 2026-08-22
 

@@ -80,4 +80,5 @@ def _basic_provenance(config: AppConfig, repository_root: Path, task: str) -> Ru
         task=task,
         package_version=__version__,
         repository_root=repository_root,
+        intent_protocol_id="declared-deterministic-evaluator-v1",
     )

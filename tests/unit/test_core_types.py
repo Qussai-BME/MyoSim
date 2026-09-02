@@ -31,6 +31,10 @@ def test_intent_vector_copies_and_validates_values() -> None:
         confidence=0.8,
         modality="emg",
         model_version="test-v1",
+        dimensions=("index_flexion", "thumb_opposition"),
+        units=("rad", "rad"),
+        coordinate_semantics="hand_joint_targets",
+        source="test-source",
     )
     original[0] = 99.0
 
