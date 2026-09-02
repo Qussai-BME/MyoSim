@@ -5,7 +5,7 @@
 **Audit date:** 2026-08-22
 **Release identity:** MyoSim V1.1, Python distribution `0.1.2`
 **Scope:** Software-only, local-first, non-clinical research demonstrator.
-**Author:** Manus AI
+**Author:** Qussai Adlbi
 
 > **Release decision:** The MyoSim `0.1.2` source and Python-package release is accepted for public distribution within its declared research scope. All Critical and High findings from `public_release_adversarial_audit.md` were closed and re-verified. Actual PyPI publication remains intentionally conditional on the repository owner configuring the canonical repository, private vulnerability reporting, protected release tags, and the documented PyPI Trusted Publisher; no publication account or external organization identity was assumed or altered during this audit.
 
