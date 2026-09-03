@@ -1,5 +1,5 @@
 # MyoSim
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22096522.svg)](https://zenodo.org/records/22096522)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22282345.svg)](https://zenodo.org/records/22282345)
 
 🚀 **[Live Interactive Demo](https://myosim-qussai-bme.streamlit.app/)
 
