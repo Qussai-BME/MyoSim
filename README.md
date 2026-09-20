@@ -12,7 +12,7 @@
 
 A read-only [Streamlit](https://streamlit.io) front end (`streamlit_app.py`) wraps the pick-and-place, reach, and grasp runners for interactive, browser-based exploration — no local install required. It calls the exact same public runners as the CLI below and adds no new simulation, control, or safety logic; see the module docstring in `streamlit_app.py`.
 
-**Live app:** _add your deployed Streamlit Community Cloud URL here once published._
+**Live app:** _https://myosim-qussai-bme.streamlit.app/_
 
 Run it locally instead:
 
