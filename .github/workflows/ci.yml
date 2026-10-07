@@ -30,6 +30,8 @@ jobs:
       - name: Type check
         run: mypy src
       - name: Run tests with global coverage gate
+        env:
+          MUJOCO_GL: osmesa
         run: pytest -q
       - name: Enforce substantive per-module coverage gate
         run: python scripts/check_coverage_policy.py coverage.json 85
@@ -38,6 +40,8 @@ jobs:
       - name: Verify Hardware Twin core semantics
         run: python scripts/verify_hardware_twin_core.py
       - name: Run Hardware Twin MuJoCo integration smoke test
+        env:
+          MUJOCO_GL: osmesa
         run: python -m pytest -q tests/integration/test_hardware_twin_mujoco.py --no-cov
 
   distribution:
