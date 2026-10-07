@@ -28,6 +28,15 @@ class ConfidenceGate:
         return self._threshold
 
     def evaluate(self, event: IntentEvent) -> ConfidenceDecision:
+        if event.label is IntentLabel.UNKNOWN:
+            return ConfidenceDecision(accepted=False, reason="unknown_intent")
+        if event.acceptance_override is not None:
+            return ConfidenceDecision(
+                accepted=event.acceptance_override,
+                reason="explicit_acceptance_override"
+                if event.acceptance_override
+                else "explicit_rejection_override",
+            )
         if event.label is IntentLabel.REST:
             return ConfidenceDecision(accepted=True, reason="explicit_rest")
         if event.confidence >= self._threshold:

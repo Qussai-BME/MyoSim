@@ -57,6 +57,10 @@ def write_task_markdown_report(result: TaskRunResult, run_dir: Path) -> Path:
 | Mean confirmation latency (s) | {control.mean_confirmation_latency_s} |
 | State transitions | {control.state_transition_count} |
 
+## Hardware Twin evidence
+
+{_hardware_twin_report_section(result.hardware_twin)}
+
 ## Interpretation boundary
 
 This file reports a deterministic software simulation under the exact source, model,
@@ -74,3 +78,57 @@ contains SHA-256 hashes for every evidence file other than itself.
 """
     path.write_text(text, encoding="utf-8")
     return path
+
+
+def _hardware_twin_report_section(evidence: dict[str, object] | None) -> str:
+    """Render actuator assumptions and per-joint metrics without implying real hardware."""
+    if evidence is None:
+        return "Hardware Twin was disabled for this run."
+
+    stats = evidence.get("stats", {})
+    if not isinstance(stats, dict):
+        stats = {}
+    model_spec = evidence.get("model_spec", {})
+    if not isinstance(model_spec, dict):
+        model_spec = {}
+    trace_summary = evidence.get("trace_summary", {})
+    if not isinstance(trace_summary, dict):
+        trace_summary = {}
+    lines = [
+        "Hardware Twin enabled (software-only, assumed parameters).",
+        "",
+        f"- Model: `{evidence.get('model', 'unknown')}`",
+        f"- Command delay: `{evidence.get('command_delay_s', 'unknown')} s`",
+        f"- Profile source: `{model_spec.get('profile_source', 'not declared')}`",
+        f"- Profile SHA-256: `{model_spec.get('profile_sha256', 'not declared')}`",
+        f"- Applied commands: `{stats.get('applied_commands', 'unknown')}`",
+        f"- Dropped commands: `{stats.get('dropped_commands', 'unknown')}`",
+        f"- Fault-active physics steps: `{stats.get('fault_steps', 'unknown')}`",
+        f"- Trace samples: `{trace_summary.get('samples', 'unknown')}`",
+        "",
+        "Per-joint response metrics (units are joint-specific):",
+    ]
+    per_joint = trace_summary.get("per_joint", {})
+    if isinstance(per_joint, dict) and per_joint:
+        lines.append("")
+        lines.append(
+            "| Joint | Unit | Mean abs. tracking error | "
+            "Max abs. tracking error | Max abs. rate / s |"
+        )
+        lines.append("|---|---|---:|---:|---:|")
+        for joint_name, values in sorted(per_joint.items()):
+            if not isinstance(values, dict):
+                continue
+            lines.append(
+                f"| {joint_name} | {values.get('coordinate_unit', 'unspecified')} | "
+                f"{values.get('mean_abs_tracking_error', 'n/a')} | "
+                f"{values.get('max_abs_tracking_error', 'n/a')} | "
+                f"{values.get('max_abs_coordinate_rate_per_s', 'n/a')} |"
+            )
+    lines.extend(
+        [
+            "",
+            f"- Claim boundary: {evidence.get('claim_boundary', 'not declared')}",
+        ]
+    )
+    return "\n".join(lines)

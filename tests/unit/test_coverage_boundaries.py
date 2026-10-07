@@ -1,11 +1,14 @@
 from __future__ import annotations
 
+import importlib.util
 import sys
 from pathlib import Path
 from types import ModuleType
 
 import numpy as np
 import pytest
+
+pytest.importorskip("mujoco")
 
 from myosim import runtime
 from myosim.core.types import IntentEvent, IntentLabel
@@ -97,7 +100,10 @@ def test_backend_factory_reports_creates_and_rejects_unknown(
 ) -> None:
     status = factory.backend_status()
     assert status["mujoco"] == "available"
-    assert status["pybullet"] == "available"
+    if importlib.util.find_spec("pybullet") is not None:
+        assert status["pybullet"] == "available"
+    else:
+        assert status["pybullet"].startswith("unavailable")
     backend = factory.create_backend("mujoco")
     assert isinstance(backend, MujocoBackend)
     backend.close()

@@ -1,25 +1,32 @@
 # MyoSim Research Roadmap
 
 **Document status:** Maintained forward-looking research roadmap
-**Current baseline:** MyoSim V1.1 / audited distribution `0.1.4`
+**Current baseline:** MyoSim 0.1.6 (R2.3 recorded-data downstream integration + R2.4 Hardware Twin)
 **Scope:** Software-first, local-first, non-clinical research development
-**Last updated:** 2026-08-26
+**Last updated:** 2026-10-06
 
 > **Reading rule:** This roadmap distinguishes a future research direction from a delivered capability. It is not a clinical-development plan, product promise, implementation schedule, or claim that EEG, EMG, multimodal fusion, hardware, medical robotics, or clinical validation is presently available in MyoSim.
 
+## Current engineering status — 2026-10-06
+
+- **R2.3 real-data downstream integration:** closed as a software/simulation benchmark; it is not a decoder-quality or hardware-safety result.
+- **R2.4 Hardware Twin (shipped in 0.1.6):** the opt-in backend wrapper, backend-neutral model gate and frozen paired MuJoCo sensitivity matrix are part of the 0.1.6 release; see `docs/history/r2_4/README.md` and `RELEASE_NOTES_0_1_6.md`. Actuator parameters remain assumptions, not measurements.
+- **SimScale:** not started. Do not begin a generic CFD/FEA model until a concrete geometry, material, load case, boundary condition, and decision question are defined.
+- **HMI Master Evidence Map:** the next integration deliverable. It should link the finished evidence/artifact chain and hashes rather than merely illustrate the architecture. It is intentionally outside this archive.
+
 ## 1. Purpose and current baseline
 
-MyoSim’s long-term purpose is to make a reproducible chain from **biosignal-derived motor intent** to **safe simulated physical action** observable and testable. V1.1 establishes only the simulated-action end of that chain: typed intent events, confidence and temporal gating, a fault-aware command state machine, deterministic replay, physical-task evaluation, provenance, MuJoCo as the reference simulator, and a scoped PyBullet compatibility backend.
+MyoSim’s long-term purpose is to make a reproducible chain from **biosignal-derived motor intent** to **safe simulated physical action** observable and testable. The R2.3 real-data integration and the R2.4 Hardware Twin extend the simulated-action chain: typed intent events, confidence and temporal gating, a fault-aware command state machine, deterministic replay, physical-task evaluation, provenance, MuJoCo as the reference simulator, and a scoped PyBullet compatibility backend.
 
 The next research increments must preserve that separation. Signal science belongs in versioned decoder/data-adapter experiments; command safety belongs in the controller; and task/physics validity belongs in the simulation experiment. A higher offline classification score must never be treated as evidence of improved task performance, user benefit, or clinical suitability.
 
-| Capability | Status at `0.1.4` | Roadmap treatment |
+| Capability | Status at release `0.1.6` | Roadmap treatment |
 |---|---|---|
 | Synthetic and CSV intent replay | **Implemented and verified** | Stable regression baseline for every future modality experiment. |
 | Discrete intent, confidence gating, temporal confirmation, state machine | **Implemented and verified** | Must remain the modality-agnostic safety boundary. |
 | MuJoCo / PyBullet simulated task execution | **Implemented and verified within documented limits** | Use MuJoCo as the reference path; do not claim cross-engine equivalence. |
 | Live EMG or EEG acquisition | **Not implemented** | Future opt-in research interface only. |
-| MyoControl, MyoAdapt, Lite-DAN, or BioSignal-FM runtime integration | **Not implemented** | Integrate only through public, versioned contracts. |
+| MyoControl, MyoAdapt, Lite-DAN, or BioSignal-FM runtime integration | **Not implemented** | Keep upstream science separate; integrate through public, versioned prediction contracts. |
 | Continuous EMG-to-torque/joint control | **Not implemented** | Separate V2 experiment, not an extension inferred from discrete replay. |
 | EEG motor-intention decoding | **Not implemented** | Begin offline and replay-first, with artifact/quality handling. |
 | EEG+EMG fusion | **Not implemented** | Evaluate against unimodal baselines under a preregistered protocol. |
@@ -68,9 +75,10 @@ The sequence is dependency-driven, not calendar-driven. A stage may begin only a
 
 | Stage | Research objective and deliverables | Minimum acceptance gate | Explicit non-claim |
 |---|---|---|---|
-| **R0 — Verified V1 baseline** | Preserve `0.1.4` deterministic replay, task metrics, complete provenance, artifact hashes, package, CI, SBOM, and container path. | Existing V1 quality gates, clean installs, strict doctor, and task demo remain green. | No live biosignal acquisition or hardware pathway. |
+| **R0 — Verified V1 baseline** | Preserve the `0.1.5.x` deterministic replay/control baseline, task metrics, complete provenance, artifact hashes, package, CI, SBOM, and container path. | Existing V1 quality gates, clean installs, strict doctor, and task demo remain green. | No live biosignal acquisition or hardware pathway. |
 | **R1 — Multimodal data and replay foundation** | Specify a versioned EEG/EMG recording manifest; modality-specific timestamps; clock/alignment metadata; channel/electrode metadata; quality flags; event labels; and consent/data-governance fields. Implement import only for **offline** artifacts. | Schema validation; malformed/misaligned/stale fixtures fail safely; deterministic replays reproduce labels and task outcomes; no raw human data is bundled. | No decoder, classifier, or device integration. |
 | **R2 — EMG intent integration** | Add a public adapter for versioned EMG-derived predictions from MyoControl or another explicitly versioned upstream source. Maintain synthetic and recorded replay modes. | Compare the exact same task protocol using synthetic, recorded EMG intent, and a no-command control; report confidence, latency, false activations, unintended transitions, and task metrics. | No claim of real-time EMG control or cross-subject generalization. |
+| **R2.4 — Hardware Twin sensitivity** | Add an opt-in actuator abstraction between the safety-limited controller and physics; quantify fixed delay, first-order actuator response, bounds, and deterministic faults on the same replay. | Backend-neutral core gate plus five-scenario MuJoCo matrix; scenario traces, hashes, deterministic repeat, and baseline deltas. | No claim of a calibrated physical device, HIL, clinical safety, or real hardware. |
 | **R3 — Subject-invariant EMG evaluation** | Evaluate a separately versioned MyoAdapt/Lite-DAN-style decoder output using subject/session-disjoint protocols. Add calibration-budget and failure-mode reporting. | Frozen data split, participant/session-disjoint validation, model/config/data hashes, and matched baseline comparisons. Evidence must include task-level results, not only decoder scores. | No zero-calibration or clinical-performance claim without dedicated evidence. |
 | **R4 — Continuous EMG control** | Introduce `IntentVector` replay for continuous joint-angle, velocity, or torque targets. Maintain bounds, smoothing, emergency-stop semantics, and a distinct experimental protocol. | Unit/scale/latency contracts; trajectory error plus task/safety metrics; deterministic regression tolerance; controller never accepts unbounded raw model output. | No biomechanical validity or physical torque equivalence. |
 | **R5 — EEG offline motor-intention track** | Establish a separate EEG-only, replay-first research track for motor imagery or movement-intention labels. Include artifact policy, reference/montage metadata, quality flags, and subject/session splits. | BIDS-aligned metadata where applicable; artifact/quality rejection tests; unimodal EEG baseline; task-level replay evaluation; documented participant/data governance. | No claim of neural control, real-time BCI, or direct patient benefit. |

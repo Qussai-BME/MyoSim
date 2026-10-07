@@ -3,6 +3,8 @@ from pathlib import Path
 import numpy as np
 import pytest
 
+pytest.importorskip("pybullet")
+
 from myosim.core.commands import JointTargets
 from myosim.core.errors import BackendError, SafetyViolation
 from myosim.core.types import Command

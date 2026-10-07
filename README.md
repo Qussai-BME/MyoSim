@@ -1,103 +1,105 @@
-# MyoSim
+# MyoSim — Human Motor Intent to Simulated Action
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22282345.svg)](https://zenodo.org/records/22282345)
+[![Zenodo](https://zenodo.org/badge/DOI/10.5281/zenodo.22282345.svg)](https://zenodo.org/records/22282345) · [Interactive demo](https://myosim-qussai-bme.streamlit.app/)
 
-🚀 **[Live Interactive Demo](https://myosim-qussai-bme.streamlit.app/)
+> **Research software only.** MyoSim is a local-first, software-only research demonstrator. It is not a medical device, a hardware driver, a clinical validation platform, or evidence that a decoder or assistive system is safe for patient use.
 
-**MyoSim** is a local-first, software-only research demonstrator for reproducible simulation of the path from motor-intent events to bounded virtual prosthetic action.
+## Research question
 
-> **Research scope only.** MyoSim is not a medical device, is not clinically validated, and must not be represented as safe or ready for patient deployment.
+How do differences in decoded human motor intent propagate through decision logic, bounded control, safety constraints, actuation assumptions, and task outcomes?
 
-## Live demo
-
-A read-only [Streamlit](https://streamlit.io) front end (`streamlit_app.py`) wraps the pick-and-place, reach, and grasp runners for interactive, browser-based exploration — no local install required. It calls the exact same public runners as the CLI below and adds no new simulation, control, or safety logic; see the module docstring in `streamlit_app.py`.
-
-**Live app:** _https://myosim-qussai-bme.streamlit.app/_
-
-Run it locally instead:
-
-```bash
-python -m pip install -e .
-python -m pip install streamlit
-streamlit run streamlit_app.py
-```
-
-`packages.txt` installs `libegl1`, `libgl1`, and `libglib2.0-0` on Streamlit Community Cloud so MuJoCo's headless `MUJOCO_GL=egl` renderer (the same one this project's Dockerfile and CI already exercise) can produce the pick-and-place GIFs without a GPU. If a future Community Cloud base image ever lacks EGL support, add `libosmesa6` to `packages.txt` and set `MUJOCO_GL=osmesa` as an app secret/environment variable as a software-rendering fallback — no application code needs to change.
-
-## System chain
+MyoSim is designed to make that downstream chain inspectable and reproducible rather than hiding it behind a single task-success number.
 
 ```text
-Intent source → input adapter → IntentRecord → confidence and temporal logic
-→ command state machine → bounded motion targets → physics backend
-→ virtual hand/task → metrics and provenance
+Recorded / synthetic intent
+  → versioned input adapter
+  → decision and temporal logic
+  → bounded controller + software safety
+  → optional Hardware Twin actuator model
+  → MuJoCo physics
+  → task metrics, trace, and provenance
 ```
 
-The V1 implementation deliberately begins with synthetic and recorded intent replay. It does not require EMG devices, prosthetic hardware, a patient-specific calibration, or live ML inference.
+## Real-data downstream integration (R2.3 milestone)
 
-## Quick start
+R2.3 connected NinaPro DB3/DB7-derived decoder prediction artifacts to the decoder-independent MyoSim intent/control stack. The verified release reports 33 prediction artifacts and 117,572 rows/events. The flagship comparison uses the same 560-window DB7 S21 episode for Ground Truth and Real Decoder runs.
+
+| Flagship run | Task result | Simulated time | Final error | Grasp-stability steps | Command corrections |
+|---|---:|---:|---:|---:|---:|
+| Ground Truth | COMPLETE | 100.6 s | 0.048500 m | 171 | 7 |
+| Real Decoder | COMPLETE | 100.6 s | 0.054792 m | 11 | 51 |
+
+These values establish that the real-data-derived prediction stream traversed the downstream software/simulation stack and completed this particular task. They do **not** establish strong decoder quality, robust generalization, real-time operation, clinical efficacy, physical-hardware performance, or safety. The Real Decoder run's higher correction count and lower grasp stability are important limitations, not details to hide.
+
+See `docs/history/r2_3/README.md` for the immutable-history index, `docs/history/r2_3/R2.3_FINAL_CLOSURE_REPORT.md` for the exact published closure record, `docs/limitations.md`, and `artifacts/r2_3_real_emg/release_manifest.json` for the evidence and boundaries.
+
+## Hardware Twin (R2.4 milestone)
+
+**Version:** `0.1.6`. Previous public release: `0.1.5.3` ([Zenodo 22282345](https://zenodo.org/records/22282345)). Release evidence: `RELEASE_NOTES_0_1_6.md`.
+
+This release adds an opt-in software-only actuator abstraction between the existing safety-limited controller and the physics backend. The first increment models:
+
+- fixed command transport delay;
+- first-order actuator response;
+- per-joint coordinate and rate bounds;
+- deterministic command-dropout and stuck-actuator fault windows;
+- emergency-stop queue clearing and declared safe-coordinate requests;
+- machine-readable actuator assumptions, fault counters, and final state in task evidence.
+
+The bundled profiles are **assumptions for sensitivity analysis**, not measured parameters for a physical prosthesis. No physical device is connected. The wrapper preserves the normal R2.3 path when not explicitly enabled.
+
+Read `docs/hardware-twin.md`, `docs/HARDWARE_TWIN_R2_4_SPEC.md`, and `docs/adr/ADR-001-hardware-twin-backend-wrapper.md` before interpreting any Hardware Twin result. The fixed sensitivity protocol is `configs/hardware_twin/sensitivity_v1.yaml`.
+
+## Reproduce
+
+Install in a clean Python 3.11+ environment:
 
 ```bash
 python -m venv .venv
-. .venv/bin/activate
+. .venv/bin/activate  # Windows: .venv\Scripts\activate
 python -m pip install --upgrade pip
-python -m pip install -e '.[dev,pybullet]'
+python -m pip install -e '.[dev,pybullet]'  # include PyBullet for the full dual-backend test suite
 myosim doctor --strict
-myosim validate-model --model assets/models/hand.xml --backend pybullet
-myosim run-demo --config configs/demo.yaml
 ```
 
-The demo creates a deterministic run under `artifacts/runs/`, including a configuration hash, provenance, transitions, metrics, and visual artifacts when recording is enabled. PyBullet is an optional V1 compatibility backend; MuJoCo remains the primary backend for the complete pick-and-place experiment.
-
-## Common V1 commands
+Run the existing baseline benchmark:
 
 ```bash
-myosim list-backends
-myosim validate-model --model assets/models/hand.xml --backend mujoco
-myosim validate-model --model assets/models/hand.xml --backend pybullet
-myosim run-task --task reach
-myosim run-task --task grasp
-myosim run-task --task pick_place --config configs/tasks/pick_place.yaml
-myosim benchmark --config configs/benchmarks.yaml
-myosim viewer --model assets/models/hand.xml  # local GUI only; never CI
-pytest -q
-python scripts/check_coverage_policy.py coverage.json 85
+myosim benchmark --config configs/benchmarks.yaml \
+  --file examples/intents/pick_place_replay.csv
 ```
 
-Task defaults resolve by convention from `configs/tasks/<task>.yaml`. The viewer is a local diagnostic tool requiring a compatible desktop/OpenGL environment; it is not launched in automated tests.
+Run the opt-in Hardware Twin benchmark:
 
-## Quality policy
+```bash
+myosim hardware-twin-benchmark \
+  --config configs/benchmarks.yaml \
+  --file examples/intents/pick_place_replay.csv \
+  --command-delay-s 0.02
+```
 
-MyoSim is developed in verified increments. Each phase carries unit and integration tests, a smoke run where relevant, a provenance record, documented limitations, and an engineering/research/product/release review. See `docs/research_protocol.md`, `docs/research.md`, `docs/safety.md`, `docs/reproducibility.md`, and `docs/adr/`.
+Inject a deterministic command-dropout interval:
 
-## Future research roadmap
+```bash
+myosim hardware-twin-benchmark \
+  --config configs/benchmarks.yaml \
+  --file examples/intents/pick_place_replay.csv \
+  --command-delay-s 0.02 \
+  --fault command_dropout --fault-start-s 1.0 --fault-end-s 1.5
+```
 
-The maintained [research roadmap](docs/roadmap.md) describes the dependency-gated progression from the verified V1 replay baseline toward EMG integration, EEG-only offline research, and EEG+EMG fusion. These are **future research tracks**, not current capabilities. Each requires a versioned data/decoder contract, replay-first evidence, matched unimodal baselines, explicit safety and privacy controls, an ADR where architecture changes, and a separate acceptance gate. The roadmap also documents the continuing non-clinical boundary for any future hardware, assistive, manipulator, or medical-robotics work.
+The baseline and Hardware Twin runs have distinct run identities and configuration hashes. Use the same input file, task config, model, and seed for comparisons. Inspect task outcomes and control metrics together with twin assumptions and fault counters.
 
-## Public release and security
+## Quality and claim discipline
 
-The maintained release procedure is in `docs/public_release.md`. It defines locked-environment verification, dependency auditing, distribution/SBOM checks, Docker smoke validation, and PyPI Trusted Publishing prerequisites. Report suspected vulnerabilities privately as described in `SECURITY.md`; use `SUPPORT.md` for non-security software questions and `CODE_OF_CONDUCT.md` for community expectations.
+- Every reported result must be traceable to a declared input, configuration, model, and run artifact.
+- The original MuJoCo backend remains responsible for its own model/actuator range checks.
+- Hardware Twin is not hardware-in-the-loop, an identified plant model, or a safety case.
+- SimScale work, if justified later, is a separate geometry/material/load study; it does not calibrate actuator parameters by itself.
+- Cross-subject decoder research remains upstream in the P1–P5 research sequence. MyoSim evaluates downstream consequences; it does not replace decoder evaluation.
 
-These controls improve package and release integrity. They do not certify security, validate a clinical device, or change the project’s software-only research boundary.
+## License and citation
 
-## Project layout
+Source code is licensed under Apache-2.0. Third-party package and asset notices are listed in `THIRD_PARTY_NOTICES.md`. Cite the software with `CITATION.cff`. The Zenodo record above holds release 0.1.5.3; a new record for 0.1.6 is created when this version is deposited.
 
-| Directory | Purpose |
-|---|---|
-| `src/myosim/core` | Stable types, configuration, errors, commands, and events. |
-| `src/myosim/signals` and `src/myosim/intent` | Generic input/replay adapters; no scientific preprocessing implementation. |
-| `src/myosim/control` | Confidence gating, temporal logic, state machine, safety, and motion targets. |
-| `src/myosim/simulation` | Physics-backend protocol/factory, MuJoCo primary backend, PyBullet compatibility backend, MJCF models, and scenes. |
-| `src/myosim/tasks` | Reach, grasp, and pick-and-place task definitions. |
-| `src/myosim/metrics` and `src/myosim/experiments` | Objective measures, reports, execution, and provenance. |
-| `src/myosim/rendering` | Headless frame capture, diagnostic overlays, and visual outputs. |
-| `tests` | Unit, integration, fixtures, and deterministic regression checks. |
-| `docs` | Architecture, intent, controls, safety, tasks, metrics, research use, reproducibility, phase reports, public-release procedure, and ADRs. |
-| `streamlit_app.py`, `requirements.txt`, `packages.txt`, `.streamlit/` | Read-only Streamlit demo front end and its Streamlit Community Cloud deployment config. |
-
-## Licence and citation
-
-The source code is licensed under Apache-2.0. Third-party package and asset notices are recorded in `THIRD_PARTY_NOTICES.md`. Cite the software using `CITATION.cff`.
-
-## V1 acceptance statement
-
-A V1 release is acceptable only when the declared virtual hand loads headlessly and deterministically on both tested backends; synthetic and recorded intents drive bounded state-machine control; reach, grasp, and pick-and-place commands resolve their explicit configurations; pick-and-place runs produce task/control metrics and provenance; global test coverage is at least 90% with each substantive source module at least 85%; a clean environment can reproduce the example; CI passes; and all public documentation retains non-clinical language.
+Verification results for this release are listed in `RELEASE_NOTES_0_1_6.md`.

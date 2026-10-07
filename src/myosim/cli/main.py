@@ -3,34 +3,37 @@
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
+import subprocess
 import sys
+from collections.abc import Mapping
+from dataclasses import asdict
 from pathlib import Path
-from typing import Any
+from typing import TYPE_CHECKING, Any
 
 from myosim import __version__
-from myosim.control.controllers import ControlOutput
 from myosim.core.config import AppConfig, load_config
 from myosim.core.errors import MyoSimError
 from myosim.core.types import IntentInput, as_discrete_event
-from myosim.experiments.basic_task_runner import run_grasp_evaluation, run_reach_evaluation
-from myosim.experiments.registry import (
-    write_artifact_manifest,
-    write_synthetic_run,
-    write_task_run,
+from myosim.hardware_twin import (
+    ActuatorProfile,
+    FaultKind,
+    FaultWindow,
+    load_hand_profiles,
 )
-from myosim.experiments.runner import SyntheticExperimentRunner
-from myosim.experiments.task_runner import PickPlaceExperimentRunner, TaskRunResult
-from myosim.metrics.reporting import write_task_markdown_report
-from myosim.rendering.overlays import DebugOverlay
-from myosim.rendering.recorder import FrameRecorder
-from myosim.rendering.summary import write_visual_summary
-from myosim.rendering.viewer import launch_mujoco_viewer
+from myosim.integrations.emg import (
+    EMGPredictionAdapter,
+    IntentMappingResolver,
+    PredictionArtifactLoader,
+)
 from myosim.runtime import resource_root
 from myosim.signals.replay import CsvIntentReplay
-from myosim.simulation.factory import SUPPORTED_BACKENDS, backend_status, create_backend
-from myosim.simulation.mujoco_backend import MujocoBackend
-from myosim.tasks.base import TaskStep
+
+if TYPE_CHECKING:
+    from myosim.control.controllers import ControlOutput
+    from myosim.experiments.task_runner import TaskRunResult
+    from myosim.tasks.base import TaskStep
 
 RESOURCE_ROOT = resource_root()
 DEFAULT_CONFIG = RESOURCE_ROOT / "configs" / "demo.yaml"
@@ -40,6 +43,9 @@ TASK_NAMES = ("reach", "grasp", "pick_place")
 
 
 def build_parser() -> argparse.ArgumentParser:
+    # Keep parser construction dependency-light so `myosim --help` and command
+    # discovery work even when optional physics packages are unavailable.
+    supported_backends = ("mujoco", "pybullet")
     parser = argparse.ArgumentParser(prog="myosim", description=__doc__)
     parser.add_argument("--version", action="version", version=f"myosim {__version__}")
     subparsers = parser.add_subparsers(dest="command", required=True)
@@ -55,7 +61,7 @@ def build_parser() -> argparse.ArgumentParser:
         "validate-model", help="Load and step an MJCF model headlessly."
     )
     validate.add_argument("--model", required=True, type=Path)
-    validate.add_argument("--backend", choices=SUPPORTED_BACKENDS, default="mujoco")
+    validate.add_argument("--backend", choices=supported_backends, default="mujoco")
 
     replay = subparsers.add_parser(
         "replay", help="Run a CSV replay through controller and physics only."
@@ -76,6 +82,28 @@ def build_parser() -> argparse.ArgumentParser:
     benchmark.add_argument("--file", type=Path, default=DEFAULT_REPLAY)
     benchmark.add_argument("--record", action="store_true")
 
+    twin_benchmark = subparsers.add_parser(
+        "hardware-twin-benchmark",
+        help="Run the pick-and-place replay through the software-only actuator twin.",
+    )
+    twin_benchmark.add_argument("--config", type=Path, default=BENCHMARK_CONFIG)
+    twin_benchmark.add_argument("--file", type=Path, default=DEFAULT_REPLAY)
+    twin_benchmark.add_argument("--command-delay-s", type=float, default=0.02)
+    twin_benchmark.add_argument(
+        "--profile-config",
+        type=Path,
+        default=RESOURCE_ROOT / "configs" / "hardware_twin" / "default_hand_v1.yaml",
+        help="Versioned actuator-profile YAML used by the Hardware Twin.",
+    )
+    twin_benchmark.add_argument(
+        "--fault",
+        choices=[kind.value for kind in FaultKind],
+        help="Optional deterministic fault injection for robustness testing.",
+    )
+    twin_benchmark.add_argument("--fault-start-s", type=float, default=1.0)
+    twin_benchmark.add_argument("--fault-end-s", type=float, default=1.5)
+    twin_benchmark.add_argument("--fault-joint", type=str)
+
     demo = subparsers.add_parser(
         "run-demo", help="Run the one-command V1 end-to-end demonstration."
     )
@@ -92,6 +120,42 @@ def build_parser() -> argparse.ArgumentParser:
     report = subparsers.add_parser("report", help="Print the existing report for a run ID.")
     report.add_argument("--run", required=True)
     report.add_argument("--artifacts-dir", type=Path, default=Path.cwd() / "artifacts" / "runs")
+
+    emg_validate = subparsers.add_parser(
+        "validate-emg-predictions", help="Validate a public EMG prediction artifact."
+    )
+    emg_validate.add_argument("--input", required=True, type=Path)
+    emg_validate.add_argument("--strict", action="store_true")
+    emg_normalize = subparsers.add_parser(
+        "normalize-emg-predictions", help="Normalize an EMG prediction artifact."
+    )
+    emg_normalize.add_argument("--input", required=True, type=Path)
+    emg_normalize.add_argument("--output", required=True, type=Path)
+    emg_normalize.add_argument("--strict", action="store_true")
+    emg_replay = subparsers.add_parser(
+        "replay-emg-intent", help="Replay EMG predictions through the existing task pipeline."
+    )
+    emg_replay.add_argument("--input", required=True, type=Path)
+    emg_replay.add_argument(
+        "--config",
+        type=Path,
+        default=RESOURCE_ROOT / "configs" / "experiments" / "r2_emg_intent_replay.yaml",
+    )
+    emg_replay.add_argument("--label-map", type=Path)
+    emg_replay.add_argument("--record", action="store_true")
+    emg_benchmark = subparsers.add_parser(
+        "benchmark-emg-intent", help="Run the declared EMG integration benchmark."
+    )
+    emg_benchmark.add_argument(
+        "--config",
+        type=Path,
+        default=RESOURCE_ROOT / "configs" / "experiments" / "r2_emg_intent_replay.yaml",
+    )
+    emg_benchmark.add_argument("--record", action="store_true")
+    subparsers.add_parser(
+        "verify-r23",
+        help="Verify the closed R2.3 real-data evidence bundle without modifying it.",
+    )
     return parser
 
 
@@ -101,6 +165,8 @@ def main(argv: list[str] | None = None) -> int:
         if args.command == "doctor":
             return _doctor(args.strict)
         if args.command == "list-backends":
+            from myosim.simulation.factory import backend_status
+
             print(json.dumps(backend_status(), indent=2, sort_keys=True))
             return 0
         if args.command == "validate-model":
@@ -114,6 +180,42 @@ def main(argv: list[str] | None = None) -> int:
             return _run_declared_task(
                 "pick_place", _resolve(args.file), _resolve(args.config), args.record
             )
+        if args.command == "hardware-twin-benchmark":
+            faults: tuple[FaultWindow, ...] = ()
+            if args.fault:
+                faults = (
+                    FaultWindow(
+                        kind=FaultKind(args.fault),
+                        start_s=args.fault_start_s,
+                        end_s=args.fault_end_s,
+                        joint_name=args.fault_joint,
+                    ),
+                )
+            profile_path = _resolve(args.profile_config)
+            profiles = load_hand_profiles(profile_path)
+            profile_sha256 = hashlib.sha256(profile_path.read_bytes()).hexdigest()
+            if (
+                args.fault == FaultKind.ACTUATOR_STUCK.value
+                and args.fault_joint is not None
+                and args.fault_joint not in profiles
+            ):
+                raise ValueError(
+                    f"Unknown actuator joint {args.fault_joint!r}; choose from {sorted(profiles)}"
+                )
+            try:
+                profile_source = profile_path.relative_to(RESOURCE_ROOT).as_posix()
+            except ValueError:
+                profile_source = profile_path.name
+            return _run_pick_place_task(
+                _resolve(args.file),
+                load_config(_resolve(args.config)),
+                record=False,
+                hardware_twin_delay_s=args.command_delay_s,
+                hardware_twin_faults=faults,
+                hardware_twin_profiles=profiles,
+                hardware_twin_profile_source=profile_source,
+                hardware_twin_profile_sha256=profile_sha256,
+            )
         if args.command == "run-demo":
             return _run_declared_task(
                 "pick_place", DEFAULT_REPLAY, _resolve(args.config), record=True
@@ -123,13 +225,72 @@ def main(argv: list[str] | None = None) -> int:
             return 0
         if args.command == "report":
             return _show_report(args.artifacts_dir / args.run / "report.md")
+        if args.command == "validate-emg-predictions":
+            artifact = PredictionArtifactLoader().load(_resolve(args.input))
+            print(
+                json.dumps(
+                    {
+                        "valid": True,
+                        "schema": artifact.manifest["schema"],
+                        "predictions": len(artifact.predictions),
+                        "canonical_sha256": artifact.manifest["canonical_sha256"],
+                        "input_sha256": artifact.input_sha256,
+                    },
+                    indent=2,
+                    sort_keys=True,
+                )
+            )
+            return 0
+        if args.command == "normalize-emg-predictions":
+            artifact = PredictionArtifactLoader().load(_resolve(args.input))
+            output = _resolve(args.output)
+            output.parent.mkdir(parents=True, exist_ok=True)
+            output.write_text(
+                json.dumps(artifact.manifest, indent=2, sort_keys=True, ensure_ascii=False) + "\n",
+                encoding="utf-8",
+            )
+            print(
+                json.dumps(
+                    {
+                        "output": str(output),
+                        "canonical_sha256": artifact.manifest["canonical_sha256"],
+                    },
+                    indent=2,
+                )
+            )
+            return 0
+        if args.command == "replay-emg-intent":
+            label_map = _resolve(args.label_map) if args.label_map else None
+            return _run_emg_replay(_resolve(args.input), _resolve(args.config), label_map)
+        if args.command == "benchmark-emg-intent":
+            return _run_emg_replay(None, _resolve(args.config), None)
+        if args.command == "verify-r23":
+            completed = subprocess.run(
+                [sys.executable, str(RESOURCE_ROOT / "scripts" / "verify_r23_release.py")],
+                cwd=RESOURCE_ROOT,
+                check=False,
+            )
+            return completed.returncode
     except (MyoSimError, OSError, RuntimeError, ValueError) as exc:
         print(f"myosim error: {exc}", file=sys.stderr)
         return 2
     raise AssertionError(f"Unhandled command {args.command}")
 
 
+def launch_mujoco_viewer(model_path: Path, timestep_s: float | None = None) -> None:
+    """Launch the native MuJoCo viewer lazily.
+
+    Kept as a module-level seam so CLI callers/tests can replace the GUI launch
+    function without importing MuJoCo during command parsing or `--help`.
+    """
+    from myosim.rendering.viewer import launch_mujoco_viewer as _launch
+
+    _launch(model_path, timestep_s)
+
+
 def _doctor(strict: bool) -> int:
+    from myosim.simulation.factory import backend_status, create_backend
+
     checks: dict[str, bool | str] = {"package_version": __version__}
     for name, status in backend_status().items():
         checks[f"{name}_availability"] = status
@@ -155,6 +316,8 @@ def _doctor(strict: bool) -> int:
 
 
 def _validate_model(model_path: Path, backend_name: str) -> int:
+    from myosim.simulation.factory import create_backend
+
     backend = create_backend(backend_name)
     try:
         backend.load_model(model_path)
@@ -177,6 +340,9 @@ def _validate_model(model_path: Path, backend_name: str) -> int:
 
 
 def _replay_only(replay_path: Path, config_path: Path) -> int:
+    from myosim.experiments.registry import write_synthetic_run
+    from myosim.experiments.runner import SyntheticExperimentRunner
+
     config = load_config(config_path)
     if config.simulation.backend != "mujoco":
         raise ValueError("V1 replay runner currently requires simulation.backend='mujoco'")
@@ -192,6 +358,8 @@ def _replay_only(replay_path: Path, config_path: Path) -> int:
 
 
 def _run_declared_task(task_name: str, replay_path: Path, config_path: Path, record: bool) -> int:
+    from myosim.experiments.basic_task_runner import run_grasp_evaluation, run_reach_evaluation
+
     config = load_config(config_path)
     if config.task.name != task_name:
         raise ValueError(
@@ -210,14 +378,32 @@ def _run_declared_task(task_name: str, replay_path: Path, config_path: Path, rec
     return 0 if result.success else 1
 
 
-def _run_pick_place_task(replay_path: Path, config: AppConfig, record: bool) -> int:
+def _run_pick_place_task(
+    replay_path: Path,
+    config: AppConfig,
+    record: bool,
+    *,
+    hardware_twin_delay_s: float | None = None,
+    hardware_twin_faults: tuple[FaultWindow, ...] = (),
+    hardware_twin_profiles: Mapping[str, ActuatorProfile] | None = None,
+    hardware_twin_profile_source: str | None = None,
+    hardware_twin_profile_sha256: str | None = None,
+) -> int:
+    from myosim.experiments.registry import write_artifact_manifest, write_task_run
+    from myosim.experiments.task_runner import PickPlaceExperimentRunner
+    from myosim.metrics.reporting import write_task_markdown_report
+    from myosim.rendering.overlays import DebugOverlay
+    from myosim.rendering.recorder import FrameRecorder
+    from myosim.rendering.summary import write_visual_summary
+    from myosim.simulation.base import PhysicsBackend
+
     if config.simulation.backend != "mujoco":
         raise ValueError("V1 pick_place runner currently requires simulation.backend='mujoco'")
     source = CsvIntentReplay(replay_path)
     recorder: FrameRecorder | None = None
 
     def capture(
-        backend: MujocoBackend,
+        backend: PhysicsBackend,
         event: IntentInput,
         control: ControlOutput,
         task_step: TaskStep,
@@ -243,9 +429,15 @@ def _run_pick_place_task(replay_path: Path, config: AppConfig, record: bool) -> 
             )
         )
 
-    result: TaskRunResult = PickPlaceExperimentRunner(config, RESOURCE_ROOT).run(
-        source, on_step=capture
-    )
+    result: TaskRunResult = PickPlaceExperimentRunner(
+        config,
+        RESOURCE_ROOT,
+        hardware_twin_delay_s=hardware_twin_delay_s,
+        hardware_twin_faults=hardware_twin_faults,
+        hardware_twin_profiles=hardware_twin_profiles,
+        hardware_twin_profile_source=hardware_twin_profile_source,
+        hardware_twin_profile_sha256=hardware_twin_profile_sha256,
+    ).run(source, on_step=capture)
     run_dir = write_task_run(result, _artifact_root(config))
     report_path = write_task_markdown_report(result, run_dir)
     recordings: dict[str, str] = {}
@@ -289,6 +481,8 @@ def _run_pick_place_task(replay_path: Path, config: AppConfig, record: bool) -> 
 
 
 def _write_basic_task_result(result: dict[str, Any], config: AppConfig) -> Path:
+    from myosim.experiments.registry import write_artifact_manifest
+
     run_dir = _artifact_root(config) / str(result["provenance"]["run_id"])
     run_dir.mkdir(parents=True, exist_ok=False)
     (run_dir / "summary.json").write_text(
@@ -304,6 +498,74 @@ def _show_report(path: Path) -> int:
         return 2
     print(path.read_text(encoding="utf-8"))
     return 0
+
+
+def _run_emg_replay(
+    input_path: Path | None,
+    protocol_path: Path,
+    label_map_path: Path | None,
+) -> int:
+    import yaml
+
+    from myosim.experiments.registry import write_artifact_manifest
+    from myosim.experiments.task_runner import PickPlaceExperimentRunner
+
+    protocol = yaml.safe_load(protocol_path.read_text(encoding="utf-8"))
+    if not isinstance(protocol, dict):
+        raise ValueError("EMG protocol must be a YAML object")
+    artifact_path = input_path or _resolve(Path(protocol["input_artifact"]))
+    map_path = label_map_path or _resolve(Path(protocol["label_map"]))
+    artifact = PredictionArtifactLoader().load(artifact_path)
+    source = EMGPredictionAdapter(artifact, IntentMappingResolver(map_path))
+    config = load_config(RESOURCE_ROOT / "configs" / "benchmarks.yaml")
+    result = PickPlaceExperimentRunner(config, RESOURCE_ROOT).run(source)
+    run_dir = _artifact_root(config) / f"emg-{result.provenance.run_id}"
+    run_dir.mkdir(parents=True, exist_ok=False)
+    provenance_payload = {
+        **result.provenance.to_dict(),
+        "integration": {
+            "artifact": str(artifact_path),
+            "label_map": str(map_path),
+            "claim": "synthetic upstream integration",
+        },
+    }
+    (run_dir / "provenance.json").write_text(
+        json.dumps(provenance_payload, indent=2, sort_keys=True) + "\n",
+        encoding="utf-8",
+    )
+    metrics_payload = {
+        "task": result.task_metrics.to_dict(),
+        "control": result.control_metrics.to_dict(),
+    }
+    (run_dir / "metrics.json").write_text(
+        json.dumps(metrics_payload, indent=2, sort_keys=True) + "\n",
+        encoding="utf-8",
+    )
+    transition_payload = {
+        "control": [asdict(item) for item in result.control_transitions],
+        "task": [asdict(item) for item in result.task_transitions],
+    }
+    (run_dir / "transitions.json").write_text(
+        json.dumps(transition_payload, indent=2, sort_keys=True, default=str) + "\n",
+        encoding="utf-8",
+    )
+    (run_dir / "intent_sequence.json").write_text(
+        json.dumps([event.to_dict() for event in source.events()], indent=2, sort_keys=True) + "\n",
+        encoding="utf-8",
+    )
+    write_artifact_manifest(run_dir)
+    print(
+        json.dumps(
+            {
+                "run_dir": str(run_dir),
+                "claim": "synthetic upstream integration",
+                "task_metrics": result.task_metrics.to_dict(),
+                "control_metrics": result.control_metrics.to_dict(),
+            },
+            indent=2,
+        )
+    )
+    return 0 if result.task_metrics.success and not result.invalid_state_detected else 1
 
 
 def _artifact_root(config: AppConfig) -> Path:

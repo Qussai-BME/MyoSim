@@ -1,7 +1,7 @@
 # MyoSim V1 — Requirements Traceability and Evidence Baseline
 
-**Status:** Maintained public-release traceability record (V1.1; audited distribution 0.1.4)
-**Authoritative source:** `MyoSim_Master_Engineering_Spec.md` supplied by the project owner.
+**Status:** Maintained requirements/evidence traceability record for the current software baseline (release 0.1.6)
+**Specification basis:** Historical master engineering specification supplied by the project owner; that source document is not bundled in this archive.
 **Scope:** Software-only, local-first, non-clinical research demonstrator.
 
 ## 1. Release boundary

@@ -5,6 +5,8 @@
 **Scope authority:** `pasted_content.txt`, Sections 2, 5, 9, 24, 25, and 30  
 **Working tree baseline:** `b81387c` (`docs: add Zenodo DOI (v1.1)`)
 
+> **Historical record:** this report documents the 2026-08-26 Phase 1 gate. Its archived build paths and package hashes describe that historical milestone and are not current R2.4 release evidence.
+
 > This report closes only the approved **Phase 1 — Core Contracts** gate. The master specification directs the implementation to stop after this report; therefore no Phase 2 or later capability was newly implemented, changed, or represented as approved work.
 
 ## Scope and boundary
@@ -50,7 +52,7 @@ The resulting core boundary is decoder-independent. A producer supplies an `Inte
 | Distribution build | **Passed**; source distribution and universal wheel created |
 | Patch hygiene | **Passed** (`git diff --check`) |
 
-The bundled full suite initially required the archive's declared optional `pybullet` extra, which was not present in the clean environment. Its native build also required a C++ compiler and Python development headers. These were installed only in the sandbox to execute the supplied test suite; no dependency declaration was altered as part of the Phase 1 implementation.
+The bundled full suite initially required the archive's declared optional `pybullet` extra, which was not present in the clean environment. Its native build also required a C++ compiler and Python development headers. These were installed only in the temporary test environment to execute the supplied test suite; no dependency declaration was altered as part of the Phase 1 implementation.
 
 ## Reproducibility commands
 

@@ -79,3 +79,19 @@ def test_state_machine_rejects_chronological_reset_and_emergency_input_errors() 
         machine.emergency_stop(-0.1, "reason")
     with pytest.raises(ValueError):
         machine.emergency_stop(0.2, "")
+
+
+def test_unknown_intent_is_fail_safe_and_never_executes_unknown() -> None:
+    machine = make_machine()
+    from myosim.core.types import IntentLabel
+    first = machine.process(IntentEvent(0.1, IntentLabel.UNKNOWN, 0.0, acceptance_override=False))
+    assert first.state is ControllerState.REST
+    assert first.request.command is Command.REST
+    machine.process(event(0.2, IntentLabel.PINCH))
+    machine.process(event(0.3, IntentLabel.PINCH))
+    machine.process(event(0.4, IntentLabel.PINCH))
+    executing = machine.process(event(0.5, IntentLabel.PINCH))
+    assert executing.state is ControllerState.EXECUTING
+    rejected = machine.process(IntentEvent(0.6, IntentLabel.UNKNOWN, 0.0, acceptance_override=False))
+    assert rejected.state is ControllerState.HOLD
+    assert rejected.request.command is Command.HOLD

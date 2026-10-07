@@ -1,0 +1,5 @@
+protocol_id: r2-emg-intent-replay-v1
+input_artifact: myocontrol_prediction_example.json
+label_map: label_map_v1.yaml
+source_claim: MyoControl-format synthetic replay
+adapter_version: myosim-emg-adapter/v1

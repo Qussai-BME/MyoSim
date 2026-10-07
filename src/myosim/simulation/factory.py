@@ -5,7 +5,6 @@ from __future__ import annotations
 from importlib.util import find_spec
 
 from myosim.simulation.base import PhysicsBackend
-from myosim.simulation.mujoco_backend import MujocoBackend
 
 SUPPORTED_BACKENDS = ("mujoco", "pybullet")
 
@@ -27,6 +26,10 @@ def backend_status() -> dict[str, str]:
 def create_backend(name: str, timestep_s: float | None = None) -> PhysicsBackend:
     """Create one declared backend or provide a specific availability error."""
     if name == "mujoco":
+        if find_spec("mujoco") is None:
+            raise RuntimeError("MuJoCo is unavailable; install the declared 'mujoco' dependency")
+        from myosim.simulation.mujoco_backend import MujocoBackend
+
         return MujocoBackend(timestep_s=timestep_s)
     if name == "pybullet":
         if find_spec("pybullet") is None:

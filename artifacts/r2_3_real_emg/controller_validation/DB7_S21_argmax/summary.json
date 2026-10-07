@@ -1,0 +1,104 @@
+{
+  "status": "CONTROLLER_VALIDATED",
+  "policy": "classifier_argmax_accept",
+  "events": 560,
+  "state_transition_count": 74,
+  "released_command_count": 19,
+  "released_commands": [
+    {
+      "timestamp_s": 8.55,
+      "command": "PINCH",
+      "reason": "confirmed_command_released"
+    },
+    {
+      "timestamp_s": 10.05,
+      "command": "CLOSE",
+      "reason": "hold_duration_elapsed_with_consistent_intent"
+    },
+    {
+      "timestamp_s": 11.55,
+      "command": "PINCH",
+      "reason": "confirmed_command_released"
+    },
+    {
+      "timestamp_s": 13.95,
+      "command": "CLOSE",
+      "reason": "hold_duration_elapsed_with_consistent_intent"
+    },
+    {
+      "timestamp_s": 17.85,
+      "command": "PINCH",
+      "reason": "confirmed_command_released"
+    },
+    {
+      "timestamp_s": 24.35,
+      "command": "CLOSE",
+      "reason": "hold_duration_elapsed_with_consistent_intent"
+    },
+    {
+      "timestamp_s": 63.45,
+      "command": "CLOSE",
+      "reason": "confirmed_command_released"
+    },
+    {
+      "timestamp_s": 64.45,
+      "command": "PINCH",
+      "reason": "hold_duration_elapsed_with_consistent_intent"
+    },
+    {
+      "timestamp_s": 64.75,
+      "command": "PINCH",
+      "reason": "hold_duration_elapsed_with_consistent_intent"
+    },
+    {
+      "timestamp_s": 65.55,
+      "command": "PINCH",
+      "reason": "hold_duration_elapsed_with_consistent_intent"
+    },
+    {
+      "timestamp_s": 97.45,
+      "command": "PINCH",
+      "reason": "confirmed_command_released"
+    },
+    {
+      "timestamp_s": 97.95,
+      "command": "PINCH",
+      "reason": "hold_duration_elapsed_with_consistent_intent"
+    },
+    {
+      "timestamp_s": 98.65,
+      "command": "PINCH",
+      "reason": "hold_duration_elapsed_with_consistent_intent"
+    },
+    {
+      "timestamp_s": 99.15,
+      "command": "CLOSE",
+      "reason": "hold_duration_elapsed_with_consistent_intent"
+    },
+    {
+      "timestamp_s": 106.85,
+      "command": "PINCH",
+      "reason": "hold_duration_elapsed_with_consistent_intent"
+    },
+    {
+      "timestamp_s": 107.25,
+      "command": "PINCH",
+      "reason": "hold_duration_elapsed_with_consistent_intent"
+    },
+    {
+      "timestamp_s": 107.55,
+      "command": "PINCH",
+      "reason": "hold_duration_elapsed_with_consistent_intent"
+    },
+    {
+      "timestamp_s": 107.95,
+      "command": "PINCH",
+      "reason": "hold_duration_elapsed_with_consistent_intent"
+    },
+    {
+      "timestamp_s": 108.45,
+      "command": "OPEN",
+      "reason": "hold_duration_elapsed_with_consistent_intent"
+    }
+  ]
+}

@@ -20,8 +20,10 @@ Run locally with:
 from __future__ import annotations
 
 import base64
+import json
 import os
 import tempfile
+from hashlib import sha256
 from pathlib import Path
 from typing import Any
 
@@ -30,8 +32,10 @@ import streamlit as st
 from myosim import __version__
 from myosim.core.config import load_config
 from myosim.core.errors import MyoSimError
+from myosim.core.types import as_discrete_event
 from myosim.experiments.basic_task_runner import run_grasp_evaluation, run_reach_evaluation
 from myosim.experiments.task_runner import PickPlaceExperimentRunner, TaskRunResult
+from myosim.hardware_twin import FaultKind, FaultWindow, load_hand_profiles
 from myosim.metrics.reporting import write_task_markdown_report
 from myosim.rendering.overlays import DebugOverlay
 from myosim.rendering.recorder import FrameRecorder
@@ -40,7 +44,9 @@ from myosim.signals.replay import CsvIntentReplay
 from myosim.simulation.factory import backend_status, create_backend
 
 # A publisher may set this without baking an unverified public URL into a release.
-REPOSITORY_URL = os.environ.get("MYOSIM_REPOSITORY_URL", "").strip()
+REPOSITORY_URL = os.environ.get(
+    "MYOSIM_REPOSITORY_URL", "https://github.com/Qussai-BME/MyoSim"
+).strip()
 
 REPO_ROOT = resource_root()
 DEMO_CONFIG_PATH = REPO_ROOT / "configs" / "demo.yaml"
@@ -48,6 +54,8 @@ REACH_CONFIG_PATH = REPO_ROOT / "configs" / "tasks" / "reach.yaml"
 GRASP_CONFIG_PATH = REPO_ROOT / "configs" / "tasks" / "grasp.yaml"
 DEFAULT_REPLAY_PATH = REPO_ROOT / "examples" / "intents" / "pick_place_replay.csv"
 HAND_MODEL_PATH = REPO_ROOT / "assets" / "models" / "hand.xml"
+R23_ROOT = REPO_ROOT / "artifacts" / "r2_3_real_emg"
+HARDWARE_TWIN_PROFILE_PATH = REPO_ROOT / "configs" / "hardware_twin" / "default_hand_v1.yaml"
 
 NON_CLINICAL_NOTICE = (
     "**Research scope only.** MyoSim is not a medical device, is not clinically "
@@ -124,7 +132,12 @@ def get_environment_status() -> dict[str, Any]:
     return checks
 
 
-def run_pick_place(replay_path: Path) -> dict[str, Any]:
+def run_pick_place(
+    replay_path: Path,
+    *,
+    hardware_twin_delay_s: float | None = None,
+    hardware_twin_faults: tuple[FaultWindow, ...] = (),
+) -> dict[str, Any]:
     """Run the flagship physics-backed pick-and-place task and capture GIFs.
 
     This calls the exact same `PickPlaceExperimentRunner` the CLI's
@@ -145,7 +158,7 @@ def run_pick_place(replay_path: Path) -> dict[str, Any]:
         recorder_box["recorder"].capture(
             DebugOverlay(
                 timestamp_s=event.timestamp_s,
-                intent=event.label.value,
+                intent=as_discrete_event(event).label.value,
                 confidence=event.confidence,
                 controller_state=control.state_output.state.value,
                 task_state=task_step.state.value,
@@ -153,9 +166,27 @@ def run_pick_place(replay_path: Path) -> dict[str, Any]:
             )
         )
 
-    result: TaskRunResult = PickPlaceExperimentRunner(config, REPO_ROOT).run(
-        source, on_step=on_step
-    )
+    result: TaskRunResult = PickPlaceExperimentRunner(
+        config,
+        REPO_ROOT,
+        hardware_twin_delay_s=hardware_twin_delay_s,
+        hardware_twin_faults=hardware_twin_faults,
+        hardware_twin_profiles=(
+            load_hand_profiles(HARDWARE_TWIN_PROFILE_PATH)
+            if hardware_twin_delay_s is not None
+            else None
+        ),
+        hardware_twin_profile_source=(
+            "configs/hardware_twin/default_hand_v1.yaml"
+            if hardware_twin_delay_s is not None
+            else None
+        ),
+        hardware_twin_profile_sha256=(
+            sha256(HARDWARE_TWIN_PROFILE_PATH.read_bytes()).hexdigest()
+            if hardware_twin_delay_s is not None
+            else None
+        ),
+    ).run(source, on_step=on_step)
 
     clean_bytes = debug_bytes = None
     report_text = ""
@@ -206,8 +237,22 @@ with st.sidebar:
         "public runners and adds no new simulation, control, or safety logic."
     )
 
-tab_pick_place, tab_reach_grasp, tab_environment, tab_about = st.tabs(
-    ["🤖 Pick & place", "🎯 Reach & grasp", "🩺 Environment status", "ℹ️ About"]
+(
+    tab_pick_place,
+    tab_reach_grasp,
+    tab_environment,
+    tab_console,
+    tab_hardware_twin,
+    tab_about,
+) = st.tabs(
+    [
+        "🤖 Pick & place",
+        "🎯 Reach & grasp",
+        "🩺 Environment status",
+        "🔬 R2.3 Evidence",
+        "⚙️ Hardware Twin",
+        "ℹ️ About",
+    ]
 )
 
 
@@ -365,6 +410,231 @@ with tab_environment:
 
 
 # --------------------------------------------------------------------------
+# Tab: R2.3 real-data downstream evidence (read-only)
+# --------------------------------------------------------------------------
+
+with tab_console:
+    st.subheader("R2.3 · Recorded sEMG-derived intent to simulated action")
+    st.write(
+        "This console reads the frozen R2.3 evidence bundle. The upstream predictions "
+        "are derived from recorded NinaPro DB3/DB7 data; the downstream task remains "
+        "an offline software simulation, not a physical prosthesis test."
+    )
+    manifest_path = R23_ROOT / "release_manifest.json"
+    gt_path = (
+        R23_ROOT
+        / "myosim_runs"
+        / "ground_truth"
+        / "DB7-S21-ground_truth-postfix-v2"
+        / "result.json"
+    )
+    decoder_path = (
+        R23_ROOT / "myosim_runs" / "decoder" / "DB7-S21-decoder-postfix-v2" / "result.json"
+    )
+
+    if manifest_path.is_file() and gt_path.is_file() and decoder_path.is_file():
+        manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+        ground_truth = json.loads(gt_path.read_text(encoding="utf-8"))
+        real_decoder = json.loads(decoder_path.read_text(encoding="utf-8"))
+        closure = manifest["closure"]
+        episode = closure["functional_episode"]
+        outcomes = closure["mujoco_results"]
+
+        k1, k2, k3 = st.columns(3)
+        k1.metric("Prediction artifacts", "33")
+        row_count = sum(item["rows"] for group in manifest["datasets"].values() for item in group)
+        k2.metric("Prediction rows/events", f"{row_count:,}")
+        k3.metric("Shared DB7 S21 episode", f"{episode['window_count']} windows")
+        st.caption(
+            f"Frozen episode: windows {episode['window_start']}–{episode['window_end']} · "
+            f"source SHA-256: {episode['source_prediction_sha256']}"
+        )
+
+        rows = []
+        for label, result in (("Ground Truth", ground_truth), ("Real Decoder", real_decoder)):
+            task = result["task_metrics"]
+            rows.append(
+                {
+                    "Condition": label,
+                    "Outcome": task["final_state"],
+                    "Completion (s)": task["completion_time_s"],
+                    "Final error (m)": task["final_error_m"],
+                    "Grasp-stability steps": task["grasp_stability_steps"],
+                    "Command corrections": task["command_corrections"],
+                }
+            )
+        st.dataframe(rows, use_container_width=True, hide_index=True)
+
+        st.markdown("### What the comparison actually says")
+        st.write(
+            "Both conditions completed this same declared episode. The Real Decoder "
+            "required substantially more command corrections and had much lower grasp "
+            "stability than Ground Truth. Successful task completion here is evidence "
+            "of downstream integration, not proof that the decoder is robust or ready "
+            "for real-time or clinical use."
+        )
+        with st.expander("Full R2.3 closure manifest"):
+            st.json(closure)
+        st.download_button(
+            "Download R2.3 release manifest",
+            data=manifest_path.read_bytes(),
+            file_name="r2_3_release_manifest.json",
+            mime="application/json",
+        )
+        st.info(
+            "Evidence boundary: recorded-data-derived offline replay through the MyoSim "
+            "decision/control/safety stack and MuJoCo. No physical hardware, HIL, clinical "
+            "validation, patient benefit, or real-time causal performance is established.",
+            icon="ℹ️",
+        )
+    else:
+        st.warning("Canonical R2.3 evidence files are not present in this deployment bundle.")
+
+
+# --------------------------------------------------------------------------
+# Tab: Hardware Twin (opt-in software-only actuator model)
+# --------------------------------------------------------------------------
+
+with tab_hardware_twin:
+    st.subheader("Hardware Twin · actuator sensitivity experiment")
+    st.write(
+        "Run the same bundled intent replay through a software-only actuator layer "
+        "before MuJoCo. This models assumptions; it does not connect to or validate "
+        "physical hardware. The baseline tab remains unchanged."
+    )
+    delay_s = st.slider(
+        "Command transport delay (s)",
+        min_value=0.0,
+        max_value=0.20,
+        value=0.02,
+        step=0.01,
+    )
+    fault_choice = st.selectbox(
+        "Deterministic fault scenario",
+        options=["none", FaultKind.COMMAND_DROPOUT.value, FaultKind.ACTUATOR_STUCK.value],
+    )
+    fault_start_s = st.slider(
+        "Fault start (simulation seconds)",
+        min_value=0.0,
+        max_value=3.5,
+        value=1.0,
+        step=0.1,
+    )
+    fault_end_s = st.slider(
+        "Fault end (simulation seconds)",
+        min_value=0.1,
+        max_value=3.5,
+        value=1.5,
+        step=0.1,
+    )
+    stuck_joint = st.selectbox(
+        "Stuck actuator",
+        options=["all actuators", "thumb_flex", "index_flex", "middle_flex", "ring_flex"],
+    )
+    st.caption(
+        "Profiles are engineering assumptions for sensitivity analysis, not measured "
+        "parameters. Compare task and control metrics together; one successful run "
+        "is not a reliability claim."
+    )
+    if st.button("▶ Run Hardware Twin experiment", type="primary"):
+        if fault_end_s <= fault_start_s:
+            st.error("Fault end must be later than fault start.")
+        else:
+            faults: tuple[FaultWindow, ...] = ()
+            if fault_choice != "none":
+                faults = (
+                    FaultWindow(
+                        kind=FaultKind(fault_choice),
+                        start_s=fault_start_s,
+                        end_s=fault_end_s,
+                        joint_name=(
+                            None
+                            if fault_choice == FaultKind.COMMAND_DROPOUT.value
+                            or stuck_joint == "all actuators"
+                            else stuck_joint
+                        ),
+                    ),
+                )
+            try:
+                with st.spinner("Running the actuator-twin replay through MuJoCo..."):
+                    st.session_state["hardware_twin"] = run_pick_place(
+                        DEFAULT_REPLAY_PATH,
+                        hardware_twin_delay_s=delay_s,
+                        hardware_twin_faults=faults,
+                    )
+            except Exception as exc:  # noqa: BLE001 - surfaced for local diagnosis
+                st.error(f"Hardware Twin run failed: {exc}")
+
+    twin_payload = st.session_state.get("hardware_twin")
+    if twin_payload is not None:
+        twin_result: TaskRunResult = twin_payload["result"]
+        twin_task = twin_result.task_metrics
+        twin_control = twin_result.control_metrics
+        cols = st.columns(4)
+        cols[0].metric("Outcome", twin_task.final_state)
+        cols[1].metric("Final error", f"{twin_task.final_error_m:.4f} m")
+        cols[2].metric("Grasp stability", str(twin_task.grasp_stability_steps))
+        cols[3].metric("Command corrections", str(twin_task.command_corrections))
+        twin_evidence = twin_result.hardware_twin or {}
+        trace = twin_result.hardware_twin_trace or ()
+        if trace:
+            profile_specs = twin_evidence.get("model_spec", {}).get("profiles", {})
+            st.markdown("### Actuator response trace")
+            unit_groups = (
+                ("m", "Slide coordinates (m)"),
+                ("rad", "Hinge coordinates (rad)"),
+            )
+            for unit, unit_label in unit_groups:
+                joint_names = [
+                    name
+                    for name, profile in profile_specs.items()
+                    if profile.get("coordinate_unit") == unit
+                ]
+                if not joint_names:
+                    continue
+                chart_data = {
+                    "time_s": [point["timestamp_s"] for point in trace],
+                    **{
+                        name: [point["actuator_coordinates"].get(name) for point in trace]
+                        for name in joint_names
+                    },
+                }
+                st.caption(unit_label)
+                st.line_chart(chart_data, x="time_s")
+
+            st.markdown("### Command tracking error")
+            error_groups = (("m", "Slide error (m)"), ("rad", "Hinge error (rad)"))
+            for unit, unit_label in error_groups:
+                joint_names = [
+                    name
+                    for name, profile in profile_specs.items()
+                    if profile.get("coordinate_unit") == unit
+                ]
+                if not joint_names:
+                    continue
+                error_data = {
+                    "time_s": [point["timestamp_s"] for point in trace],
+                    **{
+                        name: [point["tracking_error"].get(name) for point in trace]
+                        for name in joint_names
+                    },
+                }
+                st.caption(unit_label)
+                st.line_chart(error_data, x="time_s")
+        st.json(twin_evidence)
+        with st.expander("Control metrics"):
+            st.json(twin_control.to_dict())
+        with st.expander("Run report"):
+            st.markdown(twin_payload["report_md"])
+        if twin_payload["clean_gif"] and twin_payload["debug_gif"]:
+            twin_cols = st.columns(2)
+            with twin_cols[0]:
+                render_gif(twin_payload["clean_gif"], "Hardware Twin clean render")
+            with twin_cols[1]:
+                render_gif(twin_payload["debug_gif"], "Hardware Twin diagnostic render")
+
+
+# --------------------------------------------------------------------------
 # Tab: About
 # --------------------------------------------------------------------------
 
@@ -384,6 +654,8 @@ with tab_about:
         "machine, safety limits, and motion targets.\n"
         "- **`src/myosim/simulation`** — physics-backend protocol/factory, "
         "MuJoCo (primary) and PyBullet (compatibility) backends.\n"
+        "- **`src/myosim/hardware_twin`** — opt-in software actuator response and "
+        "deterministic fault injection.\n"
         "- **`src/myosim/tasks`** — reach, grasp, and pick-and-place task "
         "definitions.\n"
         "- **`src/myosim/metrics` / `experiments`** — objective measures, "

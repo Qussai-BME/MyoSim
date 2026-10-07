@@ -13,8 +13,8 @@ authors:
     given-names: Qussai
     email: qussai.adlbi@proton.me
 license: Apache-2.0
-version: "0.1.5"
-date-released: 2026-08-26
+version: "0.1.6"
+date-released: 2026-10-06
 keywords:
   - motor-intent control
   - simulation
@@ -28,4 +28,4 @@ preferred-citation:
     - family-names: Adlbi
       given-names: Qussai
   year: 2026
-  version: "0.1.5"
+  version: "0.1.6"

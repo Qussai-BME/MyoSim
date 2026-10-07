@@ -2,7 +2,7 @@
 
 ## Supported release line
 
-Security fixes are applied to the latest published MyoSim release line. At public-release preparation, that line is **0.1.2**. Earlier releases and unverified forks may not receive fixes.
+Security fixes are applied to the latest published MyoSim release line, currently **0.1.6**.
 
 ## Reporting a vulnerability
 

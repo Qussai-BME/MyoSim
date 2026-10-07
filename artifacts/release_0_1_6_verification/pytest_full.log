@@ -1,0 +1,71 @@
+........................................................................ [ 34%]
+........................................................................ [ 69%]
+...............................................................          [100%]
+================================ tests coverage ================================
+_______________ coverage: platform linux, python 3.12.3-final-0 ________________
+
+Name                                          Stmts   Miss Branch BrPart  Cover   Missing
+-----------------------------------------------------------------------------------------
+src/myosim/__init__.py                            2      0      0      0   100%
+src/myosim/cli/__init__.py                        0      0      0      0   100%
+src/myosim/cli/main.py                          279     17     64      7    92%   265-273, 277, 286-288, 298, 305-307, 348, 371, 401, 515, 593
+src/myosim/control/__init__.py                    0      0      0      0   100%
+src/myosim/control/command_mapper.py             16      1      4      1    90%   56
+src/myosim/control/confidence.py                 25      3     10      2    86%   23, 28, 34
+src/myosim/control/controllers.py                45      4      4      1    90%   36, 48-50
+src/myosim/control/filters.py                    46      0     16      0   100%
+src/myosim/control/safety.py                     35      3     12      3    87%   28, 39, 44
+src/myosim/control/state_machine.py             117      4     44      2    96%   60, 97-98, 208
+src/myosim/control/temporal.py                   49      3     10      3    90%   29, 31, 49
+src/myosim/core/__init__.py                       3      0      0      0   100%
+src/myosim/core/commands.py                      37      2     16      2    92%   24, 26
+src/myosim/core/config.py                       100      7     28      6    90%   27, 29, 61, 63, 77, 118, 136
+src/myosim/core/contracts.py                    120      1     34      3    97%   41, 163->165, 165->169
+src/myosim/core/errors.py                         6      0      0      0   100%
+src/myosim/core/events.py                         2      0      0      0   100%
+src/myosim/core/state.py                          2      0      0      0   100%
+src/myosim/core/types.py                        264     20     76     14    90%   48, 54, 56, 62, 64, 80, 85, 93, 122-123, 125, 300-301, 305, 307, 310, 343, 405-406, 460
+src/myosim/experiments/__init__.py                0      0      0      0   100%
+src/myosim/experiments/basic_task_runner.py      33      0      2      0   100%
+src/myosim/experiments/provenance.py             60      1     14      1    97%   75
+src/myosim/experiments/registry.py               48      5      8      1    86%   52, 81-84
+src/myosim/experiments/runner.py                 51      1      4      1    96%   55
+src/myosim/experiments/task_runner.py           123      0     24      1    99%   208->211
+src/myosim/experiments/trace.py                  53      0     14      0   100%
+src/myosim/hardware_twin/__init__.py              2      0      0      0   100%
+src/myosim/hardware_twin/backend.py             343     10     90      5    97%   274, 511, 514-515, 519, 521, 526, 539, 551-552
+src/myosim/integrations/__init__.py               2      0      0      0   100%
+src/myosim/integrations/emg.py                  323     29    154     27    88%   67, 74, 115, 124, 132, 139, 148, 156, 204, 207->206, 255, 271, 278, 282, 285, 291, 294, 302, 313, 339, 419, 426, 444-445, 450, 457, 461, 463, 474, 576
+src/myosim/intent/__init__.py                     0      0      0      0   100%
+src/myosim/intent/decoder.py                      8      0      0      0   100%
+src/myosim/intent/inference.py                   24      2      4      2    86%   37, 39
+src/myosim/intent/live.py                        49      0     28      0   100%
+src/myosim/metrics/__init__.py                    0      0      0      0   100%
+src/myosim/metrics/control.py                    31      0      6      0   100%
+src/myosim/metrics/reporting.py                  35      0     14      0   100%
+src/myosim/metrics/task.py                       17      0      0      0   100%
+src/myosim/rendering/__init__.py                  0      0      0      0   100%
+src/myosim/rendering/overlays.py                 38      0      8      0   100%
+src/myosim/rendering/recorder.py                 33      2      4      2    89%   20, 39
+src/myosim/rendering/summary.py                  54      4     14      3    90%   89-90, 108, 114
+src/myosim/rendering/viewer.py                   23      0     10      2    94%   22->26, 33->28
+src/myosim/runtime.py                            10      0      4      0   100%
+src/myosim/signals/__init__.py                    0      0      0      0   100%
+src/myosim/signals/adapters.py                   12      0      2      0   100%
+src/myosim/signals/loaders.py                     5      0      0      0   100%
+src/myosim/signals/replay.py                     64      6     16      2    90%   30, 42, 87-88, 99, 101
+src/myosim/simulation/__init__.py                 0      0      0      0   100%
+src/myosim/simulation/base.py                    23      0      0      0   100%
+src/myosim/simulation/factory.py                 18      1      8      1    92%   30
+src/myosim/simulation/mujoco_backend.py         168      8     54      8    93%   53, 61-62, 77->75, 85->82, 88, 132, 197, 202, 224
+src/myosim/simulation/pybullet_backend.py       273     17     90     15    91%   60, 71-72, 74, 85, 117-118, 305->307, 360, 379, 385, 390, 399, 422, 428, 434, 440, 464
+src/myosim/tasks/__init__.py                      0      0      0      0   100%
+src/myosim/tasks/base.py                         22      0      0      0   100%
+src/myosim/tasks/grasp.py                        22      0      6      0   100%
+src/myosim/tasks/pick_place.py                   82      9     24      2    90%   40, 57, 60-65, 84
+src/myosim/tasks/reach.py                        27      1      6      1    94%   33
+-----------------------------------------------------------------------------------------
+TOTAL                                          3224    161    926    118    93%
+Coverage JSON written to file /tmp/cov.json
+Required test coverage of 90.0% reached. Total coverage: 93.13%
+207 passed in 13.69s

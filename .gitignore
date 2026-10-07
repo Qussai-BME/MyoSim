@@ -19,21 +19,9 @@ build/
 .idea/
 .DS_Store
 
-# Generated experiment outputs; placeholders are retained via .gitkeep files.
+# Generated experiment outputs
 artifacts/runs/*
-!artifacts/runs/.gitkeep
-artifacts/videos/*
-!artifacts/videos/.gitkeep
-artifacts/figures/*
-!artifacts/figures/.gitkeep
-artifacts/benchmarks/*
-!artifacts/benchmarks/.gitkeep
-artifacts/task_runs/*
-!artifacts/task_runs/.gitkeep
-artifacts/development_runs/*
-!artifacts/development_runs/.gitkeep
-artifacts/reports/generated/*
-!artifacts/reports/generated/.gitkeep
+artifacts/hardware_twin_sensitivity/*
 
 # Local user input and secrets
 .env

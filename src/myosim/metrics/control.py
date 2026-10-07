@@ -47,7 +47,7 @@ def compute_control_metrics(
     releases = [
         transition
         for transition in transitions
-        if transition.reason == "confirmed_command_released"
+        if transition.current.value == "EXECUTING"
         and transition.command not in {Command.REST, Command.HOLD, Command.RELEASE}
     ]
     false_activations = [
@@ -64,7 +64,7 @@ def compute_control_metrics(
         label = str(transition.metadata.get("active_label", "REST"))
         if transition.current.value == "CANDIDATE":
             candidate_started[label] = transition.timestamp_s
-        if transition.reason == "confirmed_command_released" and label in candidate_started:
+        if transition.current.value == "EXECUTING" and label in candidate_started:
             latencies.append(transition.timestamp_s - candidate_started[label])
     unintended = sum(
         transition.reason

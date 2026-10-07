@@ -1,0 +1,9 @@
+{
+  "algorithm": "sha256",
+  "artifacts": {
+    "summary.json": "bdf05ea8167fdf980215bb64eb3a964b9054d40e06bdd45d79eac69815a7cca7"
+  },
+  "excluded": [
+    "artifact_manifest.json"
+  ]
+}

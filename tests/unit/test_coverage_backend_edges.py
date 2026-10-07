@@ -5,6 +5,9 @@ from pathlib import Path
 import numpy as np
 import pytest
 
+pytest.importorskip("mujoco")
+pytest.importorskip("pybullet")
+
 from myosim.core import events, state
 from myosim.core.errors import BackendError
 from myosim.simulation.mujoco_backend import MujocoBackend

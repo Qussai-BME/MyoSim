@@ -1,0 +1,16 @@
+{
+  "failures": [],
+  "flagship_conditions_checked": [
+    "ground_truth",
+    "decoder"
+  ],
+  "functional_episode": {
+    "end": 1088,
+    "rows": 560,
+    "start": 82
+  },
+  "manifest_sha256": "808d743a2bbd3ef0dcf17c713f0a00fbc772cc9c26f37e053361f097311e13a0",
+  "prediction_files_checked": 33,
+  "prediction_rows_checked": 117572,
+  "status": "PASS"
+}

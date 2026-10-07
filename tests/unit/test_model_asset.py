@@ -1,6 +1,8 @@
 from pathlib import Path
 
-import mujoco
+import pytest
+
+mujoco = pytest.importorskip("mujoco")
 
 REPOSITORY_ROOT = Path(__file__).resolve().parents[2]
 MODEL_PATH = REPOSITORY_ROOT / "assets" / "models" / "hand.xml"

@@ -1,0 +1,12 @@
+pybullet build time: Jan 29 2025 23:17:20
+b3Warning[examples/SharedMemory/PhysicsServerCommandProcessor.cpp,3584]:
+/home/ubuntu/work/myosim-r24-audit/extracted/MyoSim_R2.4/assets/models/hand.xml:19: unhandled root element 'light'b3Warning[examples/SharedMemory/PhysicsServerCommandProcessor.cpp,3584]:
+/home/ubuntu/work/myosim-r24-audit/extracted/MyoSim_R2.4/assets/models/hand.xml:67: unknown field 'freejoint'{
+  "mujoco_availability": "available",
+  "mujoco_controllable_joint_count": "6",
+  "mujoco_headless_load_reset_step": true,
+  "package_version": "0.1.6.dev0",
+  "pybullet_availability": "available",
+  "pybullet_controllable_joint_count": "6",
+  "pybullet_headless_load_reset_step": true
+}

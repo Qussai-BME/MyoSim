@@ -1,0 +1,6 @@
+R2.3 protected-file comparison: PASS
+Protected files matched: 52/52
+Scope: artifacts/r2_3_real_emg/**; configs/r2_3/**; both NinaPro intent-map configs; artifacts/FLAGSHIP_GATE_DB7_S21.md
+Canonical closure report copy byte-identical to finalized R2.3 report: True
+Published R2.3 archive SHA-256: a35beeac7d8d1182345e2c4e14343df0d48e0baead05348fdcc6c7f8d1b7f25d
+Mismatches: []

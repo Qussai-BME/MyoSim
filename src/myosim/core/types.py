@@ -133,6 +133,7 @@ class IntentLabel(StrEnum):
     OPEN = "OPEN"
     CLOSE = "CLOSE"
     PINCH = "PINCH"
+    UNKNOWN = "UNKNOWN"
 
 
 class Command(StrEnum):
@@ -274,6 +275,7 @@ class IntentEvent:
     modality: str = "synthetic"
     model_version: str = "synthetic-v1"
     window_id: str | None = None
+    acceptance_override: bool | None = None
 
     def __post_init__(self) -> None:
         _require_finite_timestamp(self.timestamp_s)
@@ -303,6 +305,9 @@ def as_discrete_event(intent: IntentInput) -> IntentEvent:
         raise ValueError("IntentRecord payload source_subject must be a string when provided")
     if window_id is not None and not isinstance(window_id, str):
         raise ValueError("IntentRecord payload window_id must be a string when provided")
+    acceptance_override = intent.payload.get("acceptance_override")
+    if acceptance_override is not None and not isinstance(acceptance_override, bool):
+        raise ValueError("IntentRecord payload acceptance_override must be boolean when provided")
     return IntentEvent(
         timestamp_s=intent.timestamp_s,
         label=label,
@@ -311,6 +316,7 @@ def as_discrete_event(intent: IntentInput) -> IntentEvent:
         modality=intent.modality,
         model_version=intent.model_version,
         window_id=window_id,
+        acceptance_override=acceptance_override,
     )
 
 

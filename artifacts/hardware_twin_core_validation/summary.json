@@ -1,0 +1,375 @@
+{
+  "cases": [
+    {
+      "final": {
+        "index": 0.799999999592154,
+        "thumb": 0.799999999592154
+      },
+      "first_response_step": {
+        "index": 1,
+        "thumb": 1
+      },
+      "max_error_during_stuck_window": {
+        "index": 0.0,
+        "thumb": 0.0
+      },
+      "max_rate": 2.0000000000000018,
+      "max_tracking_error": 0.78,
+      "max_tracking_error_by_joint": {
+        "index": 0.78,
+        "thumb": 0.78
+      },
+      "model_spec": {
+        "claim_boundary": "software-only engineering abstraction; not measured physical hardware",
+        "command_delay_s": 0.0,
+        "dynamics": {
+          "coordinate_bounds": true,
+          "per_coordinate_rate_limit": true,
+          "response_discretization": "backward_euler_style_alpha_dt_over_tau_plus_dt",
+          "response_model": "first_order_position"
+        },
+        "faults": [],
+        "model_id": "hardware_twin_position_first_order_v1",
+        "model_schema": "myosim-hardware-twin-model/v1",
+        "parameter_status": "assumed_unidentified",
+        "physics_timestep_s": 0.01,
+        "profile_sha256": "84164ebab725d7a4f9dfff94171194e77df019053c25a59f934d7cfaceed1d25",
+        "profile_source": "configs/hardware_twin/default_hand_v1.yaml",
+        "profiles": {
+          "index": {
+            "coordinate_max": 1.45,
+            "coordinate_min": -0.05,
+            "coordinate_unit": "rad",
+            "initial_coordinate": 0.0,
+            "max_coordinate_rate_per_s": 2.0,
+            "safe_coordinate": 0.0,
+            "time_constant_s": 0.08
+          },
+          "thumb": {
+            "coordinate_max": 1.2,
+            "coordinate_min": -0.05,
+            "coordinate_unit": "rad",
+            "initial_coordinate": 0.0,
+            "max_coordinate_rate_per_s": 2.0,
+            "safe_coordinate": 0.0,
+            "time_constant_s": 0.08
+          }
+        }
+      },
+      "scenario": "baseline",
+      "stats": {
+        "accepted": 1,
+        "applied": 1,
+        "dropout_steps": 0,
+        "dropped": 0,
+        "fault_steps": 0,
+        "stuck_steps": 0
+      },
+      "trace_samples": 200,
+      "trace_sha256": "eebbcae28caf71dcab08771fbec860f913508609eeee2e49b47eb9124a312d11",
+      "within_position_bounds": true,
+      "within_rate_bounds": true
+    },
+    {
+      "final": {
+        "index": 0.7999999995411732,
+        "thumb": 0.7999999995411732
+      },
+      "first_response_step": {
+        "index": 2,
+        "thumb": 2
+      },
+      "max_error_during_stuck_window": {
+        "index": 0.0,
+        "thumb": 0.0
+      },
+      "max_rate": 2.0000000000000018,
+      "max_tracking_error": 0.78,
+      "max_tracking_error_by_joint": {
+        "index": 0.78,
+        "thumb": 0.78
+      },
+      "model_spec": {
+        "claim_boundary": "software-only engineering abstraction; not measured physical hardware",
+        "command_delay_s": 0.02,
+        "dynamics": {
+          "coordinate_bounds": true,
+          "per_coordinate_rate_limit": true,
+          "response_discretization": "backward_euler_style_alpha_dt_over_tau_plus_dt",
+          "response_model": "first_order_position"
+        },
+        "faults": [],
+        "model_id": "hardware_twin_position_first_order_v1",
+        "model_schema": "myosim-hardware-twin-model/v1",
+        "parameter_status": "assumed_unidentified",
+        "physics_timestep_s": 0.01,
+        "profile_sha256": "84164ebab725d7a4f9dfff94171194e77df019053c25a59f934d7cfaceed1d25",
+        "profile_source": "configs/hardware_twin/default_hand_v1.yaml",
+        "profiles": {
+          "index": {
+            "coordinate_max": 1.45,
+            "coordinate_min": -0.05,
+            "coordinate_unit": "rad",
+            "initial_coordinate": 0.0,
+            "max_coordinate_rate_per_s": 2.0,
+            "safe_coordinate": 0.0,
+            "time_constant_s": 0.08
+          },
+          "thumb": {
+            "coordinate_max": 1.2,
+            "coordinate_min": -0.05,
+            "coordinate_unit": "rad",
+            "initial_coordinate": 0.0,
+            "max_coordinate_rate_per_s": 2.0,
+            "safe_coordinate": 0.0,
+            "time_constant_s": 0.08
+          }
+        }
+      },
+      "scenario": "delay_20ms",
+      "stats": {
+        "accepted": 1,
+        "applied": 1,
+        "dropout_steps": 0,
+        "dropped": 0,
+        "fault_steps": 0,
+        "stuck_steps": 0
+      },
+      "trace_samples": 200,
+      "trace_sha256": "eda863fd9f0d06cb5e863f183792eeb1043acf8b7fa365e6114d2fdc4ae73cc5",
+      "within_position_bounds": true,
+      "within_rate_bounds": true
+    },
+    {
+      "final": {
+        "index": 0.7999999993467095,
+        "thumb": 0.7999999993467095
+      },
+      "first_response_step": {
+        "index": 5,
+        "thumb": 5
+      },
+      "max_error_during_stuck_window": {
+        "index": 0.0,
+        "thumb": 0.0
+      },
+      "max_rate": 2.0000000000000018,
+      "max_tracking_error": 0.78,
+      "max_tracking_error_by_joint": {
+        "index": 0.78,
+        "thumb": 0.78
+      },
+      "model_spec": {
+        "claim_boundary": "software-only engineering abstraction; not measured physical hardware",
+        "command_delay_s": 0.05,
+        "dynamics": {
+          "coordinate_bounds": true,
+          "per_coordinate_rate_limit": true,
+          "response_discretization": "backward_euler_style_alpha_dt_over_tau_plus_dt",
+          "response_model": "first_order_position"
+        },
+        "faults": [],
+        "model_id": "hardware_twin_position_first_order_v1",
+        "model_schema": "myosim-hardware-twin-model/v1",
+        "parameter_status": "assumed_unidentified",
+        "physics_timestep_s": 0.01,
+        "profile_sha256": "84164ebab725d7a4f9dfff94171194e77df019053c25a59f934d7cfaceed1d25",
+        "profile_source": "configs/hardware_twin/default_hand_v1.yaml",
+        "profiles": {
+          "index": {
+            "coordinate_max": 1.45,
+            "coordinate_min": -0.05,
+            "coordinate_unit": "rad",
+            "initial_coordinate": 0.0,
+            "max_coordinate_rate_per_s": 2.0,
+            "safe_coordinate": 0.0,
+            "time_constant_s": 0.08
+          },
+          "thumb": {
+            "coordinate_max": 1.2,
+            "coordinate_min": -0.05,
+            "coordinate_unit": "rad",
+            "initial_coordinate": 0.0,
+            "max_coordinate_rate_per_s": 2.0,
+            "safe_coordinate": 0.0,
+            "time_constant_s": 0.08
+          }
+        }
+      },
+      "scenario": "delay_50ms",
+      "stats": {
+        "accepted": 1,
+        "applied": 1,
+        "dropout_steps": 0,
+        "dropped": 0,
+        "fault_steps": 0,
+        "stuck_steps": 0
+      },
+      "trace_samples": 200,
+      "trace_sha256": "a40411993f5f3232a1695f16dbafc39aeb28ffb4b673b6a37d56c2fcec095f6a",
+      "within_position_bounds": true,
+      "within_rate_bounds": true
+    },
+    {
+      "final": {
+        "index": 0.0,
+        "thumb": 0.0
+      },
+      "first_response_step": {
+        "index": null,
+        "thumb": null
+      },
+      "max_error_during_stuck_window": {
+        "index": 0.0,
+        "thumb": 0.0
+      },
+      "max_rate": 0.0,
+      "max_tracking_error": 0.0,
+      "max_tracking_error_by_joint": {
+        "index": 0.0,
+        "thumb": 0.0
+      },
+      "model_spec": {
+        "claim_boundary": "software-only engineering abstraction; not measured physical hardware",
+        "command_delay_s": 0.02,
+        "dynamics": {
+          "coordinate_bounds": true,
+          "per_coordinate_rate_limit": true,
+          "response_discretization": "backward_euler_style_alpha_dt_over_tau_plus_dt",
+          "response_model": "first_order_position"
+        },
+        "faults": [
+          {
+            "end_s": 0.5,
+            "joint_name": null,
+            "kind": "command_dropout",
+            "start_s": 0.0
+          }
+        ],
+        "model_id": "hardware_twin_position_first_order_v1",
+        "model_schema": "myosim-hardware-twin-model/v1",
+        "parameter_status": "assumed_unidentified",
+        "physics_timestep_s": 0.01,
+        "profile_sha256": "84164ebab725d7a4f9dfff94171194e77df019053c25a59f934d7cfaceed1d25",
+        "profile_source": "configs/hardware_twin/default_hand_v1.yaml",
+        "profiles": {
+          "index": {
+            "coordinate_max": 1.45,
+            "coordinate_min": -0.05,
+            "coordinate_unit": "rad",
+            "initial_coordinate": 0.0,
+            "max_coordinate_rate_per_s": 2.0,
+            "safe_coordinate": 0.0,
+            "time_constant_s": 0.08
+          },
+          "thumb": {
+            "coordinate_max": 1.2,
+            "coordinate_min": -0.05,
+            "coordinate_unit": "rad",
+            "initial_coordinate": 0.0,
+            "max_coordinate_rate_per_s": 2.0,
+            "safe_coordinate": 0.0,
+            "time_constant_s": 0.08
+          }
+        }
+      },
+      "scenario": "command_dropout_0_00_0_50s",
+      "stats": {
+        "accepted": 1,
+        "applied": 0,
+        "dropout_steps": 49,
+        "dropped": 1,
+        "fault_steps": 49,
+        "stuck_steps": 0
+      },
+      "trace_samples": 200,
+      "trace_sha256": "effe5d9fe37810c961a812df8c7f3899f4a543c828fa658c487db77b39a0da4e",
+      "within_position_bounds": true,
+      "within_rate_bounds": true
+    },
+    {
+      "final": {
+        "index": 0.7999998343181802,
+        "thumb": 0.7999999995411732
+      },
+      "first_response_step": {
+        "index": 2,
+        "thumb": 2
+      },
+      "max_error_during_stuck_window": {
+        "index": 0.02430410448016218,
+        "thumb": 0.02160364842681084
+      },
+      "max_rate": 2.0000000000000018,
+      "max_tracking_error": 0.78,
+      "max_tracking_error_by_joint": {
+        "index": 0.78,
+        "thumb": 0.78
+      },
+      "model_spec": {
+        "claim_boundary": "software-only engineering abstraction; not measured physical hardware",
+        "command_delay_s": 0.02,
+        "dynamics": {
+          "coordinate_bounds": true,
+          "per_coordinate_rate_limit": true,
+          "response_discretization": "backward_euler_style_alpha_dt_over_tau_plus_dt",
+          "response_model": "first_order_position"
+        },
+        "faults": [
+          {
+            "end_s": 1.0,
+            "joint_name": "index",
+            "kind": "actuator_stuck",
+            "start_s": 0.5
+          }
+        ],
+        "model_id": "hardware_twin_position_first_order_v1",
+        "model_schema": "myosim-hardware-twin-model/v1",
+        "parameter_status": "assumed_unidentified",
+        "physics_timestep_s": 0.01,
+        "profile_sha256": "84164ebab725d7a4f9dfff94171194e77df019053c25a59f934d7cfaceed1d25",
+        "profile_source": "configs/hardware_twin/default_hand_v1.yaml",
+        "profiles": {
+          "index": {
+            "coordinate_max": 1.45,
+            "coordinate_min": -0.05,
+            "coordinate_unit": "rad",
+            "initial_coordinate": 0.0,
+            "max_coordinate_rate_per_s": 2.0,
+            "safe_coordinate": 0.0,
+            "time_constant_s": 0.08
+          },
+          "thumb": {
+            "coordinate_max": 1.2,
+            "coordinate_min": -0.05,
+            "coordinate_unit": "rad",
+            "initial_coordinate": 0.0,
+            "max_coordinate_rate_per_s": 2.0,
+            "safe_coordinate": 0.0,
+            "time_constant_s": 0.08
+          }
+        }
+      },
+      "scenario": "index_stuck_0_50_1_00s",
+      "stats": {
+        "accepted": 1,
+        "applied": 1,
+        "dropout_steps": 0,
+        "dropped": 0,
+        "fault_steps": 50,
+        "stuck_steps": 50
+      },
+      "trace_samples": 200,
+      "trace_sha256": "beb043eaca378953389f25bf9aa50519a9a7ead103d77abfc685540a5dd847a1",
+      "within_position_bounds": true,
+      "within_rate_bounds": true
+    }
+  ],
+  "determinism": "PASS",
+  "model_id": "hardware_twin_position_first_order_v1",
+  "profile_config": "configs/hardware_twin/default_hand_v1.yaml",
+  "profile_config_sha256": "84164ebab725d7a4f9dfff94171194e77df019053c25a59f934d7cfaceed1d25",
+  "schema": "myosim-hardware-twin-core-validation/v1",
+  "scope": "model-level validation with backend-neutral toy backend; not MuJoCo task validation",
+  "status": "PASS"
+}

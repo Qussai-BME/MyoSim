@@ -48,6 +48,8 @@ def write_task_run(result: TaskRunResult, artifacts_dir: Path) -> Path:
         run_dir / "task_transitions.json", [asdict(item) for item in result.task_transitions]
     )
     _write_json(run_dir / "summary.json", result.to_dict())
+    if result.hardware_twin_trace is not None:
+        _write_jsonl(run_dir / "hardware_twin_trace.jsonl", result.hardware_twin_trace)
     write_artifact_manifest(run_dir)
     return run_dir
 
@@ -73,6 +75,13 @@ def write_artifact_manifest(run_dir: Path) -> Path:
         },
     )
     return manifest_path
+
+
+def _write_jsonl(path: Path, rows: tuple[dict[str, object], ...] | list[dict[str, object]]) -> None:
+    with path.open("w", encoding="utf-8") as handle:
+        for row in rows:
+            json.dump(row, handle, indent=None, sort_keys=True, allow_nan=False)
+            handle.write("\n")
 
 
 def _write_json(path: Path, data: object) -> None:

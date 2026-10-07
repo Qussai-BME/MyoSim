@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "myosim"
-version = "0.1.5"
+version = "0.1.6"
 description = "A reproducible software-only motor-intent to virtual prosthetic-control research demonstrator."
 readme = "README.md"
 requires-python = ">=3.11"
@@ -63,8 +63,7 @@ include = [
   "/scripts/**/*",
   "/README.md",
   "/CHANGELOG.md",
-  "/RELEASE_NOTES_V1.md",
-  "/RELEASE_NOTES_0_1_5.md",
+  "/RELEASE_NOTES_0_1_6.md",
   "/CITATION.cff",
   "/CONTRIBUTING.md",
   "/SECURITY.md",
@@ -86,6 +85,19 @@ pythonpath = ["src"]
 target-version = "py311"
 line-length = 100
 src = ["src", "tests"]
+# Preserve the historical R2.3 source/test snapshots byte-for-byte; they remain
+# executable under pytest and their own release verifiers, but are not current R2.4 lint targets.
+extend-exclude = [
+  "research_inputs/r2_3_minirocket/**",
+  "scripts/history/r2_3/**",
+  "scripts/verify_r23_manifest_hashes.py",
+  "scripts/verify_r23_release.py",
+  "tests/unit/test_control_pipeline.py",
+  "tests/unit/test_emg_adapter.py",
+  "tests/unit/test_r22_hardening.py",
+  "tests/unit/test_r23_real_emg_release.py",
+  "tests/unit/test_state_machine_edges.py",
+]
 
 [tool.ruff.lint]
 select = ["E", "F", "I", "UP", "B", "SIM"]

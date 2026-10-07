@@ -101,6 +101,7 @@ def create_provenance(
     repository_root: Path,
     intent_protocol_id: str = "not-applicable",
     input_file_sha256: str | None = None,
+    run_id: str | None = None,
     environment: Mapping[str, str] | None = None,
 ) -> RunProvenance:
     """Create provenance once at the beginning of an experiment.
@@ -114,7 +115,7 @@ def create_provenance(
     if input_file_sha256 is not None and len(input_file_sha256) != 64:
         raise ValueError("input_file_sha256 must be a SHA-256 hex digest when provided")
     return RunProvenance(
-        run_id=uuid4().hex,
+        run_id=run_id or uuid4().hex,
         created_at_utc=datetime.now(UTC).replace(microsecond=0).isoformat(),
         config_hash=config_hash,
         git_commit=discover_git_commit(repository_root),

@@ -25,4 +25,4 @@ The backend adapter must explicitly provide model loading, reset, stepping, cont
 
 ## Evidence
 
-MuJoCo's official documentation describes editable MJCF definitions, distinct model and dynamic state structures, Python access, and simulation/visualization support. See https://mujoco.readthedocs.io/en/stable/overview.html. V1.1 implementation and verification evidence is retained in `src/myosim/simulation/pybullet_backend.py`, `tests/integration/test_pybullet_backend.py`, `docs/simulation.md`, and `artifacts/reports/repair_final_audit.md`.
+MuJoCo's official documentation describes editable MJCF definitions, distinct model and dynamic state structures, Python access, and simulation/visualization support. See https://mujoco.readthedocs.io/en/stable/overview.html. The implementation evidence is retained in `src/myosim/simulation/pybullet_backend.py`, `tests/integration/test_pybullet_backend.py`, and `docs/simulation.md`; current release-quality verification is recorded in `R2.4_CLOSURE_REPORT.md` and `artifacts/r2_4_verification/`.

@@ -30,6 +30,8 @@ def _json_output(capsys: pytest.CaptureFixture[str]) -> dict[str, object]:
 
 
 def test_doctor_and_list_backends_report_runtime_schema(capsys: pytest.CaptureFixture[str]) -> None:
+    pytest.importorskip("mujoco")
+    pytest.importorskip("pybullet")
     assert cli_main.main(["doctor", "--strict"]) == 0
     doctor = _json_output(capsys)
     assert doctor["package_version"] == __version__
@@ -46,6 +48,7 @@ def test_doctor_and_list_backends_report_runtime_schema(capsys: pytest.CaptureFi
 def test_validate_model_reports_backend_schema(
     backend: str, capsys: pytest.CaptureFixture[str]
 ) -> None:
+    pytest.importorskip(backend)
     assert cli_main.main(["validate-model", "--model", str(MODEL), "--backend", backend]) == 0
     payload = _json_output(capsys)
     assert payload["backend"] == backend
@@ -57,6 +60,7 @@ def test_validate_model_reports_backend_schema(
 def test_replay_run_task_benchmark_demo_and_report_write_expected_schema(
     tmp_path: Path, capsys: pytest.CaptureFixture[str]
 ) -> None:
+    pytest.importorskip("mujoco")
     demo_config = _config_copy(REPOSITORY_ROOT / "configs" / "demo.yaml", tmp_path)
     benchmark_config = _config_copy(REPOSITORY_ROOT / "configs" / "benchmarks.yaml", tmp_path)
     pick_config = _config_copy(REPOSITORY_ROOT / "configs" / "tasks" / "pick_place.yaml", tmp_path)
@@ -152,3 +156,13 @@ def test_cli_resolves_existing_working_directory_files_before_packaged_resources
 
     assert cli_main._resolve(Path("user-config.yaml")) == user_config
     assert cli_main._resolve(Path("configs/demo.yaml")) == REPOSITORY_ROOT / "configs" / "demo.yaml"
+
+
+def test_cli_help_does_not_require_physics_package(capsys) -> None:
+    from myosim.cli.main import main
+
+    with pytest.raises(SystemExit) as excinfo:
+        main(["--help"])
+    assert excinfo.value.code == 0
+    output = capsys.readouterr().out
+    assert "hardware-twin-benchmark" in output

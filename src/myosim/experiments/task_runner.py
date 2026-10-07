@@ -2,8 +2,10 @@
 
 from __future__ import annotations
 
-from collections.abc import Callable
+import json
+from collections.abc import Callable, Mapping
 from dataclasses import asdict, dataclass
+from hashlib import sha256
 from pathlib import Path
 from typing import Any
 
@@ -19,9 +21,17 @@ from myosim.experiments.provenance import (
     create_provenance,
     input_metadata,
 )
+from myosim.hardware_twin import (
+    ActuatorProfile,
+    FaultWindow,
+    HardwareTwinBackend,
+    default_hand_profiles,
+    trace_to_dict,
+)
 from myosim.intent.inference import IntentSource
 from myosim.metrics.control import ControlMetrics, compute_control_metrics
 from myosim.metrics.task import TaskMetrics, make_pick_place_metrics
+from myosim.simulation.base import PhysicsBackend
 from myosim.simulation.mujoco_backend import MujocoBackend
 from myosim.tasks.base import TaskStep, TaskTransition
 from myosim.tasks.pick_place import PickPlaceTask
@@ -37,6 +47,8 @@ class TaskRunResult:
     control_transitions: tuple[StateTransition, ...]
     task_transitions: tuple[TaskTransition, ...]
     invalid_state_detected: bool
+    hardware_twin: dict[str, Any] | None = None
+    hardware_twin_trace: tuple[dict[str, object], ...] | None = None
 
     def to_dict(self) -> dict[str, Any]:
         return {
@@ -46,29 +58,70 @@ class TaskRunResult:
             "control_transitions": [asdict(item) for item in self.control_transitions],
             "task_transitions": [asdict(item) for item in self.task_transitions],
             "invalid_state_detected": self.invalid_state_detected,
+            "hardware_twin": self.hardware_twin,
+            "hardware_twin_trace_file": (
+                "hardware_twin_trace.jsonl" if self.hardware_twin_trace is not None else None
+            ),
         }
 
 
 class PickPlaceExperimentRunner:
     """Run declared arm transport gated by decoded hand commands and replay events."""
 
-    def __init__(self, config: AppConfig, repository_root: Path) -> None:
+    def __init__(
+        self,
+        config: AppConfig,
+        repository_root: Path,
+        *,
+        hardware_twin_delay_s: float | None = None,
+        hardware_twin_faults: tuple[FaultWindow, ...] = (),
+        hardware_twin_profiles: Mapping[str, ActuatorProfile] | None = None,
+        hardware_twin_profile_source: str | None = None,
+        hardware_twin_profile_sha256: str | None = None,
+    ) -> None:
         if config.task.name != "pick_place":
             raise ValueError("PickPlaceExperimentRunner requires task.name='pick_place'")
+        if hardware_twin_delay_s is not None and hardware_twin_delay_s < 0:
+            raise ValueError("hardware_twin_delay_s must be non-negative")
         self._config = config
         self._repository_root = repository_root
+        self._hardware_twin_delay_s = hardware_twin_delay_s
+        self._hardware_twin_faults = tuple(hardware_twin_faults)
+        self._hardware_twin_profiles = (
+            dict(hardware_twin_profiles) if hardware_twin_profiles is not None else None
+        )
+        self._hardware_twin_profile_source = hardware_twin_profile_source
+        self._hardware_twin_profile_sha256 = hardware_twin_profile_sha256
 
     def run(
         self,
         source: IntentSource,
-        on_step: Callable[[MujocoBackend, IntentInput, ControlOutput, TaskStep], None]
+        on_step: Callable[[PhysicsBackend, IntentInput, ControlOutput, TaskStep], None]
         | None = None,
     ) -> TaskRunResult:
         events = tuple(source.events())
         if not events:
             raise ValueError("An experiment requires at least one intent event")
         model_path = (self._repository_root / self._config.simulation.model_path).resolve()
-        backend = MujocoBackend(timestep_s=self._config.simulation.timestep_s)
+        physics_backend = MujocoBackend(timestep_s=self._config.simulation.timestep_s)
+        backend: PhysicsBackend
+        hardware_twin_backend: HardwareTwinBackend | None = None
+        if self._hardware_twin_delay_s is None:
+            backend = physics_backend
+        else:
+            hardware_twin_backend = HardwareTwinBackend(
+                physics_backend,
+                profiles=(
+                    self._hardware_twin_profiles
+                    if self._hardware_twin_profiles is not None
+                    else default_hand_profiles()
+                ),
+                command_delay_s=self._hardware_twin_delay_s,
+                faults=self._hardware_twin_faults,
+                profile_source=self._hardware_twin_profile_source,
+                profile_sha256=self._hardware_twin_profile_sha256,
+            )
+            backend = hardware_twin_backend
         backend.load_model(model_path)
         backend.reset(seed=self._config.run.seed)
         controller = IntentController(self._config.control, backend.joint_names)
@@ -139,11 +192,35 @@ class PickPlaceExperimentRunner:
                 command_corrections=command_corrections,
             )
             intent_protocol_id, input_file_sha256 = input_metadata(events)
+            twin_spec = None
+            effective_config_hash = self._config.content_hash()
+            derived_run_id = events[0].run_id if hasattr(events[0], "run_id") else None
+            if hardware_twin_backend is not None:
+                twin_spec = {
+                    "model": hardware_twin_backend.model_spec["model_id"],
+                    "model_spec": hardware_twin_backend.model_spec,
+                    "command_delay_s": self._hardware_twin_delay_s,
+                }
+                twin_json = json.dumps(twin_spec, sort_keys=True, separators=(",", ":"))
+                effective_config_hash = sha256(
+                    f"{effective_config_hash}:{twin_json}".encode()
+                ).hexdigest()
+                if derived_run_id:
+                    suffix = sha256(twin_json.encode()).hexdigest()[:10]
+                    derived_run_id = f"{derived_run_id}-hw-{suffix}"
             provenance = create_provenance(
-                config_hash=self._config.content_hash(),
-                physics_backend=self._config.simulation.backend,
+                config_hash=effective_config_hash,
+                physics_backend=(
+                    f"{self._config.simulation.backend}+hardware_twin"
+                    if self._hardware_twin_delay_s is not None
+                    else self._config.simulation.backend
+                ),
                 model_path=model_path,
-                model_version="myosim-hand-task-mjcf-v1",
+                model_version=(
+                    "myosim-hand-task-mjcf-v1+hardware-twin-v1"
+                    if self._hardware_twin_delay_s is not None
+                    else "myosim-hand-task-mjcf-v1"
+                ),
                 intent_source=source.source_name,
                 seed=self._config.run.seed,
                 task="pick_place",
@@ -151,7 +228,54 @@ class PickPlaceExperimentRunner:
                 repository_root=self._repository_root,
                 intent_protocol_id=intent_protocol_id,
                 input_file_sha256=input_file_sha256,
+                run_id=derived_run_id,
             )
+            twin_evidence = None
+            if hardware_twin_backend is not None:
+                snapshot = hardware_twin_backend.snapshot
+                stats = hardware_twin_backend.stats
+                assert twin_spec is not None
+                trace = hardware_twin_backend.trace
+                profile_specs = hardware_twin_backend.model_spec["profiles"]
+                assert isinstance(profile_specs, dict)
+                per_joint_summary: dict[str, dict[str, object]] = {}
+                for joint_name in backend.joint_names:
+                    errors = [abs(sample.tracking_error[joint_name]) for sample in trace]
+                    rates = [abs(sample.actuator_rates_per_s[joint_name]) for sample in trace]
+                    profile_spec = profile_specs[joint_name]
+                    per_joint_summary[joint_name] = {
+                        "coordinate_unit": profile_spec["coordinate_unit"],
+                        "mean_abs_tracking_error": (
+                            float(sum(errors) / len(errors)) if errors else 0.0
+                        ),
+                        "max_abs_tracking_error": max(errors, default=0.0),
+                        "max_abs_coordinate_rate_per_s": max(rates, default=0.0),
+                    }
+                twin_evidence = {
+                    **twin_spec,
+                    "trace_summary": {
+                        "samples": len(trace),
+                        "per_joint": per_joint_summary,
+                        "units_note": (
+                            "Tracking error and rate are reported per joint because "
+                            "slide and hinge coordinates use different units."
+                        ),
+                    },
+                    "claim_boundary": (
+                        "software-only engineering abstraction; not a measured hardware model"
+                    ),
+                    "stats": {
+                        "accepted_commands": stats.accepted_commands,
+                        "dropped_commands": stats.dropped_commands,
+                        "applied_commands": stats.applied_commands,
+                        "emergency_stops": stats.emergency_stops,
+                        "fault_steps": stats.fault_steps,
+                        "command_dropout_steps": stats.command_dropout_steps,
+                        "actuator_stuck_steps": stats.actuator_stuck_steps,
+                    },
+                    "final_actuator_coordinates": dict(snapshot.actuator_coordinates),
+                    "active_faults_at_end": list(snapshot.active_faults),
+                }
             return TaskRunResult(
                 provenance=provenance,
                 control_metrics=compute_control_metrics(
@@ -161,6 +285,12 @@ class PickPlaceExperimentRunner:
                 control_transitions=controller.state_machine.transitions,
                 task_transitions=task.transitions,
                 invalid_state_detected=invalid_state_detected,
+                hardware_twin=twin_evidence,
+                hardware_twin_trace=(
+                    tuple(trace_to_dict(hardware_twin_backend.trace))
+                    if hardware_twin_backend is not None
+                    else None
+                ),
             )
         finally:
             backend.close()

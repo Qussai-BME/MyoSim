@@ -1,5 +1,9 @@
 from pathlib import Path
 
+import pytest
+
+pytest.importorskip("mujoco")
+
 from myosim.control.controllers import IntentController
 from myosim.core.config import load_config
 from myosim.core.types import IntentEvent, IntentLabel

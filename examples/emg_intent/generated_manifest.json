@@ -1,0 +1,5 @@
+{
+  "canonical_sha256": "eb591ed9693af5e762c211e11ef5bd5a1f57ad5a50ba02d2a63444fc5b9f7cb9",
+  "generator": "scripts/generate_r22_fixture.py",
+  "scenario_sha256": "b796bdf285f8b04dc38f8f459c0cdeef8a4ddfd3abbace41ba8d7eaa3bf49cfc"
+}

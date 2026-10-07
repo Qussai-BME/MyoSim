@@ -1,0 +1,42 @@
+{
+  "candidate_status": "ENGINEERING CANDIDATE — NOT PUBLIC RELEASE",
+  "candidate_upload_ready": true,
+  "date": "2026-10-06",
+  "tests": {
+    "passed": 207,
+    "failed": 0,
+    "skipped": 0,
+    "status": "PASS"
+  },
+  "coverage": {
+    "global_combined_percent": 93.13,
+    "global_threshold_percent": 90.0,
+    "global_policy": "PASS",
+    "statement_percent": 95.01,
+    "branch_percent": 86.61,
+    "substantive_module_minimum_percent": 85.71,
+    "module_policy": "PASS"
+  },
+  "optional_backends": {
+    "mujoco_3.15.0": "PASS",
+    "pybullet_3.2.7": "PASS"
+  },
+  "pybullet_importer_note": "Non-fatal MJCF warnings reported for light and freejoint fields; backend doctor and tests passed.",
+  "hardware_twin_core": "PASS",
+  "sensitivity_matrix": {
+    "scenarios": "5/5 successful",
+    "invalid_states": 0,
+    "fresh_run": "PASS",
+    "resume_integrity": "PASS"
+  },
+  "ruff_format": "PASS",
+  "ruff_check": "PASS",
+  "mypy": "PASS: 58 source files",
+  "compileall": "PASS",
+  "package_build_and_twine": "PASS",
+  "declared_dependency_audit": "PASS: no known vulnerabilities",
+  "cyclonedx_sbom": "PASS: 86 components, includes PyBullet",
+  "r2_3_verifiers": "PASS",
+  "r2_3_protected_files": "PASS: 52/52 unchanged",
+  "public_release": false
+}

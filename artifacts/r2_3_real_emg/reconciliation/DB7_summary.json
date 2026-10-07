@@ -1,0 +1,384 @@
+{
+  "dataset": "DB7",
+  "interpretation": "Prediction-stream integrity reconciliation. Historical aggregate values may differ when a distinct training-pool protocol variant was used.",
+  "max_abs_difference": 0.0,
+  "n_check": 0,
+  "n_pass": 22,
+  "n_subjects": 22,
+  "subjects": [
+    {
+      "diffs": {
+        "accuracy_abs_diff": 0.0,
+        "macro_f1_abs_diff": 0.0
+      },
+      "expected_from_export_audit": {
+        "accuracy": 0.21566861773975687,
+        "macro_f1": 0.16384401759234124
+      },
+      "recomputed_from_canonical_predictions": {
+        "accuracy": 0.21566861773975687,
+        "macro_f1": 0.16384401759234124
+      },
+      "source_audit_status": "PROTOCOL_CHANGE_TRAINING_POOL",
+      "status": "PASS",
+      "subject_id": 1
+    },
+    {
+      "diffs": {
+        "accuracy_abs_diff": 0.0,
+        "macro_f1_abs_diff": 0.0
+      },
+      "expected_from_export_audit": {
+        "accuracy": 0.2627442650807137,
+        "macro_f1": 0.24155157484207423
+      },
+      "recomputed_from_canonical_predictions": {
+        "accuracy": 0.2627442650807137,
+        "macro_f1": 0.24155157484207423
+      },
+      "source_audit_status": "PROTOCOL_CHANGE_TRAINING_POOL",
+      "status": "PASS",
+      "subject_id": 2
+    },
+    {
+      "diffs": {
+        "accuracy_abs_diff": 0.0,
+        "macro_f1_abs_diff": 0.0
+      },
+      "expected_from_export_audit": {
+        "accuracy": 0.2348780487804878,
+        "macro_f1": 0.20234372170574008
+      },
+      "recomputed_from_canonical_predictions": {
+        "accuracy": 0.2348780487804878,
+        "macro_f1": 0.20234372170574008
+      },
+      "source_audit_status": "PROTOCOL_CHANGE_TRAINING_POOL",
+      "status": "PASS",
+      "subject_id": 3
+    },
+    {
+      "diffs": {
+        "accuracy_abs_diff": 0.0,
+        "macro_f1_abs_diff": 0.0
+      },
+      "expected_from_export_audit": {
+        "accuracy": 0.1959406713505074,
+        "macro_f1": 0.18371699895055166
+      },
+      "recomputed_from_canonical_predictions": {
+        "accuracy": 0.1959406713505074,
+        "macro_f1": 0.18371699895055166
+      },
+      "source_audit_status": "PROTOCOL_CHANGE_TRAINING_POOL",
+      "status": "PASS",
+      "subject_id": 4
+    },
+    {
+      "diffs": {
+        "accuracy_abs_diff": 0.0,
+        "macro_f1_abs_diff": 0.0
+      },
+      "expected_from_export_audit": {
+        "accuracy": 0.23784059078176725,
+        "macro_f1": 0.21408316722043136
+      },
+      "recomputed_from_canonical_predictions": {
+        "accuracy": 0.23784059078176725,
+        "macro_f1": 0.21408316722043136
+      },
+      "source_audit_status": "PROTOCOL_CHANGE_TRAINING_POOL",
+      "status": "PASS",
+      "subject_id": 5
+    },
+    {
+      "diffs": {
+        "accuracy_abs_diff": 0.0,
+        "macro_f1_abs_diff": 0.0
+      },
+      "expected_from_export_audit": {
+        "accuracy": 0.1784323271665044,
+        "macro_f1": 0.15895009037486915
+      },
+      "recomputed_from_canonical_predictions": {
+        "accuracy": 0.1784323271665044,
+        "macro_f1": 0.15895009037486915
+      },
+      "source_audit_status": "PROTOCOL_CHANGE_TRAINING_POOL",
+      "status": "PASS",
+      "subject_id": 6
+    },
+    {
+      "diffs": {
+        "accuracy_abs_diff": 0.0,
+        "macro_f1_abs_diff": 0.0
+      },
+      "expected_from_export_audit": {
+        "accuracy": 0.23301781737193764,
+        "macro_f1": 0.1861983016176926
+      },
+      "recomputed_from_canonical_predictions": {
+        "accuracy": 0.23301781737193764,
+        "macro_f1": 0.1861983016176926
+      },
+      "source_audit_status": "PROTOCOL_CHANGE_TRAINING_POOL",
+      "status": "PASS",
+      "subject_id": 7
+    },
+    {
+      "diffs": {
+        "accuracy_abs_diff": 0.0,
+        "macro_f1_abs_diff": 0.0
+      },
+      "expected_from_export_audit": {
+        "accuracy": 0.3230623370466935,
+        "macro_f1": 0.29273255816339955
+      },
+      "recomputed_from_canonical_predictions": {
+        "accuracy": 0.3230623370466935,
+        "macro_f1": 0.29273255816339955
+      },
+      "source_audit_status": "PROTOCOL_CHANGE_TRAINING_POOL",
+      "status": "PASS",
+      "subject_id": 8
+    },
+    {
+      "diffs": {
+        "accuracy_abs_diff": 0.0,
+        "macro_f1_abs_diff": 0.0
+      },
+      "expected_from_export_audit": {
+        "accuracy": 0.23319779956948097,
+        "macro_f1": 0.19608879675659635
+      },
+      "recomputed_from_canonical_predictions": {
+        "accuracy": 0.23319779956948097,
+        "macro_f1": 0.19608879675659635
+      },
+      "source_audit_status": "PROTOCOL_CHANGE_TRAINING_POOL",
+      "status": "PASS",
+      "subject_id": 9
+    },
+    {
+      "diffs": {
+        "accuracy_abs_diff": 0.0,
+        "macro_f1_abs_diff": 0.0
+      },
+      "expected_from_export_audit": {
+        "accuracy": 0.239691343139619,
+        "macro_f1": 0.20909712871870045
+      },
+      "recomputed_from_canonical_predictions": {
+        "accuracy": 0.239691343139619,
+        "macro_f1": 0.20909712871870045
+      },
+      "source_audit_status": "PROTOCOL_CHANGE_TRAINING_POOL",
+      "status": "PASS",
+      "subject_id": 10
+    },
+    {
+      "diffs": {
+        "accuracy_abs_diff": 0.0,
+        "macro_f1_abs_diff": 0.0
+      },
+      "expected_from_export_audit": {
+        "accuracy": 0.19856602270464052,
+        "macro_f1": 0.1674685562308808
+      },
+      "recomputed_from_canonical_predictions": {
+        "accuracy": 0.19856602270464052,
+        "macro_f1": 0.1674685562308808
+      },
+      "source_audit_status": "PROTOCOL_CHANGE_TRAINING_POOL",
+      "status": "PASS",
+      "subject_id": 11
+    },
+    {
+      "diffs": {
+        "accuracy_abs_diff": 0.0,
+        "macro_f1_abs_diff": 0.0
+      },
+      "expected_from_export_audit": {
+        "accuracy": 0.16736401673640167,
+        "macro_f1": 0.14388051961712042
+      },
+      "recomputed_from_canonical_predictions": {
+        "accuracy": 0.16736401673640167,
+        "macro_f1": 0.14388051961712042
+      },
+      "source_audit_status": "PROTOCOL_CHANGE_TRAINING_POOL",
+      "status": "PASS",
+      "subject_id": 12
+    },
+    {
+      "diffs": {
+        "accuracy_abs_diff": 0.0,
+        "macro_f1_abs_diff": 0.0
+      },
+      "expected_from_export_audit": {
+        "accuracy": 0.1494798733604704,
+        "macro_f1": 0.13003149700248345
+      },
+      "recomputed_from_canonical_predictions": {
+        "accuracy": 0.1494798733604704,
+        "macro_f1": 0.13003149700248345
+      },
+      "source_audit_status": "PROTOCOL_CHANGE_TRAINING_POOL",
+      "status": "PASS",
+      "subject_id": 13
+    },
+    {
+      "diffs": {
+        "accuracy_abs_diff": 0.0,
+        "macro_f1_abs_diff": 0.0
+      },
+      "expected_from_export_audit": {
+        "accuracy": 0.20362950742399247,
+        "macro_f1": 0.14894234275359128
+      },
+      "recomputed_from_canonical_predictions": {
+        "accuracy": 0.20362950742399247,
+        "macro_f1": 0.14894234275359128
+      },
+      "source_audit_status": "PROTOCOL_CHANGE_TRAINING_POOL",
+      "status": "PASS",
+      "subject_id": 14
+    },
+    {
+      "diffs": {
+        "accuracy_abs_diff": 0.0,
+        "macro_f1_abs_diff": 0.0
+      },
+      "expected_from_export_audit": {
+        "accuracy": 0.24214285714285713,
+        "macro_f1": 0.20912973384537806
+      },
+      "recomputed_from_canonical_predictions": {
+        "accuracy": 0.24214285714285713,
+        "macro_f1": 0.20912973384537806
+      },
+      "source_audit_status": "PROTOCOL_CHANGE_TRAINING_POOL",
+      "status": "PASS",
+      "subject_id": 15
+    },
+    {
+      "diffs": {
+        "accuracy_abs_diff": 0.0,
+        "macro_f1_abs_diff": 0.0
+      },
+      "expected_from_export_audit": {
+        "accuracy": 0.2040332147093713,
+        "macro_f1": 0.16105558044366894
+      },
+      "recomputed_from_canonical_predictions": {
+        "accuracy": 0.2040332147093713,
+        "macro_f1": 0.16105558044366894
+      },
+      "source_audit_status": "PROTOCOL_CHANGE_TRAINING_POOL",
+      "status": "PASS",
+      "subject_id": 16
+    },
+    {
+      "diffs": {
+        "accuracy_abs_diff": 0.0,
+        "macro_f1_abs_diff": 0.0
+      },
+      "expected_from_export_audit": {
+        "accuracy": 0.23895292987512007,
+        "macro_f1": 0.2169466069345763
+      },
+      "recomputed_from_canonical_predictions": {
+        "accuracy": 0.23895292987512007,
+        "macro_f1": 0.2169466069345763
+      },
+      "source_audit_status": "PROTOCOL_CHANGE_TRAINING_POOL",
+      "status": "PASS",
+      "subject_id": 17
+    },
+    {
+      "diffs": {
+        "accuracy_abs_diff": 0.0,
+        "macro_f1_abs_diff": 0.0
+      },
+      "expected_from_export_audit": {
+        "accuracy": 0.16868614872891424,
+        "macro_f1": 0.11628766242844035
+      },
+      "recomputed_from_canonical_predictions": {
+        "accuracy": 0.16868614872891424,
+        "macro_f1": 0.11628766242844035
+      },
+      "source_audit_status": "PROTOCOL_CHANGE_TRAINING_POOL",
+      "status": "PASS",
+      "subject_id": 18
+    },
+    {
+      "diffs": {
+        "accuracy_abs_diff": 0.0,
+        "macro_f1_abs_diff": 0.0
+      },
+      "expected_from_export_audit": {
+        "accuracy": 0.3122012578616352,
+        "macro_f1": 0.2720490282062439
+      },
+      "recomputed_from_canonical_predictions": {
+        "accuracy": 0.3122012578616352,
+        "macro_f1": 0.2720490282062439
+      },
+      "source_audit_status": "PROTOCOL_CHANGE_TRAINING_POOL",
+      "status": "PASS",
+      "subject_id": 19
+    },
+    {
+      "diffs": {
+        "accuracy_abs_diff": 0.0,
+        "macro_f1_abs_diff": 0.0
+      },
+      "expected_from_export_audit": {
+        "accuracy": 0.1259351620947631,
+        "macro_f1": 0.07515265079055244
+      },
+      "recomputed_from_canonical_predictions": {
+        "accuracy": 0.1259351620947631,
+        "macro_f1": 0.07515265079055244
+      },
+      "source_audit_status": "PROTOCOL_CHANGE_TRAINING_POOL",
+      "status": "PASS",
+      "subject_id": 20
+    },
+    {
+      "diffs": {
+        "accuracy_abs_diff": 0.0,
+        "macro_f1_abs_diff": 0.0
+      },
+      "expected_from_export_audit": {
+        "accuracy": 0.054976303317535544,
+        "macro_f1": 0.01533173019550639
+      },
+      "recomputed_from_canonical_predictions": {
+        "accuracy": 0.054976303317535544,
+        "macro_f1": 0.01533173019550639
+      },
+      "source_audit_status": "PROTOCOL_CHANGE_TRAINING_POOL",
+      "status": "PASS",
+      "subject_id": 21
+    },
+    {
+      "diffs": {
+        "accuracy_abs_diff": 0.0,
+        "macro_f1_abs_diff": 0.0
+      },
+      "expected_from_export_audit": {
+        "accuracy": 0.06805514813728367,
+        "macro_f1": 0.04026408320935635
+      },
+      "recomputed_from_canonical_predictions": {
+        "accuracy": 0.06805514813728367,
+        "macro_f1": 0.04026408320935635
+      },
+      "source_audit_status": "PROTOCOL_CHANGE_TRAINING_POOL",
+      "status": "PASS",
+      "subject_id": 22
+    }
+  ]
+}

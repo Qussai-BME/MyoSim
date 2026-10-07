@@ -1,5 +1,9 @@
 from pathlib import Path
 
+import pytest
+
+pytest.importorskip("mujoco")
+
 from myosim.rendering.recorder import DebugOverlay, FrameRecorder
 from myosim.simulation.mujoco_backend import MujocoBackend
 

@@ -87,11 +87,14 @@ class CommandStateMachine:
         temporal = self._temporal.observe(event, confidence.accepted)
         transition: StateTransition | None = None
 
-        if event.label is IntentLabel.REST:
+        if event.label is IntentLabel.UNKNOWN:
+            transition = self._handle_rejected(event, confidence, temporal)
+        elif event.label is IntentLabel.REST:
             transition = self._handle_rest(event, confidence, temporal)
         elif not confidence.accepted:
             transition = self._handle_rejected(event, confidence, temporal)
         elif temporal.conflict and self._state is ControllerState.EXECUTING:
+            self._active_label = event.label
             transition = self._transition(
                 event.timestamp_s,
                 ControllerState.HOLD,

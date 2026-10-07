@@ -1,3 +1,7 @@
+import pytest
+
+pytest.importorskip("mujoco")
+
 import json
 from pathlib import Path
 

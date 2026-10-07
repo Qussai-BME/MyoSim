@@ -1,0 +1,7 @@
+{
+  "metrics_patch": {
+    "released_command_count": 4
+  },
+  "source": "archived successful ground-truth transition trace",
+  "status": "RECOMPUTED_FROM_TRACE"
+}

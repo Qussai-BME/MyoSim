@@ -91,3 +91,24 @@ def test_control_package_has_no_direct_mujoco_import() -> None:
     for source_path in (REPOSITORY_ROOT / "src" / "myosim" / "control").glob("*.py"):
         source = source_path.read_text(encoding="utf-8")
         assert "import mujoco" not in source
+
+
+def test_control_metrics_count_hold_recovery_as_command_release() -> None:
+    from myosim.metrics.control import compute_control_metrics
+    from myosim.core.types import StateTransition
+
+    events = [
+        IntentEvent(0.0, IntentLabel.PINCH, 0.95),
+        IntentEvent(0.1, IntentLabel.PINCH, 0.95),
+        IntentEvent(0.2, IntentLabel.PINCH, 0.95),
+        IntentEvent(0.3, IntentLabel.PINCH, 0.95),
+    ]
+    transitions = [
+        StateTransition(0.2, ControllerState.REST, ControllerState.CANDIDATE, "accepted_candidate_intent", Command.REST, {"active_label": "PINCH"}),
+        StateTransition(0.3, ControllerState.CANDIDATE, ControllerState.CONFIRMED, "confidence_and_temporal_requirements_met", Command.REST, {"active_label": "PINCH"}),
+        StateTransition(0.4, ControllerState.CONFIRMED, ControllerState.EXECUTING, "confirmed_command_released", Command.PINCH, {"active_label": "PINCH"}),
+        StateTransition(0.5, ControllerState.EXECUTING, ControllerState.HOLD, "conflicting_high_confidence_intent", Command.HOLD, {"active_label": "PINCH"}),
+        StateTransition(0.7, ControllerState.HOLD, ControllerState.EXECUTING, "hold_duration_elapsed_with_consistent_intent", Command.PINCH, {"active_label": "PINCH"}),
+    ]
+    metrics = compute_control_metrics(events, transitions)
+    assert metrics.released_command_count == 2

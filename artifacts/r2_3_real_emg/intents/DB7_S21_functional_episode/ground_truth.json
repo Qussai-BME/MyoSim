@@ -1,0 +1,5091 @@
+{
+  "artifact_sha256": "ba304eaeac2e13c7e630f6c6cfe7a31e8369b2663fe04c6cb6be49e51c31da3b",
+  "artifact_type": "ground_truth_intent_stream",
+  "dataset": "DB7",
+  "label_map_sha256": "4e7354771dd635a7d3385260ad3f3f5c758a2d55a0f4cad307355bf4f8c62c8f",
+  "label_map_version": "ninapro-db7-to-myosim-v1",
+  "modality": "sEMG",
+  "model_version": "canonical-minirocket-ridge-v1",
+  "predictions": [
+    {
+      "confidence": 1.0,
+      "predicted_label": "rest",
+      "repetition_id": 3,
+      "resolved_intent": "REST",
+      "source_label_index": 0,
+      "timestamp_s": 8.25,
+      "window_index": 82
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "rest",
+      "repetition_id": 3,
+      "resolved_intent": "REST",
+      "source_label_index": 0,
+      "timestamp_s": 8.35,
+      "window_index": 83
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "rest",
+      "repetition_id": 3,
+      "resolved_intent": "REST",
+      "source_label_index": 0,
+      "timestamp_s": 8.45,
+      "window_index": 84
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "rest",
+      "repetition_id": 3,
+      "resolved_intent": "REST",
+      "source_label_index": 0,
+      "timestamp_s": 8.55,
+      "window_index": 85
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "rest",
+      "repetition_id": 3,
+      "resolved_intent": "REST",
+      "source_label_index": 0,
+      "timestamp_s": 8.65,
+      "window_index": 86
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "rest",
+      "repetition_id": 3,
+      "resolved_intent": "REST",
+      "source_label_index": 0,
+      "timestamp_s": 8.75,
+      "window_index": 87
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "rest",
+      "repetition_id": 3,
+      "resolved_intent": "REST",
+      "source_label_index": 0,
+      "timestamp_s": 8.85,
+      "window_index": 88
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "rest",
+      "repetition_id": 3,
+      "resolved_intent": "REST",
+      "source_label_index": 0,
+      "timestamp_s": 8.95,
+      "window_index": 89
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "rest",
+      "repetition_id": 3,
+      "resolved_intent": "REST",
+      "source_label_index": 0,
+      "timestamp_s": 9.05,
+      "window_index": 90
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "rest",
+      "repetition_id": 3,
+      "resolved_intent": "REST",
+      "source_label_index": 0,
+      "timestamp_s": 9.15,
+      "window_index": 91
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "rest",
+      "repetition_id": 3,
+      "resolved_intent": "REST",
+      "source_label_index": 0,
+      "timestamp_s": 9.25,
+      "window_index": 92
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "rest",
+      "repetition_id": 3,
+      "resolved_intent": "REST",
+      "source_label_index": 0,
+      "timestamp_s": 9.35,
+      "window_index": 93
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "rest",
+      "repetition_id": 3,
+      "resolved_intent": "REST",
+      "source_label_index": 0,
+      "timestamp_s": 9.45,
+      "window_index": 94
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "rest",
+      "repetition_id": 3,
+      "resolved_intent": "REST",
+      "source_label_index": 0,
+      "timestamp_s": 9.55,
+      "window_index": 95
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "rest",
+      "repetition_id": 3,
+      "resolved_intent": "REST",
+      "source_label_index": 0,
+      "timestamp_s": 9.65,
+      "window_index": 96
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "rest",
+      "repetition_id": 3,
+      "resolved_intent": "REST",
+      "source_label_index": 0,
+      "timestamp_s": 9.75,
+      "window_index": 97
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "rest",
+      "repetition_id": 3,
+      "resolved_intent": "REST",
+      "source_label_index": 0,
+      "timestamp_s": 9.85,
+      "window_index": 98
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "rest",
+      "repetition_id": 3,
+      "resolved_intent": "REST",
+      "source_label_index": 0,
+      "timestamp_s": 9.95,
+      "window_index": 99
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "rest",
+      "repetition_id": 3,
+      "resolved_intent": "REST",
+      "source_label_index": 0,
+      "timestamp_s": 10.05,
+      "window_index": 100
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "rest",
+      "repetition_id": 3,
+      "resolved_intent": "REST",
+      "source_label_index": 0,
+      "timestamp_s": 10.15,
+      "window_index": 101
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "rest",
+      "repetition_id": 3,
+      "resolved_intent": "REST",
+      "source_label_index": 0,
+      "timestamp_s": 10.25,
+      "window_index": 102
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "rest",
+      "repetition_id": 3,
+      "resolved_intent": "REST",
+      "source_label_index": 0,
+      "timestamp_s": 10.35,
+      "window_index": 103
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "rest",
+      "repetition_id": 3,
+      "resolved_intent": "REST",
+      "source_label_index": 0,
+      "timestamp_s": 10.45,
+      "window_index": 104
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "rest",
+      "repetition_id": 3,
+      "resolved_intent": "REST",
+      "source_label_index": 0,
+      "timestamp_s": 10.55,
+      "window_index": 105
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "rest",
+      "repetition_id": 3,
+      "resolved_intent": "REST",
+      "source_label_index": 0,
+      "timestamp_s": 10.65,
+      "window_index": 106
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "rest",
+      "repetition_id": 3,
+      "resolved_intent": "REST",
+      "source_label_index": 0,
+      "timestamp_s": 10.75,
+      "window_index": 107
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "rest",
+      "repetition_id": 3,
+      "resolved_intent": "REST",
+      "source_label_index": 0,
+      "timestamp_s": 10.85,
+      "window_index": 108
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "rest",
+      "repetition_id": 3,
+      "resolved_intent": "REST",
+      "source_label_index": 0,
+      "timestamp_s": 10.95,
+      "window_index": 109
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "rest",
+      "repetition_id": 3,
+      "resolved_intent": "REST",
+      "source_label_index": 0,
+      "timestamp_s": 11.05,
+      "window_index": 110
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "rest",
+      "repetition_id": 3,
+      "resolved_intent": "REST",
+      "source_label_index": 0,
+      "timestamp_s": 11.15,
+      "window_index": 111
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "rest",
+      "repetition_id": 3,
+      "resolved_intent": "REST",
+      "source_label_index": 0,
+      "timestamp_s": 11.25,
+      "window_index": 112
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "rest",
+      "repetition_id": 3,
+      "resolved_intent": "REST",
+      "source_label_index": 0,
+      "timestamp_s": 11.35,
+      "window_index": 113
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "rest",
+      "repetition_id": 3,
+      "resolved_intent": "REST",
+      "source_label_index": 0,
+      "timestamp_s": 11.45,
+      "window_index": 114
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "rest",
+      "repetition_id": 3,
+      "resolved_intent": "REST",
+      "source_label_index": 0,
+      "timestamp_s": 11.55,
+      "window_index": 115
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "rest",
+      "repetition_id": 3,
+      "resolved_intent": "REST",
+      "source_label_index": 0,
+      "timestamp_s": 11.65,
+      "window_index": 116
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "rest",
+      "repetition_id": 3,
+      "resolved_intent": "REST",
+      "source_label_index": 0,
+      "timestamp_s": 11.75,
+      "window_index": 117
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "rest",
+      "repetition_id": 3,
+      "resolved_intent": "REST",
+      "source_label_index": 0,
+      "timestamp_s": 11.85,
+      "window_index": 118
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "rest",
+      "repetition_id": 3,
+      "resolved_intent": "REST",
+      "source_label_index": 0,
+      "timestamp_s": 11.95,
+      "window_index": 119
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "rest",
+      "repetition_id": 3,
+      "resolved_intent": "REST",
+      "source_label_index": 0,
+      "timestamp_s": 12.05,
+      "window_index": 120
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "rest",
+      "repetition_id": 3,
+      "resolved_intent": "REST",
+      "source_label_index": 0,
+      "timestamp_s": 12.15,
+      "window_index": 121
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "rest",
+      "repetition_id": 3,
+      "resolved_intent": "REST",
+      "source_label_index": 0,
+      "timestamp_s": 12.25,
+      "window_index": 122
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "rest",
+      "repetition_id": 3,
+      "resolved_intent": "REST",
+      "source_label_index": 0,
+      "timestamp_s": 12.35,
+      "window_index": 123
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "rest",
+      "repetition_id": 3,
+      "resolved_intent": "REST",
+      "source_label_index": 0,
+      "timestamp_s": 12.45,
+      "window_index": 124
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "rest",
+      "repetition_id": 3,
+      "resolved_intent": "REST",
+      "source_label_index": 0,
+      "timestamp_s": 12.55,
+      "window_index": 125
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "rest",
+      "repetition_id": 3,
+      "resolved_intent": "REST",
+      "source_label_index": 0,
+      "timestamp_s": 12.65,
+      "window_index": 126
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "rest",
+      "repetition_id": 3,
+      "resolved_intent": "REST",
+      "source_label_index": 0,
+      "timestamp_s": 12.75,
+      "window_index": 127
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "rest",
+      "repetition_id": 3,
+      "resolved_intent": "REST",
+      "source_label_index": 0,
+      "timestamp_s": 12.85,
+      "window_index": 128
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "rest",
+      "repetition_id": 3,
+      "resolved_intent": "REST",
+      "source_label_index": 0,
+      "timestamp_s": 12.95,
+      "window_index": 129
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "rest",
+      "repetition_id": 3,
+      "resolved_intent": "REST",
+      "source_label_index": 0,
+      "timestamp_s": 13.05,
+      "window_index": 130
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "rest",
+      "repetition_id": 3,
+      "resolved_intent": "REST",
+      "source_label_index": 0,
+      "timestamp_s": 13.15,
+      "window_index": 131
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "rest",
+      "repetition_id": 4,
+      "resolved_intent": "REST",
+      "source_label_index": 0,
+      "timestamp_s": 13.25,
+      "window_index": 132
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "rest",
+      "repetition_id": 4,
+      "resolved_intent": "REST",
+      "source_label_index": 0,
+      "timestamp_s": 13.35,
+      "window_index": 133
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "rest",
+      "repetition_id": 4,
+      "resolved_intent": "REST",
+      "source_label_index": 0,
+      "timestamp_s": 13.45,
+      "window_index": 134
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "rest",
+      "repetition_id": 4,
+      "resolved_intent": "REST",
+      "source_label_index": 0,
+      "timestamp_s": 13.55,
+      "window_index": 135
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "rest",
+      "repetition_id": 4,
+      "resolved_intent": "REST",
+      "source_label_index": 0,
+      "timestamp_s": 13.65,
+      "window_index": 136
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "rest",
+      "repetition_id": 4,
+      "resolved_intent": "REST",
+      "source_label_index": 0,
+      "timestamp_s": 13.75,
+      "window_index": 137
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "rest",
+      "repetition_id": 4,
+      "resolved_intent": "REST",
+      "source_label_index": 0,
+      "timestamp_s": 13.85,
+      "window_index": 138
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "rest",
+      "repetition_id": 4,
+      "resolved_intent": "REST",
+      "source_label_index": 0,
+      "timestamp_s": 13.95,
+      "window_index": 139
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "rest",
+      "repetition_id": 4,
+      "resolved_intent": "REST",
+      "source_label_index": 0,
+      "timestamp_s": 14.05,
+      "window_index": 140
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "rest",
+      "repetition_id": 4,
+      "resolved_intent": "REST",
+      "source_label_index": 0,
+      "timestamp_s": 14.15,
+      "window_index": 141
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "rest",
+      "repetition_id": 4,
+      "resolved_intent": "REST",
+      "source_label_index": 0,
+      "timestamp_s": 14.25,
+      "window_index": 142
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "rest",
+      "repetition_id": 4,
+      "resolved_intent": "REST",
+      "source_label_index": 0,
+      "timestamp_s": 14.35,
+      "window_index": 143
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "rest",
+      "repetition_id": 4,
+      "resolved_intent": "REST",
+      "source_label_index": 0,
+      "timestamp_s": 14.45,
+      "window_index": 144
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "rest",
+      "repetition_id": 4,
+      "resolved_intent": "REST",
+      "source_label_index": 0,
+      "timestamp_s": 14.55,
+      "window_index": 145
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "rest",
+      "repetition_id": 4,
+      "resolved_intent": "REST",
+      "source_label_index": 0,
+      "timestamp_s": 14.65,
+      "window_index": 146
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "rest",
+      "repetition_id": 4,
+      "resolved_intent": "REST",
+      "source_label_index": 0,
+      "timestamp_s": 14.75,
+      "window_index": 147
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "rest",
+      "repetition_id": 4,
+      "resolved_intent": "REST",
+      "source_label_index": 0,
+      "timestamp_s": 14.85,
+      "window_index": 148
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "rest",
+      "repetition_id": 4,
+      "resolved_intent": "REST",
+      "source_label_index": 0,
+      "timestamp_s": 14.95,
+      "window_index": 149
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "rest",
+      "repetition_id": 4,
+      "resolved_intent": "REST",
+      "source_label_index": 0,
+      "timestamp_s": 15.05,
+      "window_index": 150
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "rest",
+      "repetition_id": 4,
+      "resolved_intent": "REST",
+      "source_label_index": 0,
+      "timestamp_s": 15.15,
+      "window_index": 151
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "rest",
+      "repetition_id": 4,
+      "resolved_intent": "REST",
+      "source_label_index": 0,
+      "timestamp_s": 15.25,
+      "window_index": 152
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "rest",
+      "repetition_id": 4,
+      "resolved_intent": "REST",
+      "source_label_index": 0,
+      "timestamp_s": 15.35,
+      "window_index": 153
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "rest",
+      "repetition_id": 4,
+      "resolved_intent": "REST",
+      "source_label_index": 0,
+      "timestamp_s": 15.45,
+      "window_index": 154
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "rest",
+      "repetition_id": 4,
+      "resolved_intent": "REST",
+      "source_label_index": 0,
+      "timestamp_s": 15.55,
+      "window_index": 155
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "rest",
+      "repetition_id": 4,
+      "resolved_intent": "REST",
+      "source_label_index": 0,
+      "timestamp_s": 15.65,
+      "window_index": 156
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "rest",
+      "repetition_id": 4,
+      "resolved_intent": "REST",
+      "source_label_index": 0,
+      "timestamp_s": 15.75,
+      "window_index": 157
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "rest",
+      "repetition_id": 4,
+      "resolved_intent": "REST",
+      "source_label_index": 0,
+      "timestamp_s": 15.85,
+      "window_index": 158
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "rest",
+      "repetition_id": 4,
+      "resolved_intent": "REST",
+      "source_label_index": 0,
+      "timestamp_s": 15.95,
+      "window_index": 159
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "rest",
+      "repetition_id": 4,
+      "resolved_intent": "REST",
+      "source_label_index": 0,
+      "timestamp_s": 16.05,
+      "window_index": 160
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "rest",
+      "repetition_id": 4,
+      "resolved_intent": "REST",
+      "source_label_index": 0,
+      "timestamp_s": 16.15,
+      "window_index": 161
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "rest",
+      "repetition_id": 4,
+      "resolved_intent": "REST",
+      "source_label_index": 0,
+      "timestamp_s": 16.25,
+      "window_index": 162
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "rest",
+      "repetition_id": 4,
+      "resolved_intent": "REST",
+      "source_label_index": 0,
+      "timestamp_s": 16.35,
+      "window_index": 163
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "rest",
+      "repetition_id": 4,
+      "resolved_intent": "REST",
+      "source_label_index": 0,
+      "timestamp_s": 16.45,
+      "window_index": 164
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "rest",
+      "repetition_id": 4,
+      "resolved_intent": "REST",
+      "source_label_index": 0,
+      "timestamp_s": 16.55,
+      "window_index": 165
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "rest",
+      "repetition_id": 4,
+      "resolved_intent": "REST",
+      "source_label_index": 0,
+      "timestamp_s": 16.65,
+      "window_index": 166
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "rest",
+      "repetition_id": 4,
+      "resolved_intent": "REST",
+      "source_label_index": 0,
+      "timestamp_s": 16.75,
+      "window_index": 167
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "rest",
+      "repetition_id": 4,
+      "resolved_intent": "REST",
+      "source_label_index": 0,
+      "timestamp_s": 16.85,
+      "window_index": 168
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "rest",
+      "repetition_id": 4,
+      "resolved_intent": "REST",
+      "source_label_index": 0,
+      "timestamp_s": 16.95,
+      "window_index": 169
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "rest",
+      "repetition_id": 4,
+      "resolved_intent": "REST",
+      "source_label_index": 0,
+      "timestamp_s": 17.05,
+      "window_index": 170
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "rest",
+      "repetition_id": 4,
+      "resolved_intent": "REST",
+      "source_label_index": 0,
+      "timestamp_s": 17.15,
+      "window_index": 171
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "rest",
+      "repetition_id": 4,
+      "resolved_intent": "REST",
+      "source_label_index": 0,
+      "timestamp_s": 17.25,
+      "window_index": 172
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "rest",
+      "repetition_id": 4,
+      "resolved_intent": "REST",
+      "source_label_index": 0,
+      "timestamp_s": 17.35,
+      "window_index": 173
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "rest",
+      "repetition_id": 4,
+      "resolved_intent": "REST",
+      "source_label_index": 0,
+      "timestamp_s": 17.45,
+      "window_index": 174
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "rest",
+      "repetition_id": 4,
+      "resolved_intent": "REST",
+      "source_label_index": 0,
+      "timestamp_s": 17.55,
+      "window_index": 175
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "rest",
+      "repetition_id": 4,
+      "resolved_intent": "REST",
+      "source_label_index": 0,
+      "timestamp_s": 17.65,
+      "window_index": 176
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "rest",
+      "repetition_id": 4,
+      "resolved_intent": "REST",
+      "source_label_index": 0,
+      "timestamp_s": 17.75,
+      "window_index": 177
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "rest",
+      "repetition_id": 4,
+      "resolved_intent": "REST",
+      "source_label_index": 0,
+      "timestamp_s": 17.85,
+      "window_index": 178
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "rest",
+      "repetition_id": 4,
+      "resolved_intent": "REST",
+      "source_label_index": 0,
+      "timestamp_s": 17.95,
+      "window_index": 179
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "rest",
+      "repetition_id": 4,
+      "resolved_intent": "REST",
+      "source_label_index": 0,
+      "timestamp_s": 18.05,
+      "window_index": 180
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "rest",
+      "repetition_id": 4,
+      "resolved_intent": "REST",
+      "source_label_index": 0,
+      "timestamp_s": 18.15,
+      "window_index": 181
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "rest",
+      "repetition_id": 4,
+      "resolved_intent": "REST",
+      "source_label_index": 0,
+      "timestamp_s": 18.25,
+      "window_index": 182
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "rest",
+      "repetition_id": 4,
+      "resolved_intent": "REST",
+      "source_label_index": 0,
+      "timestamp_s": 18.35,
+      "window_index": 183
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "rest",
+      "repetition_id": 4,
+      "resolved_intent": "REST",
+      "source_label_index": 0,
+      "timestamp_s": 18.45,
+      "window_index": 184
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "rest",
+      "repetition_id": 4,
+      "resolved_intent": "REST",
+      "source_label_index": 0,
+      "timestamp_s": 18.55,
+      "window_index": 185
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "rest",
+      "repetition_id": 6,
+      "resolved_intent": "REST",
+      "source_label_index": 0,
+      "timestamp_s": 23.65,
+      "window_index": 236
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "rest",
+      "repetition_id": 6,
+      "resolved_intent": "REST",
+      "source_label_index": 0,
+      "timestamp_s": 23.75,
+      "window_index": 237
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "rest",
+      "repetition_id": 6,
+      "resolved_intent": "REST",
+      "source_label_index": 0,
+      "timestamp_s": 23.85,
+      "window_index": 238
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "rest",
+      "repetition_id": 6,
+      "resolved_intent": "REST",
+      "source_label_index": 0,
+      "timestamp_s": 23.95,
+      "window_index": 239
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "rest",
+      "repetition_id": 6,
+      "resolved_intent": "REST",
+      "source_label_index": 0,
+      "timestamp_s": 24.05,
+      "window_index": 240
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "rest",
+      "repetition_id": 6,
+      "resolved_intent": "REST",
+      "source_label_index": 0,
+      "timestamp_s": 24.15,
+      "window_index": 241
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "rest",
+      "repetition_id": 6,
+      "resolved_intent": "REST",
+      "source_label_index": 0,
+      "timestamp_s": 24.25,
+      "window_index": 242
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "rest",
+      "repetition_id": 6,
+      "resolved_intent": "REST",
+      "source_label_index": 0,
+      "timestamp_s": 24.35,
+      "window_index": 243
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "rest",
+      "repetition_id": 6,
+      "resolved_intent": "REST",
+      "source_label_index": 0,
+      "timestamp_s": 24.45,
+      "window_index": 244
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "rest",
+      "repetition_id": 6,
+      "resolved_intent": "REST",
+      "source_label_index": 0,
+      "timestamp_s": 24.55,
+      "window_index": 245
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "rest",
+      "repetition_id": 6,
+      "resolved_intent": "REST",
+      "source_label_index": 0,
+      "timestamp_s": 24.65,
+      "window_index": 246
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "rest",
+      "repetition_id": 6,
+      "resolved_intent": "REST",
+      "source_label_index": 0,
+      "timestamp_s": 24.75,
+      "window_index": 247
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "rest",
+      "repetition_id": 6,
+      "resolved_intent": "REST",
+      "source_label_index": 0,
+      "timestamp_s": 24.85,
+      "window_index": 248
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "rest",
+      "repetition_id": 6,
+      "resolved_intent": "REST",
+      "source_label_index": 0,
+      "timestamp_s": 24.95,
+      "window_index": 249
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "rest",
+      "repetition_id": 6,
+      "resolved_intent": "REST",
+      "source_label_index": 0,
+      "timestamp_s": 25.05,
+      "window_index": 250
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "rest",
+      "repetition_id": 6,
+      "resolved_intent": "REST",
+      "source_label_index": 0,
+      "timestamp_s": 25.15,
+      "window_index": 251
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "rest",
+      "repetition_id": 6,
+      "resolved_intent": "REST",
+      "source_label_index": 0,
+      "timestamp_s": 25.25,
+      "window_index": 252
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "rest",
+      "repetition_id": 6,
+      "resolved_intent": "REST",
+      "source_label_index": 0,
+      "timestamp_s": 25.35,
+      "window_index": 253
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "rest",
+      "repetition_id": 6,
+      "resolved_intent": "REST",
+      "source_label_index": 0,
+      "timestamp_s": 25.45,
+      "window_index": 254
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "rest",
+      "repetition_id": 6,
+      "resolved_intent": "REST",
+      "source_label_index": 0,
+      "timestamp_s": 25.55,
+      "window_index": 255
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "rest",
+      "repetition_id": 6,
+      "resolved_intent": "REST",
+      "source_label_index": 0,
+      "timestamp_s": 25.65,
+      "window_index": 256
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "rest",
+      "repetition_id": 6,
+      "resolved_intent": "REST",
+      "source_label_index": 0,
+      "timestamp_s": 25.75,
+      "window_index": 257
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "rest",
+      "repetition_id": 6,
+      "resolved_intent": "REST",
+      "source_label_index": 0,
+      "timestamp_s": 25.85,
+      "window_index": 258
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "rest",
+      "repetition_id": 6,
+      "resolved_intent": "REST",
+      "source_label_index": 0,
+      "timestamp_s": 25.95,
+      "window_index": 259
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "rest",
+      "repetition_id": 6,
+      "resolved_intent": "REST",
+      "source_label_index": 0,
+      "timestamp_s": 26.05,
+      "window_index": 260
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "rest",
+      "repetition_id": 6,
+      "resolved_intent": "REST",
+      "source_label_index": 0,
+      "timestamp_s": 26.15,
+      "window_index": 261
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "rest",
+      "repetition_id": 6,
+      "resolved_intent": "REST",
+      "source_label_index": 0,
+      "timestamp_s": 26.25,
+      "window_index": 262
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "rest",
+      "repetition_id": 6,
+      "resolved_intent": "REST",
+      "source_label_index": 0,
+      "timestamp_s": 26.35,
+      "window_index": 263
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "rest",
+      "repetition_id": 6,
+      "resolved_intent": "REST",
+      "source_label_index": 0,
+      "timestamp_s": 26.45,
+      "window_index": 264
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "rest",
+      "repetition_id": 6,
+      "resolved_intent": "REST",
+      "source_label_index": 0,
+      "timestamp_s": 26.55,
+      "window_index": 265
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "rest",
+      "repetition_id": 6,
+      "resolved_intent": "REST",
+      "source_label_index": 0,
+      "timestamp_s": 26.65,
+      "window_index": 266
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "rest",
+      "repetition_id": 6,
+      "resolved_intent": "REST",
+      "source_label_index": 0,
+      "timestamp_s": 26.75,
+      "window_index": 267
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "rest",
+      "repetition_id": 6,
+      "resolved_intent": "REST",
+      "source_label_index": 0,
+      "timestamp_s": 26.85,
+      "window_index": 268
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "rest",
+      "repetition_id": 6,
+      "resolved_intent": "REST",
+      "source_label_index": 0,
+      "timestamp_s": 26.95,
+      "window_index": 269
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "rest",
+      "repetition_id": 6,
+      "resolved_intent": "REST",
+      "source_label_index": 0,
+      "timestamp_s": 27.05,
+      "window_index": 270
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "rest",
+      "repetition_id": 6,
+      "resolved_intent": "REST",
+      "source_label_index": 0,
+      "timestamp_s": 27.15,
+      "window_index": 271
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "rest",
+      "repetition_id": 6,
+      "resolved_intent": "REST",
+      "source_label_index": 0,
+      "timestamp_s": 27.25,
+      "window_index": 272
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "rest",
+      "repetition_id": 6,
+      "resolved_intent": "REST",
+      "source_label_index": 0,
+      "timestamp_s": 27.35,
+      "window_index": 273
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "rest",
+      "repetition_id": 6,
+      "resolved_intent": "REST",
+      "source_label_index": 0,
+      "timestamp_s": 27.45,
+      "window_index": 274
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "rest",
+      "repetition_id": 6,
+      "resolved_intent": "REST",
+      "source_label_index": 0,
+      "timestamp_s": 27.55,
+      "window_index": 275
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "rest",
+      "repetition_id": 6,
+      "resolved_intent": "REST",
+      "source_label_index": 0,
+      "timestamp_s": 27.65,
+      "window_index": 276
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "rest",
+      "repetition_id": 6,
+      "resolved_intent": "REST",
+      "source_label_index": 0,
+      "timestamp_s": 27.75,
+      "window_index": 277
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "rest",
+      "repetition_id": 6,
+      "resolved_intent": "REST",
+      "source_label_index": 0,
+      "timestamp_s": 27.85,
+      "window_index": 278
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "rest",
+      "repetition_id": 6,
+      "resolved_intent": "REST",
+      "source_label_index": 0,
+      "timestamp_s": 27.95,
+      "window_index": 279
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Thumb up",
+      "repetition_id": 1,
+      "resolved_intent": "OPEN",
+      "source_label_index": 1,
+      "timestamp_s": 28.05,
+      "window_index": 280
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Thumb up",
+      "repetition_id": 1,
+      "resolved_intent": "OPEN",
+      "source_label_index": 1,
+      "timestamp_s": 28.15,
+      "window_index": 281
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Thumb up",
+      "repetition_id": 1,
+      "resolved_intent": "OPEN",
+      "source_label_index": 1,
+      "timestamp_s": 28.25,
+      "window_index": 282
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Thumb up",
+      "repetition_id": 1,
+      "resolved_intent": "OPEN",
+      "source_label_index": 1,
+      "timestamp_s": 28.35,
+      "window_index": 283
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Thumb up",
+      "repetition_id": 1,
+      "resolved_intent": "OPEN",
+      "source_label_index": 1,
+      "timestamp_s": 28.45,
+      "window_index": 284
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Thumb up",
+      "repetition_id": 1,
+      "resolved_intent": "OPEN",
+      "source_label_index": 1,
+      "timestamp_s": 28.55,
+      "window_index": 285
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Thumb up",
+      "repetition_id": 1,
+      "resolved_intent": "OPEN",
+      "source_label_index": 1,
+      "timestamp_s": 28.65,
+      "window_index": 286
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Thumb up",
+      "repetition_id": 1,
+      "resolved_intent": "OPEN",
+      "source_label_index": 1,
+      "timestamp_s": 28.75,
+      "window_index": 287
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Thumb up",
+      "repetition_id": 1,
+      "resolved_intent": "OPEN",
+      "source_label_index": 1,
+      "timestamp_s": 28.85,
+      "window_index": 288
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Thumb up",
+      "repetition_id": 1,
+      "resolved_intent": "OPEN",
+      "source_label_index": 1,
+      "timestamp_s": 28.95,
+      "window_index": 289
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Thumb up",
+      "repetition_id": 1,
+      "resolved_intent": "OPEN",
+      "source_label_index": 1,
+      "timestamp_s": 29.05,
+      "window_index": 290
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Thumb up",
+      "repetition_id": 1,
+      "resolved_intent": "OPEN",
+      "source_label_index": 1,
+      "timestamp_s": 29.15,
+      "window_index": 291
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Thumb up",
+      "repetition_id": 1,
+      "resolved_intent": "OPEN",
+      "source_label_index": 1,
+      "timestamp_s": 29.25,
+      "window_index": 292
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Thumb up",
+      "repetition_id": 1,
+      "resolved_intent": "OPEN",
+      "source_label_index": 1,
+      "timestamp_s": 29.35,
+      "window_index": 293
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Thumb up",
+      "repetition_id": 1,
+      "resolved_intent": "OPEN",
+      "source_label_index": 1,
+      "timestamp_s": 29.45,
+      "window_index": 294
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Thumb up",
+      "repetition_id": 1,
+      "resolved_intent": "OPEN",
+      "source_label_index": 1,
+      "timestamp_s": 29.55,
+      "window_index": 295
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Thumb up",
+      "repetition_id": 1,
+      "resolved_intent": "OPEN",
+      "source_label_index": 1,
+      "timestamp_s": 29.65,
+      "window_index": 296
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Thumb up",
+      "repetition_id": 1,
+      "resolved_intent": "OPEN",
+      "source_label_index": 1,
+      "timestamp_s": 29.75,
+      "window_index": 297
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Thumb up",
+      "repetition_id": 1,
+      "resolved_intent": "OPEN",
+      "source_label_index": 1,
+      "timestamp_s": 29.85,
+      "window_index": 298
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Thumb up",
+      "repetition_id": 1,
+      "resolved_intent": "OPEN",
+      "source_label_index": 1,
+      "timestamp_s": 29.95,
+      "window_index": 299
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Thumb up",
+      "repetition_id": 1,
+      "resolved_intent": "OPEN",
+      "source_label_index": 1,
+      "timestamp_s": 30.05,
+      "window_index": 300
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Thumb up",
+      "repetition_id": 1,
+      "resolved_intent": "OPEN",
+      "source_label_index": 1,
+      "timestamp_s": 30.15,
+      "window_index": 301
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Thumb up",
+      "repetition_id": 1,
+      "resolved_intent": "OPEN",
+      "source_label_index": 1,
+      "timestamp_s": 30.25,
+      "window_index": 302
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Thumb up",
+      "repetition_id": 1,
+      "resolved_intent": "OPEN",
+      "source_label_index": 1,
+      "timestamp_s": 30.35,
+      "window_index": 303
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Thumb up",
+      "repetition_id": 1,
+      "resolved_intent": "OPEN",
+      "source_label_index": 1,
+      "timestamp_s": 30.45,
+      "window_index": 304
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Thumb up",
+      "repetition_id": 1,
+      "resolved_intent": "OPEN",
+      "source_label_index": 1,
+      "timestamp_s": 30.55,
+      "window_index": 305
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Thumb up",
+      "repetition_id": 1,
+      "resolved_intent": "OPEN",
+      "source_label_index": 1,
+      "timestamp_s": 30.65,
+      "window_index": 306
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Thumb up",
+      "repetition_id": 1,
+      "resolved_intent": "OPEN",
+      "source_label_index": 1,
+      "timestamp_s": 30.75,
+      "window_index": 307
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Thumb up",
+      "repetition_id": 1,
+      "resolved_intent": "OPEN",
+      "source_label_index": 1,
+      "timestamp_s": 30.85,
+      "window_index": 308
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Thumb up",
+      "repetition_id": 1,
+      "resolved_intent": "OPEN",
+      "source_label_index": 1,
+      "timestamp_s": 30.95,
+      "window_index": 309
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Thumb up",
+      "repetition_id": 1,
+      "resolved_intent": "OPEN",
+      "source_label_index": 1,
+      "timestamp_s": 31.05,
+      "window_index": 310
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Thumb up",
+      "repetition_id": 1,
+      "resolved_intent": "OPEN",
+      "source_label_index": 1,
+      "timestamp_s": 31.15,
+      "window_index": 311
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Thumb up",
+      "repetition_id": 1,
+      "resolved_intent": "OPEN",
+      "source_label_index": 1,
+      "timestamp_s": 31.25,
+      "window_index": 312
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Thumb up",
+      "repetition_id": 1,
+      "resolved_intent": "OPEN",
+      "source_label_index": 1,
+      "timestamp_s": 31.35,
+      "window_index": 313
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Thumb up",
+      "repetition_id": 1,
+      "resolved_intent": "OPEN",
+      "source_label_index": 1,
+      "timestamp_s": 31.45,
+      "window_index": 314
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Thumb up",
+      "repetition_id": 1,
+      "resolved_intent": "OPEN",
+      "source_label_index": 1,
+      "timestamp_s": 31.55,
+      "window_index": 315
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Thumb up",
+      "repetition_id": 1,
+      "resolved_intent": "OPEN",
+      "source_label_index": 1,
+      "timestamp_s": 31.65,
+      "window_index": 316
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Thumb up",
+      "repetition_id": 1,
+      "resolved_intent": "OPEN",
+      "source_label_index": 1,
+      "timestamp_s": 31.75,
+      "window_index": 317
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Thumb up",
+      "repetition_id": 1,
+      "resolved_intent": "OPEN",
+      "source_label_index": 1,
+      "timestamp_s": 31.85,
+      "window_index": 318
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Thumb up",
+      "repetition_id": 1,
+      "resolved_intent": "OPEN",
+      "source_label_index": 1,
+      "timestamp_s": 31.95,
+      "window_index": 319
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Thumb up",
+      "repetition_id": 1,
+      "resolved_intent": "OPEN",
+      "source_label_index": 1,
+      "timestamp_s": 32.05,
+      "window_index": 320
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Thumb up",
+      "repetition_id": 1,
+      "resolved_intent": "OPEN",
+      "source_label_index": 1,
+      "timestamp_s": 32.15,
+      "window_index": 321
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Thumb up",
+      "repetition_id": 1,
+      "resolved_intent": "OPEN",
+      "source_label_index": 1,
+      "timestamp_s": 32.25,
+      "window_index": 322
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Thumb up",
+      "repetition_id": 1,
+      "resolved_intent": "OPEN",
+      "source_label_index": 1,
+      "timestamp_s": 32.35,
+      "window_index": 323
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Thumb up",
+      "repetition_id": 1,
+      "resolved_intent": "OPEN",
+      "source_label_index": 1,
+      "timestamp_s": 32.45,
+      "window_index": 324
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Thumb up",
+      "repetition_id": 1,
+      "resolved_intent": "OPEN",
+      "source_label_index": 1,
+      "timestamp_s": 32.55,
+      "window_index": 325
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Thumb up",
+      "repetition_id": 1,
+      "resolved_intent": "OPEN",
+      "source_label_index": 1,
+      "timestamp_s": 32.65,
+      "window_index": 326
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Thumb up",
+      "repetition_id": 1,
+      "resolved_intent": "OPEN",
+      "source_label_index": 1,
+      "timestamp_s": 32.75,
+      "window_index": 327
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Thumb up",
+      "repetition_id": 4,
+      "resolved_intent": "OPEN",
+      "source_label_index": 1,
+      "timestamp_s": 42.55,
+      "window_index": 425
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Thumb up",
+      "repetition_id": 4,
+      "resolved_intent": "OPEN",
+      "source_label_index": 1,
+      "timestamp_s": 42.65,
+      "window_index": 426
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Thumb up",
+      "repetition_id": 4,
+      "resolved_intent": "OPEN",
+      "source_label_index": 1,
+      "timestamp_s": 42.75,
+      "window_index": 427
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Thumb up",
+      "repetition_id": 4,
+      "resolved_intent": "OPEN",
+      "source_label_index": 1,
+      "timestamp_s": 42.85,
+      "window_index": 428
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Thumb up",
+      "repetition_id": 4,
+      "resolved_intent": "OPEN",
+      "source_label_index": 1,
+      "timestamp_s": 42.95,
+      "window_index": 429
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Thumb up",
+      "repetition_id": 4,
+      "resolved_intent": "OPEN",
+      "source_label_index": 1,
+      "timestamp_s": 43.05,
+      "window_index": 430
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Thumb up",
+      "repetition_id": 4,
+      "resolved_intent": "OPEN",
+      "source_label_index": 1,
+      "timestamp_s": 43.15,
+      "window_index": 431
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Thumb up",
+      "repetition_id": 4,
+      "resolved_intent": "OPEN",
+      "source_label_index": 1,
+      "timestamp_s": 43.25,
+      "window_index": 432
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Thumb up",
+      "repetition_id": 4,
+      "resolved_intent": "OPEN",
+      "source_label_index": 1,
+      "timestamp_s": 43.35,
+      "window_index": 433
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Thumb up",
+      "repetition_id": 4,
+      "resolved_intent": "OPEN",
+      "source_label_index": 1,
+      "timestamp_s": 43.45,
+      "window_index": 434
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Thumb up",
+      "repetition_id": 4,
+      "resolved_intent": "OPEN",
+      "source_label_index": 1,
+      "timestamp_s": 43.55,
+      "window_index": 435
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Thumb up",
+      "repetition_id": 4,
+      "resolved_intent": "OPEN",
+      "source_label_index": 1,
+      "timestamp_s": 43.65,
+      "window_index": 436
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Thumb up",
+      "repetition_id": 4,
+      "resolved_intent": "OPEN",
+      "source_label_index": 1,
+      "timestamp_s": 43.75,
+      "window_index": 437
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Thumb up",
+      "repetition_id": 4,
+      "resolved_intent": "OPEN",
+      "source_label_index": 1,
+      "timestamp_s": 43.85,
+      "window_index": 438
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Thumb up",
+      "repetition_id": 4,
+      "resolved_intent": "OPEN",
+      "source_label_index": 1,
+      "timestamp_s": 43.95,
+      "window_index": 439
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Thumb up",
+      "repetition_id": 4,
+      "resolved_intent": "OPEN",
+      "source_label_index": 1,
+      "timestamp_s": 44.05,
+      "window_index": 440
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Thumb up",
+      "repetition_id": 4,
+      "resolved_intent": "OPEN",
+      "source_label_index": 1,
+      "timestamp_s": 44.15,
+      "window_index": 441
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Thumb up",
+      "repetition_id": 4,
+      "resolved_intent": "OPEN",
+      "source_label_index": 1,
+      "timestamp_s": 44.25,
+      "window_index": 442
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Thumb up",
+      "repetition_id": 4,
+      "resolved_intent": "OPEN",
+      "source_label_index": 1,
+      "timestamp_s": 44.35,
+      "window_index": 443
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Thumb up",
+      "repetition_id": 4,
+      "resolved_intent": "OPEN",
+      "source_label_index": 1,
+      "timestamp_s": 44.45,
+      "window_index": 444
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Thumb up",
+      "repetition_id": 4,
+      "resolved_intent": "OPEN",
+      "source_label_index": 1,
+      "timestamp_s": 44.55,
+      "window_index": 445
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Thumb up",
+      "repetition_id": 4,
+      "resolved_intent": "OPEN",
+      "source_label_index": 1,
+      "timestamp_s": 44.65,
+      "window_index": 446
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Thumb up",
+      "repetition_id": 4,
+      "resolved_intent": "OPEN",
+      "source_label_index": 1,
+      "timestamp_s": 44.75,
+      "window_index": 447
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Thumb up",
+      "repetition_id": 4,
+      "resolved_intent": "OPEN",
+      "source_label_index": 1,
+      "timestamp_s": 44.85,
+      "window_index": 448
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Thumb up",
+      "repetition_id": 4,
+      "resolved_intent": "OPEN",
+      "source_label_index": 1,
+      "timestamp_s": 44.95,
+      "window_index": 449
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Thumb up",
+      "repetition_id": 4,
+      "resolved_intent": "OPEN",
+      "source_label_index": 1,
+      "timestamp_s": 45.05,
+      "window_index": 450
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Thumb up",
+      "repetition_id": 4,
+      "resolved_intent": "OPEN",
+      "source_label_index": 1,
+      "timestamp_s": 45.15,
+      "window_index": 451
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Thumb up",
+      "repetition_id": 4,
+      "resolved_intent": "OPEN",
+      "source_label_index": 1,
+      "timestamp_s": 45.25,
+      "window_index": 452
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Thumb up",
+      "repetition_id": 4,
+      "resolved_intent": "OPEN",
+      "source_label_index": 1,
+      "timestamp_s": 45.35,
+      "window_index": 453
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Thumb up",
+      "repetition_id": 4,
+      "resolved_intent": "OPEN",
+      "source_label_index": 1,
+      "timestamp_s": 45.45,
+      "window_index": 454
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Thumb up",
+      "repetition_id": 4,
+      "resolved_intent": "OPEN",
+      "source_label_index": 1,
+      "timestamp_s": 45.55,
+      "window_index": 455
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Thumb up",
+      "repetition_id": 4,
+      "resolved_intent": "OPEN",
+      "source_label_index": 1,
+      "timestamp_s": 45.65,
+      "window_index": 456
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Thumb up",
+      "repetition_id": 4,
+      "resolved_intent": "OPEN",
+      "source_label_index": 1,
+      "timestamp_s": 45.75,
+      "window_index": 457
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Thumb up",
+      "repetition_id": 4,
+      "resolved_intent": "OPEN",
+      "source_label_index": 1,
+      "timestamp_s": 45.85,
+      "window_index": 458
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Thumb up",
+      "repetition_id": 4,
+      "resolved_intent": "OPEN",
+      "source_label_index": 1,
+      "timestamp_s": 45.95,
+      "window_index": 459
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Thumb up",
+      "repetition_id": 4,
+      "resolved_intent": "OPEN",
+      "source_label_index": 1,
+      "timestamp_s": 46.05,
+      "window_index": 460
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Thumb up",
+      "repetition_id": 4,
+      "resolved_intent": "OPEN",
+      "source_label_index": 1,
+      "timestamp_s": 46.15,
+      "window_index": 461
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Thumb up",
+      "repetition_id": 4,
+      "resolved_intent": "OPEN",
+      "source_label_index": 1,
+      "timestamp_s": 46.25,
+      "window_index": 462
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Thumb up",
+      "repetition_id": 4,
+      "resolved_intent": "OPEN",
+      "source_label_index": 1,
+      "timestamp_s": 46.35,
+      "window_index": 463
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Thumb up",
+      "repetition_id": 6,
+      "resolved_intent": "OPEN",
+      "source_label_index": 1,
+      "timestamp_s": 52.05,
+      "window_index": 520
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Thumb up",
+      "repetition_id": 6,
+      "resolved_intent": "OPEN",
+      "source_label_index": 1,
+      "timestamp_s": 52.15,
+      "window_index": 521
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Thumb up",
+      "repetition_id": 6,
+      "resolved_intent": "OPEN",
+      "source_label_index": 1,
+      "timestamp_s": 52.25,
+      "window_index": 522
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Thumb up",
+      "repetition_id": 6,
+      "resolved_intent": "OPEN",
+      "source_label_index": 1,
+      "timestamp_s": 52.35,
+      "window_index": 523
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Thumb up",
+      "repetition_id": 6,
+      "resolved_intent": "OPEN",
+      "source_label_index": 1,
+      "timestamp_s": 52.45,
+      "window_index": 524
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Thumb up",
+      "repetition_id": 6,
+      "resolved_intent": "OPEN",
+      "source_label_index": 1,
+      "timestamp_s": 52.55,
+      "window_index": 525
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Thumb up",
+      "repetition_id": 6,
+      "resolved_intent": "OPEN",
+      "source_label_index": 1,
+      "timestamp_s": 52.65,
+      "window_index": 526
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Thumb up",
+      "repetition_id": 6,
+      "resolved_intent": "OPEN",
+      "source_label_index": 1,
+      "timestamp_s": 52.75,
+      "window_index": 527
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Thumb up",
+      "repetition_id": 6,
+      "resolved_intent": "OPEN",
+      "source_label_index": 1,
+      "timestamp_s": 52.85,
+      "window_index": 528
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Thumb up",
+      "repetition_id": 6,
+      "resolved_intent": "OPEN",
+      "source_label_index": 1,
+      "timestamp_s": 52.95,
+      "window_index": 529
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Thumb up",
+      "repetition_id": 6,
+      "resolved_intent": "OPEN",
+      "source_label_index": 1,
+      "timestamp_s": 53.05,
+      "window_index": 530
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Thumb up",
+      "repetition_id": 6,
+      "resolved_intent": "OPEN",
+      "source_label_index": 1,
+      "timestamp_s": 53.15,
+      "window_index": 531
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Thumb up",
+      "repetition_id": 6,
+      "resolved_intent": "OPEN",
+      "source_label_index": 1,
+      "timestamp_s": 53.25,
+      "window_index": 532
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Thumb up",
+      "repetition_id": 6,
+      "resolved_intent": "OPEN",
+      "source_label_index": 1,
+      "timestamp_s": 53.35,
+      "window_index": 533
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Thumb up",
+      "repetition_id": 6,
+      "resolved_intent": "OPEN",
+      "source_label_index": 1,
+      "timestamp_s": 53.45,
+      "window_index": 534
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Thumb up",
+      "repetition_id": 6,
+      "resolved_intent": "OPEN",
+      "source_label_index": 1,
+      "timestamp_s": 53.55,
+      "window_index": 535
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Thumb up",
+      "repetition_id": 6,
+      "resolved_intent": "OPEN",
+      "source_label_index": 1,
+      "timestamp_s": 53.65,
+      "window_index": 536
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Thumb up",
+      "repetition_id": 6,
+      "resolved_intent": "OPEN",
+      "source_label_index": 1,
+      "timestamp_s": 53.75,
+      "window_index": 537
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Thumb up",
+      "repetition_id": 6,
+      "resolved_intent": "OPEN",
+      "source_label_index": 1,
+      "timestamp_s": 53.85,
+      "window_index": 538
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Thumb up",
+      "repetition_id": 6,
+      "resolved_intent": "OPEN",
+      "source_label_index": 1,
+      "timestamp_s": 53.95,
+      "window_index": 539
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Thumb up",
+      "repetition_id": 6,
+      "resolved_intent": "OPEN",
+      "source_label_index": 1,
+      "timestamp_s": 54.05,
+      "window_index": 540
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Thumb up",
+      "repetition_id": 6,
+      "resolved_intent": "OPEN",
+      "source_label_index": 1,
+      "timestamp_s": 54.15,
+      "window_index": 541
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Thumb up",
+      "repetition_id": 6,
+      "resolved_intent": "OPEN",
+      "source_label_index": 1,
+      "timestamp_s": 54.25,
+      "window_index": 542
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Thumb up",
+      "repetition_id": 6,
+      "resolved_intent": "OPEN",
+      "source_label_index": 1,
+      "timestamp_s": 54.35,
+      "window_index": 543
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Thumb up",
+      "repetition_id": 6,
+      "resolved_intent": "OPEN",
+      "source_label_index": 1,
+      "timestamp_s": 54.45,
+      "window_index": 544
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Thumb up",
+      "repetition_id": 6,
+      "resolved_intent": "OPEN",
+      "source_label_index": 1,
+      "timestamp_s": 54.55,
+      "window_index": 545
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Thumb up",
+      "repetition_id": 6,
+      "resolved_intent": "OPEN",
+      "source_label_index": 1,
+      "timestamp_s": 54.65,
+      "window_index": 546
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Thumb up",
+      "repetition_id": 6,
+      "resolved_intent": "OPEN",
+      "source_label_index": 1,
+      "timestamp_s": 54.75,
+      "window_index": 547
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Thumb up",
+      "repetition_id": 6,
+      "resolved_intent": "OPEN",
+      "source_label_index": 1,
+      "timestamp_s": 54.85,
+      "window_index": 548
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Thumb up",
+      "repetition_id": 6,
+      "resolved_intent": "OPEN",
+      "source_label_index": 1,
+      "timestamp_s": 54.95,
+      "window_index": 549
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Thumb up",
+      "repetition_id": 6,
+      "resolved_intent": "OPEN",
+      "source_label_index": 1,
+      "timestamp_s": 55.05,
+      "window_index": 550
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Extension of index and middle, flexion of the others",
+      "repetition_id": 3,
+      "resolved_intent": "OPEN",
+      "source_label_index": 2,
+      "timestamp_s": 60.45,
+      "window_index": 604
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Extension of index and middle, flexion of the others",
+      "repetition_id": 3,
+      "resolved_intent": "OPEN",
+      "source_label_index": 2,
+      "timestamp_s": 60.55,
+      "window_index": 605
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Extension of index and middle, flexion of the others",
+      "repetition_id": 3,
+      "resolved_intent": "OPEN",
+      "source_label_index": 2,
+      "timestamp_s": 60.65,
+      "window_index": 606
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Extension of index and middle, flexion of the others",
+      "repetition_id": 3,
+      "resolved_intent": "OPEN",
+      "source_label_index": 2,
+      "timestamp_s": 60.75,
+      "window_index": 607
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Extension of index and middle, flexion of the others",
+      "repetition_id": 3,
+      "resolved_intent": "OPEN",
+      "source_label_index": 2,
+      "timestamp_s": 60.85,
+      "window_index": 608
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Extension of index and middle, flexion of the others",
+      "repetition_id": 3,
+      "resolved_intent": "OPEN",
+      "source_label_index": 2,
+      "timestamp_s": 60.95,
+      "window_index": 609
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Extension of index and middle, flexion of the others",
+      "repetition_id": 3,
+      "resolved_intent": "OPEN",
+      "source_label_index": 2,
+      "timestamp_s": 61.05,
+      "window_index": 610
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Extension of index and middle, flexion of the others",
+      "repetition_id": 3,
+      "resolved_intent": "OPEN",
+      "source_label_index": 2,
+      "timestamp_s": 61.15,
+      "window_index": 611
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Extension of index and middle, flexion of the others",
+      "repetition_id": 3,
+      "resolved_intent": "OPEN",
+      "source_label_index": 2,
+      "timestamp_s": 61.25,
+      "window_index": 612
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Extension of index and middle, flexion of the others",
+      "repetition_id": 3,
+      "resolved_intent": "OPEN",
+      "source_label_index": 2,
+      "timestamp_s": 61.35,
+      "window_index": 613
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Extension of index and middle, flexion of the others",
+      "repetition_id": 3,
+      "resolved_intent": "OPEN",
+      "source_label_index": 2,
+      "timestamp_s": 61.45,
+      "window_index": 614
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Extension of index and middle, flexion of the others",
+      "repetition_id": 3,
+      "resolved_intent": "OPEN",
+      "source_label_index": 2,
+      "timestamp_s": 61.55,
+      "window_index": 615
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Extension of index and middle, flexion of the others",
+      "repetition_id": 3,
+      "resolved_intent": "OPEN",
+      "source_label_index": 2,
+      "timestamp_s": 61.65,
+      "window_index": 616
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Extension of index and middle, flexion of the others",
+      "repetition_id": 3,
+      "resolved_intent": "OPEN",
+      "source_label_index": 2,
+      "timestamp_s": 61.75,
+      "window_index": 617
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Extension of index and middle, flexion of the others",
+      "repetition_id": 3,
+      "resolved_intent": "OPEN",
+      "source_label_index": 2,
+      "timestamp_s": 61.85,
+      "window_index": 618
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Extension of index and middle, flexion of the others",
+      "repetition_id": 3,
+      "resolved_intent": "OPEN",
+      "source_label_index": 2,
+      "timestamp_s": 61.95,
+      "window_index": 619
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Extension of index and middle, flexion of the others",
+      "repetition_id": 3,
+      "resolved_intent": "OPEN",
+      "source_label_index": 2,
+      "timestamp_s": 62.05,
+      "window_index": 620
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Extension of index and middle, flexion of the others",
+      "repetition_id": 3,
+      "resolved_intent": "OPEN",
+      "source_label_index": 2,
+      "timestamp_s": 62.15,
+      "window_index": 621
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Extension of index and middle, flexion of the others",
+      "repetition_id": 3,
+      "resolved_intent": "OPEN",
+      "source_label_index": 2,
+      "timestamp_s": 62.25,
+      "window_index": 622
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Extension of index and middle, flexion of the others",
+      "repetition_id": 3,
+      "resolved_intent": "OPEN",
+      "source_label_index": 2,
+      "timestamp_s": 62.35,
+      "window_index": 623
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Extension of index and middle, flexion of the others",
+      "repetition_id": 3,
+      "resolved_intent": "OPEN",
+      "source_label_index": 2,
+      "timestamp_s": 62.45,
+      "window_index": 624
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Extension of index and middle, flexion of the others",
+      "repetition_id": 3,
+      "resolved_intent": "OPEN",
+      "source_label_index": 2,
+      "timestamp_s": 62.55,
+      "window_index": 625
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Extension of index and middle, flexion of the others",
+      "repetition_id": 3,
+      "resolved_intent": "OPEN",
+      "source_label_index": 2,
+      "timestamp_s": 62.65,
+      "window_index": 626
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Extension of index and middle, flexion of the others",
+      "repetition_id": 3,
+      "resolved_intent": "OPEN",
+      "source_label_index": 2,
+      "timestamp_s": 62.75,
+      "window_index": 627
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Extension of index and middle, flexion of the others",
+      "repetition_id": 3,
+      "resolved_intent": "OPEN",
+      "source_label_index": 2,
+      "timestamp_s": 62.85,
+      "window_index": 628
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Extension of index and middle, flexion of the others",
+      "repetition_id": 3,
+      "resolved_intent": "OPEN",
+      "source_label_index": 2,
+      "timestamp_s": 62.95,
+      "window_index": 629
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Extension of index and middle, flexion of the others",
+      "repetition_id": 3,
+      "resolved_intent": "OPEN",
+      "source_label_index": 2,
+      "timestamp_s": 63.05,
+      "window_index": 630
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Extension of index and middle, flexion of the others",
+      "repetition_id": 3,
+      "resolved_intent": "OPEN",
+      "source_label_index": 2,
+      "timestamp_s": 63.15,
+      "window_index": 631
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Extension of index and middle, flexion of the others",
+      "repetition_id": 3,
+      "resolved_intent": "OPEN",
+      "source_label_index": 2,
+      "timestamp_s": 63.25,
+      "window_index": 632
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Extension of index and middle, flexion of the others",
+      "repetition_id": 3,
+      "resolved_intent": "OPEN",
+      "source_label_index": 2,
+      "timestamp_s": 63.35,
+      "window_index": 633
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Extension of index and middle, flexion of the others",
+      "repetition_id": 4,
+      "resolved_intent": "OPEN",
+      "source_label_index": 2,
+      "timestamp_s": 63.45,
+      "window_index": 634
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Extension of index and middle, flexion of the others",
+      "repetition_id": 4,
+      "resolved_intent": "OPEN",
+      "source_label_index": 2,
+      "timestamp_s": 63.55,
+      "window_index": 635
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Extension of index and middle, flexion of the others",
+      "repetition_id": 4,
+      "resolved_intent": "OPEN",
+      "source_label_index": 2,
+      "timestamp_s": 63.65,
+      "window_index": 636
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Extension of index and middle, flexion of the others",
+      "repetition_id": 4,
+      "resolved_intent": "OPEN",
+      "source_label_index": 2,
+      "timestamp_s": 63.75,
+      "window_index": 637
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Extension of index and middle, flexion of the others",
+      "repetition_id": 4,
+      "resolved_intent": "OPEN",
+      "source_label_index": 2,
+      "timestamp_s": 63.85,
+      "window_index": 638
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Extension of index and middle, flexion of the others",
+      "repetition_id": 4,
+      "resolved_intent": "OPEN",
+      "source_label_index": 2,
+      "timestamp_s": 63.95,
+      "window_index": 639
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Extension of index and middle, flexion of the others",
+      "repetition_id": 4,
+      "resolved_intent": "OPEN",
+      "source_label_index": 2,
+      "timestamp_s": 64.05,
+      "window_index": 640
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Extension of index and middle, flexion of the others",
+      "repetition_id": 4,
+      "resolved_intent": "OPEN",
+      "source_label_index": 2,
+      "timestamp_s": 64.15,
+      "window_index": 641
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Extension of index and middle, flexion of the others",
+      "repetition_id": 4,
+      "resolved_intent": "OPEN",
+      "source_label_index": 2,
+      "timestamp_s": 64.25,
+      "window_index": 642
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Extension of index and middle, flexion of the others",
+      "repetition_id": 4,
+      "resolved_intent": "OPEN",
+      "source_label_index": 2,
+      "timestamp_s": 64.35,
+      "window_index": 643
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Extension of index and middle, flexion of the others",
+      "repetition_id": 4,
+      "resolved_intent": "OPEN",
+      "source_label_index": 2,
+      "timestamp_s": 64.45,
+      "window_index": 644
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Extension of index and middle, flexion of the others",
+      "repetition_id": 4,
+      "resolved_intent": "OPEN",
+      "source_label_index": 2,
+      "timestamp_s": 64.55,
+      "window_index": 645
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Extension of index and middle, flexion of the others",
+      "repetition_id": 4,
+      "resolved_intent": "OPEN",
+      "source_label_index": 2,
+      "timestamp_s": 64.65,
+      "window_index": 646
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Extension of index and middle, flexion of the others",
+      "repetition_id": 4,
+      "resolved_intent": "OPEN",
+      "source_label_index": 2,
+      "timestamp_s": 64.75,
+      "window_index": 647
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Extension of index and middle, flexion of the others",
+      "repetition_id": 4,
+      "resolved_intent": "OPEN",
+      "source_label_index": 2,
+      "timestamp_s": 64.85,
+      "window_index": 648
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Extension of index and middle, flexion of the others",
+      "repetition_id": 4,
+      "resolved_intent": "OPEN",
+      "source_label_index": 2,
+      "timestamp_s": 64.95,
+      "window_index": 649
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Extension of index and middle, flexion of the others",
+      "repetition_id": 4,
+      "resolved_intent": "OPEN",
+      "source_label_index": 2,
+      "timestamp_s": 65.05,
+      "window_index": 650
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Extension of index and middle, flexion of the others",
+      "repetition_id": 4,
+      "resolved_intent": "OPEN",
+      "source_label_index": 2,
+      "timestamp_s": 65.15,
+      "window_index": 651
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Extension of index and middle, flexion of the others",
+      "repetition_id": 4,
+      "resolved_intent": "OPEN",
+      "source_label_index": 2,
+      "timestamp_s": 65.25,
+      "window_index": 652
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Extension of index and middle, flexion of the others",
+      "repetition_id": 4,
+      "resolved_intent": "OPEN",
+      "source_label_index": 2,
+      "timestamp_s": 65.35,
+      "window_index": 653
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Extension of index and middle, flexion of the others",
+      "repetition_id": 4,
+      "resolved_intent": "OPEN",
+      "source_label_index": 2,
+      "timestamp_s": 65.45,
+      "window_index": 654
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Extension of index and middle, flexion of the others",
+      "repetition_id": 4,
+      "resolved_intent": "OPEN",
+      "source_label_index": 2,
+      "timestamp_s": 65.55,
+      "window_index": 655
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Extension of index and middle, flexion of the others",
+      "repetition_id": 4,
+      "resolved_intent": "OPEN",
+      "source_label_index": 2,
+      "timestamp_s": 65.65,
+      "window_index": 656
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Extension of index and middle, flexion of the others",
+      "repetition_id": 4,
+      "resolved_intent": "OPEN",
+      "source_label_index": 2,
+      "timestamp_s": 65.75,
+      "window_index": 657
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Extension of index and middle, flexion of the others",
+      "repetition_id": 4,
+      "resolved_intent": "OPEN",
+      "source_label_index": 2,
+      "timestamp_s": 65.85,
+      "window_index": 658
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Extension of index and middle, flexion of the others",
+      "repetition_id": 4,
+      "resolved_intent": "OPEN",
+      "source_label_index": 2,
+      "timestamp_s": 65.95,
+      "window_index": 659
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Extension of index and middle, flexion of the others",
+      "repetition_id": 4,
+      "resolved_intent": "OPEN",
+      "source_label_index": 2,
+      "timestamp_s": 66.05,
+      "window_index": 660
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Extension of index and middle, flexion of the others",
+      "repetition_id": 4,
+      "resolved_intent": "OPEN",
+      "source_label_index": 2,
+      "timestamp_s": 66.15,
+      "window_index": 661
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Extension of index and middle, flexion of the others",
+      "repetition_id": 4,
+      "resolved_intent": "OPEN",
+      "source_label_index": 2,
+      "timestamp_s": 66.25,
+      "window_index": 662
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Extension of index and middle, flexion of the others",
+      "repetition_id": 5,
+      "resolved_intent": "OPEN",
+      "source_label_index": 2,
+      "timestamp_s": 66.35,
+      "window_index": 663
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Extension of index and middle, flexion of the others",
+      "repetition_id": 5,
+      "resolved_intent": "OPEN",
+      "source_label_index": 2,
+      "timestamp_s": 66.45,
+      "window_index": 664
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Extension of index and middle, flexion of the others",
+      "repetition_id": 5,
+      "resolved_intent": "OPEN",
+      "source_label_index": 2,
+      "timestamp_s": 66.55,
+      "window_index": 665
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Extension of index and middle, flexion of the others",
+      "repetition_id": 5,
+      "resolved_intent": "OPEN",
+      "source_label_index": 2,
+      "timestamp_s": 66.65,
+      "window_index": 666
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Extension of index and middle, flexion of the others",
+      "repetition_id": 5,
+      "resolved_intent": "OPEN",
+      "source_label_index": 2,
+      "timestamp_s": 66.75,
+      "window_index": 667
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Extension of index and middle, flexion of the others",
+      "repetition_id": 5,
+      "resolved_intent": "OPEN",
+      "source_label_index": 2,
+      "timestamp_s": 66.85,
+      "window_index": 668
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Extension of index and middle, flexion of the others",
+      "repetition_id": 5,
+      "resolved_intent": "OPEN",
+      "source_label_index": 2,
+      "timestamp_s": 66.95,
+      "window_index": 669
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Extension of index and middle, flexion of the others",
+      "repetition_id": 5,
+      "resolved_intent": "OPEN",
+      "source_label_index": 2,
+      "timestamp_s": 67.05,
+      "window_index": 670
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Extension of index and middle, flexion of the others",
+      "repetition_id": 5,
+      "resolved_intent": "OPEN",
+      "source_label_index": 2,
+      "timestamp_s": 67.15,
+      "window_index": 671
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Extension of index and middle, flexion of the others",
+      "repetition_id": 5,
+      "resolved_intent": "OPEN",
+      "source_label_index": 2,
+      "timestamp_s": 67.25,
+      "window_index": 672
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Extension of index and middle, flexion of the others",
+      "repetition_id": 5,
+      "resolved_intent": "OPEN",
+      "source_label_index": 2,
+      "timestamp_s": 67.35,
+      "window_index": 673
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Extension of index and middle, flexion of the others",
+      "repetition_id": 5,
+      "resolved_intent": "OPEN",
+      "source_label_index": 2,
+      "timestamp_s": 67.45,
+      "window_index": 674
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Extension of index and middle, flexion of the others",
+      "repetition_id": 5,
+      "resolved_intent": "OPEN",
+      "source_label_index": 2,
+      "timestamp_s": 67.55,
+      "window_index": 675
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Extension of index and middle, flexion of the others",
+      "repetition_id": 5,
+      "resolved_intent": "OPEN",
+      "source_label_index": 2,
+      "timestamp_s": 67.65,
+      "window_index": 676
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Extension of index and middle, flexion of the others",
+      "repetition_id": 5,
+      "resolved_intent": "OPEN",
+      "source_label_index": 2,
+      "timestamp_s": 67.75,
+      "window_index": 677
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Extension of index and middle, flexion of the others",
+      "repetition_id": 5,
+      "resolved_intent": "OPEN",
+      "source_label_index": 2,
+      "timestamp_s": 67.85,
+      "window_index": 678
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Extension of index and middle, flexion of the others",
+      "repetition_id": 5,
+      "resolved_intent": "OPEN",
+      "source_label_index": 2,
+      "timestamp_s": 67.95,
+      "window_index": 679
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Extension of index and middle, flexion of the others",
+      "repetition_id": 5,
+      "resolved_intent": "OPEN",
+      "source_label_index": 2,
+      "timestamp_s": 68.05,
+      "window_index": 680
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Extension of index and middle, flexion of the others",
+      "repetition_id": 5,
+      "resolved_intent": "OPEN",
+      "source_label_index": 2,
+      "timestamp_s": 68.15,
+      "window_index": 681
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Extension of index and middle, flexion of the others",
+      "repetition_id": 5,
+      "resolved_intent": "OPEN",
+      "source_label_index": 2,
+      "timestamp_s": 68.25,
+      "window_index": 682
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Extension of index and middle, flexion of the others",
+      "repetition_id": 5,
+      "resolved_intent": "OPEN",
+      "source_label_index": 2,
+      "timestamp_s": 68.35,
+      "window_index": 683
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Extension of index and middle, flexion of the others",
+      "repetition_id": 5,
+      "resolved_intent": "OPEN",
+      "source_label_index": 2,
+      "timestamp_s": 68.45,
+      "window_index": 684
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Extension of index and middle, flexion of the others",
+      "repetition_id": 5,
+      "resolved_intent": "OPEN",
+      "source_label_index": 2,
+      "timestamp_s": 68.55,
+      "window_index": 685
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Extension of index and middle, flexion of the others",
+      "repetition_id": 5,
+      "resolved_intent": "OPEN",
+      "source_label_index": 2,
+      "timestamp_s": 68.65,
+      "window_index": 686
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Extension of index and middle, flexion of the others",
+      "repetition_id": 5,
+      "resolved_intent": "OPEN",
+      "source_label_index": 2,
+      "timestamp_s": 68.75,
+      "window_index": 687
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Extension of index and middle, flexion of the others",
+      "repetition_id": 5,
+      "resolved_intent": "OPEN",
+      "source_label_index": 2,
+      "timestamp_s": 68.85,
+      "window_index": 688
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Extension of index and middle, flexion of the others",
+      "repetition_id": 5,
+      "resolved_intent": "OPEN",
+      "source_label_index": 2,
+      "timestamp_s": 68.95,
+      "window_index": 689
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Extension of index and middle, flexion of the others",
+      "repetition_id": 5,
+      "resolved_intent": "OPEN",
+      "source_label_index": 2,
+      "timestamp_s": 69.05,
+      "window_index": 690
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Extension of index and middle, flexion of the others",
+      "repetition_id": 5,
+      "resolved_intent": "OPEN",
+      "source_label_index": 2,
+      "timestamp_s": 69.15,
+      "window_index": 691
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Extension of index and middle, flexion of the others",
+      "repetition_id": 5,
+      "resolved_intent": "OPEN",
+      "source_label_index": 2,
+      "timestamp_s": 69.25,
+      "window_index": 692
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Extension of index and middle, flexion of the others",
+      "repetition_id": 5,
+      "resolved_intent": "OPEN",
+      "source_label_index": 2,
+      "timestamp_s": 69.35,
+      "window_index": 693
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Extension of index and middle, flexion of the others",
+      "repetition_id": 5,
+      "resolved_intent": "OPEN",
+      "source_label_index": 2,
+      "timestamp_s": 69.45,
+      "window_index": 694
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Extension of index and middle, flexion of the others",
+      "repetition_id": 5,
+      "resolved_intent": "OPEN",
+      "source_label_index": 2,
+      "timestamp_s": 69.55,
+      "window_index": 695
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Extension of index and middle, flexion of the others",
+      "repetition_id": 5,
+      "resolved_intent": "OPEN",
+      "source_label_index": 2,
+      "timestamp_s": 69.65,
+      "window_index": 696
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Extension of index and middle, flexion of the others",
+      "repetition_id": 5,
+      "resolved_intent": "OPEN",
+      "source_label_index": 2,
+      "timestamp_s": 69.75,
+      "window_index": 697
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Extension of index and middle, flexion of the others",
+      "repetition_id": 5,
+      "resolved_intent": "OPEN",
+      "source_label_index": 2,
+      "timestamp_s": 69.85,
+      "window_index": 698
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Extension of index and middle, flexion of the others",
+      "repetition_id": 5,
+      "resolved_intent": "OPEN",
+      "source_label_index": 2,
+      "timestamp_s": 69.95,
+      "window_index": 699
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Flexion of ring and little finger, extension of the others",
+      "repetition_id": 2,
+      "resolved_intent": "CLOSE",
+      "source_label_index": 3,
+      "timestamp_s": 75.45,
+      "window_index": 754
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Flexion of ring and little finger, extension of the others",
+      "repetition_id": 2,
+      "resolved_intent": "CLOSE",
+      "source_label_index": 3,
+      "timestamp_s": 75.55,
+      "window_index": 755
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Flexion of ring and little finger, extension of the others",
+      "repetition_id": 2,
+      "resolved_intent": "CLOSE",
+      "source_label_index": 3,
+      "timestamp_s": 75.65,
+      "window_index": 756
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Flexion of ring and little finger, extension of the others",
+      "repetition_id": 2,
+      "resolved_intent": "CLOSE",
+      "source_label_index": 3,
+      "timestamp_s": 75.75,
+      "window_index": 757
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Flexion of ring and little finger, extension of the others",
+      "repetition_id": 2,
+      "resolved_intent": "CLOSE",
+      "source_label_index": 3,
+      "timestamp_s": 75.85,
+      "window_index": 758
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Flexion of ring and little finger, extension of the others",
+      "repetition_id": 2,
+      "resolved_intent": "CLOSE",
+      "source_label_index": 3,
+      "timestamp_s": 75.95,
+      "window_index": 759
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Flexion of ring and little finger, extension of the others",
+      "repetition_id": 2,
+      "resolved_intent": "CLOSE",
+      "source_label_index": 3,
+      "timestamp_s": 76.05,
+      "window_index": 760
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Flexion of ring and little finger, extension of the others",
+      "repetition_id": 2,
+      "resolved_intent": "CLOSE",
+      "source_label_index": 3,
+      "timestamp_s": 76.15,
+      "window_index": 761
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Flexion of ring and little finger, extension of the others",
+      "repetition_id": 2,
+      "resolved_intent": "CLOSE",
+      "source_label_index": 3,
+      "timestamp_s": 76.25,
+      "window_index": 762
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Flexion of ring and little finger, extension of the others",
+      "repetition_id": 2,
+      "resolved_intent": "CLOSE",
+      "source_label_index": 3,
+      "timestamp_s": 76.35,
+      "window_index": 763
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Flexion of ring and little finger, extension of the others",
+      "repetition_id": 2,
+      "resolved_intent": "CLOSE",
+      "source_label_index": 3,
+      "timestamp_s": 76.45,
+      "window_index": 764
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Flexion of ring and little finger, extension of the others",
+      "repetition_id": 2,
+      "resolved_intent": "CLOSE",
+      "source_label_index": 3,
+      "timestamp_s": 76.55,
+      "window_index": 765
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Flexion of ring and little finger, extension of the others",
+      "repetition_id": 2,
+      "resolved_intent": "CLOSE",
+      "source_label_index": 3,
+      "timestamp_s": 76.65,
+      "window_index": 766
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Flexion of ring and little finger, extension of the others",
+      "repetition_id": 2,
+      "resolved_intent": "CLOSE",
+      "source_label_index": 3,
+      "timestamp_s": 76.75,
+      "window_index": 767
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Flexion of ring and little finger, extension of the others",
+      "repetition_id": 2,
+      "resolved_intent": "CLOSE",
+      "source_label_index": 3,
+      "timestamp_s": 76.85,
+      "window_index": 768
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Flexion of ring and little finger, extension of the others",
+      "repetition_id": 2,
+      "resolved_intent": "CLOSE",
+      "source_label_index": 3,
+      "timestamp_s": 76.95,
+      "window_index": 769
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Flexion of ring and little finger, extension of the others",
+      "repetition_id": 2,
+      "resolved_intent": "CLOSE",
+      "source_label_index": 3,
+      "timestamp_s": 77.05,
+      "window_index": 770
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Flexion of ring and little finger, extension of the others",
+      "repetition_id": 2,
+      "resolved_intent": "CLOSE",
+      "source_label_index": 3,
+      "timestamp_s": 77.15,
+      "window_index": 771
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Flexion of ring and little finger, extension of the others",
+      "repetition_id": 2,
+      "resolved_intent": "CLOSE",
+      "source_label_index": 3,
+      "timestamp_s": 77.25,
+      "window_index": 772
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Flexion of ring and little finger, extension of the others",
+      "repetition_id": 2,
+      "resolved_intent": "CLOSE",
+      "source_label_index": 3,
+      "timestamp_s": 77.35,
+      "window_index": 773
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Flexion of ring and little finger, extension of the others",
+      "repetition_id": 2,
+      "resolved_intent": "CLOSE",
+      "source_label_index": 3,
+      "timestamp_s": 77.45,
+      "window_index": 774
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Flexion of ring and little finger, extension of the others",
+      "repetition_id": 2,
+      "resolved_intent": "CLOSE",
+      "source_label_index": 3,
+      "timestamp_s": 77.55,
+      "window_index": 775
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Flexion of ring and little finger, extension of the others",
+      "repetition_id": 2,
+      "resolved_intent": "CLOSE",
+      "source_label_index": 3,
+      "timestamp_s": 77.65,
+      "window_index": 776
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Flexion of ring and little finger, extension of the others",
+      "repetition_id": 2,
+      "resolved_intent": "CLOSE",
+      "source_label_index": 3,
+      "timestamp_s": 77.75,
+      "window_index": 777
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Flexion of ring and little finger, extension of the others",
+      "repetition_id": 4,
+      "resolved_intent": "CLOSE",
+      "source_label_index": 3,
+      "timestamp_s": 79.95,
+      "window_index": 799
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Flexion of ring and little finger, extension of the others",
+      "repetition_id": 4,
+      "resolved_intent": "CLOSE",
+      "source_label_index": 3,
+      "timestamp_s": 80.05,
+      "window_index": 800
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Flexion of ring and little finger, extension of the others",
+      "repetition_id": 4,
+      "resolved_intent": "CLOSE",
+      "source_label_index": 3,
+      "timestamp_s": 80.15,
+      "window_index": 801
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Flexion of ring and little finger, extension of the others",
+      "repetition_id": 4,
+      "resolved_intent": "CLOSE",
+      "source_label_index": 3,
+      "timestamp_s": 80.25,
+      "window_index": 802
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Flexion of ring and little finger, extension of the others",
+      "repetition_id": 4,
+      "resolved_intent": "CLOSE",
+      "source_label_index": 3,
+      "timestamp_s": 80.35,
+      "window_index": 803
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Flexion of ring and little finger, extension of the others",
+      "repetition_id": 4,
+      "resolved_intent": "CLOSE",
+      "source_label_index": 3,
+      "timestamp_s": 80.45,
+      "window_index": 804
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Flexion of ring and little finger, extension of the others",
+      "repetition_id": 4,
+      "resolved_intent": "CLOSE",
+      "source_label_index": 3,
+      "timestamp_s": 80.55,
+      "window_index": 805
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Flexion of ring and little finger, extension of the others",
+      "repetition_id": 4,
+      "resolved_intent": "CLOSE",
+      "source_label_index": 3,
+      "timestamp_s": 80.65,
+      "window_index": 806
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Flexion of ring and little finger, extension of the others",
+      "repetition_id": 4,
+      "resolved_intent": "CLOSE",
+      "source_label_index": 3,
+      "timestamp_s": 80.75,
+      "window_index": 807
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Flexion of ring and little finger, extension of the others",
+      "repetition_id": 4,
+      "resolved_intent": "CLOSE",
+      "source_label_index": 3,
+      "timestamp_s": 80.85,
+      "window_index": 808
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Flexion of ring and little finger, extension of the others",
+      "repetition_id": 4,
+      "resolved_intent": "CLOSE",
+      "source_label_index": 3,
+      "timestamp_s": 80.95,
+      "window_index": 809
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Flexion of ring and little finger, extension of the others",
+      "repetition_id": 4,
+      "resolved_intent": "CLOSE",
+      "source_label_index": 3,
+      "timestamp_s": 81.05,
+      "window_index": 810
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Flexion of ring and little finger, extension of the others",
+      "repetition_id": 4,
+      "resolved_intent": "CLOSE",
+      "source_label_index": 3,
+      "timestamp_s": 81.15,
+      "window_index": 811
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Flexion of ring and little finger, extension of the others",
+      "repetition_id": 4,
+      "resolved_intent": "CLOSE",
+      "source_label_index": 3,
+      "timestamp_s": 81.25,
+      "window_index": 812
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Flexion of ring and little finger, extension of the others",
+      "repetition_id": 4,
+      "resolved_intent": "CLOSE",
+      "source_label_index": 3,
+      "timestamp_s": 81.35,
+      "window_index": 813
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Flexion of ring and little finger, extension of the others",
+      "repetition_id": 4,
+      "resolved_intent": "CLOSE",
+      "source_label_index": 3,
+      "timestamp_s": 81.45,
+      "window_index": 814
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Flexion of ring and little finger, extension of the others",
+      "repetition_id": 4,
+      "resolved_intent": "CLOSE",
+      "source_label_index": 3,
+      "timestamp_s": 81.55,
+      "window_index": 815
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Flexion of ring and little finger, extension of the others",
+      "repetition_id": 4,
+      "resolved_intent": "CLOSE",
+      "source_label_index": 3,
+      "timestamp_s": 81.65,
+      "window_index": 816
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Flexion of ring and little finger, extension of the others",
+      "repetition_id": 4,
+      "resolved_intent": "CLOSE",
+      "source_label_index": 3,
+      "timestamp_s": 81.75,
+      "window_index": 817
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Flexion of ring and little finger, extension of the others",
+      "repetition_id": 4,
+      "resolved_intent": "CLOSE",
+      "source_label_index": 3,
+      "timestamp_s": 81.85,
+      "window_index": 818
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Flexion of ring and little finger, extension of the others",
+      "repetition_id": 4,
+      "resolved_intent": "CLOSE",
+      "source_label_index": 3,
+      "timestamp_s": 81.95,
+      "window_index": 819
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Flexion of ring and little finger, extension of the others",
+      "repetition_id": 4,
+      "resolved_intent": "CLOSE",
+      "source_label_index": 3,
+      "timestamp_s": 82.05,
+      "window_index": 820
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Flexion of ring and little finger, extension of the others",
+      "repetition_id": 4,
+      "resolved_intent": "CLOSE",
+      "source_label_index": 3,
+      "timestamp_s": 82.15,
+      "window_index": 821
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Flexion of ring and little finger, extension of the others",
+      "repetition_id": 4,
+      "resolved_intent": "CLOSE",
+      "source_label_index": 3,
+      "timestamp_s": 82.25,
+      "window_index": 822
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Flexion of ring and little finger, extension of the others",
+      "repetition_id": 4,
+      "resolved_intent": "CLOSE",
+      "source_label_index": 3,
+      "timestamp_s": 82.35,
+      "window_index": 823
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Flexion of ring and little finger, extension of the others",
+      "repetition_id": 4,
+      "resolved_intent": "CLOSE",
+      "source_label_index": 3,
+      "timestamp_s": 82.45,
+      "window_index": 824
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Flexion of ring and little finger, extension of the others",
+      "repetition_id": 4,
+      "resolved_intent": "CLOSE",
+      "source_label_index": 3,
+      "timestamp_s": 82.55,
+      "window_index": 825
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Flexion of ring and little finger, extension of the others",
+      "repetition_id": 4,
+      "resolved_intent": "CLOSE",
+      "source_label_index": 3,
+      "timestamp_s": 82.65,
+      "window_index": 826
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Flexion of ring and little finger, extension of the others",
+      "repetition_id": 4,
+      "resolved_intent": "CLOSE",
+      "source_label_index": 3,
+      "timestamp_s": 82.75,
+      "window_index": 827
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Flexion of ring and little finger, extension of the others",
+      "repetition_id": 4,
+      "resolved_intent": "CLOSE",
+      "source_label_index": 3,
+      "timestamp_s": 82.85,
+      "window_index": 828
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Flexion of ring and little finger, extension of the others",
+      "repetition_id": 4,
+      "resolved_intent": "CLOSE",
+      "source_label_index": 3,
+      "timestamp_s": 82.95,
+      "window_index": 829
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Flexion of ring and little finger, extension of the others",
+      "repetition_id": 4,
+      "resolved_intent": "CLOSE",
+      "source_label_index": 3,
+      "timestamp_s": 83.05,
+      "window_index": 830
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Flexion of ring and little finger, extension of the others",
+      "repetition_id": 4,
+      "resolved_intent": "CLOSE",
+      "source_label_index": 3,
+      "timestamp_s": 83.15,
+      "window_index": 831
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Flexion of ring and little finger, extension of the others",
+      "repetition_id": 4,
+      "resolved_intent": "CLOSE",
+      "source_label_index": 3,
+      "timestamp_s": 83.25,
+      "window_index": 832
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Flexion of ring and little finger, extension of the others",
+      "repetition_id": 4,
+      "resolved_intent": "CLOSE",
+      "source_label_index": 3,
+      "timestamp_s": 83.35,
+      "window_index": 833
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Flexion of ring and little finger, extension of the others",
+      "repetition_id": 4,
+      "resolved_intent": "CLOSE",
+      "source_label_index": 3,
+      "timestamp_s": 83.45,
+      "window_index": 834
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Flexion of ring and little finger, extension of the others",
+      "repetition_id": 4,
+      "resolved_intent": "CLOSE",
+      "source_label_index": 3,
+      "timestamp_s": 83.55,
+      "window_index": 835
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Flexion of ring and little finger, extension of the others",
+      "repetition_id": 4,
+      "resolved_intent": "CLOSE",
+      "source_label_index": 3,
+      "timestamp_s": 83.65,
+      "window_index": 836
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Flexion of ring and little finger, extension of the others",
+      "repetition_id": 4,
+      "resolved_intent": "CLOSE",
+      "source_label_index": 3,
+      "timestamp_s": 83.75,
+      "window_index": 837
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Flexion of ring and little finger, extension of the others",
+      "repetition_id": 4,
+      "resolved_intent": "CLOSE",
+      "source_label_index": 3,
+      "timestamp_s": 83.85,
+      "window_index": 838
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Flexion of ring and little finger, extension of the others",
+      "repetition_id": 4,
+      "resolved_intent": "CLOSE",
+      "source_label_index": 3,
+      "timestamp_s": 83.95,
+      "window_index": 839
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Flexion of ring and little finger, extension of the others",
+      "repetition_id": 4,
+      "resolved_intent": "CLOSE",
+      "source_label_index": 3,
+      "timestamp_s": 84.05,
+      "window_index": 840
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Flexion of ring and little finger, extension of the others",
+      "repetition_id": 4,
+      "resolved_intent": "CLOSE",
+      "source_label_index": 3,
+      "timestamp_s": 84.15,
+      "window_index": 841
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Flexion of ring and little finger, extension of the others",
+      "repetition_id": 4,
+      "resolved_intent": "CLOSE",
+      "source_label_index": 3,
+      "timestamp_s": 84.25,
+      "window_index": 842
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Flexion of ring and little finger, extension of the others",
+      "repetition_id": 4,
+      "resolved_intent": "CLOSE",
+      "source_label_index": 3,
+      "timestamp_s": 84.35,
+      "window_index": 843
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Flexion of ring and little finger, extension of the others",
+      "repetition_id": 4,
+      "resolved_intent": "CLOSE",
+      "source_label_index": 3,
+      "timestamp_s": 84.45,
+      "window_index": 844
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Flexion of ring and little finger, extension of the others",
+      "repetition_id": 4,
+      "resolved_intent": "CLOSE",
+      "source_label_index": 3,
+      "timestamp_s": 84.55,
+      "window_index": 845
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Flexion of ring and little finger, extension of the others",
+      "repetition_id": 5,
+      "resolved_intent": "CLOSE",
+      "source_label_index": 3,
+      "timestamp_s": 84.65,
+      "window_index": 846
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Flexion of ring and little finger, extension of the others",
+      "repetition_id": 5,
+      "resolved_intent": "CLOSE",
+      "source_label_index": 3,
+      "timestamp_s": 84.75,
+      "window_index": 847
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Flexion of ring and little finger, extension of the others",
+      "repetition_id": 5,
+      "resolved_intent": "CLOSE",
+      "source_label_index": 3,
+      "timestamp_s": 84.85,
+      "window_index": 848
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Flexion of ring and little finger, extension of the others",
+      "repetition_id": 5,
+      "resolved_intent": "CLOSE",
+      "source_label_index": 3,
+      "timestamp_s": 84.95,
+      "window_index": 849
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Flexion of ring and little finger, extension of the others",
+      "repetition_id": 5,
+      "resolved_intent": "CLOSE",
+      "source_label_index": 3,
+      "timestamp_s": 85.05,
+      "window_index": 850
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Flexion of ring and little finger, extension of the others",
+      "repetition_id": 5,
+      "resolved_intent": "CLOSE",
+      "source_label_index": 3,
+      "timestamp_s": 85.15,
+      "window_index": 851
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Flexion of ring and little finger, extension of the others",
+      "repetition_id": 5,
+      "resolved_intent": "CLOSE",
+      "source_label_index": 3,
+      "timestamp_s": 85.25,
+      "window_index": 852
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Flexion of ring and little finger, extension of the others",
+      "repetition_id": 5,
+      "resolved_intent": "CLOSE",
+      "source_label_index": 3,
+      "timestamp_s": 85.35,
+      "window_index": 853
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Flexion of ring and little finger, extension of the others",
+      "repetition_id": 5,
+      "resolved_intent": "CLOSE",
+      "source_label_index": 3,
+      "timestamp_s": 85.45,
+      "window_index": 854
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Flexion of ring and little finger, extension of the others",
+      "repetition_id": 5,
+      "resolved_intent": "CLOSE",
+      "source_label_index": 3,
+      "timestamp_s": 85.55,
+      "window_index": 855
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Flexion of ring and little finger, extension of the others",
+      "repetition_id": 5,
+      "resolved_intent": "CLOSE",
+      "source_label_index": 3,
+      "timestamp_s": 85.65,
+      "window_index": 856
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Flexion of ring and little finger, extension of the others",
+      "repetition_id": 5,
+      "resolved_intent": "CLOSE",
+      "source_label_index": 3,
+      "timestamp_s": 85.75,
+      "window_index": 857
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Flexion of ring and little finger, extension of the others",
+      "repetition_id": 5,
+      "resolved_intent": "CLOSE",
+      "source_label_index": 3,
+      "timestamp_s": 85.85,
+      "window_index": 858
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Flexion of ring and little finger, extension of the others",
+      "repetition_id": 5,
+      "resolved_intent": "CLOSE",
+      "source_label_index": 3,
+      "timestamp_s": 85.95,
+      "window_index": 859
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Flexion of ring and little finger, extension of the others",
+      "repetition_id": 5,
+      "resolved_intent": "CLOSE",
+      "source_label_index": 3,
+      "timestamp_s": 86.05,
+      "window_index": 860
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Flexion of ring and little finger, extension of the others",
+      "repetition_id": 5,
+      "resolved_intent": "CLOSE",
+      "source_label_index": 3,
+      "timestamp_s": 86.15,
+      "window_index": 861
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Flexion of ring and little finger, extension of the others",
+      "repetition_id": 5,
+      "resolved_intent": "CLOSE",
+      "source_label_index": 3,
+      "timestamp_s": 86.25,
+      "window_index": 862
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Flexion of ring and little finger, extension of the others",
+      "repetition_id": 5,
+      "resolved_intent": "CLOSE",
+      "source_label_index": 3,
+      "timestamp_s": 86.35,
+      "window_index": 863
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Flexion of ring and little finger, extension of the others",
+      "repetition_id": 5,
+      "resolved_intent": "CLOSE",
+      "source_label_index": 3,
+      "timestamp_s": 86.45,
+      "window_index": 864
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Flexion of ring and little finger, extension of the others",
+      "repetition_id": 5,
+      "resolved_intent": "CLOSE",
+      "source_label_index": 3,
+      "timestamp_s": 86.55,
+      "window_index": 865
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Flexion of ring and little finger, extension of the others",
+      "repetition_id": 5,
+      "resolved_intent": "CLOSE",
+      "source_label_index": 3,
+      "timestamp_s": 86.65,
+      "window_index": 866
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Flexion of ring and little finger, extension of the others",
+      "repetition_id": 5,
+      "resolved_intent": "CLOSE",
+      "source_label_index": 3,
+      "timestamp_s": 86.75,
+      "window_index": 867
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Flexion of ring and little finger, extension of the others",
+      "repetition_id": 5,
+      "resolved_intent": "CLOSE",
+      "source_label_index": 3,
+      "timestamp_s": 86.85,
+      "window_index": 868
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Flexion of ring and little finger, extension of the others",
+      "repetition_id": 5,
+      "resolved_intent": "CLOSE",
+      "source_label_index": 3,
+      "timestamp_s": 86.95,
+      "window_index": 869
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Flexion of ring and little finger, extension of the others",
+      "repetition_id": 5,
+      "resolved_intent": "CLOSE",
+      "source_label_index": 3,
+      "timestamp_s": 87.05,
+      "window_index": 870
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Flexion of ring and little finger, extension of the others",
+      "repetition_id": 5,
+      "resolved_intent": "CLOSE",
+      "source_label_index": 3,
+      "timestamp_s": 87.15,
+      "window_index": 871
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Flexion of ring and little finger, extension of the others",
+      "repetition_id": 5,
+      "resolved_intent": "CLOSE",
+      "source_label_index": 3,
+      "timestamp_s": 87.25,
+      "window_index": 872
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Flexion of ring and little finger, extension of the others",
+      "repetition_id": 5,
+      "resolved_intent": "CLOSE",
+      "source_label_index": 3,
+      "timestamp_s": 87.35,
+      "window_index": 873
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Flexion of ring and little finger, extension of the others",
+      "repetition_id": 5,
+      "resolved_intent": "CLOSE",
+      "source_label_index": 3,
+      "timestamp_s": 87.45,
+      "window_index": 874
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Thumb opposing base of little finger",
+      "repetition_id": 1,
+      "resolved_intent": "PINCH",
+      "source_label_index": 4,
+      "timestamp_s": 90.15,
+      "window_index": 901
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Thumb opposing base of little finger",
+      "repetition_id": 1,
+      "resolved_intent": "PINCH",
+      "source_label_index": 4,
+      "timestamp_s": 90.25,
+      "window_index": 902
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Thumb opposing base of little finger",
+      "repetition_id": 1,
+      "resolved_intent": "PINCH",
+      "source_label_index": 4,
+      "timestamp_s": 90.35,
+      "window_index": 903
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Thumb opposing base of little finger",
+      "repetition_id": 1,
+      "resolved_intent": "PINCH",
+      "source_label_index": 4,
+      "timestamp_s": 90.45,
+      "window_index": 904
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Thumb opposing base of little finger",
+      "repetition_id": 1,
+      "resolved_intent": "PINCH",
+      "source_label_index": 4,
+      "timestamp_s": 90.55,
+      "window_index": 905
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Thumb opposing base of little finger",
+      "repetition_id": 1,
+      "resolved_intent": "PINCH",
+      "source_label_index": 4,
+      "timestamp_s": 90.65,
+      "window_index": 906
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Thumb opposing base of little finger",
+      "repetition_id": 1,
+      "resolved_intent": "PINCH",
+      "source_label_index": 4,
+      "timestamp_s": 90.75,
+      "window_index": 907
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Thumb opposing base of little finger",
+      "repetition_id": 1,
+      "resolved_intent": "PINCH",
+      "source_label_index": 4,
+      "timestamp_s": 90.85,
+      "window_index": 908
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Thumb opposing base of little finger",
+      "repetition_id": 1,
+      "resolved_intent": "PINCH",
+      "source_label_index": 4,
+      "timestamp_s": 90.95,
+      "window_index": 909
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Thumb opposing base of little finger",
+      "repetition_id": 1,
+      "resolved_intent": "PINCH",
+      "source_label_index": 4,
+      "timestamp_s": 91.05,
+      "window_index": 910
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Thumb opposing base of little finger",
+      "repetition_id": 1,
+      "resolved_intent": "PINCH",
+      "source_label_index": 4,
+      "timestamp_s": 91.15,
+      "window_index": 911
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Thumb opposing base of little finger",
+      "repetition_id": 1,
+      "resolved_intent": "PINCH",
+      "source_label_index": 4,
+      "timestamp_s": 91.25,
+      "window_index": 912
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Thumb opposing base of little finger",
+      "repetition_id": 1,
+      "resolved_intent": "PINCH",
+      "source_label_index": 4,
+      "timestamp_s": 91.35,
+      "window_index": 913
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Thumb opposing base of little finger",
+      "repetition_id": 1,
+      "resolved_intent": "PINCH",
+      "source_label_index": 4,
+      "timestamp_s": 91.45,
+      "window_index": 914
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Thumb opposing base of little finger",
+      "repetition_id": 1,
+      "resolved_intent": "PINCH",
+      "source_label_index": 4,
+      "timestamp_s": 91.55,
+      "window_index": 915
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Thumb opposing base of little finger",
+      "repetition_id": 1,
+      "resolved_intent": "PINCH",
+      "source_label_index": 4,
+      "timestamp_s": 91.65,
+      "window_index": 916
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Thumb opposing base of little finger",
+      "repetition_id": 1,
+      "resolved_intent": "PINCH",
+      "source_label_index": 4,
+      "timestamp_s": 91.75,
+      "window_index": 917
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Thumb opposing base of little finger",
+      "repetition_id": 1,
+      "resolved_intent": "PINCH",
+      "source_label_index": 4,
+      "timestamp_s": 91.85,
+      "window_index": 918
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Thumb opposing base of little finger",
+      "repetition_id": 1,
+      "resolved_intent": "PINCH",
+      "source_label_index": 4,
+      "timestamp_s": 91.95,
+      "window_index": 919
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Thumb opposing base of little finger",
+      "repetition_id": 1,
+      "resolved_intent": "PINCH",
+      "source_label_index": 4,
+      "timestamp_s": 92.05,
+      "window_index": 920
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Thumb opposing base of little finger",
+      "repetition_id": 1,
+      "resolved_intent": "PINCH",
+      "source_label_index": 4,
+      "timestamp_s": 92.15,
+      "window_index": 921
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Thumb opposing base of little finger",
+      "repetition_id": 1,
+      "resolved_intent": "PINCH",
+      "source_label_index": 4,
+      "timestamp_s": 92.25,
+      "window_index": 922
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Thumb opposing base of little finger",
+      "repetition_id": 1,
+      "resolved_intent": "PINCH",
+      "source_label_index": 4,
+      "timestamp_s": 92.35,
+      "window_index": 923
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Thumb opposing base of little finger",
+      "repetition_id": 1,
+      "resolved_intent": "PINCH",
+      "source_label_index": 4,
+      "timestamp_s": 92.45,
+      "window_index": 924
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Thumb opposing base of little finger",
+      "repetition_id": 1,
+      "resolved_intent": "PINCH",
+      "source_label_index": 4,
+      "timestamp_s": 92.55,
+      "window_index": 925
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Thumb opposing base of little finger",
+      "repetition_id": 2,
+      "resolved_intent": "PINCH",
+      "source_label_index": 4,
+      "timestamp_s": 92.65,
+      "window_index": 926
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Thumb opposing base of little finger",
+      "repetition_id": 2,
+      "resolved_intent": "PINCH",
+      "source_label_index": 4,
+      "timestamp_s": 92.75,
+      "window_index": 927
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Thumb opposing base of little finger",
+      "repetition_id": 2,
+      "resolved_intent": "PINCH",
+      "source_label_index": 4,
+      "timestamp_s": 92.85,
+      "window_index": 928
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Thumb opposing base of little finger",
+      "repetition_id": 2,
+      "resolved_intent": "PINCH",
+      "source_label_index": 4,
+      "timestamp_s": 92.95,
+      "window_index": 929
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Thumb opposing base of little finger",
+      "repetition_id": 2,
+      "resolved_intent": "PINCH",
+      "source_label_index": 4,
+      "timestamp_s": 93.05,
+      "window_index": 930
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Thumb opposing base of little finger",
+      "repetition_id": 2,
+      "resolved_intent": "PINCH",
+      "source_label_index": 4,
+      "timestamp_s": 93.15,
+      "window_index": 931
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Thumb opposing base of little finger",
+      "repetition_id": 2,
+      "resolved_intent": "PINCH",
+      "source_label_index": 4,
+      "timestamp_s": 93.25,
+      "window_index": 932
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Thumb opposing base of little finger",
+      "repetition_id": 2,
+      "resolved_intent": "PINCH",
+      "source_label_index": 4,
+      "timestamp_s": 93.35,
+      "window_index": 933
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Thumb opposing base of little finger",
+      "repetition_id": 2,
+      "resolved_intent": "PINCH",
+      "source_label_index": 4,
+      "timestamp_s": 93.45,
+      "window_index": 934
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Thumb opposing base of little finger",
+      "repetition_id": 2,
+      "resolved_intent": "PINCH",
+      "source_label_index": 4,
+      "timestamp_s": 93.55,
+      "window_index": 935
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Thumb opposing base of little finger",
+      "repetition_id": 2,
+      "resolved_intent": "PINCH",
+      "source_label_index": 4,
+      "timestamp_s": 93.65,
+      "window_index": 936
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Thumb opposing base of little finger",
+      "repetition_id": 2,
+      "resolved_intent": "PINCH",
+      "source_label_index": 4,
+      "timestamp_s": 93.75,
+      "window_index": 937
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Thumb opposing base of little finger",
+      "repetition_id": 2,
+      "resolved_intent": "PINCH",
+      "source_label_index": 4,
+      "timestamp_s": 93.85,
+      "window_index": 938
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Thumb opposing base of little finger",
+      "repetition_id": 2,
+      "resolved_intent": "PINCH",
+      "source_label_index": 4,
+      "timestamp_s": 93.95,
+      "window_index": 939
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Thumb opposing base of little finger",
+      "repetition_id": 2,
+      "resolved_intent": "PINCH",
+      "source_label_index": 4,
+      "timestamp_s": 94.05,
+      "window_index": 940
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Thumb opposing base of little finger",
+      "repetition_id": 2,
+      "resolved_intent": "PINCH",
+      "source_label_index": 4,
+      "timestamp_s": 94.15,
+      "window_index": 941
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Thumb opposing base of little finger",
+      "repetition_id": 2,
+      "resolved_intent": "PINCH",
+      "source_label_index": 4,
+      "timestamp_s": 94.25,
+      "window_index": 942
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Thumb opposing base of little finger",
+      "repetition_id": 2,
+      "resolved_intent": "PINCH",
+      "source_label_index": 4,
+      "timestamp_s": 94.35,
+      "window_index": 943
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Thumb opposing base of little finger",
+      "repetition_id": 2,
+      "resolved_intent": "PINCH",
+      "source_label_index": 4,
+      "timestamp_s": 94.45,
+      "window_index": 944
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Thumb opposing base of little finger",
+      "repetition_id": 2,
+      "resolved_intent": "PINCH",
+      "source_label_index": 4,
+      "timestamp_s": 94.55,
+      "window_index": 945
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Thumb opposing base of little finger",
+      "repetition_id": 2,
+      "resolved_intent": "PINCH",
+      "source_label_index": 4,
+      "timestamp_s": 94.65,
+      "window_index": 946
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Thumb opposing base of little finger",
+      "repetition_id": 2,
+      "resolved_intent": "PINCH",
+      "source_label_index": 4,
+      "timestamp_s": 94.75,
+      "window_index": 947
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Thumb opposing base of little finger",
+      "repetition_id": 2,
+      "resolved_intent": "PINCH",
+      "source_label_index": 4,
+      "timestamp_s": 94.85,
+      "window_index": 948
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Thumb opposing base of little finger",
+      "repetition_id": 2,
+      "resolved_intent": "PINCH",
+      "source_label_index": 4,
+      "timestamp_s": 94.95,
+      "window_index": 949
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Thumb opposing base of little finger",
+      "repetition_id": 4,
+      "resolved_intent": "PINCH",
+      "source_label_index": 4,
+      "timestamp_s": 97.15,
+      "window_index": 971
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Thumb opposing base of little finger",
+      "repetition_id": 4,
+      "resolved_intent": "PINCH",
+      "source_label_index": 4,
+      "timestamp_s": 97.25,
+      "window_index": 972
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Thumb opposing base of little finger",
+      "repetition_id": 4,
+      "resolved_intent": "PINCH",
+      "source_label_index": 4,
+      "timestamp_s": 97.35,
+      "window_index": 973
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Thumb opposing base of little finger",
+      "repetition_id": 4,
+      "resolved_intent": "PINCH",
+      "source_label_index": 4,
+      "timestamp_s": 97.45,
+      "window_index": 974
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Thumb opposing base of little finger",
+      "repetition_id": 4,
+      "resolved_intent": "PINCH",
+      "source_label_index": 4,
+      "timestamp_s": 97.55,
+      "window_index": 975
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Thumb opposing base of little finger",
+      "repetition_id": 4,
+      "resolved_intent": "PINCH",
+      "source_label_index": 4,
+      "timestamp_s": 97.65,
+      "window_index": 976
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Thumb opposing base of little finger",
+      "repetition_id": 4,
+      "resolved_intent": "PINCH",
+      "source_label_index": 4,
+      "timestamp_s": 97.75,
+      "window_index": 977
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Thumb opposing base of little finger",
+      "repetition_id": 4,
+      "resolved_intent": "PINCH",
+      "source_label_index": 4,
+      "timestamp_s": 97.85,
+      "window_index": 978
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Thumb opposing base of little finger",
+      "repetition_id": 4,
+      "resolved_intent": "PINCH",
+      "source_label_index": 4,
+      "timestamp_s": 97.95,
+      "window_index": 979
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Thumb opposing base of little finger",
+      "repetition_id": 4,
+      "resolved_intent": "PINCH",
+      "source_label_index": 4,
+      "timestamp_s": 98.05,
+      "window_index": 980
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Thumb opposing base of little finger",
+      "repetition_id": 4,
+      "resolved_intent": "PINCH",
+      "source_label_index": 4,
+      "timestamp_s": 98.15,
+      "window_index": 981
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Thumb opposing base of little finger",
+      "repetition_id": 4,
+      "resolved_intent": "PINCH",
+      "source_label_index": 4,
+      "timestamp_s": 98.25,
+      "window_index": 982
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Thumb opposing base of little finger",
+      "repetition_id": 4,
+      "resolved_intent": "PINCH",
+      "source_label_index": 4,
+      "timestamp_s": 98.35,
+      "window_index": 983
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Thumb opposing base of little finger",
+      "repetition_id": 4,
+      "resolved_intent": "PINCH",
+      "source_label_index": 4,
+      "timestamp_s": 98.45,
+      "window_index": 984
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Thumb opposing base of little finger",
+      "repetition_id": 4,
+      "resolved_intent": "PINCH",
+      "source_label_index": 4,
+      "timestamp_s": 98.55,
+      "window_index": 985
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Thumb opposing base of little finger",
+      "repetition_id": 4,
+      "resolved_intent": "PINCH",
+      "source_label_index": 4,
+      "timestamp_s": 98.65,
+      "window_index": 986
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Thumb opposing base of little finger",
+      "repetition_id": 4,
+      "resolved_intent": "PINCH",
+      "source_label_index": 4,
+      "timestamp_s": 98.75,
+      "window_index": 987
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Thumb opposing base of little finger",
+      "repetition_id": 4,
+      "resolved_intent": "PINCH",
+      "source_label_index": 4,
+      "timestamp_s": 98.85,
+      "window_index": 988
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Thumb opposing base of little finger",
+      "repetition_id": 4,
+      "resolved_intent": "PINCH",
+      "source_label_index": 4,
+      "timestamp_s": 98.95,
+      "window_index": 989
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Thumb opposing base of little finger",
+      "repetition_id": 4,
+      "resolved_intent": "PINCH",
+      "source_label_index": 4,
+      "timestamp_s": 99.05,
+      "window_index": 990
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Thumb opposing base of little finger",
+      "repetition_id": 4,
+      "resolved_intent": "PINCH",
+      "source_label_index": 4,
+      "timestamp_s": 99.15,
+      "window_index": 991
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Abduction of all fingers",
+      "repetition_id": 2,
+      "resolved_intent": "OPEN",
+      "source_label_index": 5,
+      "timestamp_s": 106.15,
+      "window_index": 1061
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Abduction of all fingers",
+      "repetition_id": 2,
+      "resolved_intent": "OPEN",
+      "source_label_index": 5,
+      "timestamp_s": 106.25,
+      "window_index": 1062
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Abduction of all fingers",
+      "repetition_id": 2,
+      "resolved_intent": "OPEN",
+      "source_label_index": 5,
+      "timestamp_s": 106.35,
+      "window_index": 1063
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Abduction of all fingers",
+      "repetition_id": 2,
+      "resolved_intent": "OPEN",
+      "source_label_index": 5,
+      "timestamp_s": 106.45,
+      "window_index": 1064
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Abduction of all fingers",
+      "repetition_id": 2,
+      "resolved_intent": "OPEN",
+      "source_label_index": 5,
+      "timestamp_s": 106.55,
+      "window_index": 1065
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Abduction of all fingers",
+      "repetition_id": 2,
+      "resolved_intent": "OPEN",
+      "source_label_index": 5,
+      "timestamp_s": 106.65,
+      "window_index": 1066
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Abduction of all fingers",
+      "repetition_id": 2,
+      "resolved_intent": "OPEN",
+      "source_label_index": 5,
+      "timestamp_s": 106.75,
+      "window_index": 1067
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Abduction of all fingers",
+      "repetition_id": 2,
+      "resolved_intent": "OPEN",
+      "source_label_index": 5,
+      "timestamp_s": 106.85,
+      "window_index": 1068
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Abduction of all fingers",
+      "repetition_id": 2,
+      "resolved_intent": "OPEN",
+      "source_label_index": 5,
+      "timestamp_s": 106.95,
+      "window_index": 1069
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Abduction of all fingers",
+      "repetition_id": 2,
+      "resolved_intent": "OPEN",
+      "source_label_index": 5,
+      "timestamp_s": 107.05,
+      "window_index": 1070
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Abduction of all fingers",
+      "repetition_id": 2,
+      "resolved_intent": "OPEN",
+      "source_label_index": 5,
+      "timestamp_s": 107.15,
+      "window_index": 1071
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Abduction of all fingers",
+      "repetition_id": 2,
+      "resolved_intent": "OPEN",
+      "source_label_index": 5,
+      "timestamp_s": 107.25,
+      "window_index": 1072
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Abduction of all fingers",
+      "repetition_id": 2,
+      "resolved_intent": "OPEN",
+      "source_label_index": 5,
+      "timestamp_s": 107.35,
+      "window_index": 1073
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Abduction of all fingers",
+      "repetition_id": 2,
+      "resolved_intent": "OPEN",
+      "source_label_index": 5,
+      "timestamp_s": 107.45,
+      "window_index": 1074
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Abduction of all fingers",
+      "repetition_id": 2,
+      "resolved_intent": "OPEN",
+      "source_label_index": 5,
+      "timestamp_s": 107.55,
+      "window_index": 1075
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Abduction of all fingers",
+      "repetition_id": 2,
+      "resolved_intent": "OPEN",
+      "source_label_index": 5,
+      "timestamp_s": 107.65,
+      "window_index": 1076
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Abduction of all fingers",
+      "repetition_id": 2,
+      "resolved_intent": "OPEN",
+      "source_label_index": 5,
+      "timestamp_s": 107.75,
+      "window_index": 1077
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Abduction of all fingers",
+      "repetition_id": 2,
+      "resolved_intent": "OPEN",
+      "source_label_index": 5,
+      "timestamp_s": 107.85,
+      "window_index": 1078
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Abduction of all fingers",
+      "repetition_id": 2,
+      "resolved_intent": "OPEN",
+      "source_label_index": 5,
+      "timestamp_s": 107.95,
+      "window_index": 1079
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Abduction of all fingers",
+      "repetition_id": 2,
+      "resolved_intent": "OPEN",
+      "source_label_index": 5,
+      "timestamp_s": 108.05,
+      "window_index": 1080
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Abduction of all fingers",
+      "repetition_id": 2,
+      "resolved_intent": "OPEN",
+      "source_label_index": 5,
+      "timestamp_s": 108.15,
+      "window_index": 1081
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Abduction of all fingers",
+      "repetition_id": 2,
+      "resolved_intent": "OPEN",
+      "source_label_index": 5,
+      "timestamp_s": 108.25,
+      "window_index": 1082
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Abduction of all fingers",
+      "repetition_id": 2,
+      "resolved_intent": "OPEN",
+      "source_label_index": 5,
+      "timestamp_s": 108.35,
+      "window_index": 1083
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Abduction of all fingers",
+      "repetition_id": 2,
+      "resolved_intent": "OPEN",
+      "source_label_index": 5,
+      "timestamp_s": 108.45,
+      "window_index": 1084
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Abduction of all fingers",
+      "repetition_id": 2,
+      "resolved_intent": "OPEN",
+      "source_label_index": 5,
+      "timestamp_s": 108.55,
+      "window_index": 1085
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Abduction of all fingers",
+      "repetition_id": 2,
+      "resolved_intent": "OPEN",
+      "source_label_index": 5,
+      "timestamp_s": 108.65,
+      "window_index": 1086
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Abduction of all fingers",
+      "repetition_id": 2,
+      "resolved_intent": "OPEN",
+      "source_label_index": 5,
+      "timestamp_s": 108.75,
+      "window_index": 1087
+    },
+    {
+      "confidence": 1.0,
+      "predicted_label": "Abduction of all fingers",
+      "repetition_id": 2,
+      "resolved_intent": "OPEN",
+      "source_label_index": 5,
+      "timestamp_s": 108.85,
+      "window_index": 1088
+    }
+  ],
+  "protocol_id": "R2.3-DOWNSTREAM-v2",
+  "schema": "myosim-emg-prediction/v1",
+  "selected_runs": [
+    {
+      "intent": "REST",
+      "label": 0,
+      "window_end": 185,
+      "window_start": 82
+    },
+    {
+      "intent": "OPEN",
+      "label": 1,
+      "window_end": 327,
+      "window_start": 280
+    },
+    {
+      "intent": "CLOSE",
+      "label": 3,
+      "window_end": 777,
+      "window_start": 754
+    },
+    {
+      "intent": "OPEN",
+      "label": 5,
+      "window_end": 1088,
+      "window_start": 1061
+    }
+  ],
+  "selection_rule": "predeclared first valid ordered run sequence: REST -> OPEN -> GRASP/CLOSE -> OPEN; select all available windows between the first run start and final run end",
+  "source_model": "db7_raw_canonical_seed42_loso_S21",
+  "source_prediction_jsonl_sha256": "e7cee81d379606d61c8efc6b71eacecb5c02e56fd4a45907dd90874b310deed4",
+  "source_project": "NinaPro",
+  "source_status": "REAL_DATA_DERIVED_CACHE",
+  "subject": 21,
+  "timestamp_end_s": 108.85,
+  "timestamp_policy": "derived_window_center",
+  "timestamp_start_s": 8.25,
+  "window_count": 560,
+  "window_end": 1088,
+  "window_start": 82
+}

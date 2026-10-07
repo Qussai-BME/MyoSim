@@ -1,0 +1,10 @@
+schema: myosim-intent-map/v1
+version: myocontrol-map-v1
+source: myocontrol
+source_model: myocontrol-synthetic-fixture
+mapping:
+  rest: REST
+  open: OPEN
+  close: CLOSE
+  pinch: PINCH
+unmapped_policy: reject

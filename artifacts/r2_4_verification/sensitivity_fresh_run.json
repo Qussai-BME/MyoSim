@@ -1,0 +1,778 @@
+{
+  "config_file": "configs/benchmarks.yaml",
+  "config_file_sha256": "08d69863b0fc6f647926b8c11eb4f2bfd8e194e2b681937177ade3768bfd2523",
+  "input_file": "examples/intents/pick_place_replay.csv",
+  "input_file_sha256": "a94e59e30e2599eb92517198739dff96aa40b01f3bf6777756722e09960e09f3",
+  "matrix_manifest": "matrix_manifest.json",
+  "profile_config": "configs/hardware_twin/default_hand_v1.yaml",
+  "profile_sha256": "84164ebab725d7a4f9dfff94171194e77df019053c25a59f934d7cfaceed1d25",
+  "protocol": "R2.4-HW-TWIN-SENSITIVITY-v1",
+  "protocol_config": "configs/hardware_twin/sensitivity_v1.yaml",
+  "protocol_config_sha256": "c8587c4518f531517ccfdb960c7e12513cae970d150c8e8dd0bd99eff4c56611",
+  "resumed_scenarios": 0,
+  "same_input_across_scenarios": true,
+  "same_seed_across_scenarios": true,
+  "scenarios": [
+    {
+      "artifact_manifest": "baseline/artifact_manifest.json",
+      "command_delay_s": null,
+      "control": {
+        "event_count": 33,
+        "false_activation_count": 0,
+        "false_activation_rate": 0.0,
+        "mean_confirmation_latency_s": 0.30000000000000004,
+        "released_command_count": 1,
+        "state_transition_count": 5,
+        "unintended_transition_count": 0
+      },
+      "delta_vs_baseline": {
+        "command_corrections": 0.0,
+        "completion_time_s": 0.0,
+        "final_error_m": 0.0,
+        "grasp_stability_steps": 0.0,
+        "path_length_m": 0.0,
+        "released_commands": 0.0,
+        "success_changed": false
+      },
+      "faults": [],
+      "hardware_twin_enabled": false,
+      "invalid_state_detected": false,
+      "scenario": "baseline",
+      "task": {
+        "command_corrections": 3,
+        "completion_time_s": 3.22,
+        "final_error_m": 0.04985601966004137,
+        "final_state": "COMPLETE",
+        "grasp_stability_steps": 14,
+        "path_length_m": 0.9678159612131996,
+        "success": true,
+        "task_name": "pick_place"
+      },
+      "twin": null
+    },
+    {
+      "artifact_manifest": "delay_20ms/artifact_manifest.json",
+      "command_delay_s": 0.02,
+      "control": {
+        "event_count": 33,
+        "false_activation_count": 0,
+        "false_activation_rate": 0.0,
+        "mean_confirmation_latency_s": 0.30000000000000004,
+        "released_command_count": 1,
+        "state_transition_count": 5,
+        "unintended_transition_count": 0
+      },
+      "delta_vs_baseline": {
+        "command_corrections": 0.0,
+        "completion_time_s": 0.0,
+        "final_error_m": 0.0014274768707891253,
+        "grasp_stability_steps": 3.0,
+        "path_length_m": -0.33267422554672765,
+        "released_commands": 0.0,
+        "success_changed": false
+      },
+      "faults": [],
+      "hardware_twin_enabled": true,
+      "invalid_state_detected": false,
+      "scenario": "delay_20ms",
+      "task": {
+        "command_corrections": 3,
+        "completion_time_s": 3.22,
+        "final_error_m": 0.051283496530830495,
+        "final_state": "COMPLETE",
+        "grasp_stability_steps": 17,
+        "path_length_m": 0.6351417356664719,
+        "success": true,
+        "task_name": "pick_place"
+      },
+      "twin": {
+        "active_faults_at_end": [],
+        "claim_boundary": "software-only engineering abstraction; not a measured hardware model",
+        "command_delay_s": 0.02,
+        "final_actuator_coordinates": {
+          "forearm_x": 0.449999998641618,
+          "forearm_y": 0.09999999993416567,
+          "index_flex": 0.5475098163353191,
+          "middle_flex": 0.012387419764101237,
+          "ring_flex": 0.00990993581128099,
+          "thumb_flex": 0.5875098163353134
+        },
+        "model": "hardware_twin_position_first_order_v1",
+        "model_spec": {
+          "claim_boundary": "software-only engineering abstraction; not measured physical hardware",
+          "command_delay_s": 0.02,
+          "dynamics": {
+            "coordinate_bounds": true,
+            "per_coordinate_rate_limit": true,
+            "response_discretization": "backward_euler_style_alpha_dt_over_tau_plus_dt",
+            "response_model": "first_order_position"
+          },
+          "faults": [],
+          "model_id": "hardware_twin_position_first_order_v1",
+          "model_schema": "myosim-hardware-twin-model/v1",
+          "parameter_status": "assumed_unidentified",
+          "physics_timestep_s": 0.002,
+          "profile_sha256": "84164ebab725d7a4f9dfff94171194e77df019053c25a59f934d7cfaceed1d25",
+          "profile_source": "configs/hardware_twin/default_hand_v1.yaml",
+          "profiles": {
+            "forearm_x": {
+              "coordinate_max": 0.46,
+              "coordinate_min": 0.0,
+              "coordinate_unit": "m",
+              "initial_coordinate": 0.0,
+              "max_coordinate_rate_per_s": 0.25,
+              "safe_coordinate": 0.0,
+              "time_constant_s": 0.08
+            },
+            "forearm_y": {
+              "coordinate_max": 0.15,
+              "coordinate_min": -0.12,
+              "coordinate_unit": "m",
+              "initial_coordinate": 0.0,
+              "max_coordinate_rate_per_s": 0.25,
+              "safe_coordinate": 0.0,
+              "time_constant_s": 0.08
+            },
+            "index_flex": {
+              "coordinate_max": 1.45,
+              "coordinate_min": -0.05,
+              "coordinate_unit": "rad",
+              "initial_coordinate": 0.0,
+              "max_coordinate_rate_per_s": 2.0,
+              "safe_coordinate": 0.0,
+              "time_constant_s": 0.08
+            },
+            "middle_flex": {
+              "coordinate_max": 1.45,
+              "coordinate_min": -0.05,
+              "coordinate_unit": "rad",
+              "initial_coordinate": 0.0,
+              "max_coordinate_rate_per_s": 2.0,
+              "safe_coordinate": 0.0,
+              "time_constant_s": 0.08
+            },
+            "ring_flex": {
+              "coordinate_max": 1.4,
+              "coordinate_min": -0.05,
+              "coordinate_unit": "rad",
+              "initial_coordinate": 0.0,
+              "max_coordinate_rate_per_s": 2.0,
+              "safe_coordinate": 0.0,
+              "time_constant_s": 0.08
+            },
+            "thumb_flex": {
+              "coordinate_max": 1.2,
+              "coordinate_min": -0.05,
+              "coordinate_unit": "rad",
+              "initial_coordinate": 0.0,
+              "max_coordinate_rate_per_s": 2.0,
+              "safe_coordinate": 0.0,
+              "time_constant_s": 0.08
+            }
+          }
+        },
+        "stats": {
+          "accepted_commands": 33,
+          "actuator_stuck_steps": 0,
+          "applied_commands": 33,
+          "command_dropout_steps": 0,
+          "dropped_commands": 0,
+          "emergency_stops": 0,
+          "fault_steps": 0
+        },
+        "trace_summary": {
+          "per_joint": {
+            "forearm_x": {
+              "coordinate_unit": "m",
+              "max_abs_coordinate_rate_per_s": 0.2500000000000002,
+              "max_abs_tracking_error": 0.2895,
+              "mean_abs_tracking_error": 0.06868861351239137
+            },
+            "forearm_y": {
+              "coordinate_unit": "m",
+              "max_abs_coordinate_rate_per_s": 0.2500000000000002,
+              "max_abs_tracking_error": 0.0995,
+              "mean_abs_tracking_error": 0.006430788328595052
+            },
+            "index_flex": {
+              "coordinate_unit": "rad",
+              "max_abs_coordinate_rate_per_s": 2.0000000000000018,
+              "max_abs_tracking_error": 0.2973893849719541,
+              "mean_abs_tracking_error": 0.03530546221092882
+            },
+            "middle_flex": {
+              "coordinate_unit": "rad",
+              "max_abs_coordinate_rate_per_s": 1.8292682926829267,
+              "max_abs_tracking_error": 0.14634146341463414,
+              "mean_abs_tracking_error": 0.007141218627831115
+            },
+            "ring_flex": {
+              "coordinate_unit": "rad",
+              "max_abs_coordinate_rate_per_s": 1.4634146341463414,
+              "max_abs_tracking_error": 0.11707317073170731,
+              "mean_abs_tracking_error": 0.005712974902264886
+            },
+            "thumb_flex": {
+              "coordinate_unit": "rad",
+              "max_abs_coordinate_rate_per_s": 2.0000000000000018,
+              "max_abs_tracking_error": 0.2973893849719541,
+              "mean_abs_tracking_error": 0.03660548587053361
+            }
+          },
+          "samples": 1611,
+          "units_note": "Tracking error and rate are reported per joint because slide and hinge coordinates use different units."
+        }
+      }
+    },
+    {
+      "artifact_manifest": "delay_50ms/artifact_manifest.json",
+      "command_delay_s": 0.05,
+      "control": {
+        "event_count": 33,
+        "false_activation_count": 0,
+        "false_activation_rate": 0.0,
+        "mean_confirmation_latency_s": 0.30000000000000004,
+        "released_command_count": 1,
+        "state_transition_count": 5,
+        "unintended_transition_count": 0
+      },
+      "delta_vs_baseline": {
+        "command_corrections": 0.0,
+        "completion_time_s": 0.0,
+        "final_error_m": -0.001111700221176598,
+        "grasp_stability_steps": 3.0,
+        "path_length_m": -0.32911710801288774,
+        "released_commands": 0.0,
+        "success_changed": false
+      },
+      "faults": [],
+      "hardware_twin_enabled": true,
+      "invalid_state_detected": false,
+      "scenario": "delay_50ms",
+      "task": {
+        "command_corrections": 3,
+        "completion_time_s": 3.22,
+        "final_error_m": 0.04874431943886477,
+        "final_state": "COMPLETE",
+        "grasp_stability_steps": 17,
+        "path_length_m": 0.6386988532003118,
+        "success": true,
+        "task_name": "pick_place"
+      },
+      "twin": {
+        "active_faults_at_end": [],
+        "claim_boundary": "software-only engineering abstraction; not a measured hardware model",
+        "command_delay_s": 0.05,
+        "final_actuator_coordinates": {
+          "forearm_x": 0.44999999803265783,
+          "forearm_y": 0.09999999990465223,
+          "index_flex": 0.5957062698789917,
+          "middle_flex": 0.01794067733199029,
+          "ring_flex": 0.014352541865592233,
+          "thumb_flex": 0.6357062698789829
+        },
+        "model": "hardware_twin_position_first_order_v1",
+        "model_spec": {
+          "claim_boundary": "software-only engineering abstraction; not measured physical hardware",
+          "command_delay_s": 0.05,
+          "dynamics": {
+            "coordinate_bounds": true,
+            "per_coordinate_rate_limit": true,
+            "response_discretization": "backward_euler_style_alpha_dt_over_tau_plus_dt",
+            "response_model": "first_order_position"
+          },
+          "faults": [],
+          "model_id": "hardware_twin_position_first_order_v1",
+          "model_schema": "myosim-hardware-twin-model/v1",
+          "parameter_status": "assumed_unidentified",
+          "physics_timestep_s": 0.002,
+          "profile_sha256": "84164ebab725d7a4f9dfff94171194e77df019053c25a59f934d7cfaceed1d25",
+          "profile_source": "configs/hardware_twin/default_hand_v1.yaml",
+          "profiles": {
+            "forearm_x": {
+              "coordinate_max": 0.46,
+              "coordinate_min": 0.0,
+              "coordinate_unit": "m",
+              "initial_coordinate": 0.0,
+              "max_coordinate_rate_per_s": 0.25,
+              "safe_coordinate": 0.0,
+              "time_constant_s": 0.08
+            },
+            "forearm_y": {
+              "coordinate_max": 0.15,
+              "coordinate_min": -0.12,
+              "coordinate_unit": "m",
+              "initial_coordinate": 0.0,
+              "max_coordinate_rate_per_s": 0.25,
+              "safe_coordinate": 0.0,
+              "time_constant_s": 0.08
+            },
+            "index_flex": {
+              "coordinate_max": 1.45,
+              "coordinate_min": -0.05,
+              "coordinate_unit": "rad",
+              "initial_coordinate": 0.0,
+              "max_coordinate_rate_per_s": 2.0,
+              "safe_coordinate": 0.0,
+              "time_constant_s": 0.08
+            },
+            "middle_flex": {
+              "coordinate_max": 1.45,
+              "coordinate_min": -0.05,
+              "coordinate_unit": "rad",
+              "initial_coordinate": 0.0,
+              "max_coordinate_rate_per_s": 2.0,
+              "safe_coordinate": 0.0,
+              "time_constant_s": 0.08
+            },
+            "ring_flex": {
+              "coordinate_max": 1.4,
+              "coordinate_min": -0.05,
+              "coordinate_unit": "rad",
+              "initial_coordinate": 0.0,
+              "max_coordinate_rate_per_s": 2.0,
+              "safe_coordinate": 0.0,
+              "time_constant_s": 0.08
+            },
+            "thumb_flex": {
+              "coordinate_max": 1.2,
+              "coordinate_min": -0.05,
+              "coordinate_unit": "rad",
+              "initial_coordinate": 0.0,
+              "max_coordinate_rate_per_s": 2.0,
+              "safe_coordinate": 0.0,
+              "time_constant_s": 0.08
+            }
+          }
+        },
+        "stats": {
+          "accepted_commands": 33,
+          "actuator_stuck_steps": 0,
+          "applied_commands": 33,
+          "command_dropout_steps": 0,
+          "dropped_commands": 0,
+          "emergency_stops": 0,
+          "fault_steps": 0
+        },
+        "trace_summary": {
+          "per_joint": {
+            "forearm_x": {
+              "coordinate_unit": "m",
+              "max_abs_coordinate_rate_per_s": 0.2500000000000002,
+              "max_abs_tracking_error": 0.2895,
+              "mean_abs_tracking_error": 0.06868861349727132
+            },
+            "forearm_y": {
+              "coordinate_unit": "m",
+              "max_abs_coordinate_rate_per_s": 0.2500000000000002,
+              "max_abs_tracking_error": 0.0995,
+              "mean_abs_tracking_error": 0.006430788327862252
+            },
+            "index_flex": {
+              "coordinate_unit": "rad",
+              "max_abs_coordinate_rate_per_s": 2.0000000000000018,
+              "max_abs_tracking_error": 0.2973893849719541,
+              "mean_abs_tracking_error": 0.034108778075766254
+            },
+            "middle_flex": {
+              "coordinate_unit": "rad",
+              "max_abs_coordinate_rate_per_s": 1.8292682926829267,
+              "max_abs_tracking_error": 0.14634146341463414,
+              "mean_abs_tracking_error": 0.0070033351376290265
+            },
+            "ring_flex": {
+              "coordinate_unit": "rad",
+              "max_abs_coordinate_rate_per_s": 1.4634146341463414,
+              "max_abs_tracking_error": 0.11707317073170731,
+              "mean_abs_tracking_error": 0.005602668110103216
+            },
+            "thumb_flex": {
+              "coordinate_unit": "rad",
+              "max_abs_coordinate_rate_per_s": 2.0000000000000018,
+              "max_abs_tracking_error": 0.2973893849719541,
+              "mean_abs_tracking_error": 0.03540880173537111
+            }
+          },
+          "samples": 1611,
+          "units_note": "Tracking error and rate are reported per joint because slide and hinge coordinates use different units."
+        }
+      }
+    },
+    {
+      "artifact_manifest": "command_dropout_1_0_1_5s/artifact_manifest.json",
+      "command_delay_s": 0.02,
+      "control": {
+        "event_count": 33,
+        "false_activation_count": 0,
+        "false_activation_rate": 0.0,
+        "mean_confirmation_latency_s": 0.30000000000000004,
+        "released_command_count": 1,
+        "state_transition_count": 5,
+        "unintended_transition_count": 0
+      },
+      "delta_vs_baseline": {
+        "command_corrections": 0.0,
+        "completion_time_s": 0.0,
+        "final_error_m": -0.0151274155630554,
+        "grasp_stability_steps": 3.0,
+        "path_length_m": -0.3369680465406708,
+        "released_commands": 0.0,
+        "success_changed": false
+      },
+      "faults": [
+        {
+          "end_s": 1.5,
+          "joint_name": null,
+          "kind": "command_dropout",
+          "start_s": 1.0
+        }
+      ],
+      "hardware_twin_enabled": true,
+      "invalid_state_detected": false,
+      "scenario": "command_dropout_1_0_1_5s",
+      "task": {
+        "command_corrections": 3,
+        "completion_time_s": 3.22,
+        "final_error_m": 0.03472860409698597,
+        "final_state": "COMPLETE",
+        "grasp_stability_steps": 17,
+        "path_length_m": 0.6308479146725288,
+        "success": true,
+        "task_name": "pick_place"
+      },
+      "twin": {
+        "active_faults_at_end": [],
+        "claim_boundary": "software-only engineering abstraction; not a measured hardware model",
+        "command_delay_s": 0.02,
+        "final_actuator_coordinates": {
+          "forearm_x": 0.4499999848620159,
+          "forearm_y": 0.09999999922225182,
+          "index_flex": 0.5475098163353191,
+          "middle_flex": 0.012387419764101237,
+          "ring_flex": 0.00990993581128099,
+          "thumb_flex": 0.5875098163353134
+        },
+        "model": "hardware_twin_position_first_order_v1",
+        "model_spec": {
+          "claim_boundary": "software-only engineering abstraction; not measured physical hardware",
+          "command_delay_s": 0.02,
+          "dynamics": {
+            "coordinate_bounds": true,
+            "per_coordinate_rate_limit": true,
+            "response_discretization": "backward_euler_style_alpha_dt_over_tau_plus_dt",
+            "response_model": "first_order_position"
+          },
+          "faults": [
+            {
+              "end_s": 1.5,
+              "joint_name": null,
+              "kind": "command_dropout",
+              "start_s": 1.0
+            }
+          ],
+          "model_id": "hardware_twin_position_first_order_v1",
+          "model_schema": "myosim-hardware-twin-model/v1",
+          "parameter_status": "assumed_unidentified",
+          "physics_timestep_s": 0.002,
+          "profile_sha256": "84164ebab725d7a4f9dfff94171194e77df019053c25a59f934d7cfaceed1d25",
+          "profile_source": "configs/hardware_twin/default_hand_v1.yaml",
+          "profiles": {
+            "forearm_x": {
+              "coordinate_max": 0.46,
+              "coordinate_min": 0.0,
+              "coordinate_unit": "m",
+              "initial_coordinate": 0.0,
+              "max_coordinate_rate_per_s": 0.25,
+              "safe_coordinate": 0.0,
+              "time_constant_s": 0.08
+            },
+            "forearm_y": {
+              "coordinate_max": 0.15,
+              "coordinate_min": -0.12,
+              "coordinate_unit": "m",
+              "initial_coordinate": 0.0,
+              "max_coordinate_rate_per_s": 0.25,
+              "safe_coordinate": 0.0,
+              "time_constant_s": 0.08
+            },
+            "index_flex": {
+              "coordinate_max": 1.45,
+              "coordinate_min": -0.05,
+              "coordinate_unit": "rad",
+              "initial_coordinate": 0.0,
+              "max_coordinate_rate_per_s": 2.0,
+              "safe_coordinate": 0.0,
+              "time_constant_s": 0.08
+            },
+            "middle_flex": {
+              "coordinate_max": 1.45,
+              "coordinate_min": -0.05,
+              "coordinate_unit": "rad",
+              "initial_coordinate": 0.0,
+              "max_coordinate_rate_per_s": 2.0,
+              "safe_coordinate": 0.0,
+              "time_constant_s": 0.08
+            },
+            "ring_flex": {
+              "coordinate_max": 1.4,
+              "coordinate_min": -0.05,
+              "coordinate_unit": "rad",
+              "initial_coordinate": 0.0,
+              "max_coordinate_rate_per_s": 2.0,
+              "safe_coordinate": 0.0,
+              "time_constant_s": 0.08
+            },
+            "thumb_flex": {
+              "coordinate_max": 1.2,
+              "coordinate_min": -0.05,
+              "coordinate_unit": "rad",
+              "initial_coordinate": 0.0,
+              "max_coordinate_rate_per_s": 2.0,
+              "safe_coordinate": 0.0,
+              "time_constant_s": 0.08
+            }
+          }
+        },
+        "stats": {
+          "accepted_commands": 33,
+          "actuator_stuck_steps": 0,
+          "applied_commands": 28,
+          "command_dropout_steps": 250,
+          "dropped_commands": 5,
+          "emergency_stops": 0,
+          "fault_steps": 250
+        },
+        "trace_summary": {
+          "per_joint": {
+            "forearm_x": {
+              "coordinate_unit": "m",
+              "max_abs_coordinate_rate_per_s": 0.2500000000000002,
+              "max_abs_tracking_error": 0.2895,
+              "mean_abs_tracking_error": 0.06848266942709605
+            },
+            "forearm_y": {
+              "coordinate_unit": "m",
+              "max_abs_coordinate_rate_per_s": 0.2500000000000002,
+              "max_abs_tracking_error": 0.0995,
+              "mean_abs_tracking_error": 0.006430788310918728
+            },
+            "index_flex": {
+              "coordinate_unit": "rad",
+              "max_abs_coordinate_rate_per_s": 2.0000000000000018,
+              "max_abs_tracking_error": 0.2973893849719541,
+              "mean_abs_tracking_error": 0.03530546221092882
+            },
+            "middle_flex": {
+              "coordinate_unit": "rad",
+              "max_abs_coordinate_rate_per_s": 1.8292682926829267,
+              "max_abs_tracking_error": 0.14634146341463414,
+              "mean_abs_tracking_error": 0.007141218627831115
+            },
+            "ring_flex": {
+              "coordinate_unit": "rad",
+              "max_abs_coordinate_rate_per_s": 1.4634146341463414,
+              "max_abs_tracking_error": 0.11707317073170731,
+              "mean_abs_tracking_error": 0.005712974902264886
+            },
+            "thumb_flex": {
+              "coordinate_unit": "rad",
+              "max_abs_coordinate_rate_per_s": 2.0000000000000018,
+              "max_abs_tracking_error": 0.2973893849719541,
+              "mean_abs_tracking_error": 0.03660548587053361
+            }
+          },
+          "samples": 1611,
+          "units_note": "Tracking error and rate are reported per joint because slide and hinge coordinates use different units."
+        }
+      }
+    },
+    {
+      "artifact_manifest": "index_stuck_1_0_1_5s/artifact_manifest.json",
+      "command_delay_s": 0.02,
+      "control": {
+        "event_count": 33,
+        "false_activation_count": 0,
+        "false_activation_rate": 0.0,
+        "mean_confirmation_latency_s": 0.30000000000000004,
+        "released_command_count": 1,
+        "state_transition_count": 5,
+        "unintended_transition_count": 0
+      },
+      "delta_vs_baseline": {
+        "command_corrections": 0.0,
+        "completion_time_s": 0.0,
+        "final_error_m": 0.0014280825261272848,
+        "grasp_stability_steps": 3.0,
+        "path_length_m": -0.3326647138138745,
+        "released_commands": 0.0,
+        "success_changed": false
+      },
+      "faults": [
+        {
+          "end_s": 1.5,
+          "joint_name": "index_flex",
+          "kind": "actuator_stuck",
+          "start_s": 1.0
+        }
+      ],
+      "hardware_twin_enabled": true,
+      "invalid_state_detected": false,
+      "scenario": "index_stuck_1_0_1_5s",
+      "task": {
+        "command_corrections": 3,
+        "completion_time_s": 3.22,
+        "final_error_m": 0.051284102186168655,
+        "final_state": "COMPLETE",
+        "grasp_stability_steps": 17,
+        "path_length_m": 0.635151247399325,
+        "success": true,
+        "task_name": "pick_place"
+      },
+      "twin": {
+        "active_faults_at_end": [],
+        "claim_boundary": "software-only engineering abstraction; not a measured hardware model",
+        "command_delay_s": 0.02,
+        "final_actuator_coordinates": {
+          "forearm_x": 0.449999998641618,
+          "forearm_y": 0.09999999993416567,
+          "index_flex": 0.547509816324991,
+          "middle_flex": 0.012387419764101237,
+          "ring_flex": 0.00990993581128099,
+          "thumb_flex": 0.5875098163353134
+        },
+        "model": "hardware_twin_position_first_order_v1",
+        "model_spec": {
+          "claim_boundary": "software-only engineering abstraction; not measured physical hardware",
+          "command_delay_s": 0.02,
+          "dynamics": {
+            "coordinate_bounds": true,
+            "per_coordinate_rate_limit": true,
+            "response_discretization": "backward_euler_style_alpha_dt_over_tau_plus_dt",
+            "response_model": "first_order_position"
+          },
+          "faults": [
+            {
+              "end_s": 1.5,
+              "joint_name": "index_flex",
+              "kind": "actuator_stuck",
+              "start_s": 1.0
+            }
+          ],
+          "model_id": "hardware_twin_position_first_order_v1",
+          "model_schema": "myosim-hardware-twin-model/v1",
+          "parameter_status": "assumed_unidentified",
+          "physics_timestep_s": 0.002,
+          "profile_sha256": "84164ebab725d7a4f9dfff94171194e77df019053c25a59f934d7cfaceed1d25",
+          "profile_source": "configs/hardware_twin/default_hand_v1.yaml",
+          "profiles": {
+            "forearm_x": {
+              "coordinate_max": 0.46,
+              "coordinate_min": 0.0,
+              "coordinate_unit": "m",
+              "initial_coordinate": 0.0,
+              "max_coordinate_rate_per_s": 0.25,
+              "safe_coordinate": 0.0,
+              "time_constant_s": 0.08
+            },
+            "forearm_y": {
+              "coordinate_max": 0.15,
+              "coordinate_min": -0.12,
+              "coordinate_unit": "m",
+              "initial_coordinate": 0.0,
+              "max_coordinate_rate_per_s": 0.25,
+              "safe_coordinate": 0.0,
+              "time_constant_s": 0.08
+            },
+            "index_flex": {
+              "coordinate_max": 1.45,
+              "coordinate_min": -0.05,
+              "coordinate_unit": "rad",
+              "initial_coordinate": 0.0,
+              "max_coordinate_rate_per_s": 2.0,
+              "safe_coordinate": 0.0,
+              "time_constant_s": 0.08
+            },
+            "middle_flex": {
+              "coordinate_max": 1.45,
+              "coordinate_min": -0.05,
+              "coordinate_unit": "rad",
+              "initial_coordinate": 0.0,
+              "max_coordinate_rate_per_s": 2.0,
+              "safe_coordinate": 0.0,
+              "time_constant_s": 0.08
+            },
+            "ring_flex": {
+              "coordinate_max": 1.4,
+              "coordinate_min": -0.05,
+              "coordinate_unit": "rad",
+              "initial_coordinate": 0.0,
+              "max_coordinate_rate_per_s": 2.0,
+              "safe_coordinate": 0.0,
+              "time_constant_s": 0.08
+            },
+            "thumb_flex": {
+              "coordinate_max": 1.2,
+              "coordinate_min": -0.05,
+              "coordinate_unit": "rad",
+              "initial_coordinate": 0.0,
+              "max_coordinate_rate_per_s": 2.0,
+              "safe_coordinate": 0.0,
+              "time_constant_s": 0.08
+            }
+          }
+        },
+        "stats": {
+          "accepted_commands": 33,
+          "actuator_stuck_steps": 250,
+          "applied_commands": 33,
+          "command_dropout_steps": 0,
+          "dropped_commands": 0,
+          "emergency_stops": 0,
+          "fault_steps": 250
+        },
+        "trace_summary": {
+          "per_joint": {
+            "forearm_x": {
+              "coordinate_unit": "m",
+              "max_abs_coordinate_rate_per_s": 0.2500000000000002,
+              "max_abs_tracking_error": 0.2895,
+              "mean_abs_tracking_error": 0.06868861351239137
+            },
+            "forearm_y": {
+              "coordinate_unit": "m",
+              "max_abs_coordinate_rate_per_s": 0.2500000000000002,
+              "max_abs_tracking_error": 0.0995,
+              "mean_abs_tracking_error": 0.006430788328595052
+            },
+            "index_flex": {
+              "coordinate_unit": "rad",
+              "max_abs_coordinate_rate_per_s": 2.0000000000000018,
+              "max_abs_tracking_error": 0.2973893849719541,
+              "mean_abs_tracking_error": 0.03627963533698189
+            },
+            "middle_flex": {
+              "coordinate_unit": "rad",
+              "max_abs_coordinate_rate_per_s": 1.8292682926829267,
+              "max_abs_tracking_error": 0.14634146341463414,
+              "mean_abs_tracking_error": 0.007141218627831115
+            },
+            "ring_flex": {
+              "coordinate_unit": "rad",
+              "max_abs_coordinate_rate_per_s": 1.4634146341463414,
+              "max_abs_tracking_error": 0.11707317073170731,
+              "mean_abs_tracking_error": 0.005712974902264886
+            },
+            "thumb_flex": {
+              "coordinate_unit": "rad",
+              "max_abs_coordinate_rate_per_s": 2.0000000000000018,
+              "max_abs_tracking_error": 0.2973893849719541,
+              "mean_abs_tracking_error": 0.03660548587053361
+            }
+          },
+          "samples": 1611,
+          "units_note": "Tracking error and rate are reported per joint because slide and hinge coordinates use different units."
+        }
+      }
+    }
+  ]
+}

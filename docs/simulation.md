@@ -1,12 +1,12 @@
 # Simulation
 
-MyoSim V1.1 uses **MuJoCo** as its declared primary physics backend. The human-editable source model is `assets/models/hand.xml`; it is loaded headlessly in tests and through `myosim validate-model`. V1.1 also provides an optional, tested **PyBullet compatibility backend** for the declared V1 asset in headless DIRECT mode. The two backends satisfy the same software contract but are not claimed to be trajectory- or physics-equivalent.
+The MyoSim simulation layer uses **MuJoCo** as its declared primary physics backend. The human-editable source model is `assets/models/hand.xml`; it is loaded headlessly in tests and through `myosim validate-model`. It also provides an optional, tested **PyBullet compatibility backend** for the declared V1 asset in headless DIRECT mode. The two backends satisfy the same software contract but are not claimed to be trajectory- or physics-equivalent.
 
 ## Backend contract
 
 `PhysicsBackend` defines load, reset, step, apply-control, snapshot, restore, body-position query, explicit constraint activation, render, and close operations. Both `MujocoBackend` and `PyBulletBackend` implement this interface. Controllers depend on the contract rather than importing either physics library. Runtime availability is reported by `myosim list-backends`, and a selected backend can be checked through `myosim validate-model --backend <mujoco|pybullet>`.
 
-| Backend | V1.1 role | Verification mode | Declared boundary |
+| Backend | Current role | Verification mode | Declared boundary |
 |---|---|---|---|
 | MuJoCo | Primary backend | Headless load/reset/step; local viewer available on GUI-capable systems | Reference path for V1 MJCF, actuator, equality, and rendering semantics |
 | PyBullet | Optional compatibility backend | Headless DIRECT-mode load/reset/step | Supports the V1 contract and named controllable joints; it does not establish physical equivalence with MuJoCo |

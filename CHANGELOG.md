@@ -1,6 +1,51 @@
 # Changelog
 
+## [0.1.6] - 2026-10-06
+
+The previous public release is 0.1.5.3. Versions 0.1.5.4 (R2.2 evidence work) and the R2.3 closure were internal milestones that were never deposited separately; their content ships in this release.
+
+### Added
+
+- **Real-data downstream integration (R2.3 milestone).** NinaPro DB3/DB7-derived decoder prediction artifacts (33 files, 117,572 rows/events) run through the decoder-independent intent/control stack, with a Ground Truth vs Real Decoder comparison on the same 560-window DB7 S21 episode. Evidence and verifiers are under `artifacts/r2_3_real_emg/`; the historical record is under `docs/history/r2_3/`. These runs show that real-data-derived predictions traverse the software stack; they do not establish decoder quality, real-time operation, clinical efficacy, or safety.
+- **Hardware Twin (R2.4 milestone).** An opt-in `HardwareTwinBackend` wrapper with explicit coordinate bounds, rate limits, first-order response, fixed command delay, deterministic dropout and stuck-actuator fault windows, emergency-stop queue clearing, and observable counters.
+- `myosim hardware-twin-benchmark` command with configuration-aware run identity and recorded twin assumptions.
+- Frozen five-scenario sensitivity protocol (`configs/hardware_twin/sensitivity_v1.yaml`) and its evidence under `artifacts/hardware_twin_sensitivity/`.
+- Architecture decision record `docs/adr/ADR-001-hardware-twin-backend-wrapper.md` and specification `docs/HARDWARE_TWIN_R2_4_SPEC.md`.
+
+### Changed
+
+- The baseline runner remains the default path; the Hardware Twin is strictly opt-in.
+- Fixed a missing synthetic-run writer import in the replay CLI, applied type/import cleanups, and made the MuJoCo delay assertion account for the model's 2 ms physics timestep. No physics-model behavior changed.
+- Tests that need the optional PyBullet backend now skip cleanly when it is not installed instead of failing.
+- R2.3 scripts moved to `scripts/history/r2_3/`; historical R2.3 documents moved to `docs/history/r2_3/`.
+- Engineering reports of the Hardware Twin milestone are kept as a dated record in `docs/history/r2_4/`.
+
+### Scientific boundary
+
+The actuator profiles are assumptions for sensitivity analysis, not identified parameters of a physical device. Nothing in this release is hardware-in-the-loop, calibration evidence, clinical validation, or a safety case.
+
 All notable changes to MyoSim are documented in this file. The project follows a phase-gated engineering workflow; entries are recorded only after the associated implementation, review, and verification gates pass.
+
+## [0.1.5.4] - 2026-09-29 (internal milestone, not deposited)
+
+### R2.2 Flagship Evidence Release
+
+### Added
+
+- Idempotent scientific canonical hashing independent of JSON key ordering, whitespace, and raw-file identity metadata.
+- Explicit `SYNTHETIC` / `REAL_DATA_DERIVED` source branch validation with fail-closed semantics.
+- Strongly typed `TraceEvent` lifecycle preserving predicted label, mapped intent, decision state, released command, safety action, controller state, robot reference, task state, and run ID.
+- R2.2 verifier and CLI command: `PYTHONPATH=src python3 -m myosim.cli.main verify-r2`.
+- Fifteen-case adversarial input suite, deterministic scientific-trace comparison, formal schemas, evidence index, release audit, and quality scorecard.
+- Clean 18-second MP4/WebM hero encodings derived from the actual MuJoCo replay frames.
+
+### Verification
+
+- R2.2 targeted adapter and hardening tests: 11 passed.
+- Local regression excluding unavailable optional PyBullet environment tests: 124 passed.
+- R2.2 adversarial suite: 15/15 rejected safely.
+- Deterministic repeat: scientific trace equal and task metrics equal.
+- Scientific status: synthetic upstream replay; real-data evidence remains explicitly blocked.
 
 ## [0.1.4] - 2026-08-26
 

@@ -1,3 +1,7 @@
+import pytest
+
+pytest.importorskip("mujoco")
+
 import json
 from hashlib import sha256
 from pathlib import Path
