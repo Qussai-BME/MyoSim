@@ -463,7 +463,7 @@ with tab_console:
                     "Command corrections": task["command_corrections"],
                 }
             )
-        st.dataframe(rows, use_container_width=True, hide_index=True)
+        st.dataframe(rows, width="stretch", hide_index=True)
 
         st.markdown("### What the comparison actually says")
         st.write(
