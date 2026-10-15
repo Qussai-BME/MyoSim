@@ -8,3 +8,5 @@
 # myosim package itself). Pinned per Streamlit's own best-practice guidance
 # so Community Cloud never silently upgrades it under you.
 streamlit>=1.60,<2.0
+# pyarrow must stay compatible with the numpy<2.0 pin in pyproject.toml.
+pyarrow>=19,<21
