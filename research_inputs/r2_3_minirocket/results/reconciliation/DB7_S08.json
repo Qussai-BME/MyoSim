@@ -1,0 +1,12 @@
+{
+  "dataset": "DB7",
+  "subject_id": 8,
+  "archived_accuracy": 0.367623,
+  "recomputed_accuracy": 0.3230623370466935,
+  "difference_accuracy": -0.04456066295330646,
+  "archived_macro_f1": 0.326346,
+  "recomputed_macro_f1": 0.29273255816339955,
+  "difference_macro_f1": -0.03361344183660048,
+  "training_policy": "complete_eligible_pool_except_held_out",
+  "status": "PROTOCOL_CHANGE_TRAINING_POOL"
+}

@@ -1,0 +1,14 @@
+{
+  "config_file": "configs/benchmarks.yaml",
+  "config_file_sha256": "08d69863b0fc6f647926b8c11eb4f2bfd8e194e2b681937177ade3768bfd2523",
+  "input_file": "examples/intents/pick_place_replay.csv",
+  "input_file_sha256": "a94e59e30e2599eb92517198739dff96aa40b01f3bf6777756722e09960e09f3",
+  "profile_config": "configs/hardware_twin/default_hand_v1.yaml",
+  "profile_sha256": "84164ebab725d7a4f9dfff94171194e77df019053c25a59f934d7cfaceed1d25",
+  "protocol_config": "configs/hardware_twin/sensitivity_v1.yaml",
+  "protocol_config_sha256": "c8587c4518f531517ccfdb960c7e12513cae970d150c8e8dd0bd99eff4c56611",
+  "protocol_id": "R2.4-HW-TWIN-SENSITIVITY-v1",
+  "same_input_across_scenarios": true,
+  "same_seed_across_scenarios": true,
+  "schema": "myosim-hardware-twin-sensitivity-run/v1"
+}

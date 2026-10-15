@@ -1,0 +1,10 @@
+{
+  "command_corrections": 3,
+  "completion_time_s": 3.22,
+  "final_error_m": 0.051284102186168655,
+  "final_state": "COMPLETE",
+  "grasp_stability_steps": 17,
+  "path_length_m": 0.635151247399325,
+  "success": true,
+  "task_name": "pick_place"
+}

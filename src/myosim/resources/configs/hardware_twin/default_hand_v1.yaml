@@ -1,0 +1,52 @@
+schema: myosim-hardware-twin-profiles/v1
+model_id: hardware_twin_position_first_order_v1
+parameter_status: assumed_unidentified
+profiles:
+  forearm_x:
+    coordinate_min: 0.0
+    coordinate_max: 0.46
+    max_coordinate_rate_per_s: 0.25
+    time_constant_s: 0.08
+    initial_coordinate: 0.0
+    safe_coordinate: 0.0
+    coordinate_unit: m
+  forearm_y:
+    coordinate_min: -0.12
+    coordinate_max: 0.15
+    max_coordinate_rate_per_s: 0.25
+    time_constant_s: 0.08
+    initial_coordinate: 0.0
+    safe_coordinate: 0.0
+    coordinate_unit: m
+  thumb_flex:
+    coordinate_min: -0.05
+    coordinate_max: 1.2
+    max_coordinate_rate_per_s: 2.0
+    time_constant_s: 0.08
+    initial_coordinate: 0.0
+    safe_coordinate: 0.0
+    coordinate_unit: rad
+  index_flex:
+    coordinate_min: -0.05
+    coordinate_max: 1.45
+    max_coordinate_rate_per_s: 2.0
+    time_constant_s: 0.08
+    initial_coordinate: 0.0
+    safe_coordinate: 0.0
+    coordinate_unit: rad
+  middle_flex:
+    coordinate_min: -0.05
+    coordinate_max: 1.45
+    max_coordinate_rate_per_s: 2.0
+    time_constant_s: 0.08
+    initial_coordinate: 0.0
+    safe_coordinate: 0.0
+    coordinate_unit: rad
+  ring_flex:
+    coordinate_min: -0.05
+    coordinate_max: 1.40
+    max_coordinate_rate_per_s: 2.0
+    time_constant_s: 0.08
+    initial_coordinate: 0.0
+    safe_coordinate: 0.0
+    coordinate_unit: rad

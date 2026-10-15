@@ -1,0 +1,47 @@
+{
+  "dataset": "DB7",
+  "label_map_sha256": "4e7354771dd635a7d3385260ad3f3f5c758a2d55a0f4cad307355bf4f8c62c8f",
+  "label_map_version": "ninapro-db7-to-myosim-v1",
+  "modality": "sEMG",
+  "model_version": "canonical-minirocket-ridge-v1",
+  "protocol_id": "R2.3-DOWNSTREAM-v2",
+  "schema": "myosim-emg-prediction/v1",
+  "selected_runs": [
+    {
+      "intent": "REST",
+      "label": 0,
+      "window_end": 185,
+      "window_start": 82
+    },
+    {
+      "intent": "OPEN",
+      "label": 1,
+      "window_end": 327,
+      "window_start": 280
+    },
+    {
+      "intent": "CLOSE",
+      "label": 3,
+      "window_end": 777,
+      "window_start": 754
+    },
+    {
+      "intent": "OPEN",
+      "label": 5,
+      "window_end": 1088,
+      "window_start": 1061
+    }
+  ],
+  "selection_rule": "predeclared first valid ordered run sequence: REST -> OPEN -> GRASP/CLOSE -> OPEN; select all available windows between the first run start and final run end",
+  "source_model": "db7_raw_canonical_seed42_loso_S21",
+  "source_prediction_jsonl_sha256": "e7cee81d379606d61c8efc6b71eacecb5c02e56fd4a45907dd90874b310deed4",
+  "source_project": "NinaPro",
+  "source_status": "REAL_DATA_DERIVED_CACHE",
+  "subject": 21,
+  "timestamp_end_s": 108.85,
+  "timestamp_policy": "derived_window_center",
+  "timestamp_start_s": 8.25,
+  "window_count": 560,
+  "window_end": 1088,
+  "window_start": 82
+}

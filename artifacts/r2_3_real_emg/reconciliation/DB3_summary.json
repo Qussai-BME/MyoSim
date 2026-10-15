@@ -1,0 +1,197 @@
+{
+  "dataset": "DB3",
+  "interpretation": "Prediction-stream integrity reconciliation. Historical aggregate values may differ when a distinct training-pool protocol variant was used.",
+  "max_abs_difference": 0.0,
+  "n_check": 0,
+  "n_pass": 11,
+  "n_subjects": 11,
+  "subjects": [
+    {
+      "diffs": {
+        "accuracy_abs_diff": 0.0,
+        "macro_f1_abs_diff": 0.0
+      },
+      "expected_from_export_audit": {
+        "accuracy": 0.12190889370932755,
+        "macro_f1": 0.09243415242806675
+      },
+      "recomputed_from_canonical_predictions": {
+        "accuracy": 0.12190889370932755,
+        "macro_f1": 0.09243415242806675
+      },
+      "source_audit_status": "PASS_WITHIN_REVIEW",
+      "status": "PASS",
+      "subject_id": 1
+    },
+    {
+      "diffs": {
+        "accuracy_abs_diff": 0.0,
+        "macro_f1_abs_diff": 0.0
+      },
+      "expected_from_export_audit": {
+        "accuracy": 0.10953461975028377,
+        "macro_f1": 0.04851379661969299
+      },
+      "recomputed_from_canonical_predictions": {
+        "accuracy": 0.10953461975028377,
+        "macro_f1": 0.04851379661969299
+      },
+      "source_audit_status": "PASS_WITHIN_REVIEW",
+      "status": "PASS",
+      "subject_id": 2
+    },
+    {
+      "diffs": {
+        "accuracy_abs_diff": 0.0,
+        "macro_f1_abs_diff": 0.0
+      },
+      "expected_from_export_audit": {
+        "accuracy": 0.05306603773584906,
+        "macro_f1": 0.010092478167737683
+      },
+      "recomputed_from_canonical_predictions": {
+        "accuracy": 0.05306603773584906,
+        "macro_f1": 0.010092478167737683
+      },
+      "source_audit_status": "PASS_WITHIN_REVIEW",
+      "status": "PASS",
+      "subject_id": 3
+    },
+    {
+      "diffs": {
+        "accuracy_abs_diff": 0.0,
+        "macro_f1_abs_diff": 0.0
+      },
+      "expected_from_export_audit": {
+        "accuracy": 0.08216136195410807,
+        "macro_f1": 0.06861650420165619
+      },
+      "recomputed_from_canonical_predictions": {
+        "accuracy": 0.08216136195410807,
+        "macro_f1": 0.06861650420165619
+      },
+      "source_audit_status": "PASS_WITHIN_REVIEW",
+      "status": "PASS",
+      "subject_id": 4
+    },
+    {
+      "diffs": {
+        "accuracy_abs_diff": 0.0,
+        "macro_f1_abs_diff": 0.0
+      },
+      "expected_from_export_audit": {
+        "accuracy": 0.046653919694072656,
+        "macro_f1": 0.04262907051999362
+      },
+      "recomputed_from_canonical_predictions": {
+        "accuracy": 0.046653919694072656,
+        "macro_f1": 0.04262907051999362
+      },
+      "source_audit_status": "PASS_WITHIN_REVIEW",
+      "status": "PASS",
+      "subject_id": 5
+    },
+    {
+      "diffs": {
+        "accuracy_abs_diff": 0.0,
+        "macro_f1_abs_diff": 0.0
+      },
+      "expected_from_export_audit": {
+        "accuracy": 0.06782802075611565,
+        "macro_f1": 0.01692146950529375
+      },
+      "recomputed_from_canonical_predictions": {
+        "accuracy": 0.06782802075611565,
+        "macro_f1": 0.01692146950529375
+      },
+      "source_audit_status": "PASS_WITHIN_REVIEW",
+      "status": "PASS",
+      "subject_id": 6
+    },
+    {
+      "diffs": {
+        "accuracy_abs_diff": 0.0,
+        "macro_f1_abs_diff": 0.0
+      },
+      "expected_from_export_audit": {
+        "accuracy": 0.05886821116597037,
+        "macro_f1": 0.01940183609368646
+      },
+      "recomputed_from_canonical_predictions": {
+        "accuracy": 0.05886821116597037,
+        "macro_f1": 0.01940183609368646
+      },
+      "source_audit_status": "PASS_WITHIN_REVIEW",
+      "status": "PASS",
+      "subject_id": 7
+    },
+    {
+      "diffs": {
+        "accuracy_abs_diff": 0.0,
+        "macro_f1_abs_diff": 0.0
+      },
+      "expected_from_export_audit": {
+        "accuracy": 0.0762958648806057,
+        "macro_f1": 0.06336544398586094
+      },
+      "recomputed_from_canonical_predictions": {
+        "accuracy": 0.0762958648806057,
+        "macro_f1": 0.06336544398586094
+      },
+      "source_audit_status": "PASS_WITHIN_REVIEW",
+      "status": "PASS",
+      "subject_id": 8
+    },
+    {
+      "diffs": {
+        "accuracy_abs_diff": 0.0,
+        "macro_f1_abs_diff": 0.0
+      },
+      "expected_from_export_audit": {
+        "accuracy": 0.12003825920612148,
+        "macro_f1": 0.10626084418463322
+      },
+      "recomputed_from_canonical_predictions": {
+        "accuracy": 0.12003825920612148,
+        "macro_f1": 0.10626084418463322
+      },
+      "source_audit_status": "PASS_WITHIN_REVIEW",
+      "status": "PASS",
+      "subject_id": 9
+    },
+    {
+      "diffs": {
+        "accuracy_abs_diff": 0.0,
+        "macro_f1_abs_diff": 0.0
+      },
+      "expected_from_export_audit": {
+        "accuracy": 0.1016949152542373,
+        "macro_f1": 0.07218673846707271
+      },
+      "recomputed_from_canonical_predictions": {
+        "accuracy": 0.1016949152542373,
+        "macro_f1": 0.07218673846707271
+      },
+      "source_audit_status": "PASS_WITHIN_REVIEW",
+      "status": "PASS",
+      "subject_id": 10
+    },
+    {
+      "diffs": {
+        "accuracy_abs_diff": 0.0,
+        "macro_f1_abs_diff": 0.0
+      },
+      "expected_from_export_audit": {
+        "accuracy": 0.13798790544255085,
+        "macro_f1": 0.1335712790029351
+      },
+      "recomputed_from_canonical_predictions": {
+        "accuracy": 0.13798790544255085,
+        "macro_f1": 0.1335712790029351
+      },
+      "source_audit_status": "PASS_WITHIN_REVIEW",
+      "status": "PASS",
+      "subject_id": 11
+    }
+  ]
+}

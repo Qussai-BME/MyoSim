@@ -1,0 +1,30 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+coverage.json
+htmlcov/
+dist/
+build/
+*.egg-info/
+.venv/
+
+# Editors and operating systems
+.vscode/
+.idea/
+.DS_Store
+
+# Generated experiment outputs
+artifacts/runs/*
+# artifacts/hardware_twin_sensitivity/ holds the frozen, released sensitivity evidence and is tracked.
+
+# Local user input and secrets
+.env
+*.pem
+*.key
+local_data/

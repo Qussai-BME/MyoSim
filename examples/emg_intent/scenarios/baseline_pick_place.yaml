@@ -1,0 +1,19 @@
+name: baseline_pick_place
+owner: Qussai Adlbi
+source_project: MyoControl
+source_model: myocontrol-synthetic-scenario
+model_version: synthetic-scenario-v1
+protocol_id: r2.2-emg-intent-replay-v1
+modality: sEMG
+sampling_rate_hz: 2000
+window_ms: 400
+overlap: 0.5
+timestamp_policy: derived_window_center
+seed: 20260822
+sequence:
+  - intent: REST
+    duration_windows: 1
+  - intent: PINCH
+    duration_windows: 30
+  - intent: REST
+    duration_windows: 2

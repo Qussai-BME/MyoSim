@@ -1,0 +1,52 @@
+[
+  {
+    "command": "REST",
+    "current": "CANDIDATE",
+    "metadata": {
+      "active_label": "PINCH"
+    },
+    "previous": "REST",
+    "reason": "accepted_candidate_intent",
+    "timestamp_s": 0.1
+  },
+  {
+    "command": "REST",
+    "current": "CONFIRMED",
+    "metadata": {
+      "active_label": "PINCH"
+    },
+    "previous": "CANDIDATE",
+    "reason": "confidence_and_temporal_requirements_met",
+    "timestamp_s": 0.3
+  },
+  {
+    "command": "PINCH",
+    "current": "EXECUTING",
+    "metadata": {
+      "active_label": "PINCH"
+    },
+    "previous": "CONFIRMED",
+    "reason": "confirmed_command_released",
+    "timestamp_s": 0.4
+  },
+  {
+    "command": "RELEASE",
+    "current": "RELEASE",
+    "metadata": {
+      "active_label": "REST"
+    },
+    "previous": "EXECUTING",
+    "reason": "explicit_rest_received",
+    "timestamp_s": 3.1
+  },
+  {
+    "command": "REST",
+    "current": "REST",
+    "metadata": {
+      "active_label": "REST"
+    },
+    "previous": "RELEASE",
+    "reason": "release_completed",
+    "timestamp_s": 3.22
+  }
+]

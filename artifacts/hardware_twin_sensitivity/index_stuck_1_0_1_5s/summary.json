@@ -1,0 +1,269 @@
+{
+  "control_metrics": {
+    "event_count": 33,
+    "false_activation_count": 0,
+    "false_activation_rate": 0.0,
+    "mean_confirmation_latency_s": 0.30000000000000004,
+    "released_command_count": 1,
+    "state_transition_count": 5,
+    "unintended_transition_count": 0
+  },
+  "control_transitions": [
+    {
+      "command": "REST",
+      "current": "CANDIDATE",
+      "metadata": {
+        "active_label": "PINCH"
+      },
+      "previous": "REST",
+      "reason": "accepted_candidate_intent",
+      "timestamp_s": 0.1
+    },
+    {
+      "command": "REST",
+      "current": "CONFIRMED",
+      "metadata": {
+        "active_label": "PINCH"
+      },
+      "previous": "CANDIDATE",
+      "reason": "confidence_and_temporal_requirements_met",
+      "timestamp_s": 0.3
+    },
+    {
+      "command": "PINCH",
+      "current": "EXECUTING",
+      "metadata": {
+        "active_label": "PINCH"
+      },
+      "previous": "CONFIRMED",
+      "reason": "confirmed_command_released",
+      "timestamp_s": 0.4
+    },
+    {
+      "command": "RELEASE",
+      "current": "RELEASE",
+      "metadata": {
+        "active_label": "REST"
+      },
+      "previous": "EXECUTING",
+      "reason": "explicit_rest_received",
+      "timestamp_s": 3.1
+    },
+    {
+      "command": "REST",
+      "current": "REST",
+      "metadata": {
+        "active_label": "REST"
+      },
+      "previous": "RELEASE",
+      "reason": "release_completed",
+      "timestamp_s": 3.22
+    }
+  ],
+  "hardware_twin": {
+    "active_faults_at_end": [],
+    "claim_boundary": "software-only engineering abstraction; not a measured hardware model",
+    "command_delay_s": 0.02,
+    "final_actuator_coordinates": {
+      "forearm_x": 0.449999998641618,
+      "forearm_y": 0.09999999993416567,
+      "index_flex": 0.547509816324991,
+      "middle_flex": 0.012387419764101237,
+      "ring_flex": 0.00990993581128099,
+      "thumb_flex": 0.5875098163353134
+    },
+    "model": "hardware_twin_position_first_order_v1",
+    "model_spec": {
+      "claim_boundary": "software-only engineering abstraction; not measured physical hardware",
+      "command_delay_s": 0.02,
+      "dynamics": {
+        "coordinate_bounds": true,
+        "per_coordinate_rate_limit": true,
+        "response_discretization": "backward_euler_style_alpha_dt_over_tau_plus_dt",
+        "response_model": "first_order_position"
+      },
+      "faults": [
+        {
+          "end_s": 1.5,
+          "joint_name": "index_flex",
+          "kind": "actuator_stuck",
+          "start_s": 1.0
+        }
+      ],
+      "model_id": "hardware_twin_position_first_order_v1",
+      "model_schema": "myosim-hardware-twin-model/v1",
+      "parameter_status": "assumed_unidentified",
+      "physics_timestep_s": 0.002,
+      "profile_sha256": "84164ebab725d7a4f9dfff94171194e77df019053c25a59f934d7cfaceed1d25",
+      "profile_source": "configs/hardware_twin/default_hand_v1.yaml",
+      "profiles": {
+        "forearm_x": {
+          "coordinate_max": 0.46,
+          "coordinate_min": 0.0,
+          "coordinate_unit": "m",
+          "initial_coordinate": 0.0,
+          "max_coordinate_rate_per_s": 0.25,
+          "safe_coordinate": 0.0,
+          "time_constant_s": 0.08
+        },
+        "forearm_y": {
+          "coordinate_max": 0.15,
+          "coordinate_min": -0.12,
+          "coordinate_unit": "m",
+          "initial_coordinate": 0.0,
+          "max_coordinate_rate_per_s": 0.25,
+          "safe_coordinate": 0.0,
+          "time_constant_s": 0.08
+        },
+        "index_flex": {
+          "coordinate_max": 1.45,
+          "coordinate_min": -0.05,
+          "coordinate_unit": "rad",
+          "initial_coordinate": 0.0,
+          "max_coordinate_rate_per_s": 2.0,
+          "safe_coordinate": 0.0,
+          "time_constant_s": 0.08
+        },
+        "middle_flex": {
+          "coordinate_max": 1.45,
+          "coordinate_min": -0.05,
+          "coordinate_unit": "rad",
+          "initial_coordinate": 0.0,
+          "max_coordinate_rate_per_s": 2.0,
+          "safe_coordinate": 0.0,
+          "time_constant_s": 0.08
+        },
+        "ring_flex": {
+          "coordinate_max": 1.4,
+          "coordinate_min": -0.05,
+          "coordinate_unit": "rad",
+          "initial_coordinate": 0.0,
+          "max_coordinate_rate_per_s": 2.0,
+          "safe_coordinate": 0.0,
+          "time_constant_s": 0.08
+        },
+        "thumb_flex": {
+          "coordinate_max": 1.2,
+          "coordinate_min": -0.05,
+          "coordinate_unit": "rad",
+          "initial_coordinate": 0.0,
+          "max_coordinate_rate_per_s": 2.0,
+          "safe_coordinate": 0.0,
+          "time_constant_s": 0.08
+        }
+      }
+    },
+    "stats": {
+      "accepted_commands": 33,
+      "actuator_stuck_steps": 250,
+      "applied_commands": 33,
+      "command_dropout_steps": 0,
+      "dropped_commands": 0,
+      "emergency_stops": 0,
+      "fault_steps": 250
+    },
+    "trace_summary": {
+      "per_joint": {
+        "forearm_x": {
+          "coordinate_unit": "m",
+          "max_abs_coordinate_rate_per_s": 0.2500000000000002,
+          "max_abs_tracking_error": 0.2895,
+          "mean_abs_tracking_error": 0.06868861351239137
+        },
+        "forearm_y": {
+          "coordinate_unit": "m",
+          "max_abs_coordinate_rate_per_s": 0.2500000000000002,
+          "max_abs_tracking_error": 0.0995,
+          "mean_abs_tracking_error": 0.006430788328595052
+        },
+        "index_flex": {
+          "coordinate_unit": "rad",
+          "max_abs_coordinate_rate_per_s": 2.0000000000000018,
+          "max_abs_tracking_error": 0.2973893849719541,
+          "mean_abs_tracking_error": 0.03627963533698189
+        },
+        "middle_flex": {
+          "coordinate_unit": "rad",
+          "max_abs_coordinate_rate_per_s": 1.8292682926829267,
+          "max_abs_tracking_error": 0.14634146341463414,
+          "mean_abs_tracking_error": 0.007141218627831115
+        },
+        "ring_flex": {
+          "coordinate_unit": "rad",
+          "max_abs_coordinate_rate_per_s": 1.4634146341463414,
+          "max_abs_tracking_error": 0.11707317073170731,
+          "mean_abs_tracking_error": 0.005712974902264886
+        },
+        "thumb_flex": {
+          "coordinate_unit": "rad",
+          "max_abs_coordinate_rate_per_s": 2.0000000000000018,
+          "max_abs_tracking_error": 0.2973893849719541,
+          "mean_abs_tracking_error": 0.03660548587053361
+        }
+      },
+      "samples": 1611,
+      "units_note": "Tracking error and rate are reported per joint because slide and hinge coordinates use different units."
+    }
+  },
+  "hardware_twin_trace_file": "hardware_twin_trace.jsonl",
+  "invalid_state_detected": false,
+  "provenance": {
+    "config_hash": "2f5e6a32711a6cf4d1bd20f7114e31b510365ac410f287f237564fc930229d8e",
+    "created_at_utc": "2026-10-05T22:00:10+00:00",
+    "environment": {
+      "executable": "/home/ubuntu/work/myosim-r24-audit/.venv311/bin/python",
+      "implementation": "CPython",
+      "machine": "x86_64",
+      "platform": "Linux-6.18.38+-x86_64-with-glibc2.39",
+      "python_version": "3.11.16",
+      "system": "Linux"
+    },
+    "git_commit": "unavailable",
+    "input_file_sha256": "a94e59e30e2599eb92517198739dff96aa40b01f3bf6777756722e09960e09f3",
+    "intent_protocol_id": "csv-intent-replay-v1",
+    "intent_source": "csv-replay:pick_place_replay.csv:a94e59e30e25",
+    "model_path": "/home/ubuntu/work/myosim-r24-audit/extracted/MyoSim_R2.4/assets/models/hand.xml",
+    "model_version": "myosim-hand-task-mjcf-v1+hardware-twin-v1",
+    "package_version": "0.1.6.dev0",
+    "physics_backend": "mujoco+hardware_twin",
+    "run_id": "replay-a94e59e30e2599eb-hw-c80e57b451",
+    "seed": 20260822,
+    "task": "pick_place"
+  },
+  "task_metrics": {
+    "command_corrections": 3,
+    "completion_time_s": 3.22,
+    "final_error_m": 0.051284102186168655,
+    "final_state": "COMPLETE",
+    "grasp_stability_steps": 17,
+    "path_length_m": 0.635151247399325,
+    "success": true,
+    "task_name": "pick_place"
+  },
+  "task_transitions": [
+    {
+      "current": "WAIT_FOR_GRASP",
+      "previous": "APPROACH",
+      "reason": "approach_reached",
+      "timestamp_s": 1.3
+    },
+    {
+      "current": "TRANSPORT",
+      "previous": "WAIT_FOR_GRASP",
+      "reason": "decoded_grasp_command",
+      "timestamp_s": 1.4
+    },
+    {
+      "current": "WAIT_FOR_RELEASE",
+      "previous": "TRANSPORT",
+      "reason": "transport_reached",
+      "timestamp_s": 2.2
+    },
+    {
+      "current": "COMPLETE",
+      "previous": "WAIT_FOR_RELEASE",
+      "reason": "object_released_in_target",
+      "timestamp_s": 3.1
+    }
+  ]
+}

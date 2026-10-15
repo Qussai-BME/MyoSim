@@ -1,0 +1,23 @@
+{
+  "config_hash": "2f5e6a32711a6cf4d1bd20f7114e31b510365ac410f287f237564fc930229d8e",
+  "created_at_utc": "2026-10-05T22:00:10+00:00",
+  "environment": {
+    "executable": "/home/ubuntu/work/myosim-r24-audit/.venv311/bin/python",
+    "implementation": "CPython",
+    "machine": "x86_64",
+    "platform": "Linux-6.18.38+-x86_64-with-glibc2.39",
+    "python_version": "3.11.16",
+    "system": "Linux"
+  },
+  "git_commit": "unavailable",
+  "input_file_sha256": "a94e59e30e2599eb92517198739dff96aa40b01f3bf6777756722e09960e09f3",
+  "intent_protocol_id": "csv-intent-replay-v1",
+  "intent_source": "csv-replay:pick_place_replay.csv:a94e59e30e25",
+  "model_path": "/home/ubuntu/work/myosim-r24-audit/extracted/MyoSim_R2.4/assets/models/hand.xml",
+  "model_version": "myosim-hand-task-mjcf-v1+hardware-twin-v1",
+  "package_version": "0.1.6.dev0",
+  "physics_backend": "mujoco+hardware_twin",
+  "run_id": "replay-a94e59e30e2599eb-hw-c80e57b451",
+  "seed": 20260822,
+  "task": "pick_place"
+}

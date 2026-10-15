@@ -1,0 +1,87 @@
+<mujoco model="myosim_v1_hand">
+  <compiler angle="radian" coordinate="local"/>
+  <option timestep="0.002" gravity="0 0 -9.81" integrator="implicitfast"/>
+  <default>
+    <geom friction="1.0 0.01 0.001" condim="4" density="700"/>
+    <joint damping="0.7" armature="0.002" limited="true"/>
+    <position kp="18" ctrlrange="-0.05 1.45" forcerange="-12 12"/>
+  </default>
+
+  <asset>
+    <material name="hand_blue" rgba="0.11 0.36 0.68 1"/>
+    <material name="finger_blue" rgba="0.14 0.46 0.80 1"/>
+    <material name="table_gray" rgba="0.32 0.35 0.39 1"/>
+    <material name="object_orange" rgba="0.94 0.42 0.10 1"/>
+    <material name="target_green" rgba="0.18 0.75 0.36 0.35"/>
+  </asset>
+
+  <worldbody>
+    <light name="key" pos="0 -0.8 1.7" dir="0 0 -1" directional="true"/>
+    <geom name="floor" type="plane" size="2 2 0.1" material="table_gray"/>
+    <body name="forearm" pos="0 0 0.22">
+      <joint name="forearm_x" type="slide" axis="1 0 0" range="0 0.46"/>
+      <joint name="forearm_y" type="slide" axis="0 1 0" range="-0.12 0.15"/>
+      <geom name="forearm_geom" type="capsule" fromto="0 0 -0.15 0 0 0.12" size="0.065" material="hand_blue"/>
+      <body name="palm" pos="0 0 0.12">
+        <geom name="palm_geom" type="box" size="0.09 0.055 0.025" material="hand_blue"/>
+        <site name="hand_center" pos="0.07 0 0" size="0.01" rgba="1 0 0 1"/>
+        <site name="pinch_site" pos="0.16 0 0.02" size="0.008" rgba="0 1 0 1"/>
+
+        <body name="thumb" pos="0.055 -0.055 0">
+          <joint name="thumb_flex" type="hinge" axis="0 1 0" range="-0.05 1.2"/>
+          <geom name="thumb_proximal" type="capsule" fromto="0 0 0 0.065 0 0" size="0.017" material="finger_blue"/>
+          <body name="thumb_tip" pos="0.065 0 0">
+            <geom name="thumb_distal" type="capsule" fromto="0 0 0 0.045 0 0" size="0.014" material="finger_blue"/>
+            <site name="thumb_contact" pos="0.045 0 0" size="0.006" rgba="0 1 1 1"/>
+          </body>
+        </body>
+
+        <body name="index" pos="0.075 -0.027 0.012">
+          <joint name="index_flex" type="hinge" axis="0 1 0" range="-0.05 1.45"/>
+          <geom name="index_proximal" type="capsule" fromto="0 0 0 0.08 0 0" size="0.014" material="finger_blue"/>
+          <body name="index_tip" pos="0.08 0 0">
+            <geom name="index_distal" type="capsule" fromto="0 0 0 0.055 0 0" size="0.012" material="finger_blue"/>
+            <site name="index_contact" pos="0.055 0 0" size="0.006" rgba="0 1 1 1"/>
+          </body>
+        </body>
+
+        <body name="middle" pos="0.075 0.0 0.012">
+          <joint name="middle_flex" type="hinge" axis="0 1 0" range="-0.05 1.45"/>
+          <geom name="middle_proximal" type="capsule" fromto="0 0 0 0.085 0 0" size="0.015" material="finger_blue"/>
+          <body name="middle_tip" pos="0.085 0 0">
+            <geom name="middle_distal" type="capsule" fromto="0 0 0 0.06 0 0" size="0.012" material="finger_blue"/>
+          </body>
+        </body>
+
+        <body name="ring" pos="0.072 0.029 0.008">
+          <joint name="ring_flex" type="hinge" axis="0 1 0" range="-0.05 1.40"/>
+          <geom name="ring_proximal" type="capsule" fromto="0 0 0 0.075 0 0" size="0.014" material="finger_blue"/>
+          <body name="ring_tip" pos="0.075 0 0">
+            <geom name="ring_distal" type="capsule" fromto="0 0 0 0.052 0 0" size="0.011" material="finger_blue"/>
+          </body>
+        </body>
+      </body>
+    </body>
+
+    <body name="manipulation_object" pos="0.36 0 0.045">
+      <freejoint name="object_free"/>
+      <geom name="object_geom" type="box" size="0.03 0.03 0.035" mass="0.06" material="object_orange"/>
+    </body>
+    <body name="target_zone" pos="0.52 0.10 0.003">
+      <geom name="target_geom" type="cylinder" size="0.07 0.003" material="target_green" contype="0" conaffinity="0"/>
+    </body>
+  </worldbody>
+
+  <actuator>
+    <position name="forearm_x_actuator" joint="forearm_x" kp="35" ctrlrange="0 0.46" forcerange="-45 45"/>
+    <position name="forearm_y_actuator" joint="forearm_y" kp="35" ctrlrange="-0.12 0.15" forcerange="-45 45"/>
+    <position name="thumb_actuator" joint="thumb_flex"/>
+    <position name="index_actuator" joint="index_flex"/>
+    <position name="middle_actuator" joint="middle_flex"/>
+    <position name="ring_actuator" joint="ring_flex"/>
+  </actuator>
+
+  <equality>
+    <weld name="grasp_weld" body1="palm" body2="manipulation_object" relpose="0 0 0 1 0 0 0" active="false"/>
+  </equality>
+</mujoco>

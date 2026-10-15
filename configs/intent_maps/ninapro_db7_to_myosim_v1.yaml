@@ -1,0 +1,211 @@
+schema: myosim-intent-map/v2
+version: ninapro-db7-to-myosim-v1
+dataset: DB7
+source_vocabulary: NinaPro DB7 Exercise B + Exercise C
+unmapped_policy: reject
+entries:
+- source_label: 0
+  source_movement_name: rest
+  target_intent: REST
+  reason: official rest class
+  mapping_status: unambiguous
+- source_label: 1
+  source_movement_name: Thumb up
+  target_intent: OPEN
+  reason: hand extension/open-equivalent
+  mapping_status: unambiguous
+- source_label: 2
+  source_movement_name: Extension of index and middle, flexion of the others
+  target_intent: OPEN
+  reason: hand extension/open-equivalent
+  mapping_status: unambiguous
+- source_label: 3
+  source_movement_name: Flexion of ring and little finger, extension of the others
+  target_intent: CLOSE
+  reason: flexion/grasp closure
+  mapping_status: unambiguous
+- source_label: 4
+  source_movement_name: Thumb opposing base of little finger
+  target_intent: PINCH
+  reason: precision or pinch grasp
+  mapping_status: unambiguous
+- source_label: 5
+  source_movement_name: Abduction of all fingers
+  target_intent: OPEN
+  reason: hand extension/open-equivalent
+  mapping_status: unambiguous
+- source_label: 6
+  source_movement_name: Fingers flexed together in fist
+  target_intent: CLOSE
+  reason: flexion/grasp closure
+  mapping_status: unambiguous
+- source_label: 7
+  source_movement_name: Pointing index
+  target_intent: OPEN
+  reason: hand extension/open-equivalent
+  mapping_status: unambiguous
+- source_label: 8
+  source_movement_name: Adduction of extended fingers
+  target_intent: OPEN
+  reason: hand extension/open-equivalent
+  mapping_status: unambiguous
+- source_label: 9
+  source_movement_name: Wrist supination axis middle finger
+  target_intent: UNKNOWN
+  reason: wrist-only action does not uniquely specify hand command
+  mapping_status: ambiguous
+- source_label: 10
+  source_movement_name: Wrist pronation axis middle finger
+  target_intent: UNKNOWN
+  reason: wrist-only action does not uniquely specify hand command
+  mapping_status: ambiguous
+- source_label: 11
+  source_movement_name: Wrist supination axis little finger
+  target_intent: UNKNOWN
+  reason: wrist-only action does not uniquely specify hand command
+  mapping_status: ambiguous
+- source_label: 12
+  source_movement_name: Wrist pronation axis little finger
+  target_intent: UNKNOWN
+  reason: wrist-only action does not uniquely specify hand command
+  mapping_status: ambiguous
+- source_label: 13
+  source_movement_name: Wrist flexion
+  target_intent: UNKNOWN
+  reason: wrist-only action does not uniquely specify hand command
+  mapping_status: ambiguous
+- source_label: 14
+  source_movement_name: Wrist extension
+  target_intent: UNKNOWN
+  reason: wrist-only action does not uniquely specify hand command
+  mapping_status: ambiguous
+- source_label: 15
+  source_movement_name: Wrist radial deviation
+  target_intent: UNKNOWN
+  reason: wrist-only action does not uniquely specify hand command
+  mapping_status: ambiguous
+- source_label: 16
+  source_movement_name: Wrist ulnar deviation
+  target_intent: UNKNOWN
+  reason: wrist-only action does not uniquely specify hand command
+  mapping_status: ambiguous
+- source_label: 17
+  source_movement_name: Wrist extension with closed hand
+  target_intent: CLOSE
+  reason: flexion/grasp closure
+  mapping_status: unambiguous
+- source_label: 18
+  source_movement_name: Large diameter grasp
+  target_intent: CLOSE
+  reason: flexion/grasp closure
+  mapping_status: unambiguous
+- source_label: 19
+  source_movement_name: Small diameter grasp
+  target_intent: PINCH
+  reason: precision or pinch grasp
+  mapping_status: unambiguous
+- source_label: 20
+  source_movement_name: Fixed hook grasp
+  target_intent: CLOSE
+  reason: flexion/grasp closure
+  mapping_status: unambiguous
+- source_label: 21
+  source_movement_name: Index finger extension grasp
+  target_intent: PINCH
+  reason: precision or pinch grasp
+  mapping_status: unambiguous
+- source_label: 22
+  source_movement_name: Medium wrap
+  target_intent: CLOSE
+  reason: flexion/grasp closure
+  mapping_status: unambiguous
+- source_label: 23
+  source_movement_name: Ring grasp
+  target_intent: CLOSE
+  reason: flexion/grasp closure
+  mapping_status: unambiguous
+- source_label: 24
+  source_movement_name: Prismatic four fingers grasp
+  target_intent: CLOSE
+  reason: flexion/grasp closure
+  mapping_status: unambiguous
+- source_label: 25
+  source_movement_name: Stick grasp
+  target_intent: PINCH
+  reason: precision or pinch grasp
+  mapping_status: unambiguous
+- source_label: 26
+  source_movement_name: Writing tripod grasp
+  target_intent: PINCH
+  reason: precision or pinch grasp
+  mapping_status: unambiguous
+- source_label: 27
+  source_movement_name: Power grasp
+  target_intent: CLOSE
+  reason: flexion/grasp closure
+  mapping_status: unambiguous
+- source_label: 28
+  source_movement_name: Three-finger sphere grasp
+  target_intent: PINCH
+  reason: precision or pinch grasp
+  mapping_status: unambiguous
+- source_label: 29
+  source_movement_name: Precision sphere grasp
+  target_intent: PINCH
+  reason: precision or pinch grasp
+  mapping_status: unambiguous
+- source_label: 30
+  source_movement_name: Tripod grasp
+  target_intent: PINCH
+  reason: precision or pinch grasp
+  mapping_status: unambiguous
+- source_label: 31
+  source_movement_name: Prismatic pinch
+  target_intent: PINCH
+  reason: precision or pinch grasp
+  mapping_status: unambiguous
+- source_label: 32
+  source_movement_name: Tip pinch
+  target_intent: PINCH
+  reason: precision or pinch grasp
+  mapping_status: unambiguous
+- source_label: 33
+  source_movement_name: Quadpod grasp
+  target_intent: PINCH
+  reason: precision or pinch grasp
+  mapping_status: unambiguous
+- source_label: 34
+  source_movement_name: Lateral grasp
+  target_intent: PINCH
+  reason: precision or pinch grasp
+  mapping_status: unambiguous
+- source_label: 35
+  source_movement_name: Parallel extension grasp
+  target_intent: OPEN
+  reason: hand extension/open-equivalent
+  mapping_status: unambiguous
+- source_label: 36
+  source_movement_name: Parallel flexion grasp
+  target_intent: CLOSE
+  reason: flexion/grasp closure
+  mapping_status: unambiguous
+- source_label: 37
+  source_movement_name: Power disk grasp
+  target_intent: CLOSE
+  reason: flexion/grasp closure
+  mapping_status: unambiguous
+- source_label: 38
+  source_movement_name: Open a bottle (tripod grasp)
+  target_intent: PINCH
+  reason: precision or pinch grasp
+  mapping_status: unambiguous
+- source_label: 39
+  source_movement_name: Turn a screw (stick grasp)
+  target_intent: PINCH
+  reason: precision or pinch grasp
+  mapping_status: unambiguous
+- source_label: 40
+  source_movement_name: Cut something (index finger extension grasp)
+  target_intent: PINCH
+  reason: precision or pinch grasp
+  mapping_status: unambiguous

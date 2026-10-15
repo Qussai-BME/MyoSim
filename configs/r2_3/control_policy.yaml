@@ -1,0 +1,25 @@
+schema: myosim-r2-3-control-policy/v2
+protocol_id: R2.3-DOWNSTREAM-v2
+score_policy:
+  type: classifier_argmax_accept
+  primary: true
+  accepts_top1_classifier_label: true
+  score_is_evidence_only: true
+  calibrated_probability_required: false
+  unknown_policy: reject
+  threshold: null
+  rationale: >-
+    RidgeClassifier decision_function values are relative multiclass scores;
+    the R2.3 primary replay therefore accepts the classifier's already-selected
+    top-1 label and preserves the raw decision_score without interpreting it as
+    a probability or applying an arbitrary zero threshold.
+temporal_policy:
+  confirmation_windows: 3
+  minimum_dwell_s: 0.08
+  hold_duration_s: 0.20
+  release_duration_s: 0.10
+  stale_input_timeout_s: 0.30
+selection_rule: first_valid_ordered_run_sequence
+selection_sequence: [REST, OPEN, GRASP_OR_CLOSE, OPEN]
+min_windows_per_run: 5
+safety_unchanged: true

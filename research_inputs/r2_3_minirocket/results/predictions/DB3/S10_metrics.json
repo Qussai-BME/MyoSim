@@ -1,0 +1,24 @@
+{
+  "subject_id": 10,
+  "n_test_windows": 2596,
+  "accuracy": 0.1016949152542373,
+  "macro_f1": 0.07218673846707271,
+  "train_subjects": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    11
+  ],
+  "train_sample_cap": 50000,
+  "per_subject_cap": 5000,
+  "warnings": [],
+  "status": "PASS",
+  "prediction_sha256": "a12195fe05430669521664c897e19a1ff8b0ff6920759cebe7ed354a51729cb8",
+  "cache_sha256": "d43c78f24cab0f0b784dcdc1de8e8a6b52fbfe0f1fcba28bce8b974a1584be08"
+}

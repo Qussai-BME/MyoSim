@@ -1,0 +1,320 @@
+{
+  "datasets": {
+    "DB3": {
+      "mean_accuracy": 0.08873072814084022,
+      "mean_balanced_accuracy": 0.09238961261547862,
+      "mean_macro_f1": 0.06127214665242086,
+      "n_subjects": 11,
+      "subjects": [
+        {
+          "accuracy": 0.12190889370932755,
+          "artifact_sha256": "012de3e5296663fb0b5f3cf2aa17ee788f54689091ba09eb28e4284740dd9c4a",
+          "balanced_accuracy": 0.1327209211190515,
+          "macro_f1": 0.09243415242806675,
+          "rows": 2305,
+          "source_protocol_version": "R2.3-OVERRIDE-v1",
+          "subject": 1
+        },
+        {
+          "accuracy": 0.10953461975028377,
+          "artifact_sha256": "cd418195e1bf6e0bba56cf305a23c43515bd7f073e6c32b90b4d584187764801",
+          "balanced_accuracy": 0.09706173205175607,
+          "macro_f1": 0.04851379661969299,
+          "rows": 1762,
+          "source_protocol_version": "R2.3-OVERRIDE-v1",
+          "subject": 2
+        },
+        {
+          "accuracy": 0.05306603773584906,
+          "artifact_sha256": "1516e699b1cc372016d34c442d15b6681f3ce14dd07c5c03f0369d7188df9c40",
+          "balanced_accuracy": 0.061537114845938386,
+          "macro_f1": 0.010092478167737683,
+          "rows": 1696,
+          "source_protocol_version": "R2.3-OVERRIDE-v1",
+          "subject": 3
+        },
+        {
+          "accuracy": 0.08216136195410807,
+          "artifact_sha256": "8bc3895e8b4b3bcabad79307351977a05ba38edc918909982efdd57d87c67ec1",
+          "balanced_accuracy": 0.08179764243757864,
+          "macro_f1": 0.06861650420165619,
+          "rows": 2702,
+          "source_protocol_version": "R2.3-OVERRIDE-v1",
+          "subject": 4
+        },
+        {
+          "accuracy": 0.046653919694072656,
+          "artifact_sha256": "3039fe3d269072e2b539f2113d6fd187982140a2ad96419ab1afd486a1c85323",
+          "balanced_accuracy": 0.04741737063611742,
+          "macro_f1": 0.04262907051999362,
+          "rows": 2615,
+          "source_protocol_version": "R2.3-OVERRIDE-v1",
+          "subject": 5
+        },
+        {
+          "accuracy": 0.06782802075611565,
+          "artifact_sha256": "0b899793e695e888bb0054b6bf1a751f561d7cb817585cb4372697efdcdc4850",
+          "balanced_accuracy": 0.06764690480297691,
+          "macro_f1": 0.01692146950529375,
+          "rows": 2698,
+          "source_protocol_version": "R2.3-OVERRIDE-v1",
+          "subject": 6
+        },
+        {
+          "accuracy": 0.05886821116597037,
+          "artifact_sha256": "e1fedb3f8d141e82f0999a452a264baa825048d0392734335495ece65eb9e57b",
+          "balanced_accuracy": 0.05811401158032585,
+          "macro_f1": 0.01940183609368646,
+          "rows": 2633,
+          "source_protocol_version": "R2.3-OVERRIDE-v1",
+          "subject": 7
+        },
+        {
+          "accuracy": 0.0762958648806057,
+          "artifact_sha256": "95cf8fb0cb2731456308194b64465efccbd0c56169be4b2990ff987d7c01cf5a",
+          "balanced_accuracy": 0.06461432272682253,
+          "macro_f1": 0.06336544398586094,
+          "rows": 1717,
+          "source_protocol_version": "R2.3-OVERRIDE-v1",
+          "subject": 8
+        },
+        {
+          "accuracy": 0.12003825920612148,
+          "artifact_sha256": "9e2a52832f992973379b9b24992bb59a15d3951bb958b841a3256470567e8f83",
+          "balanced_accuracy": 0.14045532213285158,
+          "macro_f1": 0.10626084418463322,
+          "rows": 2091,
+          "source_protocol_version": "R2.3-OVERRIDE-v1",
+          "subject": 9
+        },
+        {
+          "accuracy": 0.1016949152542373,
+          "artifact_sha256": "b98206338e657127521fd657d6ce85fd8eefbe6cfa170a43bda22e28b9834862",
+          "balanced_accuracy": 0.10047941275404247,
+          "macro_f1": 0.07218673846707271,
+          "rows": 2596,
+          "source_protocol_version": "R2.3-OVERRIDE-v1",
+          "subject": 10
+        },
+        {
+          "accuracy": 0.13798790544255085,
+          "artifact_sha256": "0dc235b96d579628106cbc6c40f184913d7bd475d064a5265e3d0c544cbe38b7",
+          "balanced_accuracy": 0.1644409836828034,
+          "macro_f1": 0.1335712790029351,
+          "rows": 1819,
+          "source_protocol_version": "R2.3-OVERRIDE-v1",
+          "subject": 11
+        }
+      ],
+      "total_windows": 24634
+    },
+    "DB7": {
+      "mean_accuracy": 0.20402255727820243,
+      "mean_balanced_accuracy": 0.198804634988531,
+      "mean_macro_f1": 0.17023392489091796,
+      "n_subjects": 22,
+      "subjects": [
+        {
+          "accuracy": 0.21566861773975687,
+          "artifact_sha256": "2e1eeeefb78b9ce4a8158b10df32faabd64784ad1790cb7d7167c2aa9f89e453",
+          "balanced_accuracy": 0.2023852293071804,
+          "macro_f1": 0.16384401759234124,
+          "rows": 4442,
+          "source_protocol_version": "R2.3-OVERRIDE-v1",
+          "subject": 1
+        },
+        {
+          "accuracy": 0.2627442650807137,
+          "artifact_sha256": "0531b318e14c81edeca8196e1691ca77d6f3a491127f1e5a16a634bef219ca25",
+          "balanced_accuracy": 0.2662938300449772,
+          "macro_f1": 0.24155157484207423,
+          "rows": 4708,
+          "source_protocol_version": "R2.3-OVERRIDE-v1",
+          "subject": 2
+        },
+        {
+          "accuracy": 0.2348780487804878,
+          "artifact_sha256": "5f0464594d3c034a69e66a486f908151c2a1d45af2b07341d469fd139e35845e",
+          "balanced_accuracy": 0.225988547812139,
+          "macro_f1": 0.20234372170574008,
+          "rows": 4100,
+          "source_protocol_version": "R2.3-OVERRIDE-v1",
+          "subject": 3
+        },
+        {
+          "accuracy": 0.1959406713505074,
+          "artifact_sha256": "9c0af0a4ca71e08fb670dfdca6591e7b88279f7683ff776a9102620ac3bf8301",
+          "balanced_accuracy": 0.19875429679308715,
+          "macro_f1": 0.18371699895055166,
+          "rows": 5124,
+          "source_protocol_version": "R2.3-OVERRIDE-v1",
+          "subject": 4
+        },
+        {
+          "accuracy": 0.23784059078176725,
+          "artifact_sha256": "f378a9e503ff59a04aa28483a540a86837c9f053e576d52959aeffc58c2654ee",
+          "balanced_accuracy": 0.22915919304093063,
+          "macro_f1": 0.21408316722043136,
+          "rows": 3927,
+          "source_protocol_version": "R2.3-OVERRIDE-v1",
+          "subject": 5
+        },
+        {
+          "accuracy": 0.1784323271665044,
+          "artifact_sha256": "d0664921ccf7382ffe2a3ca541191d1f89fb5d993d769393ac479ba446cddf73",
+          "balanced_accuracy": 0.17804164517638482,
+          "macro_f1": 0.15895009037486915,
+          "rows": 4108,
+          "source_protocol_version": "R2.3-OVERRIDE-v1",
+          "subject": 6
+        },
+        {
+          "accuracy": 0.23301781737193764,
+          "artifact_sha256": "0a417cc3e8d2276fd367a947bfcf54688367c62af598e7d8a067823e1637e880",
+          "balanced_accuracy": 0.22143040628554625,
+          "macro_f1": 0.1861983016176926,
+          "rows": 3592,
+          "source_protocol_version": "R2.3-OVERRIDE-v1",
+          "subject": 7
+        },
+        {
+          "accuracy": 0.3230623370466935,
+          "artifact_sha256": "1993d555ed5923bd1333769a3664a1259be7f04a66107db36457f4bfd8a28dfb",
+          "balanced_accuracy": 0.32276345864503936,
+          "macro_f1": 0.29273255816339955,
+          "rows": 4219,
+          "source_protocol_version": "R2.3-OVERRIDE-v1",
+          "subject": 8
+        },
+        {
+          "accuracy": 0.23319779956948097,
+          "artifact_sha256": "60d5ce388161855c9a40024088607aa2b8d555f9be1c16a4f0b605cd854bbba7",
+          "balanced_accuracy": 0.22954666280000816,
+          "macro_f1": 0.19608879675659635,
+          "rows": 4181,
+          "source_protocol_version": "R2.3-OVERRIDE-v1",
+          "subject": 9
+        },
+        {
+          "accuracy": 0.239691343139619,
+          "artifact_sha256": "9b99cfbad88a586733e77ddfc9128512fec75abe67b69ab561e719a415d533ac",
+          "balanced_accuracy": 0.2404986424331356,
+          "macro_f1": 0.20909712871870045,
+          "rows": 4147,
+          "source_protocol_version": "R2.3-OVERRIDE-v1",
+          "subject": 10
+        },
+        {
+          "accuracy": 0.19856602270464052,
+          "artifact_sha256": "135cc63b3a53b8c6e5fd91de2a241d9ae5761935fe03902993be7e1b5cf85c37",
+          "balanced_accuracy": 0.19657319233640907,
+          "macro_f1": 0.1674685562308808,
+          "rows": 5021,
+          "source_protocol_version": "R2.3-OVERRIDE-v1",
+          "subject": 11
+        },
+        {
+          "accuracy": 0.16736401673640167,
+          "artifact_sha256": "ac73aa8ed7e14b64115329b9fe079489ff380754b7b6e8473da8a448356d00c5",
+          "balanced_accuracy": 0.17035277232570897,
+          "macro_f1": 0.14388051961712042,
+          "rows": 4302,
+          "source_protocol_version": "R2.3-OVERRIDE-v1",
+          "subject": 12
+        },
+        {
+          "accuracy": 0.1494798733604704,
+          "artifact_sha256": "3e3a40bb6e9cadd808056d81eb00bb2976b84b2a1a780eb399ea07ff8fa03f6f",
+          "balanced_accuracy": 0.14938338041740998,
+          "macro_f1": 0.13003149700248345,
+          "rows": 4422,
+          "source_protocol_version": "R2.3-OVERRIDE-v1",
+          "subject": 13
+        },
+        {
+          "accuracy": 0.20362950742399247,
+          "artifact_sha256": "3a2b62741e688f9d68df2b60f7847ed9fbbab4cae8fe8dd4942cf7e53a525046",
+          "balanced_accuracy": 0.18481996481283458,
+          "macro_f1": 0.14894234275359128,
+          "rows": 4243,
+          "source_protocol_version": "R2.3-OVERRIDE-v1",
+          "subject": 14
+        },
+        {
+          "accuracy": 0.24214285714285713,
+          "artifact_sha256": "da5db55806c6d70fd1c8c64145a4bb16ed0fe0417e977965dea6b62c254dba66",
+          "balanced_accuracy": 0.24430021866294718,
+          "macro_f1": 0.20912973384537806,
+          "rows": 4200,
+          "source_protocol_version": "R2.3-OVERRIDE-v1",
+          "subject": 15
+        },
+        {
+          "accuracy": 0.2040332147093713,
+          "artifact_sha256": "883e7dbe61ff294c1d0ad0cfac9c0e9530297902cd1e3f27d6a0eafbcd07efba",
+          "balanced_accuracy": 0.19582833889581722,
+          "macro_f1": 0.16105558044366894,
+          "rows": 4215,
+          "source_protocol_version": "R2.3-OVERRIDE-v1",
+          "subject": 16
+        },
+        {
+          "accuracy": 0.23895292987512007,
+          "artifact_sha256": "873f4a0c7280581ba54e837a43751a6d4dd0e1a742c7b51afc5f7025566e2217",
+          "balanced_accuracy": 0.2314145561392375,
+          "macro_f1": 0.2169466069345763,
+          "rows": 4164,
+          "source_protocol_version": "R2.3-OVERRIDE-v1",
+          "subject": 17
+        },
+        {
+          "accuracy": 0.16868614872891424,
+          "artifact_sha256": "e4f5e8bd001f1d2d8f019b31c48b7f08a6cb43c6838696ae92fba849a0e2212b",
+          "balanced_accuracy": 0.15925757746650904,
+          "macro_f1": 0.11628766242844035,
+          "rows": 4209,
+          "source_protocol_version": "R2.3-OVERRIDE-v1",
+          "subject": 18
+        },
+        {
+          "accuracy": 0.3122012578616352,
+          "artifact_sha256": "ace8d8cb59eaf0e436277a1b2f501d5910e50c8c156a88c5640580757ef48eff",
+          "balanced_accuracy": 0.30246111017546795,
+          "macro_f1": 0.2720490282062439,
+          "rows": 3975,
+          "source_protocol_version": "R2.3-OVERRIDE-v1",
+          "subject": 19
+        },
+        {
+          "accuracy": 0.1259351620947631,
+          "artifact_sha256": "1f6ff9498f13ac31e1d659a47487edf54cbe6161a8407bc711d78d687bf84bc6",
+          "balanced_accuracy": 0.11694290071195142,
+          "macro_f1": 0.07515265079055244,
+          "rows": 4010,
+          "source_protocol_version": "R2.3-OVERRIDE-v1",
+          "subject": 20
+        },
+        {
+          "accuracy": 0.054976303317535544,
+          "artifact_sha256": "50f0fb5a311e6e3d6d5961632dd94d6ad5fa8f9a6c63745e785c504894ef6c3b",
+          "balanced_accuracy": 0.04026992272608925,
+          "macro_f1": 0.01533173019550639,
+          "rows": 4220,
+          "source_protocol_version": "R2.3-OVERRIDE-v1",
+          "subject": 21
+        },
+        {
+          "accuracy": 0.06805514813728367,
+          "artifact_sha256": "8666342efb5b6cb68edae44b00111d4fc552c72ca1ccd8b97be96f4931310eed",
+          "balanced_accuracy": 0.06723612273887111,
+          "macro_f1": 0.04026408320935635,
+          "rows": 3409,
+          "source_protocol_version": "R2.3-OVERRIDE-v1",
+          "subject": 22
+        }
+      ],
+      "total_windows": 92938
+    }
+  },
+  "schema": "myosim-r2-3-classification-summary/v1"
+}

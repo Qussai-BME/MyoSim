@@ -1,0 +1,63 @@
+{
+  "candidate_status": "ENGINEERING CANDIDATE — NOT PUBLIC RELEASE",
+  "candidate_upload_ready": true,
+  "public_release": false,
+  "date": "2026-10-06",
+  "tests": {
+    "command": "PYTHONPATH=src pytest -q",
+    "passed": 207,
+    "failed": 0,
+    "skipped": 0,
+    "deselected": 0,
+    "status": "PASS"
+  },
+  "coverage": {
+    "global_percent": 93.13253012048193,
+    "global_threshold_percent": 90.0,
+    "global_policy": "PASS",
+    "statement_percent": 95.0062034739454,
+    "statements": 3224,
+    "missing_statement_lines": 161,
+    "branch_percent": 86.60907127429806,
+    "branches": 926,
+    "missing_branches": 124,
+    "substantive_module_floor_percent": 85.0,
+    "substantive_module_minimum_percent": 85.71428571428571,
+    "module_policy": "PASS",
+    "coverage_json": "artifacts/r2_4_verification/project_coverage.json"
+  },
+  "environment": {
+    "python": "CPython 3.11.16",
+    "mujoco": "3.15.0",
+    "pybullet": "3.2.7",
+    "mujoco_doctor": "PASS",
+    "pybullet_doctor": "PASS",
+    "pybullet_mjcf_import_warnings": "Non-fatal warnings for light and freejoint fields; both backend doctor checks and the complete test suite pass."
+  },
+  "compileall": "PASS",
+  "hardware_twin_core_validation": "PASS",
+  "hardware_twin_sensitivity_matrix": {
+    "scenarios_completed": 5,
+    "scenarios_expected": 5,
+    "successful_tasks": 5,
+    "invalid_states": 0,
+    "same_input_across_scenarios": true,
+    "same_seed_across_scenarios": true,
+    "fresh_run": "PASS",
+    "resume_integrity": "PASS; 5/5 scenarios reused after integrity verification"
+  },
+  "mypy": "PASS: no issues in 58 source files",
+  "ruff_check": "PASS; preserved R2.3 history snapshots retain configured exclusions",
+  "ruff_format": "PASS",
+  "package_build": {
+    "wheel": "PASS",
+    "sdist": "PASS",
+    "twine_check": "PASS"
+  },
+  "pip_audit": "PASS: no known vulnerabilities in declared runtime and optional dependencies",
+  "cyclonedx_sbom": "PASS: CycloneDX JSON; 86 components; includes PyBullet",
+  "r23_manifest_hash_verifier": "PASS: 33 prediction files; 117572 rows; 560 functional S21 rows; both flagship conditions",
+  "r23_release_verifier": "PASS",
+  "r23_protected_files": "PASS: 52/52 byte-identical",
+  "status": "ENGINEERING_CANDIDATE_READY_FOR_UPLOAD; NOT_PUBLIC_RELEASE"
+}

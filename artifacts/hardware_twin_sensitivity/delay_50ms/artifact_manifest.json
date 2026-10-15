@@ -1,0 +1,15 @@
+{
+  "algorithm": "sha256",
+  "artifacts": {
+    "control_metrics.json": "54fe5053351f8b2bfc0e94151428cc65e71f6b9f987a718b1a082ba854990f62",
+    "control_transitions.json": "d5827f77333004d71d8737549fe6b9402bd8828a6656168ff9e01ecb7c436846",
+    "hardware_twin_trace.jsonl": "fa56ca6cdb4c33a14a1f52deb162bbc182e4d1a6ba8cbabcde2253d8c9a25791",
+    "provenance.json": "a6bd119cac0241520cd1b93b44643d2c185ebc851e08597248a1777c76f8cee7",
+    "summary.json": "46dd4923eca528eed5bf9714d788a48a311ae899640c5ab52b75513fd909bc1c",
+    "task_metrics.json": "2ce8b68e01af792aba213cff749387772748551ec2183b27aab12e2072f6b794",
+    "task_transitions.json": "68adb2080459fcec0e1b76e4a72958410d887f877224a899d9b6cef865fe9c9b"
+  },
+  "excluded": [
+    "artifact_manifest.json"
+  ]
+}

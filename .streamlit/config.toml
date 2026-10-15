@@ -1,0 +1,9 @@
+# Theme colors are taken directly from assets/models/hand.xml's own
+# <material> definitions (hand_blue / target_green) so the web UI matches
+# the simulated scene it renders.
+[theme]
+primaryColor = "#1C5CAD"
+backgroundColor = "#FFFFFF"
+secondaryBackgroundColor = "#F2F5F9"
+textColor = "#1A1A1A"
+font = "sans serif"

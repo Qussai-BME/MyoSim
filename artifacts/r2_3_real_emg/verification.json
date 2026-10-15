@@ -1,0 +1,25 @@
+{
+  "checks": {
+    "DB3_prediction_files": 11,
+    "DB3_reconciliation": true,
+    "DB7_prediction_files": 22,
+    "DB7_reconciliation": true,
+    "S21_episode_window_count": 560,
+    "S21_selected_rows": true,
+    "all_33_loader_adapter_validation": true,
+    "available_pytest_subset_passed": 131,
+    "canonical_manifest_and_prediction_hashes_checked": true,
+    "compileall_passed": true,
+    "distribution_build_and_twine_check_passed": true,
+    "flagship_episode_same_interval": true,
+    "ground_truth_mujoco_executed": true,
+    "ground_truth_task_success": true,
+    "manifest_hash_verifier_passed": true,
+    "optional_pybullet_test_dependency_available": false,
+    "pybullet_tests_deselected": 3,
+    "real_decoder_mujoco_executed": true,
+    "real_decoder_task_success": true,
+    "total_prediction_rows_and_events": 117572
+  },
+  "status": "PASS_WITH_OPTIONAL_PYBULLET_TESTS_UNAVAILABLE"
+}

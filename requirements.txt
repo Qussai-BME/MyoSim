@@ -1,0 +1,10 @@
+# Installs the myosim package itself (editable) together with the exact
+# dependency ranges declared in pyproject.toml, which stays the single
+# source of truth for the package's own requirements (mujoco, numpy,
+# PyYAML, matplotlib, imageio, Pillow).
+-e .
+
+# Additional dependency for the Streamlit front end only (not part of the
+# myosim package itself). Pinned per Streamlit's own best-practice guidance
+# so Community Cloud never silently upgrades it under you.
+streamlit>=1.60,<2.0

@@ -1,0 +1,11 @@
+{
+  "dataset": "DB3",
+  "subject_id": 1,
+  "archived_accuracy": 0.121909,
+  "recomputed_accuracy": 0.12190889370932755,
+  "difference_accuracy": -1.0629067245804258e-07,
+  "archived_macro_f1": 0.092434,
+  "recomputed_macro_f1": 0.09243415242806675,
+  "difference_macro_f1": 1.5242806675197507e-07,
+  "status": "PASS_WITHIN_REVIEW"
+}

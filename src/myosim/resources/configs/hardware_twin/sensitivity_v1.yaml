@@ -1,0 +1,35 @@
+schema: myosim-hardware-twin-sensitivity/v1
+protocol_id: R2.4-HW-TWIN-SENSITIVITY-v1
+selection:
+  same_input: true
+  same_seed: true
+  same_model: true
+  preserve_existing_evidence_by_default: true
+scenarios:
+  - id: baseline
+    hardware_twin_enabled: false
+    command_delay_s: 0.0
+    faults: []
+  - id: delay_20ms
+    hardware_twin_enabled: true
+    command_delay_s: 0.02
+    faults: []
+  - id: delay_50ms
+    hardware_twin_enabled: true
+    command_delay_s: 0.05
+    faults: []
+  - id: command_dropout_1_0_1_5s
+    hardware_twin_enabled: true
+    command_delay_s: 0.02
+    faults:
+      - kind: command_dropout
+        start_s: 1.0
+        end_s: 1.5
+  - id: index_stuck_1_0_1_5s
+    hardware_twin_enabled: true
+    command_delay_s: 0.02
+    faults:
+      - kind: actuator_stuck
+        joint_name: index_flex
+        start_s: 1.0
+        end_s: 1.5

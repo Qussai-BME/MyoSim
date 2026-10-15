@@ -1,0 +1,35 @@
+run:
+  seed: 20260822
+  artifacts_dir: artifacts/task_runs/pick_place
+  log_level: INFO
+
+simulation:
+  backend: mujoco
+  model_path: assets/models/hand.xml
+  timestep_s: 0.002
+  headless: true
+  render_width: 640
+  render_height: 480
+
+control:
+  confidence_threshold: 0.75
+  confirmation_windows: 3
+  minimum_dwell_s: 0.08
+  hold_duration_s: 0.20
+  release_duration_s: 0.10
+  ema_alpha: 0.35
+  stale_input_timeout_s: 0.30
+  command_rate_limit_rad_s: 2.0
+  max_joint_target_rad: 1.35
+  emergency_stop_on_invalid_state: true
+
+task:
+  name: pick_place
+  timeout_s: 8.0
+  target_radius_m: 0.08
+  stable_grasp_steps: 20
+
+recording:
+  enabled: true
+  debug_overlays: true
+  fps: 12

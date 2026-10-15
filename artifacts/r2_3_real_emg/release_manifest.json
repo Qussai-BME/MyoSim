@@ -1,0 +1,872 @@
+{
+  "claim_boundary": "Real recorded NinaPro sEMG-derived predictions were connected to the MyoSim intent, decision, controller, and safety stack and executed in the declared MuJoCo task replay. The result is a software-only downstream-control study, not clinical or physical-prosthesis validation.",
+  "closure": {
+    "available_pytest_subset": "131 passed; 3 PyBullet-dependent tests deselected",
+    "closed_at": "2026-10-05",
+    "command": "PYTHONPATH=src python scripts/run_r23_flagship.py --mode both",
+    "compileall": "PASS",
+    "data_changed_for_performance": false,
+    "distribution_build": "PASS: wheel and sdist built; twine check passed for both",
+    "environment": "CPython 3.12.3; MuJoCo installed in isolated project environment",
+    "environment_limitation": "Optional PyBullet test extra unavailable: no CPython 3.12 wheel found and source build exited nonzero; PyBullet-only tests are not claimed as passed.",
+    "functional_episode": {
+      "dataset": "DB7",
+      "source_prediction_sha256": "e7cee81d379606d61c8efc6b71eacecb5c02e56fd4a45907dd90874b310deed4",
+      "subject": "S21",
+      "window_count": 560,
+      "window_end": 1088,
+      "window_start": 82
+    },
+    "mujoco_results": {
+      "decoder": {
+        "command_corrections": 51,
+        "completion_time_s": 100.6,
+        "episode_artifact_sha256": "8e839fea52881954b0c6f0ea78dcee1ed38d8f9652cb7a912bc294e1acd9a893",
+        "final_error_m": 0.054791664195041556,
+        "final_state": "COMPLETE",
+        "grasp_stability_steps": 11,
+        "path": "artifacts/r2_3_real_emg/myosim_runs/decoder/DB7-S21-decoder-postfix-v2/result.json",
+        "path_length_m": 1.5214595134891529,
+        "same_functional_episode": true,
+        "success": true
+      },
+      "ground_truth": {
+        "command_corrections": 7,
+        "completion_time_s": 100.6,
+        "episode_artifact_sha256": "29388be445c44850fbff8b53a6187d4e18a14e61477c30e36d0d4e64baa95e7d",
+        "final_error_m": 0.04850045528768279,
+        "final_state": "COMPLETE",
+        "grasp_stability_steps": 171,
+        "path": "artifacts/r2_3_real_emg/myosim_runs/ground_truth/DB7-S21-ground_truth-postfix-v2/result.json",
+        "path_length_m": 2.4458967648712346,
+        "same_functional_episode": true,
+        "success": true
+      }
+    },
+    "status": "CLOSED_FLAGSHIP_MUJOCO_PASSED",
+    "structural_verifier": "PASS; 33 canonical prediction artifacts; 117572 rows/events; 560 functional-episode rows"
+  },
+  "datasets": {
+    "DB3": [
+      {
+        "path": "artifacts/r2_3_real_emg/predictions/DB3/S01.json",
+        "rows": 2305,
+        "sha256": "012de3e5296663fb0b5f3cf2aa17ee788f54689091ba09eb28e4284740dd9c4a",
+        "subject": 1
+      },
+      {
+        "path": "artifacts/r2_3_real_emg/predictions/DB3/S02.json",
+        "rows": 1762,
+        "sha256": "cd418195e1bf6e0bba56cf305a23c43515bd7f073e6c32b90b4d584187764801",
+        "subject": 2
+      },
+      {
+        "path": "artifacts/r2_3_real_emg/predictions/DB3/S03.json",
+        "rows": 1696,
+        "sha256": "1516e699b1cc372016d34c442d15b6681f3ce14dd07c5c03f0369d7188df9c40",
+        "subject": 3
+      },
+      {
+        "path": "artifacts/r2_3_real_emg/predictions/DB3/S04.json",
+        "rows": 2702,
+        "sha256": "8bc3895e8b4b3bcabad79307351977a05ba38edc918909982efdd57d87c67ec1",
+        "subject": 4
+      },
+      {
+        "path": "artifacts/r2_3_real_emg/predictions/DB3/S05.json",
+        "rows": 2615,
+        "sha256": "3039fe3d269072e2b539f2113d6fd187982140a2ad96419ab1afd486a1c85323",
+        "subject": 5
+      },
+      {
+        "path": "artifacts/r2_3_real_emg/predictions/DB3/S06.json",
+        "rows": 2698,
+        "sha256": "0b899793e695e888bb0054b6bf1a751f561d7cb817585cb4372697efdcdc4850",
+        "subject": 6
+      },
+      {
+        "path": "artifacts/r2_3_real_emg/predictions/DB3/S07.json",
+        "rows": 2633,
+        "sha256": "e1fedb3f8d141e82f0999a452a264baa825048d0392734335495ece65eb9e57b",
+        "subject": 7
+      },
+      {
+        "path": "artifacts/r2_3_real_emg/predictions/DB3/S08.json",
+        "rows": 1717,
+        "sha256": "95cf8fb0cb2731456308194b64465efccbd0c56169be4b2990ff987d7c01cf5a",
+        "subject": 8
+      },
+      {
+        "path": "artifacts/r2_3_real_emg/predictions/DB3/S09.json",
+        "rows": 2091,
+        "sha256": "9e2a52832f992973379b9b24992bb59a15d3951bb958b841a3256470567e8f83",
+        "subject": 9
+      },
+      {
+        "path": "artifacts/r2_3_real_emg/predictions/DB3/S10.json",
+        "rows": 2596,
+        "sha256": "b98206338e657127521fd657d6ce85fd8eefbe6cfa170a43bda22e28b9834862",
+        "subject": 10
+      },
+      {
+        "path": "artifacts/r2_3_real_emg/predictions/DB3/S11.json",
+        "rows": 1819,
+        "sha256": "0dc235b96d579628106cbc6c40f184913d7bd475d064a5265e3d0c544cbe38b7",
+        "subject": 11
+      }
+    ],
+    "DB7": [
+      {
+        "path": "artifacts/r2_3_real_emg/predictions/DB7/S01.json",
+        "rows": 4442,
+        "sha256": "2e1eeeefb78b9ce4a8158b10df32faabd64784ad1790cb7d7167c2aa9f89e453",
+        "subject": 1
+      },
+      {
+        "path": "artifacts/r2_3_real_emg/predictions/DB7/S02.json",
+        "rows": 4708,
+        "sha256": "0531b318e14c81edeca8196e1691ca77d6f3a491127f1e5a16a634bef219ca25",
+        "subject": 2
+      },
+      {
+        "path": "artifacts/r2_3_real_emg/predictions/DB7/S03.json",
+        "rows": 4100,
+        "sha256": "5f0464594d3c034a69e66a486f908151c2a1d45af2b07341d469fd139e35845e",
+        "subject": 3
+      },
+      {
+        "path": "artifacts/r2_3_real_emg/predictions/DB7/S04.json",
+        "rows": 5124,
+        "sha256": "9c0af0a4ca71e08fb670dfdca6591e7b88279f7683ff776a9102620ac3bf8301",
+        "subject": 4
+      },
+      {
+        "path": "artifacts/r2_3_real_emg/predictions/DB7/S05.json",
+        "rows": 3927,
+        "sha256": "f378a9e503ff59a04aa28483a540a86837c9f053e576d52959aeffc58c2654ee",
+        "subject": 5
+      },
+      {
+        "path": "artifacts/r2_3_real_emg/predictions/DB7/S06.json",
+        "rows": 4108,
+        "sha256": "d0664921ccf7382ffe2a3ca541191d1f89fb5d993d769393ac479ba446cddf73",
+        "subject": 6
+      },
+      {
+        "path": "artifacts/r2_3_real_emg/predictions/DB7/S07.json",
+        "rows": 3592,
+        "sha256": "0a417cc3e8d2276fd367a947bfcf54688367c62af598e7d8a067823e1637e880",
+        "subject": 7
+      },
+      {
+        "path": "artifacts/r2_3_real_emg/predictions/DB7/S08.json",
+        "rows": 4219,
+        "sha256": "1993d555ed5923bd1333769a3664a1259be7f04a66107db36457f4bfd8a28dfb",
+        "subject": 8
+      },
+      {
+        "path": "artifacts/r2_3_real_emg/predictions/DB7/S09.json",
+        "rows": 4181,
+        "sha256": "60d5ce388161855c9a40024088607aa2b8d555f9be1c16a4f0b605cd854bbba7",
+        "subject": 9
+      },
+      {
+        "path": "artifacts/r2_3_real_emg/predictions/DB7/S10.json",
+        "rows": 4147,
+        "sha256": "9b99cfbad88a586733e77ddfc9128512fec75abe67b69ab561e719a415d533ac",
+        "subject": 10
+      },
+      {
+        "path": "artifacts/r2_3_real_emg/predictions/DB7/S11.json",
+        "rows": 5021,
+        "sha256": "135cc63b3a53b8c6e5fd91de2a241d9ae5761935fe03902993be7e1b5cf85c37",
+        "subject": 11
+      },
+      {
+        "path": "artifacts/r2_3_real_emg/predictions/DB7/S12.json",
+        "rows": 4302,
+        "sha256": "ac73aa8ed7e14b64115329b9fe079489ff380754b7b6e8473da8a448356d00c5",
+        "subject": 12
+      },
+      {
+        "path": "artifacts/r2_3_real_emg/predictions/DB7/S13.json",
+        "rows": 4422,
+        "sha256": "3e3a40bb6e9cadd808056d81eb00bb2976b84b2a1a780eb399ea07ff8fa03f6f",
+        "subject": 13
+      },
+      {
+        "path": "artifacts/r2_3_real_emg/predictions/DB7/S14.json",
+        "rows": 4243,
+        "sha256": "3a2b62741e688f9d68df2b60f7847ed9fbbab4cae8fe8dd4942cf7e53a525046",
+        "subject": 14
+      },
+      {
+        "path": "artifacts/r2_3_real_emg/predictions/DB7/S15.json",
+        "rows": 4200,
+        "sha256": "da5db55806c6d70fd1c8c64145a4bb16ed0fe0417e977965dea6b62c254dba66",
+        "subject": 15
+      },
+      {
+        "path": "artifacts/r2_3_real_emg/predictions/DB7/S16.json",
+        "rows": 4215,
+        "sha256": "883e7dbe61ff294c1d0ad0cfac9c0e9530297902cd1e3f27d6a0eafbcd07efba",
+        "subject": 16
+      },
+      {
+        "path": "artifacts/r2_3_real_emg/predictions/DB7/S17.json",
+        "rows": 4164,
+        "sha256": "873f4a0c7280581ba54e837a43751a6d4dd0e1a742c7b51afc5f7025566e2217",
+        "subject": 17
+      },
+      {
+        "path": "artifacts/r2_3_real_emg/predictions/DB7/S18.json",
+        "rows": 4209,
+        "sha256": "e4f5e8bd001f1d2d8f019b31c48b7f08a6cb43c6838696ae92fba849a0e2212b",
+        "subject": 18
+      },
+      {
+        "path": "artifacts/r2_3_real_emg/predictions/DB7/S19.json",
+        "rows": 3975,
+        "sha256": "ace8d8cb59eaf0e436277a1b2f501d5910e50c8c156a88c5640580757ef48eff",
+        "subject": 19
+      },
+      {
+        "path": "artifacts/r2_3_real_emg/predictions/DB7/S20.json",
+        "rows": 4010,
+        "sha256": "1f6ff9498f13ac31e1d659a47487edf54cbe6161a8407bc711d78d687bf84bc6",
+        "subject": 20
+      },
+      {
+        "path": "artifacts/r2_3_real_emg/predictions/DB7/S21.json",
+        "rows": 4220,
+        "sha256": "50f0fb5a311e6e3d6d5961632dd94d6ad5fa8f9a6c63745e785c504894ef6c3b",
+        "subject": 21
+      },
+      {
+        "path": "artifacts/r2_3_real_emg/predictions/DB7/S22.json",
+        "rows": 3409,
+        "sha256": "8666342efb5b6cb68edae44b00111d4fc552c72ca1ccd8b97be96f4931310eed",
+        "subject": 22
+      }
+    ]
+  },
+  "flagship": {
+    "controller_validation": "artifacts/r2_3_real_emg/controller_validation/DB7_S21_argmax",
+    "decoder_status": "COMPLETED_SUCCESSFUL_MUJOCO_RUN",
+    "full_mujoco_status": "COMPLETED",
+    "functional_episode": "artifacts/r2_3_real_emg/intents/DB7_S21_functional_episode",
+    "functional_episode_rows": 560,
+    "functional_episode_selection_rule": "first_valid_ordered_run_sequence",
+    "ground_truth_status": "COMPLETED_SUCCESSFUL_MUJOCO_RUN",
+    "mujoco_results": {
+      "decoder": "artifacts/r2_3_real_emg/myosim_runs/decoder/DB7-S21-decoder-postfix-v2/result.json",
+      "ground_truth": "artifacts/r2_3_real_emg/myosim_runs/ground_truth/DB7-S21-ground_truth-postfix-v2/result.json"
+    },
+    "prediction_source": "artifacts/r2_3_real_emg/predictions/DB7/S21.json",
+    "score_policy": "classifier_argmax_accept",
+    "subject": "DB7-S21"
+  },
+  "generated_at": "2026-10-05",
+  "reconciliation": {
+    "DB3": {
+      "dataset": "DB3",
+      "interpretation": "Prediction-stream integrity reconciliation. Historical aggregate values may differ when a distinct training-pool protocol variant was used.",
+      "max_abs_difference": 0.0,
+      "n_check": 0,
+      "n_pass": 11,
+      "n_subjects": 11,
+      "subjects": [
+        {
+          "diffs": {
+            "accuracy_abs_diff": 0.0,
+            "macro_f1_abs_diff": 0.0
+          },
+          "expected_from_export_audit": {
+            "accuracy": 0.12190889370932755,
+            "macro_f1": 0.09243415242806675
+          },
+          "recomputed_from_canonical_predictions": {
+            "accuracy": 0.12190889370932755,
+            "macro_f1": 0.09243415242806675
+          },
+          "source_audit_status": "PASS_WITHIN_REVIEW",
+          "status": "PASS",
+          "subject_id": 1
+        },
+        {
+          "diffs": {
+            "accuracy_abs_diff": 0.0,
+            "macro_f1_abs_diff": 0.0
+          },
+          "expected_from_export_audit": {
+            "accuracy": 0.10953461975028377,
+            "macro_f1": 0.04851379661969299
+          },
+          "recomputed_from_canonical_predictions": {
+            "accuracy": 0.10953461975028377,
+            "macro_f1": 0.04851379661969299
+          },
+          "source_audit_status": "PASS_WITHIN_REVIEW",
+          "status": "PASS",
+          "subject_id": 2
+        },
+        {
+          "diffs": {
+            "accuracy_abs_diff": 0.0,
+            "macro_f1_abs_diff": 0.0
+          },
+          "expected_from_export_audit": {
+            "accuracy": 0.05306603773584906,
+            "macro_f1": 0.010092478167737683
+          },
+          "recomputed_from_canonical_predictions": {
+            "accuracy": 0.05306603773584906,
+            "macro_f1": 0.010092478167737683
+          },
+          "source_audit_status": "PASS_WITHIN_REVIEW",
+          "status": "PASS",
+          "subject_id": 3
+        },
+        {
+          "diffs": {
+            "accuracy_abs_diff": 0.0,
+            "macro_f1_abs_diff": 0.0
+          },
+          "expected_from_export_audit": {
+            "accuracy": 0.08216136195410807,
+            "macro_f1": 0.06861650420165619
+          },
+          "recomputed_from_canonical_predictions": {
+            "accuracy": 0.08216136195410807,
+            "macro_f1": 0.06861650420165619
+          },
+          "source_audit_status": "PASS_WITHIN_REVIEW",
+          "status": "PASS",
+          "subject_id": 4
+        },
+        {
+          "diffs": {
+            "accuracy_abs_diff": 0.0,
+            "macro_f1_abs_diff": 0.0
+          },
+          "expected_from_export_audit": {
+            "accuracy": 0.046653919694072656,
+            "macro_f1": 0.04262907051999362
+          },
+          "recomputed_from_canonical_predictions": {
+            "accuracy": 0.046653919694072656,
+            "macro_f1": 0.04262907051999362
+          },
+          "source_audit_status": "PASS_WITHIN_REVIEW",
+          "status": "PASS",
+          "subject_id": 5
+        },
+        {
+          "diffs": {
+            "accuracy_abs_diff": 0.0,
+            "macro_f1_abs_diff": 0.0
+          },
+          "expected_from_export_audit": {
+            "accuracy": 0.06782802075611565,
+            "macro_f1": 0.01692146950529375
+          },
+          "recomputed_from_canonical_predictions": {
+            "accuracy": 0.06782802075611565,
+            "macro_f1": 0.01692146950529375
+          },
+          "source_audit_status": "PASS_WITHIN_REVIEW",
+          "status": "PASS",
+          "subject_id": 6
+        },
+        {
+          "diffs": {
+            "accuracy_abs_diff": 0.0,
+            "macro_f1_abs_diff": 0.0
+          },
+          "expected_from_export_audit": {
+            "accuracy": 0.05886821116597037,
+            "macro_f1": 0.01940183609368646
+          },
+          "recomputed_from_canonical_predictions": {
+            "accuracy": 0.05886821116597037,
+            "macro_f1": 0.01940183609368646
+          },
+          "source_audit_status": "PASS_WITHIN_REVIEW",
+          "status": "PASS",
+          "subject_id": 7
+        },
+        {
+          "diffs": {
+            "accuracy_abs_diff": 0.0,
+            "macro_f1_abs_diff": 0.0
+          },
+          "expected_from_export_audit": {
+            "accuracy": 0.0762958648806057,
+            "macro_f1": 0.06336544398586094
+          },
+          "recomputed_from_canonical_predictions": {
+            "accuracy": 0.0762958648806057,
+            "macro_f1": 0.06336544398586094
+          },
+          "source_audit_status": "PASS_WITHIN_REVIEW",
+          "status": "PASS",
+          "subject_id": 8
+        },
+        {
+          "diffs": {
+            "accuracy_abs_diff": 0.0,
+            "macro_f1_abs_diff": 0.0
+          },
+          "expected_from_export_audit": {
+            "accuracy": 0.12003825920612148,
+            "macro_f1": 0.10626084418463322
+          },
+          "recomputed_from_canonical_predictions": {
+            "accuracy": 0.12003825920612148,
+            "macro_f1": 0.10626084418463322
+          },
+          "source_audit_status": "PASS_WITHIN_REVIEW",
+          "status": "PASS",
+          "subject_id": 9
+        },
+        {
+          "diffs": {
+            "accuracy_abs_diff": 0.0,
+            "macro_f1_abs_diff": 0.0
+          },
+          "expected_from_export_audit": {
+            "accuracy": 0.1016949152542373,
+            "macro_f1": 0.07218673846707271
+          },
+          "recomputed_from_canonical_predictions": {
+            "accuracy": 0.1016949152542373,
+            "macro_f1": 0.07218673846707271
+          },
+          "source_audit_status": "PASS_WITHIN_REVIEW",
+          "status": "PASS",
+          "subject_id": 10
+        },
+        {
+          "diffs": {
+            "accuracy_abs_diff": 0.0,
+            "macro_f1_abs_diff": 0.0
+          },
+          "expected_from_export_audit": {
+            "accuracy": 0.13798790544255085,
+            "macro_f1": 0.1335712790029351
+          },
+          "recomputed_from_canonical_predictions": {
+            "accuracy": 0.13798790544255085,
+            "macro_f1": 0.1335712790029351
+          },
+          "source_audit_status": "PASS_WITHIN_REVIEW",
+          "status": "PASS",
+          "subject_id": 11
+        }
+      ]
+    },
+    "DB7": {
+      "dataset": "DB7",
+      "interpretation": "Prediction-stream integrity reconciliation. Historical aggregate values may differ when a distinct training-pool protocol variant was used.",
+      "max_abs_difference": 0.0,
+      "n_check": 0,
+      "n_pass": 22,
+      "n_subjects": 22,
+      "subjects": [
+        {
+          "diffs": {
+            "accuracy_abs_diff": 0.0,
+            "macro_f1_abs_diff": 0.0
+          },
+          "expected_from_export_audit": {
+            "accuracy": 0.21566861773975687,
+            "macro_f1": 0.16384401759234124
+          },
+          "recomputed_from_canonical_predictions": {
+            "accuracy": 0.21566861773975687,
+            "macro_f1": 0.16384401759234124
+          },
+          "source_audit_status": "PROTOCOL_CHANGE_TRAINING_POOL",
+          "status": "PASS",
+          "subject_id": 1
+        },
+        {
+          "diffs": {
+            "accuracy_abs_diff": 0.0,
+            "macro_f1_abs_diff": 0.0
+          },
+          "expected_from_export_audit": {
+            "accuracy": 0.2627442650807137,
+            "macro_f1": 0.24155157484207423
+          },
+          "recomputed_from_canonical_predictions": {
+            "accuracy": 0.2627442650807137,
+            "macro_f1": 0.24155157484207423
+          },
+          "source_audit_status": "PROTOCOL_CHANGE_TRAINING_POOL",
+          "status": "PASS",
+          "subject_id": 2
+        },
+        {
+          "diffs": {
+            "accuracy_abs_diff": 0.0,
+            "macro_f1_abs_diff": 0.0
+          },
+          "expected_from_export_audit": {
+            "accuracy": 0.2348780487804878,
+            "macro_f1": 0.20234372170574008
+          },
+          "recomputed_from_canonical_predictions": {
+            "accuracy": 0.2348780487804878,
+            "macro_f1": 0.20234372170574008
+          },
+          "source_audit_status": "PROTOCOL_CHANGE_TRAINING_POOL",
+          "status": "PASS",
+          "subject_id": 3
+        },
+        {
+          "diffs": {
+            "accuracy_abs_diff": 0.0,
+            "macro_f1_abs_diff": 0.0
+          },
+          "expected_from_export_audit": {
+            "accuracy": 0.1959406713505074,
+            "macro_f1": 0.18371699895055166
+          },
+          "recomputed_from_canonical_predictions": {
+            "accuracy": 0.1959406713505074,
+            "macro_f1": 0.18371699895055166
+          },
+          "source_audit_status": "PROTOCOL_CHANGE_TRAINING_POOL",
+          "status": "PASS",
+          "subject_id": 4
+        },
+        {
+          "diffs": {
+            "accuracy_abs_diff": 0.0,
+            "macro_f1_abs_diff": 0.0
+          },
+          "expected_from_export_audit": {
+            "accuracy": 0.23784059078176725,
+            "macro_f1": 0.21408316722043136
+          },
+          "recomputed_from_canonical_predictions": {
+            "accuracy": 0.23784059078176725,
+            "macro_f1": 0.21408316722043136
+          },
+          "source_audit_status": "PROTOCOL_CHANGE_TRAINING_POOL",
+          "status": "PASS",
+          "subject_id": 5
+        },
+        {
+          "diffs": {
+            "accuracy_abs_diff": 0.0,
+            "macro_f1_abs_diff": 0.0
+          },
+          "expected_from_export_audit": {
+            "accuracy": 0.1784323271665044,
+            "macro_f1": 0.15895009037486915
+          },
+          "recomputed_from_canonical_predictions": {
+            "accuracy": 0.1784323271665044,
+            "macro_f1": 0.15895009037486915
+          },
+          "source_audit_status": "PROTOCOL_CHANGE_TRAINING_POOL",
+          "status": "PASS",
+          "subject_id": 6
+        },
+        {
+          "diffs": {
+            "accuracy_abs_diff": 0.0,
+            "macro_f1_abs_diff": 0.0
+          },
+          "expected_from_export_audit": {
+            "accuracy": 0.23301781737193764,
+            "macro_f1": 0.1861983016176926
+          },
+          "recomputed_from_canonical_predictions": {
+            "accuracy": 0.23301781737193764,
+            "macro_f1": 0.1861983016176926
+          },
+          "source_audit_status": "PROTOCOL_CHANGE_TRAINING_POOL",
+          "status": "PASS",
+          "subject_id": 7
+        },
+        {
+          "diffs": {
+            "accuracy_abs_diff": 0.0,
+            "macro_f1_abs_diff": 0.0
+          },
+          "expected_from_export_audit": {
+            "accuracy": 0.3230623370466935,
+            "macro_f1": 0.29273255816339955
+          },
+          "recomputed_from_canonical_predictions": {
+            "accuracy": 0.3230623370466935,
+            "macro_f1": 0.29273255816339955
+          },
+          "source_audit_status": "PROTOCOL_CHANGE_TRAINING_POOL",
+          "status": "PASS",
+          "subject_id": 8
+        },
+        {
+          "diffs": {
+            "accuracy_abs_diff": 0.0,
+            "macro_f1_abs_diff": 0.0
+          },
+          "expected_from_export_audit": {
+            "accuracy": 0.23319779956948097,
+            "macro_f1": 0.19608879675659635
+          },
+          "recomputed_from_canonical_predictions": {
+            "accuracy": 0.23319779956948097,
+            "macro_f1": 0.19608879675659635
+          },
+          "source_audit_status": "PROTOCOL_CHANGE_TRAINING_POOL",
+          "status": "PASS",
+          "subject_id": 9
+        },
+        {
+          "diffs": {
+            "accuracy_abs_diff": 0.0,
+            "macro_f1_abs_diff": 0.0
+          },
+          "expected_from_export_audit": {
+            "accuracy": 0.239691343139619,
+            "macro_f1": 0.20909712871870045
+          },
+          "recomputed_from_canonical_predictions": {
+            "accuracy": 0.239691343139619,
+            "macro_f1": 0.20909712871870045
+          },
+          "source_audit_status": "PROTOCOL_CHANGE_TRAINING_POOL",
+          "status": "PASS",
+          "subject_id": 10
+        },
+        {
+          "diffs": {
+            "accuracy_abs_diff": 0.0,
+            "macro_f1_abs_diff": 0.0
+          },
+          "expected_from_export_audit": {
+            "accuracy": 0.19856602270464052,
+            "macro_f1": 0.1674685562308808
+          },
+          "recomputed_from_canonical_predictions": {
+            "accuracy": 0.19856602270464052,
+            "macro_f1": 0.1674685562308808
+          },
+          "source_audit_status": "PROTOCOL_CHANGE_TRAINING_POOL",
+          "status": "PASS",
+          "subject_id": 11
+        },
+        {
+          "diffs": {
+            "accuracy_abs_diff": 0.0,
+            "macro_f1_abs_diff": 0.0
+          },
+          "expected_from_export_audit": {
+            "accuracy": 0.16736401673640167,
+            "macro_f1": 0.14388051961712042
+          },
+          "recomputed_from_canonical_predictions": {
+            "accuracy": 0.16736401673640167,
+            "macro_f1": 0.14388051961712042
+          },
+          "source_audit_status": "PROTOCOL_CHANGE_TRAINING_POOL",
+          "status": "PASS",
+          "subject_id": 12
+        },
+        {
+          "diffs": {
+            "accuracy_abs_diff": 0.0,
+            "macro_f1_abs_diff": 0.0
+          },
+          "expected_from_export_audit": {
+            "accuracy": 0.1494798733604704,
+            "macro_f1": 0.13003149700248345
+          },
+          "recomputed_from_canonical_predictions": {
+            "accuracy": 0.1494798733604704,
+            "macro_f1": 0.13003149700248345
+          },
+          "source_audit_status": "PROTOCOL_CHANGE_TRAINING_POOL",
+          "status": "PASS",
+          "subject_id": 13
+        },
+        {
+          "diffs": {
+            "accuracy_abs_diff": 0.0,
+            "macro_f1_abs_diff": 0.0
+          },
+          "expected_from_export_audit": {
+            "accuracy": 0.20362950742399247,
+            "macro_f1": 0.14894234275359128
+          },
+          "recomputed_from_canonical_predictions": {
+            "accuracy": 0.20362950742399247,
+            "macro_f1": 0.14894234275359128
+          },
+          "source_audit_status": "PROTOCOL_CHANGE_TRAINING_POOL",
+          "status": "PASS",
+          "subject_id": 14
+        },
+        {
+          "diffs": {
+            "accuracy_abs_diff": 0.0,
+            "macro_f1_abs_diff": 0.0
+          },
+          "expected_from_export_audit": {
+            "accuracy": 0.24214285714285713,
+            "macro_f1": 0.20912973384537806
+          },
+          "recomputed_from_canonical_predictions": {
+            "accuracy": 0.24214285714285713,
+            "macro_f1": 0.20912973384537806
+          },
+          "source_audit_status": "PROTOCOL_CHANGE_TRAINING_POOL",
+          "status": "PASS",
+          "subject_id": 15
+        },
+        {
+          "diffs": {
+            "accuracy_abs_diff": 0.0,
+            "macro_f1_abs_diff": 0.0
+          },
+          "expected_from_export_audit": {
+            "accuracy": 0.2040332147093713,
+            "macro_f1": 0.16105558044366894
+          },
+          "recomputed_from_canonical_predictions": {
+            "accuracy": 0.2040332147093713,
+            "macro_f1": 0.16105558044366894
+          },
+          "source_audit_status": "PROTOCOL_CHANGE_TRAINING_POOL",
+          "status": "PASS",
+          "subject_id": 16
+        },
+        {
+          "diffs": {
+            "accuracy_abs_diff": 0.0,
+            "macro_f1_abs_diff": 0.0
+          },
+          "expected_from_export_audit": {
+            "accuracy": 0.23895292987512007,
+            "macro_f1": 0.2169466069345763
+          },
+          "recomputed_from_canonical_predictions": {
+            "accuracy": 0.23895292987512007,
+            "macro_f1": 0.2169466069345763
+          },
+          "source_audit_status": "PROTOCOL_CHANGE_TRAINING_POOL",
+          "status": "PASS",
+          "subject_id": 17
+        },
+        {
+          "diffs": {
+            "accuracy_abs_diff": 0.0,
+            "macro_f1_abs_diff": 0.0
+          },
+          "expected_from_export_audit": {
+            "accuracy": 0.16868614872891424,
+            "macro_f1": 0.11628766242844035
+          },
+          "recomputed_from_canonical_predictions": {
+            "accuracy": 0.16868614872891424,
+            "macro_f1": 0.11628766242844035
+          },
+          "source_audit_status": "PROTOCOL_CHANGE_TRAINING_POOL",
+          "status": "PASS",
+          "subject_id": 18
+        },
+        {
+          "diffs": {
+            "accuracy_abs_diff": 0.0,
+            "macro_f1_abs_diff": 0.0
+          },
+          "expected_from_export_audit": {
+            "accuracy": 0.3122012578616352,
+            "macro_f1": 0.2720490282062439
+          },
+          "recomputed_from_canonical_predictions": {
+            "accuracy": 0.3122012578616352,
+            "macro_f1": 0.2720490282062439
+          },
+          "source_audit_status": "PROTOCOL_CHANGE_TRAINING_POOL",
+          "status": "PASS",
+          "subject_id": 19
+        },
+        {
+          "diffs": {
+            "accuracy_abs_diff": 0.0,
+            "macro_f1_abs_diff": 0.0
+          },
+          "expected_from_export_audit": {
+            "accuracy": 0.1259351620947631,
+            "macro_f1": 0.07515265079055244
+          },
+          "recomputed_from_canonical_predictions": {
+            "accuracy": 0.1259351620947631,
+            "macro_f1": 0.07515265079055244
+          },
+          "source_audit_status": "PROTOCOL_CHANGE_TRAINING_POOL",
+          "status": "PASS",
+          "subject_id": 20
+        },
+        {
+          "diffs": {
+            "accuracy_abs_diff": 0.0,
+            "macro_f1_abs_diff": 0.0
+          },
+          "expected_from_export_audit": {
+            "accuracy": 0.054976303317535544,
+            "macro_f1": 0.01533173019550639
+          },
+          "recomputed_from_canonical_predictions": {
+            "accuracy": 0.054976303317535544,
+            "macro_f1": 0.01533173019550639
+          },
+          "source_audit_status": "PROTOCOL_CHANGE_TRAINING_POOL",
+          "status": "PASS",
+          "subject_id": 21
+        },
+        {
+          "diffs": {
+            "accuracy_abs_diff": 0.0,
+            "macro_f1_abs_diff": 0.0
+          },
+          "expected_from_export_audit": {
+            "accuracy": 0.06805514813728367,
+            "macro_f1": 0.04026408320935635
+          },
+          "recomputed_from_canonical_predictions": {
+            "accuracy": 0.06805514813728367,
+            "macro_f1": 0.04026408320935635
+          },
+          "source_audit_status": "PROTOCOL_CHANGE_TRAINING_POOL",
+          "status": "PASS",
+          "subject_id": 22
+        }
+      ]
+    }
+  },
+  "release_id": "R2.3-real-emg-final-2026-10-05",
+  "safety": {
+    "unchanged": true
+  },
+  "schema": "myosim-r2-3-release/v1",
+  "source_policy": "cache-first validated real-data evidence",
+  "status": "MUJOCO_COMPLETED",
+  "verification": {
+    "available_package_tests": "131 passed; 3 PyBullet-dependent tests deselected",
+    "compileall": "PASS",
+    "distribution_build": "PASS; wheel and sdist built; twine check passed for both",
+    "manifest_hash_verifier": "scripts/verify_r23_manifest_hashes.py",
+    "mujoco_postfix": "PASS_BOTH_CONDITIONS",
+    "optional_pybullet_tests": "NOT_RUN; dependency could not be installed in CPython 3.12 environment",
+    "prediction_files": 33,
+    "prediction_rows": 117572,
+    "structural_status": "PASS",
+    "structural_verifier": "scripts/verify_r23_release.py"
+  }
+}

@@ -1,0 +1,17 @@
+protocol_id: r2-emg-intent-replay-v1
+owner: Qussai Adlbi
+input_artifact: examples/emg_intent/myocontrol_prediction_example.json
+adapter_version: myosim-emg-adapter/v1
+label_map: examples/emg_intent/label_map_v1.yaml
+confidence_policy: existing_myoSim_confidence_gate
+telemetry:
+  timestamp_policy: preserve_source_or_derive_window_center
+  probability_tolerance: 0.000001
+temporal_policy: existing_myoSim_temporal_logic
+physics_backend: mujoco
+robot_model: assets/models/hand.xml
+task: pick_place
+seed: 20260822
+metrics: [task_success, completion_time_s, final_error_m, requested_commands, accepted_intents, rejected_intents, clamped_commands, state_transitions]
+output_path: artifacts/r2_emg_intent
+claims: synthetic_upstream_integration_only

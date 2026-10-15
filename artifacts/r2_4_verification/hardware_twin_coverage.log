@@ -1,0 +1,22 @@
+..................................                                       [100%]
+=============================== warnings summary ===============================
+src/myosim/hardware_twin/backend.py:19
+  /home/ubuntu/work/myosim-r24-audit/extracted/MyoSim_R2.4/src/myosim/hardware_twin/backend.py:19: UserWarning: The NumPy module was reloaded (imported a second time). This can in some cases result in small but subtle issues and is discouraged.
+    import numpy as np
+
+tests/unit/test_hardware_twin.py:5
+  /home/ubuntu/work/myosim-r24-audit/extracted/MyoSim_R2.4/tests/unit/test_hardware_twin.py:5: UserWarning: The NumPy module was reloaded (imported a second time). This can in some cases result in small but subtle issues and is discouraged.
+    import numpy as np
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+================================ tests coverage ================================
+_______________ coverage: platform linux, python 3.11.16-final-0 _______________
+
+Name                                  Stmts   Miss Branch BrPart  Cover   Missing
+---------------------------------------------------------------------------------
+src/myosim/hardware_twin/backend.py     343     15     90      5    95%   201, 205, 274, 483-484, 511, 514-515, 519, 521, 526, 539, 551-552, 615
+---------------------------------------------------------------------------------
+TOTAL                                   343     15     90      5    95%
+Coverage JSON written to file artifacts/r2_4_verification/hardware_twin_coverage.json
+Required test coverage of 85% reached. Total coverage: 95.38%
+34 passed, 2 warnings in 0.38s

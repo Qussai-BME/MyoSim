@@ -1,0 +1,742 @@
+[
+  {
+    "timestamp_s": 8.25,
+    "previous": "REST",
+    "current": "CANDIDATE",
+    "reason": "accepted_candidate_intent",
+    "command": "REST",
+    "metadata": {
+      "active_label": "PINCH"
+    }
+  },
+  {
+    "timestamp_s": 8.45,
+    "previous": "CANDIDATE",
+    "current": "CONFIRMED",
+    "reason": "confidence_and_temporal_requirements_met",
+    "command": "REST",
+    "metadata": {
+      "active_label": "PINCH"
+    }
+  },
+  {
+    "timestamp_s": 8.55,
+    "previous": "CONFIRMED",
+    "current": "EXECUTING",
+    "reason": "confirmed_command_released",
+    "command": "PINCH",
+    "metadata": {
+      "active_label": "PINCH"
+    }
+  },
+  {
+    "timestamp_s": 9.75,
+    "previous": "EXECUTING",
+    "current": "HOLD",
+    "reason": "conflicting_high_confidence_intent",
+    "command": "HOLD",
+    "metadata": {
+      "active_label": "CLOSE"
+    }
+  },
+  {
+    "timestamp_s": 10.05,
+    "previous": "HOLD",
+    "current": "EXECUTING",
+    "reason": "hold_duration_elapsed_with_consistent_intent",
+    "command": "CLOSE",
+    "metadata": {
+      "active_label": "CLOSE"
+    }
+  },
+  {
+    "timestamp_s": 10.45,
+    "previous": "EXECUTING",
+    "current": "RELEASE",
+    "reason": "explicit_rest_received",
+    "command": "RELEASE",
+    "metadata": {
+      "active_label": "REST"
+    }
+  },
+  {
+    "timestamp_s": 10.55,
+    "previous": "RELEASE",
+    "current": "REST",
+    "reason": "release_completed",
+    "command": "REST",
+    "metadata": {
+      "active_label": "REST"
+    }
+  },
+  {
+    "timestamp_s": 10.65,
+    "previous": "REST",
+    "current": "CANDIDATE",
+    "reason": "accepted_candidate_intent",
+    "command": "REST",
+    "metadata": {
+      "active_label": "CLOSE"
+    }
+  },
+  {
+    "timestamp_s": 10.75,
+    "previous": "CANDIDATE",
+    "current": "CANDIDATE",
+    "reason": "candidate_replaced_by_new_consistent_label",
+    "command": "REST",
+    "metadata": {
+      "active_label": "PINCH"
+    }
+  },
+  {
+    "timestamp_s": 10.95,
+    "previous": "CANDIDATE",
+    "current": "RELEASE",
+    "reason": "explicit_rest_received",
+    "command": "RELEASE",
+    "metadata": {
+      "active_label": "REST"
+    }
+  },
+  {
+    "timestamp_s": 11.05,
+    "previous": "RELEASE",
+    "current": "REST",
+    "reason": "release_completed",
+    "command": "REST",
+    "metadata": {
+      "active_label": "REST"
+    }
+  },
+  {
+    "timestamp_s": 11.25,
+    "previous": "REST",
+    "current": "CANDIDATE",
+    "reason": "accepted_candidate_intent",
+    "command": "REST",
+    "metadata": {
+      "active_label": "PINCH"
+    }
+  },
+  {
+    "timestamp_s": 11.45,
+    "previous": "CANDIDATE",
+    "current": "CONFIRMED",
+    "reason": "confidence_and_temporal_requirements_met",
+    "command": "REST",
+    "metadata": {
+      "active_label": "PINCH"
+    }
+  },
+  {
+    "timestamp_s": 11.55,
+    "previous": "CONFIRMED",
+    "current": "EXECUTING",
+    "reason": "confirmed_command_released",
+    "command": "PINCH",
+    "metadata": {
+      "active_label": "PINCH"
+    }
+  },
+  {
+    "timestamp_s": 13.65,
+    "previous": "EXECUTING",
+    "current": "HOLD",
+    "reason": "conflicting_high_confidence_intent",
+    "command": "HOLD",
+    "metadata": {
+      "active_label": "CLOSE"
+    }
+  },
+  {
+    "timestamp_s": 13.95,
+    "previous": "HOLD",
+    "current": "EXECUTING",
+    "reason": "hold_duration_elapsed_with_consistent_intent",
+    "command": "CLOSE",
+    "metadata": {
+      "active_label": "CLOSE"
+    }
+  },
+  {
+    "timestamp_s": 15.25,
+    "previous": "EXECUTING",
+    "current": "HOLD",
+    "reason": "conflicting_high_confidence_intent",
+    "command": "HOLD",
+    "metadata": {
+      "active_label": "PINCH"
+    }
+  },
+  {
+    "timestamp_s": 15.55,
+    "previous": "HOLD",
+    "current": "RELEASE",
+    "reason": "explicit_rest_received",
+    "command": "RELEASE",
+    "metadata": {
+      "active_label": "REST"
+    }
+  },
+  {
+    "timestamp_s": 16.85,
+    "previous": "RELEASE",
+    "current": "REST",
+    "reason": "release_completed",
+    "command": "REST",
+    "metadata": {
+      "active_label": "REST"
+    }
+  },
+  {
+    "timestamp_s": 17.05,
+    "previous": "REST",
+    "current": "CANDIDATE",
+    "reason": "accepted_candidate_intent",
+    "command": "REST",
+    "metadata": {
+      "active_label": "CLOSE"
+    }
+  },
+  {
+    "timestamp_s": 17.25,
+    "previous": "CANDIDATE",
+    "current": "CONFIRMED",
+    "reason": "confidence_and_temporal_requirements_met",
+    "command": "REST",
+    "metadata": {
+      "active_label": "CLOSE"
+    }
+  },
+  {
+    "timestamp_s": 17.35,
+    "previous": "CONFIRMED",
+    "current": "CANDIDATE",
+    "reason": "confirmed_command_replaced_before_execution",
+    "command": "REST",
+    "metadata": {
+      "active_label": "PINCH"
+    }
+  },
+  {
+    "timestamp_s": 17.45,
+    "previous": "CANDIDATE",
+    "current": "CANDIDATE",
+    "reason": "candidate_replaced_by_new_consistent_label",
+    "command": "REST",
+    "metadata": {
+      "active_label": "OPEN"
+    }
+  },
+  {
+    "timestamp_s": 17.55,
+    "previous": "CANDIDATE",
+    "current": "CANDIDATE",
+    "reason": "candidate_replaced_by_new_consistent_label",
+    "command": "REST",
+    "metadata": {
+      "active_label": "PINCH"
+    }
+  },
+  {
+    "timestamp_s": 17.75,
+    "previous": "CANDIDATE",
+    "current": "CONFIRMED",
+    "reason": "confidence_and_temporal_requirements_met",
+    "command": "REST",
+    "metadata": {
+      "active_label": "PINCH"
+    }
+  },
+  {
+    "timestamp_s": 17.85,
+    "previous": "CONFIRMED",
+    "current": "EXECUTING",
+    "reason": "confirmed_command_released",
+    "command": "PINCH",
+    "metadata": {
+      "active_label": "PINCH"
+    }
+  },
+  {
+    "timestamp_s": 24.15,
+    "previous": "EXECUTING",
+    "current": "HOLD",
+    "reason": "conflicting_high_confidence_intent",
+    "command": "HOLD",
+    "metadata": {
+      "active_label": "CLOSE"
+    }
+  },
+  {
+    "timestamp_s": 24.35,
+    "previous": "HOLD",
+    "current": "EXECUTING",
+    "reason": "hold_duration_elapsed_with_consistent_intent",
+    "command": "CLOSE",
+    "metadata": {
+      "active_label": "CLOSE"
+    }
+  },
+  {
+    "timestamp_s": 24.45,
+    "previous": "EXECUTING",
+    "current": "RELEASE",
+    "reason": "explicit_rest_received",
+    "command": "RELEASE",
+    "metadata": {
+      "active_label": "REST"
+    }
+  },
+  {
+    "timestamp_s": 54.45,
+    "previous": "RELEASE",
+    "current": "REST",
+    "reason": "release_completed",
+    "command": "REST",
+    "metadata": {
+      "active_label": "REST"
+    }
+  },
+  {
+    "timestamp_s": 54.65,
+    "previous": "REST",
+    "current": "CANDIDATE",
+    "reason": "accepted_candidate_intent",
+    "command": "REST",
+    "metadata": {
+      "active_label": "CLOSE"
+    }
+  },
+  {
+    "timestamp_s": 55.05,
+    "previous": "CANDIDATE",
+    "current": "CANDIDATE",
+    "reason": "candidate_replaced_by_new_consistent_label",
+    "command": "REST",
+    "metadata": {
+      "active_label": "OPEN"
+    }
+  },
+  {
+    "timestamp_s": 60.45,
+    "previous": "CANDIDATE",
+    "current": "CANDIDATE",
+    "reason": "candidate_replaced_by_new_consistent_label",
+    "command": "REST",
+    "metadata": {
+      "active_label": "CLOSE"
+    }
+  },
+  {
+    "timestamp_s": 60.65,
+    "previous": "CANDIDATE",
+    "current": "RELEASE",
+    "reason": "explicit_rest_received",
+    "command": "RELEASE",
+    "metadata": {
+      "active_label": "REST"
+    }
+  },
+  {
+    "timestamp_s": 60.75,
+    "previous": "RELEASE",
+    "current": "REST",
+    "reason": "release_completed",
+    "command": "REST",
+    "metadata": {
+      "active_label": "REST"
+    }
+  },
+  {
+    "timestamp_s": 60.95,
+    "previous": "REST",
+    "current": "CANDIDATE",
+    "reason": "accepted_candidate_intent",
+    "command": "REST",
+    "metadata": {
+      "active_label": "PINCH"
+    }
+  },
+  {
+    "timestamp_s": 61.05,
+    "previous": "CANDIDATE",
+    "current": "CANDIDATE",
+    "reason": "candidate_replaced_by_new_consistent_label",
+    "command": "REST",
+    "metadata": {
+      "active_label": "OPEN"
+    }
+  },
+  {
+    "timestamp_s": 61.15,
+    "previous": "CANDIDATE",
+    "current": "RELEASE",
+    "reason": "explicit_rest_received",
+    "command": "RELEASE",
+    "metadata": {
+      "active_label": "REST"
+    }
+  },
+  {
+    "timestamp_s": 63.05,
+    "previous": "RELEASE",
+    "current": "REST",
+    "reason": "release_completed",
+    "command": "REST",
+    "metadata": {
+      "active_label": "REST"
+    }
+  },
+  {
+    "timestamp_s": 63.15,
+    "previous": "REST",
+    "current": "CANDIDATE",
+    "reason": "accepted_candidate_intent",
+    "command": "REST",
+    "metadata": {
+      "active_label": "CLOSE"
+    }
+  },
+  {
+    "timestamp_s": 63.35,
+    "previous": "CANDIDATE",
+    "current": "CONFIRMED",
+    "reason": "confidence_and_temporal_requirements_met",
+    "command": "REST",
+    "metadata": {
+      "active_label": "CLOSE"
+    }
+  },
+  {
+    "timestamp_s": 63.45,
+    "previous": "CONFIRMED",
+    "current": "EXECUTING",
+    "reason": "confirmed_command_released",
+    "command": "CLOSE",
+    "metadata": {
+      "active_label": "CLOSE"
+    }
+  },
+  {
+    "timestamp_s": 63.85,
+    "previous": "EXECUTING",
+    "current": "HOLD",
+    "reason": "conflicting_high_confidence_intent",
+    "command": "HOLD",
+    "metadata": {
+      "active_label": "PINCH"
+    }
+  },
+  {
+    "timestamp_s": 64.45,
+    "previous": "HOLD",
+    "current": "EXECUTING",
+    "reason": "hold_duration_elapsed_with_consistent_intent",
+    "command": "PINCH",
+    "metadata": {
+      "active_label": "PINCH"
+    }
+  },
+  {
+    "timestamp_s": 64.55,
+    "previous": "EXECUTING",
+    "current": "HOLD",
+    "reason": "low_confidence_input_while_executing",
+    "command": "HOLD",
+    "metadata": {
+      "active_label": "PINCH"
+    }
+  },
+  {
+    "timestamp_s": 64.75,
+    "previous": "HOLD",
+    "current": "EXECUTING",
+    "reason": "hold_duration_elapsed_with_consistent_intent",
+    "command": "PINCH",
+    "metadata": {
+      "active_label": "PINCH"
+    }
+  },
+  {
+    "timestamp_s": 65.35,
+    "previous": "EXECUTING",
+    "current": "HOLD",
+    "reason": "low_confidence_input_while_executing",
+    "command": "HOLD",
+    "metadata": {
+      "active_label": "PINCH"
+    }
+  },
+  {
+    "timestamp_s": 65.55,
+    "previous": "HOLD",
+    "current": "EXECUTING",
+    "reason": "hold_duration_elapsed_with_consistent_intent",
+    "command": "PINCH",
+    "metadata": {
+      "active_label": "PINCH"
+    }
+  },
+  {
+    "timestamp_s": 65.75,
+    "previous": "EXECUTING",
+    "current": "RELEASE",
+    "reason": "explicit_rest_received",
+    "command": "RELEASE",
+    "metadata": {
+      "active_label": "REST"
+    }
+  },
+  {
+    "timestamp_s": 69.15,
+    "previous": "RELEASE",
+    "current": "REST",
+    "reason": "release_completed",
+    "command": "REST",
+    "metadata": {
+      "active_label": "REST"
+    }
+  },
+  {
+    "timestamp_s": 69.25,
+    "previous": "REST",
+    "current": "CANDIDATE",
+    "reason": "accepted_candidate_intent",
+    "command": "REST",
+    "metadata": {
+      "active_label": "CLOSE"
+    }
+  },
+  {
+    "timestamp_s": 69.45,
+    "previous": "CANDIDATE",
+    "current": "RELEASE",
+    "reason": "explicit_rest_received",
+    "command": "RELEASE",
+    "metadata": {
+      "active_label": "REST"
+    }
+  },
+  {
+    "timestamp_s": 94.65,
+    "previous": "RELEASE",
+    "current": "REST",
+    "reason": "release_completed",
+    "command": "REST",
+    "metadata": {
+      "active_label": "REST"
+    }
+  },
+  {
+    "timestamp_s": 94.85,
+    "previous": "REST",
+    "current": "CANDIDATE",
+    "reason": "accepted_candidate_intent",
+    "command": "REST",
+    "metadata": {
+      "active_label": "CLOSE"
+    }
+  },
+  {
+    "timestamp_s": 97.15,
+    "previous": "CANDIDATE",
+    "current": "CANDIDATE",
+    "reason": "candidate_replaced_by_new_consistent_label",
+    "command": "REST",
+    "metadata": {
+      "active_label": "PINCH"
+    }
+  },
+  {
+    "timestamp_s": 97.35,
+    "previous": "CANDIDATE",
+    "current": "CONFIRMED",
+    "reason": "confidence_and_temporal_requirements_met",
+    "command": "REST",
+    "metadata": {
+      "active_label": "PINCH"
+    }
+  },
+  {
+    "timestamp_s": 97.45,
+    "previous": "CONFIRMED",
+    "current": "EXECUTING",
+    "reason": "confirmed_command_released",
+    "command": "PINCH",
+    "metadata": {
+      "active_label": "PINCH"
+    }
+  },
+  {
+    "timestamp_s": 97.65,
+    "previous": "EXECUTING",
+    "current": "HOLD",
+    "reason": "low_confidence_input_while_executing",
+    "command": "HOLD",
+    "metadata": {
+      "active_label": "PINCH"
+    }
+  },
+  {
+    "timestamp_s": 97.95,
+    "previous": "HOLD",
+    "current": "EXECUTING",
+    "reason": "hold_duration_elapsed_with_consistent_intent",
+    "command": "PINCH",
+    "metadata": {
+      "active_label": "PINCH"
+    }
+  },
+  {
+    "timestamp_s": 98.15,
+    "previous": "EXECUTING",
+    "current": "HOLD",
+    "reason": "low_confidence_input_while_executing",
+    "command": "HOLD",
+    "metadata": {
+      "active_label": "PINCH"
+    }
+  },
+  {
+    "timestamp_s": 98.65,
+    "previous": "HOLD",
+    "current": "EXECUTING",
+    "reason": "hold_duration_elapsed_with_consistent_intent",
+    "command": "PINCH",
+    "metadata": {
+      "active_label": "PINCH"
+    }
+  },
+  {
+    "timestamp_s": 98.95,
+    "previous": "EXECUTING",
+    "current": "HOLD",
+    "reason": "conflicting_high_confidence_intent",
+    "command": "HOLD",
+    "metadata": {
+      "active_label": "CLOSE"
+    }
+  },
+  {
+    "timestamp_s": 99.15,
+    "previous": "HOLD",
+    "current": "EXECUTING",
+    "reason": "hold_duration_elapsed_with_consistent_intent",
+    "command": "CLOSE",
+    "metadata": {
+      "active_label": "CLOSE"
+    }
+  },
+  {
+    "timestamp_s": 106.25,
+    "previous": "EXECUTING",
+    "current": "HOLD",
+    "reason": "conflicting_high_confidence_intent",
+    "command": "HOLD",
+    "metadata": {
+      "active_label": "PINCH"
+    }
+  },
+  {
+    "timestamp_s": 106.85,
+    "previous": "HOLD",
+    "current": "EXECUTING",
+    "reason": "hold_duration_elapsed_with_consistent_intent",
+    "command": "PINCH",
+    "metadata": {
+      "active_label": "PINCH"
+    }
+  },
+  {
+    "timestamp_s": 107.05,
+    "previous": "EXECUTING",
+    "current": "HOLD",
+    "reason": "low_confidence_input_while_executing",
+    "command": "HOLD",
+    "metadata": {
+      "active_label": "PINCH"
+    }
+  },
+  {
+    "timestamp_s": 107.25,
+    "previous": "HOLD",
+    "current": "EXECUTING",
+    "reason": "hold_duration_elapsed_with_consistent_intent",
+    "command": "PINCH",
+    "metadata": {
+      "active_label": "PINCH"
+    }
+  },
+  {
+    "timestamp_s": 107.35,
+    "previous": "EXECUTING",
+    "current": "HOLD",
+    "reason": "low_confidence_input_while_executing",
+    "command": "HOLD",
+    "metadata": {
+      "active_label": "PINCH"
+    }
+  },
+  {
+    "timestamp_s": 107.55,
+    "previous": "HOLD",
+    "current": "EXECUTING",
+    "reason": "hold_duration_elapsed_with_consistent_intent",
+    "command": "PINCH",
+    "metadata": {
+      "active_label": "PINCH"
+    }
+  },
+  {
+    "timestamp_s": 107.65,
+    "previous": "EXECUTING",
+    "current": "HOLD",
+    "reason": "low_confidence_input_while_executing",
+    "command": "HOLD",
+    "metadata": {
+      "active_label": "PINCH"
+    }
+  },
+  {
+    "timestamp_s": 107.95,
+    "previous": "HOLD",
+    "current": "EXECUTING",
+    "reason": "hold_duration_elapsed_with_consistent_intent",
+    "command": "PINCH",
+    "metadata": {
+      "active_label": "PINCH"
+    }
+  },
+  {
+    "timestamp_s": 108.15,
+    "previous": "EXECUTING",
+    "current": "HOLD",
+    "reason": "conflicting_high_confidence_intent",
+    "command": "HOLD",
+    "metadata": {
+      "active_label": "OPEN"
+    }
+  },
+  {
+    "timestamp_s": 108.45,
+    "previous": "HOLD",
+    "current": "EXECUTING",
+    "reason": "hold_duration_elapsed_with_consistent_intent",
+    "command": "OPEN",
+    "metadata": {
+      "active_label": "OPEN"
+    }
+  },
+  {
+    "timestamp_s": 108.55,
+    "previous": "EXECUTING",
+    "current": "HOLD",
+    "reason": "low_confidence_input_while_executing",
+    "command": "HOLD",
+    "metadata": {
+      "active_label": "OPEN"
+    }
+  }
+]

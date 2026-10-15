@@ -1,0 +1,13 @@
+schema: myosim-intent-map/v1
+version: myocontrol-synthetic-scenario-map-v1
+source: MyoControl-format synthetic scenario
+source_status: SYNTHETIC
+source_model: myocontrol-synthetic-scenario
+source_vocabulary: [rest, pinch]
+target_vocabulary: [REST, OPEN, CLOSE, PINCH]
+mapping:
+  rest: REST
+  pinch: PINCH
+unmapped_policy: reject
+many_to_one: false
+mapping_rationale: The synthetic scenario intentionally exercises REST and PINCH; labels are not asserted to be the vocabulary of a trained real MyoControl model.

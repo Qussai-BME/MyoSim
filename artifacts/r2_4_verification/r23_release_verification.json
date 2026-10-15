@@ -1,0 +1,9 @@
+{
+  "failures": [],
+  "functional_episode_rows": 560,
+  "physics_execution": "COMPLETED_BOTH_CONDITIONS",
+  "prediction_files": 33,
+  "status": "PASS",
+  "total_adapter_events": 117572,
+  "total_prediction_rows": 117572
+}
