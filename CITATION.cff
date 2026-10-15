@@ -11,7 +11,7 @@ type: software
 authors:
   - family-names: Adlbi
     given-names: Qussai
-    email: qussai.adlbi@proton.me
+    email: qussai.adlbi@au.edu.sy
 license: Apache-2.0
 version: "0.1.6"
 date-released: 2026-10-06
