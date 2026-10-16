@@ -3,10 +3,13 @@ message: "If you use MyoSim in academic work, cite this software release and the
 title: "MyoSim: Reproducible Motor-Intent to Simulated-Action Research Demonstrator"
 abstract: >-
   A local-first, software-only, non-clinical research platform for deterministic
-  replay of motor-intent records through confidence-aware decision logic,
-  bounded control, virtual prosthetic simulation, task metrics, and provenance
-  reporting. This release does not establish clinical validation, hardware
-  safety, decoder efficacy, or biomechanical equivalence.
+  replay of motor-intent records through confidence-aware decision logic, bounded
+  control, virtual prosthetic simulation, task metrics and provenance reporting.
+  Version 0.1.6 adds a recorded-data downstream integration (NinaPro DB3/DB7-derived
+  decoder predictions replayed through the control stack) and an opt-in Hardware Twin
+  actuator model whose parameters are assumptions, with a frozen sensitivity matrix.
+  This release does not establish clinical validation, hardware safety, decoder
+  efficacy, or biomechanical equivalence.
 type: software
 authors:
   - family-names: Adlbi
