@@ -1,6 +1,6 @@
 # MyoSim — Human Motor Intent to Simulated Action
 
-[![Zenodo](https://zenodo.org/badge/DOI/10.5281/zenodo.22282345.svg)](https://zenodo.org/records/22282345) · [Interactive demo](https://myosim-qussai-bme.streamlit.app/)
+[![Zenodo](https://zenodo.org/badge/DOI/10.5281/zenodo.23418560.svg)](https://zenodo.org/records/23418560) · [Interactive demo](https://myosim-qussai-bme.streamlit.app/)
 
 > **Research software only.** MyoSim is a local-first, software-only research demonstrator. It is not a medical device, a hardware driver, a clinical validation platform, or evidence that a decoder or assistive system is safe for patient use.
 
@@ -35,7 +35,7 @@ See `docs/history/r2_3/README.md` for the immutable-history index, `docs/history
 
 ## Hardware Twin (R2.4 milestone)
 
-**Version:** `0.1.6`. Previous public release: `0.1.5.3` ([Zenodo 22282345](https://zenodo.org/records/22282345)). Release evidence: `RELEASE_NOTES_0_1_6.md`.
+**Version:** `0.1.6`. Previous public release: `0.1.5.3` ([Zenodo 22282345](https://zenodo.org/records/23418560)). Release evidence: `RELEASE_NOTES_0_1_6.md`.
 
 This release adds an opt-in software-only actuator abstraction between the existing safety-limited controller and the physics backend. The first increment models:
 
@@ -100,6 +100,6 @@ The baseline and Hardware Twin runs have distinct run identities and configurati
 
 ## License and citation
 
-Source code is licensed under Apache-2.0. Third-party package and asset notices are listed in `THIRD_PARTY_NOTICES.md`. Cite the software with `CITATION.cff`. Archived releases are listed on Zenodo (record 22282345 and its newer versions).
+Source code is licensed under Apache-2.0. Third-party package and asset notices are listed in `THIRD_PARTY_NOTICES.md`. Cite the software with `CITATION.cff`. Archived releases are listed on Zenodo (record 23418560 and its newer versions).
 
 Verification results for this release are listed in `RELEASE_NOTES_0_1_6.md`.
