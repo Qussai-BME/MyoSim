@@ -43,7 +43,37 @@ from myosim.runtime import resource_root
 from myosim.signals.replay import CsvIntentReplay
 from myosim.simulation.factory import backend_status, create_backend
 
+
 # A publisher may set this without baking an unverified public URL into a release.
+def _render_table(rows: list[dict[str, Any]]) -> None:
+    """Render a small table as Markdown (avoids the pyarrow dependency of st.dataframe)."""
+    headers = list(rows[0].keys())
+    lines = [
+        "| " + " | ".join(headers) + " |",
+        "|" + "|".join("---" for _ in headers) + "|",
+    ]
+    for row in rows:
+        lines.append("| " + " | ".join(str(row[h]) for h in headers) + " |")
+    st.markdown("\n".join(lines))
+
+
+def _render_line_chart(data: dict[str, Any], x: str) -> None:
+    """Render a multi-series line plot with matplotlib (no pyarrow dependency)."""
+    import matplotlib.pyplot as plt
+
+    xs = data[x]
+    fig, ax = plt.subplots(figsize=(8, 3))
+    for name, values in data.items():
+        if name == x:
+            continue
+        ax.plot(xs, [float("nan") if v is None else v for v in values], label=name)
+    ax.set_xlabel(x)
+    ax.legend(loc="best", fontsize="small")
+    fig.tight_layout()
+    st.pyplot(fig)
+    plt.close(fig)
+
+
 REPOSITORY_URL = os.environ.get(
     "MYOSIM_REPOSITORY_URL", "https://github.com/Qussai-BME/MyoSim"
 ).strip()
@@ -463,7 +493,7 @@ with tab_console:
                     "Command corrections": task["command_corrections"],
                 }
             )
-        st.dataframe(rows, width="stretch", hide_index=True)
+        _render_table(rows)
 
         st.markdown("### What the comparison actually says")
         st.write(
@@ -600,7 +630,7 @@ with tab_hardware_twin:
                     },
                 }
                 st.caption(unit_label)
-                st.line_chart(chart_data, x="time_s")
+                _render_line_chart(chart_data, x="time_s")
 
             st.markdown("### Command tracking error")
             error_groups = (("m", "Slide error (m)"), ("rad", "Hinge error (rad)"))
@@ -620,7 +650,7 @@ with tab_hardware_twin:
                     },
                 }
                 st.caption(unit_label)
-                st.line_chart(error_data, x="time_s")
+                _render_line_chart(error_data, x="time_s")
         st.json(twin_evidence)
         with st.expander("Control metrics"):
             st.json(twin_control.to_dict())
