@@ -7,6 +7,6 @@
 # Additional dependency for the Streamlit front end only (not part of the
 # myosim package itself). Pinned per Streamlit's own best-practice guidance
 # so Community Cloud never silently upgrades it under you.
-streamlit>=1.60,<2.0
+streamlit>=1.66.0,<2.0
 # pyarrow must stay compatible with the numpy<2.0 pin in pyproject.toml.
-pyarrow>=19,<21
+pyarrow>=26.0.0,<27
